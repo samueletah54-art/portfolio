@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1c2a24">
+<meta name="author" content="Samuel Praise Etah">
+<title>Samuel Praise Etah</title>
+<meta name="description" content="Samuel Praise Etah — digital historian and web developer from Cameroon. Projects in digital history, education and small-business web.">
+<meta property="og:title" content="Samuel Praise Etah — Digital history &amp; web">
+<meta property="og:description" content="I research Cameroon's past and build fast, honest websites for readers on low-cost phones.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231c2a24'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' text-anchor='middle' fill='%23e9b44c'%3ESE%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #f6f1e7;
+    --surface: #fffaf0;
+    --ink: #1c2a24;
+    --muted: #5c665f;
+    --line: #ddd3c0;
+    --accent: #b5532c;
+    --gold: #c8901f;
+    --green: #2f6b4f;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --max: 68rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141a17; --surface: #1b231f; --ink: #ece6d8; --muted: #a3aa9f;
+      --line: #2f3a34; --accent: #e07a4f; --gold: #e9b44c; --green: #6fb38f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141a17; --surface: #1b231f; --ink: #ece6d8; --muted: #a3aa9f;
+    --line: #2f3a34; --accent: #e07a4f; --gold: #e9b44c; --green: #6fb38f;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 1.0625rem/1.65 var(--sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1rem; }
+  @media (min-width: 700px) { .wrap { padding: 0 2rem; } }
+
+  /* Header */
+  header.top {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+  }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 3.75rem; gap: 1rem; }
+  .mark { font-family: var(--serif); font-weight: 700; font-size: 1.15rem; text-decoration: none; }
+  .mark span { color: var(--accent); }
+  nav ul { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; font-size: .95rem; }
+  nav a { text-decoration: none; color: var(--muted); }
+  nav a:hover { color: var(--ink); }
+  @media (max-width: 560px) { nav .opt { display: none; } }
+  .theme-btn {
+    background: none; border: 1px solid var(--line); color: var(--ink);
+    width: 2.1rem; height: 2.1rem; border-radius: 50%; cursor: pointer; font-size: .95rem;
+  }
+
+  /* Hero */
+  .hero { padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+  .eyebrow { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--green); font-weight: 600; margin: 0 0 1rem; }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 600; letter-spacing: -.015em;
+    font-size: clamp(2.4rem, 7vw, 4.6rem); line-height: 1.04; margin: 0 0 1.5rem; max-width: 15ch;
+  }
+  .hero h1 em { color: var(--accent); font-style: italic; }
+  .lede { font-size: clamp(1.1rem, 2.2vw, 1.3rem); color: var(--muted); max-width: 40rem; margin: 0 0 2rem; }
+  .cta { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .btn {
+    display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.25rem;
+    border-radius: 999px; text-decoration: none; font-weight: 600; font-size: .95rem;
+    border: 1px solid var(--ink);
+  }
+  .btn.primary { background: var(--ink); color: var(--bg); }
+  .btn.primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn:not(.primary):hover { border-color: var(--accent); }
+
+  /* The drawn line motif */
+  .border-line { position: absolute; right: -2rem; top: 2rem; width: min(42vw, 30rem); opacity: .9; pointer-events: none; }
+  .border-line path { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 6 7; }
+  .border-line path.draw { stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: draw 3.2s ease-out .3s forwards; }
+  .border-line circle { fill: var(--gold); }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @media (max-width: 820px) { .border-line { opacity: .18; width: 80vw; } }
+
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin-top: 3.5rem; }
+  .facts div { background: var(--surface); padding: 1.1rem 1.25rem; }
+  .facts b { display: block; font-family: var(--serif); font-size: 1.15rem; }
+  .facts span { color: var(--muted); font-size: .9rem; }
+
+  /* Sections */
+  section { padding: 4.5rem 0; border-top: 1px solid var(--line); }
+  .sec-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2.25rem; }
+  .sec-head .num { font-family: var(--serif); color: var(--accent); font-size: 1rem; }
+  h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(1.8rem, 4vw, 2.5rem); margin: 0; letter-spacing: -.01em; }
+  h3 { font-family: var(--serif); font-weight: 600; font-size: 1.45rem; margin: 0 0 .5rem; line-height: 1.2; }
+
+  .about { display: grid; gap: 2.5rem; }
+  @media (min-width: 820px) { .about { grid-template-columns: 1.4fr 1fr; } }
+  .about p { margin: 0 0 1.1rem; }
+  .about .big { font-family: var(--serif); font-size: 1.35rem; line-height: 1.5; }
+  .principles { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--gold); }
+  .principles li { padding: .1rem 0 1rem 1.25rem; }
+  .principles b { display: block; }
+  .principles span { color: var(--muted); font-size: .95rem; }
+
+  /* Projects */
+  .projects { display: grid; gap: 1.5rem; }
+  .project {
+    display: grid; gap: 1.5rem; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 18px; padding: 1.5rem; transition: transform .25s ease, border-color .25s ease;
+  }
+  .project:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+  @media (min-width: 820px) { .project { grid-template-columns: 17rem 1fr; padding: 2rem; } }
+  .project.feature { border-width: 2px; }
+  .thumb {
+    border-radius: 12px; aspect-ratio: 4 / 3; display: grid; place-items: center;
+    position: relative; overflow: hidden;
+  }
+  .thumb svg { width: 100%; height: 100%; }
+  .tag { display: inline-block; font-size: .75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: .2rem .6rem; border-radius: 999px; margin-bottom: .75rem; }
+  .tag.live { background: color-mix(in srgb, var(--green) 16%, transparent); color: var(--green); }
+  .tag.build { background: color-mix(in srgb, var(--gold) 20%, transparent); color: var(--gold); }
+  .tag.plan { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); }
+  .project p { margin: 0 0 1rem; color: var(--muted); }
+  .project ul { margin: 0 0 1rem; padding-left: 1.1rem; }
+  .project li { margin-bottom: .35rem; }
+  .stack { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 1rem; padding: 0; list-style: none; }
+  .stack li { font-size: .8rem; border: 1px solid var(--line); border-radius: 6px; padding: .15rem .5rem; color: var(--muted); margin: 0; }
+  .links a { font-weight: 600; margin-right: 1.25rem; }
+
+  /* Skills */
+  .skills { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+  .skill { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.4rem; }
+  .skill h3 { font-size: 1.15rem; }
+  .skill ul { margin: 0; padding-left: 1.1rem; color: var(--muted); font-size: .95rem; }
+
+  .langs { list-style: none; padding: 0 !important; margin: 0; display: grid; gap: .9rem; }
+  .langs li { display: grid; gap: .35rem; }
+  .langs b { color: var(--ink); margin-right: .4rem; }
+  .langs span { font-size: .85rem; }
+  .meter { display: block; height: 6px; border-radius: 99px; background: var(--line); overflow: hidden; }
+  .meter::after { content: ""; display: block; height: 100%; width: 0; border-radius: inherit;
+    background: linear-gradient(90deg, var(--green), var(--gold)); transition: width 1.2s cubic-bezier(.2,.7,.2,1) .2s; }
+  .reveal.in .meter::after { width: var(--v); }
+
+  .skip { position: absolute; left: -999px; top: .5rem; background: var(--ink); color: var(--bg); padding: .5rem 1rem; border-radius: 8px; z-index: 20; }
+  .skip:focus { left: .75rem; }
+  .progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; transform-origin: 0 50%; transform: scaleX(0);
+    background: linear-gradient(90deg, var(--accent), var(--gold)); z-index: 30; }
+
+  /* Timeline */
+  .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+  .timeline::before { content: ""; position: absolute; left: .45rem; top: .5rem; bottom: .5rem; width: 2px; background: var(--line); }
+  .timeline li { position: relative; padding: 0 0 1.75rem 2.25rem; }
+  .timeline li::before { content: ""; position: absolute; left: 0; top: .45rem; width: 1rem; height: 1rem; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+  .timeline li.next::before { border-style: dashed; border-color: var(--gold); }
+  .timeline time { font-size: .85rem; font-weight: 600; color: var(--accent); letter-spacing: .04em; }
+  .timeline p { margin: .2rem 0 0; color: var(--muted); }
+
+  /* Contact */
+  .contact { text-align: center; padding: 5rem 0 4rem; }
+  .contact h2 { font-size: clamp(2rem, 5vw, 3.2rem); max-width: 18ch; margin: 0 auto 1rem; }
+  .contact p { color: var(--muted); max-width: 34rem; margin: 0 auto 2rem; }
+  .contact .cta { justify-content: center; }
+  footer { border-top: 1px solid var(--line); padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: .85rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .border-line path.draw { animation: none; stroke-dashoffset: 0; }
+    .project, .project:hover { transition: none; transform: none; }
+    .meter::after { transition: none; }
+  }
+  @media print {
+    header.top, .border-line, .progress, .theme-btn, .cta { display: none !important; }
+    body { background: #fff; color: #000; font-size: 11pt; }
+    section { padding: 1.5rem 0; break-inside: avoid; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+    .meter::after { width: var(--v) !important; }
+    .project, .skill, .facts div { background: #fff; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#">Samuel <span>Etah</span></a>
+    <nav aria-label="Main">
+      <ul>
+        <li class="opt"><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li class="opt"><a href="#path">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="theme-btn" id="theme" type="button" aria-label="Switch colour theme">◐</button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" style="border-top:0">
+    <svg class="border-line" viewBox="0 0 300 360" aria-hidden="true">
+      <path class="draw" d="M40 20 C 70 70, 50 110, 95 150 S 120 230, 170 250 S 230 300, 260 345"/>
+      <path d="M20 120 C 90 130, 180 100, 290 140" opacity=".35"/>
+      <circle cx="95" cy="150" r="5"/><circle cx="170" cy="250" r="5"/>
+    </svg>
+    <div class="wrap">
+      <p class="eyebrow">International Relations · Digital history · Web development</p>
+      <h1>I research the past and <em>build the web</em> people read it on.</h1>
+      <p class="lede">I’m Samuel Praise Etah, an International Relations graduate from the University of Yaoundé I, a freelance web developer and an independent researcher on the colonial history of Cameroon. I make fast, honest websites (a digital history of my country, an exam-prep platform, a local phone shop) built to load on a low-cost Android phone on slow mobile data.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">See my work →</a>
+        <a class="btn" href="mailto:samueletah54@gmail.com">Email me</a>
+      </div>
+      <div class="facts">
+        <div><b>BA International Relations</b><span>University of Yaoundé I</span></div>
+        <div><b>Zero dependencies</b><span>plain HTML, CSS, JS, Node</span></div>
+        <div><b>English · French · German</b><span>top · top · intermediate</span></div>
+        <div><b>Ghent, 2027</b><span>MA African Studies (applying)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="num">01</span><h2>About</h2></div>
+      <div class="about">
+        <div class="reveal">
+          <p class="big">Growing up in Cameroon, I have lived with the consequences of a line drawn in 1916 by two European diplomats who barely knew the land they divided.</p>
+          <p>That line became my first serious project. <em>The Line</em> is a digital history of Cameroon’s partition, reunification and colonial memory, which I research, write, design and code myself. Along the way I found I enjoy the building as much as the research: turning sources into maps that draw themselves, timelines you can search, and pages that respect a reader’s data plan.</p>
+          <p>I studied International Relations at the University of Yaoundé I, and I work as a freelance web developer, taking client sites from design to deployment. I bring the same approach to every project: an exam-prep platform for students sitting the GCE, Baccalauréat and IELTS, and a bilingual shop website for a smartphone seller in Yaoundé.</p>
+        </div>
+        <ul class="principles reveal">
+          <li><b>Never invent</b><span>Every fact sourced, every image licence-checked and credited, every uncertainty labelled.</span></li>
+          <li><b>Build for the real reader</b><span>Low-end phones, slow data, accessibility, reduced-motion support.</span></li>
+          <li><b>Keep it simple</b><span>No frameworks unless they earn their place. Content in plain files anyone can edit.</span></li>
+          <li><b>Respect people</b><span>No tracking, no cookies, consent first in oral history.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="num">02</span><h2>Selected work</h2></div>
+      <div class="projects">
+
+        <article class="project feature reveal">
+          <div class="thumb" style="background:#1c2a24">
+            <svg viewBox="0 0 160 120" aria-hidden="true">
+              <path d="M58 14 L92 10 L104 34 L98 58 L112 80 L100 108 L66 110 L60 84 L44 70 L52 44 Z" fill="#2f6b4f" opacity=".55"/>
+              <path d="M78 12 C 72 40, 86 60, 74 84 S 82 104, 80 110" stroke="#e9b44c" stroke-width="2.5" fill="none" stroke-dasharray="4 4"/>
+              <text x="12" y="112" fill="#ece6d8" font-family="Georgia,serif" font-size="13" font-style="italic">The Line</text>
+            </svg>
+          </div>
+          <div>
+            <span class="tag live">Live · in progress</span>
+            <h3>The Line: Partition, Reunification &amp; Colonial Memory in Cameroon</h3>
+            <p>A nine-chapter digital history from German rule (1884) through the Anglo-French partition, UN trusteeship, the 1961 plebiscite and the 1972 unitary state, plus how Cameroon, Africa and Europe remember it today.</p>
+            <ul>
+              <li>Nine referenced chapters, 24 profiles, a timeline of 50+ events, 50+ licence-checked archival images and seven archive films</li>
+              <li>Primary sources checked word for word: League of Nations and UN texts, the British mandate, Hansard (1961), INA television archives</li>
+              <li>Scroll-driven maps from Natural Earth data, the 1949 Colonial Office map georeferenced over a modern map, and an animated map of African independence</li>
+              <li>Oral-history strand with elders and historians, with named / first-name / anonymous consent options</li>
+              <li>My own zero-dependency Node build script; static output; no cookies, no tracking</li>
+            </ul>
+            <ul class="stack"><li>HTML</li><li>CSS</li><li>Vanilla JS</li><li>Node.js</li><li>SVG cartography</li><li>Git</li><li>Archival research</li></ul>
+            <p class="links"><a href="https://the-line-eight.vercel.app/" target="_blank" rel="noopener">Visit the site ↗</a></p>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="thumb" style="background:#14325c">
+            <svg viewBox="0 0 160 120" aria-hidden="true">
+              <circle cx="80" cy="58" r="32" fill="none" stroke="#7fb0e8" stroke-width="5"/>
+              <path d="M62 46 H92 M58 58 H96 M62 70 H92" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+              <path d="M104 30 A 40 40 0 0 1 116 70" stroke="#e9b44c" stroke-width="5" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <span class="tag plan">Blueprint · brand stage</span>
+            <h3>Examina Global</h3>
+            <p>An exam-prep platform for students in Cameroon preparing for the GCE O/A-Levels, the Baccalauréat and IELTS, in English and French: video lessons, a practice engine, mock exams and progress tracking.</p>
+            <ul>
+              <li>Brand identity: an “E” drawn as a globe, a bilingual tagline, a design system and email templates</li>
+              <li>Full blueprint: sitemap, architecture, budget and break-even in FCFA, payments, risk register, 15-phase roadmap</li>
+              <li>Pilot lesson scripts and a video-production plan</li>
+            </ul>
+            <ul class="stack"><li>Product planning</li><li>Brand design</li><li>Architecture</li><li>Bilingual content</li></ul>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="thumb" style="background:#b5532c">
+            <svg viewBox="0 0 160 120" aria-hidden="true">
+              <rect x="58" y="16" width="44" height="86" rx="8" fill="#fffaf0"/>
+              <rect x="63" y="26" width="34" height="58" rx="2" fill="#1c2a24"/>
+              <circle cx="80" cy="93" r="3.5" fill="#1c2a24"/>
+              <circle cx="116" cy="30" r="12" fill="#25d366"/>
+              <path d="M111 30 l4 4 l7 -8" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <span class="tag build">Built · pre-launch</span>
+            <h3>Mboa Phones</h3>
+            <p>A website for a smartphone shop in Yaoundé selling new and used phones in FCFA. Customers browse, then enquire on WhatsApp with a pre-filled message naming the exact model and price.</p>
+            <ul>
+              <li>French by default with an English toggle, remembered per browser</li>
+              <li>Shop with search, filters and sort, product pages, favourites, legal pages, 404</li>
+              <li>All products and business details in two editable files; a Node check script validates data, translations and links</li>
+            </ul>
+            <ul class="stack"><li>HTML</li><li>CSS tokens</li><li>ES5 JavaScript</li><li>i18n</li><li>WhatsApp deep links</li></ul>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="num">03</span><h2>What I bring</h2></div>
+      <div class="skills">
+        <div class="skill reveal"><h3>Front-end development</h3><ul><li>Semantic HTML, modern CSS, vanilla JavaScript</li><li>Static site generation with Node</li><li>SVG maps and scroll-driven storytelling</li><li>Accessibility and performance on low-end devices</li><li>Git and GitHub</li></ul></div>
+        <div class="skill reveal"><h3>Historical research</h3><ul><li>Primary sources: mandate texts, UN trusteeship records, colonial maps</li><li>Chicago-style citation</li><li>Image licensing and attribution</li><li>Source criticism, oral-history methods and research ethics</li></ul></div>
+        <div class="skill reveal"><h3>Languages</h3>
+          <ul class="langs">
+            <li><div><b>English</b><span>First language · IELTS band 7</span></div><i class="meter" style="--v:100%" role="img" aria-label="Top level"></i></li>
+            <li><div><b>French</b><span>Fluent</span></div><i class="meter" style="--v:95%" role="img" aria-label="Top level"></i></li>
+            <li><div><b>German</b><span>Intermediate learner · A2 completed</span></div><i class="meter" style="--v:50%" role="img" aria-label="Medium level"></i></li>
+            <li><div><b>Cameroonian Pidgin</b><span>Spoken</span></div></li>
+          </ul>
+        </div>
+        <div class="skill reveal"><h3>Product &amp; brand</h3><ul><li>Product blueprints and roadmaps</li><li>Brand identity and design systems</li><li>Budgeting and risk registers</li><li>Bilingual (EN/FR) content</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="path">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="num">04</span><h2>Education &amp; experience</h2></div>
+      <ol class="timeline reveal">
+        <li><time>2016</time><h3>GCE Ordinary Level</h3><p>Cameroon.</p></li>
+        <li><time>2018</time><h3>GCE Advanced Level</h3><p>Cameroon.</p></li>
+        <li><time>University</time><h3>Licence (BA) in International Relations, University of Yaoundé I</h3><p>Graduated in International Relations in Yaoundé, Cameroon.</p></li>
+        <li><time>Freelance</time><h3>Web developer</h3><p>Websites for clients and independent projects, from design to deployment: responsive interfaces, performance for mobile users, publishing workflows. Includes Mboa Phones and the Examina Global blueprint.</p></li>
+        <li><time>Oct 2026 – present</time><h3>Founder, researcher &amp; developer, <em>The Line</em></h3><p>Researching, writing and coding a digital history of Cameroon’s partition and reunification.</p></li>
+        <li class="next"><time>Sept 2027 (applying)</time><h3>MA in African Studies, Ghent University</h3><p>To study how international organisations shaped decolonisation, and how Europe and Africa negotiate memory and restitution today.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap reveal">
+      <p class="eyebrow">Get in touch</p>
+      <h2>Have a website, a story or a source to share?</h2>
+      <p>I’m open to web projects, research collaborations and conversations about Cameroon’s history. Email is the best way to reach me.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:samueletah54@gmail.com">samueletah54@gmail.com</a>
+        <a class="btn" href="https://the-line-eight.vercel.app/cv/" target="_blank" rel="noopener">Full CV ↗</a>
+        <a class="btn" href="https://github.com/samueletah54-art" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Samuel Praise Etah</span>
+    <span>Hand-built. No cookies, no tracking.</span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('theme');
+    try { var saved = localStorage.getItem('theme'); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
+    btn.addEventListener('click', function () {
+      var dark = root.getAttribute('data-theme')
+        ? root.getAttribute('data-theme') === 'dark'
+        : matchMedia('(prefers-color-scheme: dark)').matches;
+      var next = dark ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    var bar = document.getElementById('progress'), ticking = false;
+    function setBar() {
+      var max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = 'scaleX(' + (max > 0 ? scrollY / max : 0) + ')';
+      ticking = false;
+    }
+    addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(setBar); } }, { passive: true });
+    setBar();
+
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) { els.forEach(function (el) { el.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>
