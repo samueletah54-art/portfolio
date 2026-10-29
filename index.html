@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#1c2a24">
+<title>Samuel Praise Etah — Digital historian &amp; web developer</title>
+<meta name="description" content="Samuel Praise Etah — digital historian and web developer from Yaoundé, Cameroon. The Line and Examina Global, in English, French and German.">
+<meta name="theme-color" content="#070707">
 <meta name="author" content="Samuel Praise Etah">
-<title>Samuel Praise Etah</title>
-<meta name="description" content="Samuel Praise Etah — digital historian and web developer from Cameroon. Projects in digital history, education and small-business web.">
-<meta property="og:title" content="Samuel Praise Etah — Digital history &amp; web">
+<meta property="og:title" content="Samuel Praise Etah — Digital historian &amp; web developer">
 <meta property="og:description" content="I research Cameroon's past and build fast, honest websites for readers on low-cost phones.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://samuel-etah.vercel.app/">
@@ -16,599 +16,595 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://samuel-etah.vercel.app/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231c2a24'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' text-anchor='middle' fill='%23e9b44c'%3ESE%3C/text%3E%3C/svg%3E">
+<link rel="alternate" hreflang="en" href="https://samuel-etah.vercel.app/">
+<link rel="alternate" hreflang="fr" href="https://samuel-etah.vercel.app/?lang=fr">
+<link rel="alternate" hreflang="de" href="https://samuel-etah.vercel.app/?lang=de">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23070707'/%3E%3Ctext x='7' y='23' font-family='Arial' font-weight='700' font-size='18' fill='%23eae8e1'%3ES%3C/text%3E%3Ccircle cx='24' cy='21' r='3' fill='%23c9a878'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<script>try{var th=localStorage.getItem('theme');if(th)document.documentElement.setAttribute('data-theme',th)}catch(e){}</script>
 <style>
-  :root {
-    --bg: #f6f1e7;
-    --surface: #fffaf0;
-    --ink: #1c2a24;
-    --muted: #5c665f;
-    --line: #ddd3c0;
-    --accent: #b5532c;
-    --gold: #c8901f;
-    --green: #2f6b4f;
-    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    --max: 68rem;
+  :root, :root[data-theme="dark"] {
+    --bg: #070707; --bg2: #0e0e0d; --ink: #eae8e1; --smoke: #8b887d; --silver: #5c5a53;
+    --line: rgba(234, 232, 225, .12); --line2: rgba(234, 232, 225, .22);
+    --accent: #c9a878; --accent-ink: #070707; --star: 234, 232, 225;
+    --grotesk: "Space Grotesk", system-ui, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+    --serif: "Instrument Serif", Georgia, serif;
+    --max: 76rem;
+    color-scheme: dark;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #141a17; --surface: #1b231f; --ink: #ece6d8; --muted: #a3aa9f;
-      --line: #2f3a34; --accent: #e07a4f; --gold: #e9b44c; --green: #6fb38f;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #141a17; --surface: #1b231f; --ink: #ece6d8; --muted: #a3aa9f;
-    --line: #2f3a34; --accent: #e07a4f; --gold: #e9b44c; --green: #6fb38f;
+  :root[data-theme="light"] {
+    --bg: #f2efe7; --bg2: #e9e5da; --ink: #131312; --smoke: #66625a; --silver: #9a958a;
+    --line: rgba(19, 19, 18, .12); --line2: rgba(19, 19, 18, .24);
+    --accent: #946f3c; --accent-ink: #f2efe7; --star: 19, 19, 18;
+    color-scheme: light;
   }
 
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0; background: var(--bg); color: var(--ink);
-    font: 1.0625rem/1.65 var(--sans);
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
-  a:hover { color: var(--accent); }
-  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
-  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1rem; }
-  @media (min-width: 700px) { .wrap { padding: 0 2rem; } }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.65 var(--grotesk); -webkit-font-smoothing: antialiased; overflow-x: hidden; transition: background .5s, color .5s; }
+  a { color: inherit; text-decoration: none; }
+  em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--accent); }
+  :focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
+  ::selection { background: var(--accent); color: var(--accent-ink); }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1rem; position: relative; }
+  @media (min-width: 700px) { .wrap { padding: 0 2.25rem; } }
+
+  #stars { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+  main, footer { position: relative; z-index: 1; }
+
+  .skip { position: absolute; left: -999px; top: .5rem; z-index: 60; background: var(--ink); color: var(--bg); padding: .5rem 1rem; font: 500 .8rem var(--mono); }
+  .skip:focus { left: .75rem; }
+  .progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 50; background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); }
+
+  .cursor { position: fixed; left: 0; top: 0; width: 34px; height: 34px; margin: -17px 0 0 -17px; border: 1px solid var(--line2); border-radius: 50%; pointer-events: none; z-index: 70; opacity: 0; transition: width .3s, height .3s, margin .3s, border-color .3s, opacity .3s, background .3s; }
+  .cursor.on { opacity: 1; }
+  .cursor.big { width: 60px; height: 60px; margin: -30px 0 0 -30px; border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
 
   /* Header */
-  header.top {
-    position: sticky; top: 0; z-index: 10; transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .3s;
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
-  }
-  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 3.75rem; gap: 1rem; }
-  .mark { font-family: var(--serif); font-weight: 700; font-size: 1.15rem; text-decoration: none; }
-  .mark span { color: var(--accent); }
-  nav ul { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; font-size: .95rem; }
-  nav a { text-decoration: none; color: var(--muted); }
-  nav a:hover, nav a.active { color: var(--ink); }
-  nav a { position: relative; padding: .25rem 0; }
-  nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; border-radius: 2px; background: var(--accent); transform: scaleX(0); transition: transform .35s cubic-bezier(.2,.8,.2,1); }
-  nav a:hover::after, nav a.active::after { transform: scaleX(1); }
-  header.top.scrolled { box-shadow: 0 10px 30px -20px rgba(0,0,0,.35); }
+  header.top { position: sticky; top: 0; z-index: 40; transition: transform .45s cubic-bezier(.2,.8,.2,1), background .3s, border-color .3s; border-bottom: 1px solid transparent; }
+  header.top.scrolled { background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-color: var(--line); }
   header.top.hide { transform: translateY(-100%); }
-  .theme-btn {
-    background: none; border: 1px solid var(--line); color: var(--ink);
-    width: 2.1rem; height: 2.1rem; border-radius: 50%; cursor: pointer; font-size: .95rem;
-  }
-
-  /* Hero */
-  .hero {
-    position: relative; overflow: hidden; border-top: 0; padding: 0;
-    min-height: calc(100svh - 3.75rem); display: flex; flex-direction: column;
-  }
-  .hero-inner { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 1.75rem; padding-top: 1.25rem; padding-bottom: 1.25rem; }
-  .hero-meta, .hero-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .75rem 1.5rem; font-size: .8rem; color: var(--muted); letter-spacing: .04em; }
-  .status { display: inline-flex; align-items: center; gap: .55rem; padding: .35rem .8rem; border: 1px solid var(--line); border-radius: 999px; background: color-mix(in srgb, var(--surface) 70%, transparent); }
-  .status i { position: relative; width: .5rem; height: .5rem; border-radius: 50%; background: var(--green); }
-  .status i::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--green); animation: ping 2s cubic-bezier(0,0,.2,1) infinite; }
-  @keyframes ping { 75%, 100% { transform: scale(2.6); opacity: 0; } }
-  .clock { font-variant-numeric: tabular-nums; }
-  .clock b { color: var(--ink); font-weight: 600; }
-
-  .eyebrow { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--green); font-weight: 600; margin: 0 0 1rem; }
-  .hero h1 {
-    font-family: var(--serif); font-weight: 600; letter-spacing: -.02em;
-    font-size: clamp(2.5rem, min(6.2vw, 8.4vh), 5.25rem); line-height: 1.02; margin: 0 0 1.25rem; max-width: 16ch;
-  }
-  .hero h1 em { color: var(--accent); font-style: italic; }
-  .hero h1 .w { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .06em .1em 0; margin-bottom: -.1em; }
-  .hero h1 .w > span { display: inline-block; transform: translateY(105%); animation: rise 1s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: calc(.2s + var(--i) * .07s); }
-  @keyframes rise { to { transform: none; } }
-
-  .roles { font-family: var(--serif); font-size: clamp(1.15rem, 2.4vw, 1.5rem); margin: 0 0 1.25rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: .4ch; }
-  .rot { display: inline-grid; overflow: hidden; height: 1.35em; color: var(--accent); font-style: italic; }
-  .rot > span { grid-area: 1 / 1; line-height: 1.35; transform: translateY(110%); opacity: 0; transition: transform .7s cubic-bezier(.7,0,.2,1), opacity .5s; white-space: nowrap; }
-  .rot > span.on { transform: none; opacity: 1; }
-  .rot > span.out { transform: translateY(-110%); opacity: 0; }
-  .lede { font-size: clamp(1.05rem, 2vw, 1.2rem); color: var(--muted); max-width: 42rem; margin: 0 0 1.75rem; }
-
-  .seq { opacity: 0; transform: translateY(14px); animation: fade-up .9s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: var(--d, 0s); }
-  @keyframes fade-up { to { opacity: 1; transform: none; } }
-
-  .cta { display: flex; flex-wrap: wrap; gap: .75rem; }
-  .btn {
-    display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.35rem;
-    border-radius: 999px; text-decoration: none; font-weight: 600; font-size: .95rem;
-    border: 1px solid var(--ink); transition: background .25s, color .25s, border-color .25s;
-  }
-  .btn.primary { background: var(--ink); color: var(--bg); }
-  .btn.primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
-  .btn:not(.primary):hover { border-color: var(--accent); }
-  .btn .arr { display: inline-block; transition: transform .3s cubic-bezier(.2,.8,.2,1); }
-  .btn:hover .arr { transform: translateX(4px); }
-
-  .scroll-cue { display: inline-flex; align-items: center; gap: .75rem; text-decoration: none; text-transform: uppercase; letter-spacing: .14em; font-size: .72rem; }
-  .cue-line { position: relative; width: 3.5rem; height: 1px; background: var(--line); overflow: hidden; }
-  .cue-line::after { content: ""; position: absolute; inset: 0; width: 40%; background: var(--accent); animation: cue 2.2s cubic-bezier(.6,0,.2,1) infinite; }
-  @keyframes cue { from { transform: translateX(-100%); } to { transform: translateX(260%); } }
-
-  /* Survey-map background */
-  .hero-map { position: absolute; inset: 0; pointer-events: none; color: var(--ink); }
-  .hero-map svg { position: absolute; right: -10%; top: 50%; height: 104%; -webkit-mask-image: linear-gradient(to right, transparent, #000 35%); mask-image: linear-gradient(to right, transparent, #000 35%); transform: translate3d(var(--px, 0px), calc(-50% + var(--py, 0px)), 0); transition: transform .6s cubic-bezier(.2,.8,.2,1); }
-  .hero-map .grid { opacity: .07; }
-  .hero-map .contour { fill: none; stroke: currentColor; stroke-width: 1; opacity: .12; }
-  .hero-map .line { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: draw 3.6s cubic-bezier(.6,0,.2,1) .9s forwards; }
-  .hero-map .line-dash { fill: none; stroke: var(--bg); stroke-width: 3; stroke-dasharray: 2 12; opacity: 0; animation: show .4s ease 4.4s forwards; }
-  .hero-map .pin { fill: var(--gold); opacity: 0; animation: show .6s ease forwards; }
-  .hero-map .ring { fill: none; stroke: var(--gold); stroke-width: 1.5; transform-box: fill-box; transform-origin: center; opacity: 0; animation: pulse 2.8s ease-out infinite; }
-  .hero-map text { font: 600 11px var(--sans); letter-spacing: .12em; fill: var(--muted); opacity: 0; animation: show .6s ease forwards; }
-  @keyframes draw { to { stroke-dashoffset: 0; } }
-  @keyframes show { to { opacity: 1; } }
-  @keyframes pulse { 0% { transform: scale(.4); opacity: .9; } 100% { transform: scale(2.8); opacity: 0; } }
-  @media (max-width: 820px) {
-    .hero-map svg { right: -55%; opacity: .35; }
-  }
-
-  /* Ribbon */
-  .ribbon { position: relative; z-index: 1; border-top: 1px solid var(--line); overflow: hidden; padding: .9rem 0; background: color-mix(in srgb, var(--surface) 60%, transparent); }
-  .ribbon-track { display: flex; width: max-content; animation: tick 48s linear infinite; }
-  .ribbon:hover .ribbon-track { animation-play-state: paused; }
-  .ribbon span { font-family: var(--serif); font-style: italic; font-size: 1.05rem; white-space: nowrap; padding: 0 1.1rem; color: var(--muted); }
-  .ribbon span.d { color: var(--gold); font-style: normal; padding: 0; }
-  @keyframes tick { to { transform: translateX(-50%); } }
-
-  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin: 0 0 2.75rem; }
-  .facts div { background: var(--surface); padding: 1.1rem 1.25rem; }
-  .facts b { display: block; font-family: var(--serif); font-size: 1.15rem; }
-  .facts span { color: var(--muted); font-size: .9rem; }
-
-  /* Sections */
-  section { padding: 4.5rem 0; border-top: 1px solid var(--line); }
-  .sec-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); position: relative; }
-  .sec-head::after { content: ""; position: absolute; left: 0; bottom: -1px; height: 1px; width: 100%; background: var(--accent); transform: scaleX(0); transform-origin: 0 50%; transition: transform 1.2s cubic-bezier(.7,0,.2,1) .2s; }
-  .sec-head.in::after { transform: scaleX(1); }
-  .sec-head .num { font-family: var(--serif); color: var(--accent); font-size: 1rem; }
-  .sec-head .kicker { margin-left: auto; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
-  @media (max-width: 560px) { .sec-head .kicker { display: none; } }
-  h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 5vw, 3.2rem); margin: 0; letter-spacing: -.02em; line-height: 1.05; }
-  .sec-head.reveal { opacity: 1; transform: none; }
-  .sec-head.reveal h2, .sec-head.reveal .num { display: inline-block; clip-path: inset(0 0 100% 0); transform: translateY(.35em); transition: clip-path .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1); }
-  .sec-head.in h2, .sec-head.in .num { clip-path: inset(0 0 -10% 0); transform: none; }
-  h3 { font-family: var(--serif); font-weight: 600; font-size: 1.45rem; margin: 0 0 .5rem; line-height: 1.2; }
-
-  .about { display: grid; gap: 2.5rem; }
-  @media (min-width: 820px) { .about { grid-template-columns: 1.4fr 1fr; } }
-  .about p { margin: 0 0 1.1rem; }
-  .about .big { font-family: var(--serif); font-size: 1.35rem; line-height: 1.5; }
-  .principles { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--gold); }
-  .principles li { padding: .1rem 0 1rem 1.25rem; }
-  .principles b { display: block; }
-  .principles span { color: var(--muted); font-size: .95rem; }
-
-  /* Projects */
-  .projects { display: grid; gap: 2rem; }
-  .project {
-    --mx: 50%; --my: 50%;
-    position: relative; display: grid; gap: 1.75rem; align-items: center;
-    background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 1.25rem;
-    transition: border-color .3s ease, box-shadow .4s ease; isolation: isolate;
-  }
-  .project::before {
-    content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: -1; opacity: 0; transition: opacity .4s ease;
-    background: radial-gradient(520px circle at var(--mx) var(--my), color-mix(in srgb, var(--gold) 16%, transparent), transparent 60%);
-  }
-  .project:hover::before { opacity: 1; }
-  .project:hover { border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); box-shadow: 0 30px 60px -30px rgba(28, 42, 36, .35); }
-  @media (min-width: 900px) {
-    .project { grid-template-columns: 1.15fr 1fr; padding: 1.75rem; gap: 2.5rem; }
-    .project.flip .shot { order: 2; }
-  }
-  .shot {
-    display: block; border-radius: 14px; overflow: hidden; border: 1px solid var(--line);
-    background: var(--bg); box-shadow: 0 18px 40px -24px rgba(0,0,0,.45); text-decoration: none;
-  }
-  .shot-bar { display: flex; align-items: center; gap: .4rem; padding: .55rem .8rem; border-bottom: 1px solid var(--line); background: var(--surface); }
-  .shot-bar i { width: .55rem; height: .55rem; border-radius: 50%; background: var(--line); }
-  .shot-bar i:nth-child(1) { background: #e0786a; } .shot-bar i:nth-child(2) { background: #e9b44c; } .shot-bar i:nth-child(3) { background: #6fb38f; }
-  .shot-bar span { margin-left: .6rem; flex: 1; font-size: .72rem; color: var(--muted); background: var(--bg); border-radius: 6px; padding: .2rem .6rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .shot-img { aspect-ratio: 16 / 10; overflow: hidden; }
-  .shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transform: scale(1.001); transition: transform 1.2s cubic-bezier(.2,.8,.2,1); }
-  .project:hover .shot img { transform: scale(1.045); }
-  .p-num { font-family: var(--serif); font-size: .9rem; color: var(--accent); letter-spacing: .08em; margin-right: .5rem; }
-  .tag { display: inline-block; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: .22rem .65rem; border-radius: 999px; margin-bottom: .85rem; }
-  .tag.live { background: color-mix(in srgb, var(--green) 16%, transparent); color: var(--green); }
-  .tag.live::before { content: ""; display: inline-block; width: .4rem; height: .4rem; border-radius: 50%; background: currentColor; margin-right: .4rem; vertical-align: .08em; animation: blink 2.4s ease-in-out infinite; }
-  @keyframes blink { 50% { opacity: .25; } }
-  .project h3 { font-size: clamp(1.4rem, 2.6vw, 1.85rem); }
-  .project p { margin: 0 0 1rem; color: var(--muted); }
-  .project ul { margin: 0 0 1.1rem; padding-left: 1.1rem; }
-  .project li { margin-bottom: .35rem; }
-  .stack { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 1.25rem; padding: 0 !important; list-style: none; }
-  .stack li { font-size: .78rem; border: 1px solid var(--line); border-radius: 6px; padding: .15rem .55rem; color: var(--muted); margin: 0; }
-  .go { display: inline-flex; align-items: center; gap: .5rem; font-weight: 600; text-decoration: none; padding-bottom: .15rem; background: linear-gradient(var(--accent), var(--accent)) 0 100% / 0 2px no-repeat; transition: background-size .4s cubic-bezier(.2,.8,.2,1); }
-  .go:hover { background-size: 100% 2px; color: var(--ink); }
-  .go .arr { transition: transform .3s cubic-bezier(.2,.8,.2,1); }
-  .go:hover .arr { transform: translate(3px, -3px); }
-
-  /* Numbers */
-  .numbers { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-  .numbers div { padding: 1.5rem 1.25rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .numbers b { display: block; font-family: var(--serif); font-weight: 600; font-size: clamp(2.4rem, 5vw, 3.4rem); line-height: 1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
-  .numbers b sup { font-size: .45em; color: var(--accent); vertical-align: .9em; margin-left: .05em; }
-  .numbers span { display: block; margin-top: .5rem; font-size: .88rem; color: var(--muted); }
-  .numbers small { display: block; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-top: .25rem; }
-
-  /* Skills */
-  .skills { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
-  .skill { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1.5rem; transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .3s; }
-  .skill:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }
-  .skill h3 { font-size: 1.15rem; }
-  .skill ul { margin: 0; padding-left: 1.1rem; color: var(--muted); font-size: .95rem; }
-
-  .langs { list-style: none; padding: 0 !important; margin: 0; display: grid; gap: .9rem; }
-  .langs li { display: grid; gap: .35rem; }
-  .langs b { color: var(--ink); margin-right: .4rem; }
-  .langs span { font-size: .85rem; }
-  .meter { display: block; height: 6px; border-radius: 99px; background: var(--line); overflow: hidden; }
-  .meter::after { content: ""; display: block; height: 100%; width: 0; border-radius: inherit;
-    background: linear-gradient(90deg, var(--green), var(--gold)); transition: width 1.2s cubic-bezier(.2,.7,.2,1) .2s; }
-  .reveal.in .meter::after { width: var(--v); }
-
-  .skip { position: absolute; left: -999px; top: .5rem; background: var(--ink); color: var(--bg); padding: .5rem 1rem; border-radius: 8px; z-index: 20; }
-  .skip:focus { left: .75rem; }
-  .progress { position: fixed; top: 0; left: 0; height: 3px; width: 100%; transform-origin: 0 50%; transform: scaleX(0);
-    background: linear-gradient(90deg, var(--accent), var(--gold)); z-index: 30; }
-
-  /* Timeline */
-  .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
-  .timeline::before, .timeline::after { content: ""; position: absolute; left: .45rem; top: .5rem; bottom: .5rem; width: 2px; background: var(--line); }
-  .timeline::after { background: linear-gradient(var(--accent), var(--gold)); transform-origin: top; transform: scaleY(var(--tl, 0)); }
-  .timeline li { opacity: .45; transition: opacity .5s ease; }
-  .timeline li.done { opacity: 1; }
-  .timeline li.done::before { background: var(--accent); }
-  .timeline li { position: relative; padding: 0 0 1.75rem 2.25rem; }
-  .timeline li::before { content: ""; position: absolute; left: 0; top: .45rem; width: 1rem; height: 1rem; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); z-index: 1; transition: background .4s; }
-  .timeline li.next::before { border-style: dashed; border-color: var(--gold); }
-  .timeline time { font-size: .85rem; font-weight: 600; color: var(--accent); letter-spacing: .04em; }
-  .timeline p { margin: .2rem 0 0; color: var(--muted); }
-
-  /* Contact */
-  .contact { text-align: center; padding: 6rem 0 5rem; position: relative; overflow: hidden; }
-  .contact::before { content: ""; position: absolute; inset: auto -10% -40% -10%; height: 80%; background: radial-gradient(closest-side, color-mix(in srgb, var(--gold) 18%, transparent), transparent); pointer-events: none; }
-  .contact .wrap { position: relative; }
-  .contact h2 { font-size: clamp(2.4rem, 7vw, 5rem); max-width: 14ch; margin: 0 auto 1.25rem; line-height: 1; }
-  .contact h2 em { color: var(--accent); }
-  .contact p { color: var(--muted); max-width: 34rem; margin: 0 auto 2.25rem; }
-  .contact .cta { justify-content: center; }
-  .mail-row { display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .5rem; margin-bottom: 1.25rem; }
-  .big-mail { font-family: var(--serif); font-size: clamp(1.3rem, 3.6vw, 2.1rem); text-decoration: none; padding-bottom: .1rem; background: linear-gradient(var(--accent), var(--accent)) 0 100% / 100% 2px no-repeat; transition: background-size .5s cubic-bezier(.2,.8,.2,1), color .3s; overflow-wrap: anywhere; }
-  .big-mail:hover { color: var(--accent); background-size: 0 2px; background-position: 100% 100%; }
-  .copy { font: 600 .8rem var(--sans); border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: .45rem .9rem; cursor: pointer; transition: border-color .3s, background .3s; }
-  .copy:hover { border-color: var(--accent); }
-  .copy.ok { background: var(--green); border-color: var(--green); color: #fff; }
-  .magnetic { transition: transform .35s cubic-bezier(.2,.8,.2,1), background .25s, color .25s, border-color .25s; }
-
-  footer { border-top: 1px solid var(--line); padding: 2.5rem 0 2.5rem; color: var(--muted); font-size: .85rem; }
-  footer .wrap { display: grid; gap: 1.5rem; }
-  .foot-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1rem; }
-  .foot-sign { font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 2.4rem); color: var(--ink); line-height: 1.1; }
-  .foot-sign em { color: var(--accent); }
-  .foot-links { display: flex; flex-wrap: wrap; gap: 1.25rem; }
-  .foot-links a { text-decoration: none; }
-  .foot-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
-  .to-top { background: none; border: 1px solid var(--line); color: var(--ink); border-radius: 999px; padding: .35rem .85rem; cursor: pointer; font: inherit; }
-  .to-top:hover { border-color: var(--accent); color: var(--accent); }
-
-  /* Header controls */
-  .top .wrap { position: static; }
+  .bar-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 4.5rem; }
+  .logo { font: 600 .95rem var(--grotesk); letter-spacing: -.01em; white-space: nowrap; }
+  .logo b, .dot, .foot-big b { color: var(--accent); }
+  nav ul { display: flex; gap: 1.35rem; list-style: none; margin: 0; padding: 0; }
+  nav a { position: relative; font: 400 .72rem var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--smoke); transition: color .25s; }
+  nav a:hover, nav a.active { color: var(--ink); }
+  nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: 0 50%; transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+  nav a:hover::after, nav a.active::after { transform: scaleX(1); }
   .controls { display: flex; align-items: center; gap: .5rem; }
-  .lang { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
-  .lang button { font: 600 .74rem var(--sans); letter-spacing: .06em; color: var(--muted); background: none; border: 0; border-radius: 999px; padding: .32rem .62rem; cursor: pointer; transition: background .3s, color .3s; }
+  .box-btn { display: inline-flex; align-items: center; gap: .5rem; height: 2.25rem; padding: 0 .85rem; border: 1px solid var(--line2); background: none; color: var(--ink); font: 500 .72rem var(--mono); letter-spacing: .14em; text-transform: uppercase; cursor: pointer; transition: border-color .25s, background .25s, color .25s; }
+  .box-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .box-btn kbd { white-space: nowrap; font: 400 .62rem var(--mono); letter-spacing: .04em; color: var(--smoke); border: 1px solid var(--line); padding: .05rem .3rem; }
+  .cv-btn { border-color: color-mix(in srgb, var(--accent) 60%, transparent); color: var(--accent); }
+  .lang { display: inline-flex; border: 1px solid var(--line2); height: 2.25rem; }
+  .lang button { min-width: 2.35rem; background: none; border: 0; color: var(--smoke); font: 500 .72rem var(--mono); letter-spacing: .12em; cursor: pointer; transition: background .25s, color .25s; }
+  .lang button + button { border-left: 1px solid var(--line); }
   .lang button:hover { color: var(--ink); }
-  .lang button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
-  .menu-btn { display: none; width: 2.1rem; height: 2.1rem; border-radius: 50%; border: 1px solid var(--line); background: none; color: var(--ink); cursor: pointer; padding: 0; }
-  .menu-btn i, .menu-btn i::before, .menu-btn i::after { display: block; width: 14px; height: 1.5px; background: currentColor; margin: 0 auto; position: relative; transition: transform .3s, background .3s; }
+  .lang button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+  .icon-btn { width: 2.25rem; height: 2.25rem; display: inline-grid; place-items: center; border: 1px solid var(--line2); background: none; color: var(--ink); cursor: pointer; padding: 0; transition: border-color .25s; }
+  .icon-btn:hover { border-color: var(--accent); }
+  .sun { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid currentColor; background: linear-gradient(90deg, currentColor 50%, transparent 50%); }
+  .menu-btn { display: none; }
+  .menu-btn i, .menu-btn i::before, .menu-btn i::after { display: block; width: 14px; height: 1px; background: currentColor; position: relative; transition: transform .3s, background .3s; }
   .menu-btn i::before, .menu-btn i::after { content: ""; position: absolute; left: 0; }
   .menu-btn i::before { top: -5px; } .menu-btn i::after { top: 5px; }
   .menu-open .menu-btn i { background: transparent; }
   .menu-open .menu-btn i::before { transform: translateY(5px) rotate(45deg); }
   .menu-open .menu-btn i::after { transform: translateY(-5px) rotate(-45deg); }
-  @media (max-width: 1020px) {
-    .menu-btn { display: inline-block; }
-    header.top nav ul {
-      position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; gap: 0; padding: .5rem 1rem 1.25rem;
-      background: var(--bg); border-bottom: 1px solid var(--line); box-shadow: 0 20px 30px -24px rgba(0,0,0,.4);
-      opacity: 0; transform: translateY(-8px); pointer-events: none; transition: opacity .3s, transform .3s;
-    }
-    header.top nav li a { display: block; padding: .8rem 0; font-family: var(--serif); font-size: 1.35rem; color: var(--ink); border-bottom: 1px solid var(--line); }
-    header.top nav li a::after { display: none; }
+  @media (max-width: 1240px) {
+    .menu-btn { display: inline-grid; }
+    header.top nav ul { position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; gap: 0; padding: .5rem 1rem 1.5rem; background: var(--bg); border-bottom: 1px solid var(--line); opacity: 0; transform: translateY(-8px); pointer-events: none; transition: opacity .3s, transform .3s; }
     header.top.menu-open nav ul { opacity: 1; transform: none; pointer-events: auto; }
+    header.top nav li a { display: block; padding: .9rem 0; border-bottom: 1px solid var(--line); font: 500 1.5rem var(--grotesk); letter-spacing: -.01em; text-transform: none; color: var(--ink); }
+    header.top nav li a::after { display: none; }
   }
-  @media (max-width: 380px) { .mark { font-size: 1rem; } .lang button { padding: .3rem .5rem; } }
+  @media (max-width: 760px) { .idx-btn, .cv-btn { display: none; } .bar-row { height: 4rem; } }
+  @media (max-width: 380px) { .logo { font-size: .82rem; } .lang button { min-width: 2rem; } }
 
-  .sub { font-family: var(--serif); font-weight: 600; font-size: 1.5rem; margin: 3.5rem 0 1.25rem; }
+  /* Hero */
+  .hero { min-height: calc(100svh - 4.5rem); display: flex; flex-direction: column; justify-content: center; position: relative; padding: 3rem 0 5rem; }
+  .hero-grid { display: grid; gap: 3rem; align-items: center; width: 100%; }
+  @media (min-width: 960px) { .hero-grid { grid-template-columns: 1.5fr 1fr; gap: 4rem; } }
+  .meta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; font: 400 .72rem var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--smoke); margin: 0 0 2rem; }
+  .meta b { color: var(--ink); font-weight: 500; }
+  .sep { color: var(--silver); margin: 0 .25rem; }
+  .pulse { position: relative; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #6fcf97; margin-right: .35rem; flex: none; }
+  .pulse::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: inherit; animation: ping 2s cubic-bezier(0,0,.2,1) infinite; }
+  @keyframes ping { 75%, 100% { transform: scale(2.6); opacity: 0; } }
+  h1 { font: 500 clamp(3.2rem, 9.6vw, 7.4rem)/.94 var(--grotesk); letter-spacing: -.045em; margin: 0 0 2rem; }
+  h1 .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .06em; margin-bottom: -.06em; }
+  h1 .w > span { display: inline-block; transform: translateY(105%); animation: rise 1.1s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: calc(.15s + var(--i) * .1s); }
+  @keyframes rise { to { transform: none; } }
+  .roles { display: flex; flex-wrap: wrap; gap: .35rem .9rem; font: 500 .74rem var(--mono); letter-spacing: .2em; text-transform: uppercase; margin: 0 0 1.5rem; }
+  .roles i { font-style: normal; color: var(--accent); }
+  .lede { color: var(--smoke); font-size: clamp(1.05rem, 1.7vw, 1.22rem); max-width: 34rem; margin: 0 0 2.25rem; }
+  .cta { display: flex; flex-wrap: wrap; gap: .85rem; }
+  .btn { display: inline-flex; align-items: center; gap: .85rem; height: 3.1rem; padding: 0 1.6rem; font: 500 .74rem var(--mono); letter-spacing: .18em; text-transform: uppercase; border: 1px solid var(--line2); transition: background .3s, color .3s, border-color .3s, transform .35s cubic-bezier(.2,.8,.2,1); }
+  .btn.solid { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .btn.solid:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .btn.line:hover { border-color: var(--accent); color: var(--accent); }
+  .seq { opacity: 0; transform: translateY(14px); animation: fade-up 1s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: var(--d, 0s); }
+  @keyframes fade-up { to { opacity: 1; transform: none; } }
+
+  .fig { margin: 0; justify-self: center; width: min(100%, 22rem); }
+  .frame { position: relative; aspect-ratio: 4 / 5; border: 1px solid var(--line2); padding: 6px; transition: transform .6s cubic-bezier(.2,.8,.2,1); transform-style: preserve-3d; }
+  .frame-in { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--bg2); color: var(--ink); }
+  .frame-in img, .frame-in svg { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .corner { position: absolute; width: 12px; height: 12px; border-color: var(--accent); border-style: solid; border-width: 0; }
+  .corner.tl { left: -1px; top: -1px; border-left-width: 1px; border-top-width: 1px; }
+  .corner.tr { right: -1px; top: -1px; border-right-width: 1px; border-top-width: 1px; }
+  .corner.bl { left: -1px; bottom: -1px; border-left-width: 1px; border-bottom-width: 1px; }
+  .corner.br { right: -1px; bottom: -1px; border-right-width: 1px; border-bottom-width: 1px; }
+  .fig figcaption { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: .85rem; font: 400 .68rem var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--smoke); }
+  .f-grid { opacity: .08; }
+  .f-con { fill: none; stroke: currentColor; stroke-width: 1; opacity: .16; }
+  .f-line { fill: none; stroke: var(--accent); stroke-width: 2.2; stroke-linecap: round; stroke-dasharray: 520; stroke-dashoffset: 520; animation: draw 3s cubic-bezier(.6,0,.2,1) 1s forwards; }
+  .f-pin { fill: var(--accent); opacity: 0; animation: show .5s ease forwards; }
+  .f-ring { fill: none; stroke: var(--accent); stroke-width: 1; transform-box: fill-box; transform-origin: center; opacity: 0; animation: pulse 2.8s ease-out infinite; }
+  .frame-in text { font: 500 10px var(--mono); letter-spacing: .14em; fill: var(--smoke); opacity: 0; animation: show .5s ease forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes show { to { opacity: 1; } }
+  @keyframes pulse { 0% { transform: scale(.4); opacity: .9; } 100% { transform: scale(2.8); opacity: 0; } }
+
+  .scroll-cue { position: absolute; left: 50%; bottom: 1.5rem; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: .6rem; font: 400 .65rem var(--mono); letter-spacing: .24em; text-transform: uppercase; color: var(--smoke); }
+  .scroll-cue.seq { transform: translate(-50%, 14px); }
+  @keyframes fade-up-c { to { opacity: 1; transform: translate(-50%, 0); } }
+  .scroll-cue.seq { animation-name: fade-up-c; }
+  .cue-line { position: relative; width: 1px; height: 2.6rem; background: var(--line); overflow: hidden; }
+  .cue-line::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 40%; background: var(--accent); animation: cue 2.2s cubic-bezier(.6,0,.2,1) infinite; }
+  @keyframes cue { from { transform: translateY(-100%); } to { transform: translateY(260%); } }
+  @media (max-height: 700px), (max-width: 959px) { .scroll-cue { display: none; } }
+
+  /* Sections */
+  section { padding: clamp(5rem, 11vw, 9rem) 0; }
+  .sec-head { margin-bottom: clamp(2.5rem, 6vw, 4.5rem); }
+  .label { display: flex; align-items: center; gap: .9rem; margin: 0 0 1.5rem; font: 400 .72rem var(--mono); letter-spacing: .2em; text-transform: uppercase; color: var(--smoke); }
+  .label .num { color: var(--accent); }
+  .label .bar { width: 2.5rem; height: 1px; background: var(--line2); transform: scaleX(0); transform-origin: 0 50%; transition: transform 1s cubic-bezier(.7,0,.2,1) .2s; }
+  .sec-head.in .bar { transform: scaleX(1); }
+  h2 { font: 500 clamp(2.3rem, 6.2vw, 4.8rem)/1 var(--grotesk); letter-spacing: -.04em; margin: 0; max-width: 16ch; }
+  h2 em { letter-spacing: -.01em; }
+  .sec-head.reveal { opacity: 1; transform: none; }
+  .sec-head.reveal h2 { clip-path: inset(0 0 100% 0); transform: translateY(.3em); transition: clip-path 1s cubic-bezier(.2,.8,.2,1), transform 1s cubic-bezier(.2,.8,.2,1); }
+  .sec-head.in h2 { clip-path: inset(-10% -5% -15% -5%); transform: none; }
+  h3 { font: 500 1.35rem/1.25 var(--grotesk); letter-spacing: -.02em; margin: 0 0 .5rem; }
+
+  /* About */
+  .about-grid { display: grid; gap: 3rem; }
+  @media (min-width: 960px) { .about-grid { grid-template-columns: 1.3fr 1fr; gap: 5rem; } }
+  .about-text p { color: var(--smoke); margin: 0 0 1.25rem; }
+  .about-text .big { color: var(--ink); font-size: clamp(1.25rem, 2.2vw, 1.55rem); line-height: 1.5; letter-spacing: -.01em; }
+  .facts { margin: 0; border-top: 1px solid var(--line); }
+  .facts div { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+  .facts dt { font: 400 .68rem var(--mono); letter-spacing: .18em; text-transform: uppercase; color: var(--smoke); padding-top: .2rem; }
+  .facts dd { margin: 0; }
+
+  /* Expertise */
+  .exp { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .exp > li { display: grid; gap: .75rem 2rem; padding: 2rem 0; border-bottom: 1px solid var(--line); position: relative; transition: padding .4s cubic-bezier(.2,.8,.2,1); }
+  @media (min-width: 900px) { .exp > li { grid-template-columns: 4rem 1.2fr 1fr; align-items: start; } .exp > li:hover { padding-left: .75rem; } }
+  .exp > li::before { content: ""; position: absolute; left: 0; top: -1px; height: 1px; width: 0; background: var(--accent); transition: width .6s cubic-bezier(.2,.8,.2,1); }
+  .exp > li:hover::before { width: 100%; }
+  .exp-n { font: 400 .78rem var(--mono); color: var(--accent); padding-top: .35rem; }
+  .exp p { margin: 0; color: var(--smoke); max-width: 32rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: .45rem; list-style: none; margin: 0; padding: 0; align-content: start; }
+  .chips li { font: 400 .7rem var(--mono); letter-spacing: .06em; border: 1px solid var(--line); padding: .3rem .6rem; color: var(--smoke); transition: border-color .25s, color .25s; }
+  .chips li:hover { border-color: var(--accent); color: var(--ink); }
+  .meters { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; }
+  .meters li { display: grid; grid-template-columns: 6.5rem 1fr; gap: .2rem 1rem; align-items: center; }
+  .meters span { font-weight: 500; }
+  .meters small { grid-column: 2; font: 400 .68rem var(--mono); letter-spacing: .06em; color: var(--smoke); }
+  .meter { display: block; height: 2px; background: var(--line); overflow: hidden; }
+  .meter::after { content: ""; display: block; height: 100%; width: 0; background: var(--accent); transition: width 1.4s cubic-bezier(.2,.8,.2,1) .3s; }
+  .reveal.in .meter::after { width: var(--v); }
+
+  /* Work */
+  .cases { display: grid; gap: clamp(4rem, 9vw, 7rem); }
+  .case { display: grid; gap: 2rem; align-items: start; }
+  @media (min-width: 960px) { .case { grid-template-columns: 1.15fr 1fr; gap: 3.5rem; } .case.flip .shot { order: 2; } }
+  .shot { display: block; border: 1px solid var(--line2); background: var(--bg2); position: relative; overflow: hidden; }
+  .shot-bar { display: flex; align-items: center; gap: .4rem; padding: .6rem .8rem; border-bottom: 1px solid var(--line); }
+  .shot-bar i { width: 7px; height: 7px; border-radius: 50%; background: var(--line2); }
+  .shot-bar span { margin-left: .6rem; font: 400 .66rem var(--mono); letter-spacing: .06em; color: var(--smoke); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .shot-img { display: block; aspect-ratio: 16 / 10; overflow: hidden; }
+  .shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; filter: grayscale(.35) contrast(1.02); transform: scale(1.001); transition: transform 1.4s cubic-bezier(.2,.8,.2,1), filter .6s; }
+  .case:hover .shot img { transform: scale(1.05); filter: none; }
+  .case-meta { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem; font: 400 .68rem var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--smoke); margin: 0 0 1rem; }
+  .live-dot { width: 6px; height: 6px; border-radius: 50%; background: #6fcf97; margin-right: .3rem; animation: blink 2.4s ease-in-out infinite; }
+  @keyframes blink { 50% { opacity: .25; } }
+  .case h3 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.035em; line-height: 1; margin-bottom: 1rem; display: flex; align-items: baseline; gap: .9rem; }
+  .case-num { font: 400 .78rem var(--mono); letter-spacing: .1em; color: var(--accent); }
+  .case-sum { color: var(--smoke); margin: 0 0 1.25rem; }
+  .case .chips { margin-bottom: 1.5rem; }
+  .case-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; }
+  .case-toggle { display: inline-flex; align-items: center; gap: .7rem; background: none; border: 0; padding: 0; color: var(--ink); cursor: pointer; font: 500 .72rem var(--mono); letter-spacing: .16em; text-transform: uppercase; }
+  .plus { position: relative; width: 1.6rem; height: 1.6rem; border: 1px solid var(--line2); transition: border-color .25s, transform .4s; }
+  .plus::before, .plus::after { content: ""; position: absolute; left: 50%; top: 50%; width: 9px; height: 1px; background: currentColor; transform: translate(-50%, -50%); transition: transform .4s; }
+  .plus::after { transform: translate(-50%, -50%) rotate(90deg); }
+  .case-toggle:hover .plus { border-color: var(--accent); }
+  .case-toggle[aria-expanded="true"] .plus::after { transform: translate(-50%, -50%) rotate(0deg); }
+  .arrow-link { font: 500 .72rem var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid transparent; transition: border-color .25s; }
+  .arrow-link:hover { border-color: var(--accent); }
+  .case-study { margin-top: 1.75rem; }
+  .case-study dl { margin: 0; border-top: 1px solid var(--line); }
+  .case-study dl div { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); animation: fade-up .6s cubic-bezier(.2,.8,.2,1) both; }
+  .case-study dl div:nth-child(2) { animation-delay: .06s; } .case-study dl div:nth-child(3) { animation-delay: .12s; } .case-study dl div:nth-child(4) { animation-delay: .18s; }
+  .case-study dt { font: 400 .68rem var(--mono); letter-spacing: .18em; text-transform: uppercase; color: var(--accent); padding-top: .2rem; }
+  .case-study dd { margin: 0; color: var(--smoke); }
+
+  /* Record */
+  .record { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .record li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem 2rem; padding: 1.75rem 0; border-bottom: 1px solid var(--line); transition: background .3s; }
+  @media (min-width: 900px) { .record li { grid-template-columns: 10rem 1fr; } }
+  .record li:hover { background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 6%, transparent), transparent 70%); }
+  .yr { font: 400 .8rem var(--mono); letter-spacing: .1em; color: var(--accent); padding-top: .35rem; }
+  .record .org { font: 400 .7rem var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--ink); margin: 0 0 .5rem; opacity: .8; }
+  .record p { margin: 0; color: var(--smoke); max-width: 42rem; }
+  .record li.now .yr::after { content: " ●"; color: #6fcf97; }
 
   /* Distinctions */
-  .dist { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14.5rem, 1fr)); }
-  .dist article { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1.5rem; overflow: hidden; transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .3s; }
-  .dist article::before { content: ""; position: absolute; left: 0; top: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--gold)); transform: scaleX(0); transform-origin: 0 50%; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
-  .dist article:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }
-  .dist article:hover::before { transform: scaleX(1); }
-  .dist small { display: block; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--green); font-weight: 600; margin-bottom: .75rem; }
-  .dist b { display: block; font-family: var(--serif); font-weight: 600; font-size: clamp(1.7rem, 3vw, 2.2rem); line-height: 1.05; margin-bottom: .6rem; }
-  .dist p { margin: 0; color: var(--muted); font-size: .95rem; }
-  .dist .mark-ico { position: absolute; right: 1.25rem; top: 1.25rem; font-size: 1.1rem; color: var(--gold); }
+  .dist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .dist li { display: grid; grid-template-columns: 2rem 1fr auto; gap: 1rem; align-items: baseline; padding: 1.4rem 0; border-bottom: 1px solid var(--line); font-size: clamp(1.05rem, 2vw, 1.4rem); letter-spacing: -.015em; transition: padding .4s cubic-bezier(.2,.8,.2,1), color .3s; }
+  .dist li:hover { padding-left: .6rem; }
+  .star { color: var(--accent); font-size: .9rem; transition: transform .6s; display: inline-block; }
+  .dist li:hover .star { transform: rotate(180deg); }
+  .yr-tag { font: 400 .68rem var(--mono); letter-spacing: .14em; color: var(--smoke); }
 
   /* Process */
-  .process { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.5rem 2rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); counter-reset: step; }
-  .process li { position: relative; padding-top: 1.25rem; border-top: 1px solid var(--line); }
-  .process li::before { content: ""; position: absolute; left: 0; top: -1px; height: 2px; width: 0; background: var(--accent); transition: width .9s cubic-bezier(.2,.8,.2,1); }
-  .process.in li::before { width: 100%; }
-  .process.in li:nth-child(2)::before { transition-delay: .15s; } .process.in li:nth-child(3)::before { transition-delay: .3s; } .process.in li:nth-child(4)::before { transition-delay: .45s; }
-  .process .n { display: block; font-family: var(--serif); font-size: 3rem; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--accent); margin-bottom: .75rem; transition: color .4s; }
-  .process li:hover .n { color: var(--accent); }
-  .process h3 { font-size: 1.3rem; }
-  .process p { margin: 0; color: var(--muted); font-size: .95rem; }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .steps li { padding: 2rem 1.5rem 2.25rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); position: relative; overflow: hidden; transition: background .4s; }
+  .steps li::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--accent); transition: width .6s cubic-bezier(.2,.8,.2,1); }
+  .steps li:hover { background: color-mix(in srgb, var(--accent) 5%, transparent); }
+  .steps li:hover::after { width: 100%; }
+  .step-n { display: block; font: 400 3.4rem/1 var(--serif); font-style: italic; color: var(--accent); margin-bottom: 1.25rem; }
+  .steps p { margin: 0; color: var(--smoke); font-size: .97rem; }
+
+  /* Signals */
+  .signals { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .signals div { padding: 1.75rem 1.25rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .signals b { display: block; font: 500 clamp(2.6rem, 5.5vw, 4rem)/1 var(--grotesk); letter-spacing: -.05em; font-variant-numeric: tabular-nums; }
+  .signals span { display: block; margin-top: .75rem; font: 400 .68rem var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--smoke); }
+  .built-label { margin: 3.5rem 0 1rem; font: 400 .72rem var(--mono); letter-spacing: .2em; text-transform: uppercase; color: var(--smoke); }
+  .marquee { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 1.1rem 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+  .marquee-track { display: flex; align-items: center; width: max-content; animation: tick 40s linear infinite; }
+  .marquee:hover .marquee-track { animation-play-state: paused; }
+  .marquee span { font: 500 clamp(1.2rem, 2.4vw, 1.7rem) var(--grotesk); letter-spacing: -.02em; padding: 0 1.4rem; color: var(--smoke); white-space: nowrap; transition: color .3s; }
+  .marquee span:hover { color: var(--ink); }
+  .marquee i { font-style: normal; color: var(--accent); font-size: .8rem; }
+  @keyframes tick { to { transform: translateX(-50%); } }
+
+  /* Contact */
+  .contact-grid { display: grid; gap: 3rem; }
+  @media (min-width: 960px) { .contact-grid { grid-template-columns: 1fr 1.25fr; gap: 5rem; } }
+  .con-p { color: var(--smoke); font-size: clamp(1.1rem, 1.8vw, 1.3rem); margin: 0 0 2rem; max-width: 30rem; }
+  .local { font: 400 .72rem var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--smoke); display: flex; align-items: center; gap: .4rem; }
+  .local b { color: var(--ink); font-weight: 500; }
+  .pick { margin: 0 0 1rem; font: 400 .7rem var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--smoke); }
+  .channels { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .channels li { display: flex; align-items: center; border-bottom: 1px solid var(--line); position: relative; }
+  .channels a { flex: 1; display: grid; grid-template-columns: 7.5rem 1fr auto; gap: 1rem; align-items: center; padding: 1.25rem 0; min-width: 0; transition: padding .4s cubic-bezier(.2,.8,.2,1); }
+  .channels a:hover { padding-left: .75rem; }
+  .ch-k { font: 400 .68rem var(--mono); letter-spacing: .16em; text-transform: uppercase; color: var(--smoke); }
+  .ch-v { font-size: clamp(1rem, 2vw, 1.25rem); letter-spacing: -.01em; overflow-wrap: anywhere; }
+  .ch-a { color: var(--accent); transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+  .channels a:hover .ch-a { transform: translate(3px, -3px); }
+  .channels li::before { content: ""; position: absolute; left: 0; bottom: -1px; height: 1px; width: 0; background: var(--accent); transition: width .6s cubic-bezier(.2,.8,.2,1); }
+  .channels li:hover::before { width: 100%; }
+  .copy { margin-left: 1rem; flex: none; height: 2rem; padding: 0 .75rem; border: 1px solid var(--line2); background: none; color: var(--ink); font: 500 .66rem var(--mono); letter-spacing: .14em; text-transform: uppercase; cursor: pointer; transition: border-color .25s, background .25s, color .25s; }
+  .copy:hover { border-color: var(--accent); }
+  .copy.ok { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  @media (max-width: 560px) { .channels a { grid-template-columns: 1fr auto; } .ch-k { grid-column: 1 / -1; } }
+
+  /* Footer */
+  footer { border-top: 1px solid var(--line); padding: 3rem 0 2rem; overflow: hidden; }
+  .foot-big { font: 500 clamp(3.4rem, 15vw, 13rem)/.85 var(--grotesk); letter-spacing: -.06em; margin: 0 0 2rem; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px var(--line2); transition: color .6s; }
+  footer:hover .foot-big { color: var(--ink); }
+  .foot-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .75rem 1.5rem; font: 400 .68rem var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--smoke); }
+  .to-top { background: none; border: 1px solid var(--line2); color: var(--ink); height: 2.1rem; padding: 0 .85rem; font: inherit; letter-spacing: inherit; text-transform: inherit; cursor: pointer; }
+  .to-top:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Index palette */
+  .palette { position: fixed; inset: 0; z-index: 80; display: grid; place-items: start center; padding: 12vh 1rem 1rem; background: color-mix(in srgb, var(--bg) 70%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); animation: show .2s ease; }
+  .palette[hidden] { display: none; }
+  .pal-box { width: min(100%, 36rem); background: var(--bg2); border: 1px solid var(--line2); box-shadow: 0 40px 80px -30px rgba(0,0,0,.6); animation: fade-up .3s cubic-bezier(.2,.8,.2,1); }
+  .pal-box input { width: 100%; border: 0; border-bottom: 1px solid var(--line); background: none; color: var(--ink); font: 400 1.1rem var(--grotesk); padding: 1.1rem 1.25rem; outline: none; }
+  .pal-box ul { list-style: none; margin: 0; padding: .4rem 0; max-height: 50vh; overflow: auto; }
+  .pal-box .grp { font: 400 .62rem var(--mono); letter-spacing: .18em; text-transform: uppercase; color: var(--smoke); padding: .75rem 1.25rem .35rem; }
+  .pal-box .it { display: flex; justify-content: space-between; gap: 1rem; padding: .65rem 1.25rem; cursor: pointer; }
+  .pal-box .it small { font: 400 .66rem var(--mono); color: var(--smoke); letter-spacing: .08em; }
+  .pal-box .it.sel { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--ink); box-shadow: inset 2px 0 var(--accent); }
+  .pal-box .none { padding: 1rem 1.25rem; color: var(--smoke); }
+  .pal-hint { margin: 0; padding: .7rem 1.25rem; border-top: 1px solid var(--line); font: 400 .62rem var(--mono); letter-spacing: .12em; color: var(--smoke); text-transform: uppercase; }
 
   /* Reveal */
-  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1); }
   .reveal.in { opacity: 1; transform: none; }
+
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .reveal { opacity: 1; transform: none; transition: none; }
-    .hero h1 .w > span, .seq, .hero-map .pin, .hero-map text, .hero-map .line-dash { animation: none; transform: none; opacity: 1; }
-    .hero-map .line { animation: none; stroke-dashoffset: 0; }
-    .hero-map .ring, .status i::after, .cue-line::after { animation: none; }
-    .hero-map svg { transition: none; }
-    .ribbon-track { animation: none; }
-    .rot > span { transition: none; }
-    .meter::after { transition: none; }
-    .sec-head.reveal h2, .sec-head.reveal .num { clip-path: none; transform: none; transition: none; }
-    .sec-head::after { transform: none; transition: none; }
-    .timeline::after { transform: scaleY(1); }
-    .timeline li { opacity: 1; }
-    .shot img, .skill, header.top, .magnetic { transition: none; }
-    .tag.live::before { animation: none; }
-    .process li::before { width: 100%; transition: none; }
-    .dist article, header.top nav ul { transition: none; }
+    *, *::before, *::after { animation-duration: .001s !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition-duration: .001s !important; }
+    .reveal, .seq, h1 .w > span { opacity: 1 !important; transform: none !important; }
+    .scroll-cue.seq { transform: translateX(-50%) !important; }
+    .sec-head.reveal h2 { clip-path: none; transform: none; }
+    .f-line { stroke-dashoffset: 0; }
+    .f-ring, .pulse::after { display: none; }
+    .marquee-track { animation: none !important; }
+    .cursor { display: none; }
   }
   @media print {
-    header.top, .hero-map, .ribbon, .scroll-cue, .progress, .theme-btn, .cta { display: none !important; }
-    body { background: #fff; color: #000; font-size: 11pt; }
-    section { padding: 1.5rem 0; break-inside: avoid; }
-    .reveal { opacity: 1 !important; transform: none !important; }
-    .meter::after { width: var(--v) !important; }
-    .project, .skill, .facts div { background: #fff; }
-    .sec-head.reveal h2, .sec-head.reveal .num { clip-path: none !important; transform: none !important; }
-    .timeline li { opacity: 1 !important; }
+    #stars, .cursor, header.top, .progress, .scroll-cue, .marquee, .palette, .cta, .to-top { display: none !important; }
+    :root { --bg: #fff; --ink: #000; --smoke: #444; --line: #ccc; }
+    .reveal, .seq, h1 .w > span { opacity: 1 !important; transform: none !important; }
+    .sec-head.reveal h2 { clip-path: none !important; transform: none !important; }
+    .case-study[hidden] { display: block !important; }
+    section { padding: 2rem 0; break-inside: avoid; }
   }
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
+<canvas id="stars" aria-hidden="true"></canvas>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
 
 <header class="top" id="hdr">
-  <div class="wrap">
-    <a class="mark" href="#top">Samuel <span>Etah</span></a>
+  <div class="wrap bar-row">
+    <a class="logo" href="#top">SAMUEL ETAH<b>.</b></a>
     <nav aria-label="Main">
       <ul id="menu">
-        <li><a href="#about" data-i18n="nav.about">About</a></li>
-        <li><a href="#work" data-i18n="nav.work">Work</a></li>
-        <li><a href="#expertise" data-i18n="nav.expertise">Expertise</a></li>
-        <li><a href="#record" data-i18n="nav.record">Record</a></li>
-        <li><a href="#distinctions" data-i18n="nav.distinctions">Distinctions</a></li>
-        <li><a href="#process" data-i18n="nav.process">Process</a></li>
-        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        <li><a href="#about"><span data-i18n="nav.about">About</span></a></li>
+        <li><a href="#expertise"><span data-i18n="nav.expertise">Expertise</span></a></li>
+        <li><a href="#work"><span data-i18n="nav.work">Work</span></a></li>
+        <li><a href="#record"><span data-i18n="nav.record">Record</span></a></li>
+        <li><a href="#distinctions"><span data-i18n="nav.distinctions">Distinctions</span></a></li>
+        <li><a href="#process"><span data-i18n="nav.process">Process</span></a></li>
+        <li><a href="#contact"><span data-i18n="nav.contact">Contact</span></a></li>
       </ul>
     </nav>
     <div class="controls">
+      <button class="box-btn idx-btn" id="idxBtn" type="button" aria-haspopup="dialog"><span data-i18n="hdr.index">Index</span> <kbd>Ctrl K</kbd></button>
       <div class="lang" role="group" aria-label="Language">
-        <button type="button" data-lang="en" aria-pressed="true" title="English">EN</button>
-        <button type="button" data-lang="fr" aria-pressed="false" title="Français">FR</button>
-        <button type="button" data-lang="de" aria-pressed="false" title="Deutsch">DE</button>
+        <button type="button" data-lang="en" aria-pressed="true" title="English">EN</button><button type="button" data-lang="fr" aria-pressed="false" title="Français">FR</button><button type="button" data-lang="de" aria-pressed="false" title="Deutsch">DE</button>
       </div>
-      <button class="theme-btn" id="theme" type="button" aria-label="Switch colour theme">◐</button>
-      <button class="menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><i></i></button>
+      <a class="box-btn cv-btn" href="https://the-line-eight.vercel.app/cv/" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+      <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme"><span class="sun"></span></button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><i></i></button>
     </div>
   </div>
 </header>
 
 <main id="main">
   <section class="hero" id="top">
-    <div class="hero-map" id="heroMap" aria-hidden="true">
-      <svg viewBox="0 0 600 720">
-        <defs>
-          <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="currentColor"/></pattern>
-        </defs>
-        <rect class="grid" width="600" height="720" fill="url(#g)"/>
-        <path class="contour" d="M120 80 C 220 40, 360 70, 430 150 S 520 330, 470 430 S 330 640, 220 660 S 60 560, 90 420 S 40 160, 120 80Z"/>
-        <path class="contour" d="M160 130 C 240 100, 340 120, 395 180 S 465 330, 425 410 S 310 590, 230 600 S 115 520, 135 410 S 95 200, 160 130Z"/>
-        <path class="contour" d="M205 190 C 260 170, 320 185, 355 230 S 405 330, 380 390 S 300 520, 245 525 S 170 465, 180 395 S 160 245, 205 190Z"/>
-        <path class="line" d="M300 30 C 330 120, 260 180, 290 260 S 360 360, 310 440 S 240 560, 300 690"/>
-        <path class="line-dash" d="M300 30 C 330 120, 260 180, 290 260 S 360 360, 310 440 S 240 560, 300 690"/>
-        <circle class="ring" cx="290" cy="260" r="10"/>
-        <circle class="pin" cx="290" cy="260" r="5" style="animation-delay:2s"/>
-        <text x="306" y="252" style="animation-delay:2.2s">1916</text>
-        <circle class="ring" cx="310" cy="440" r="10" style="animation-delay:1.4s"/>
-        <circle class="pin" cx="310" cy="440" r="5" style="animation-delay:3s"/>
-        <text x="326" y="432" style="animation-delay:3.2s">1961</text>
-      </svg>
-    </div>
-
-    <div class="wrap hero-inner">
-      <div class="hero-meta seq" style="--d:.05s">
-        <span class="status"><i></i><span data-i18n="hero.status">Open to web projects &amp; research collaborations</span></span>
-        <span class="clock"><span data-i18n="hero.place">Yaoundé, Cameroon</span> · <b id="clock">--:--</b> WAT</span>
-      </div>
-
-      <div>
-        <p class="eyebrow seq" style="--d:.1s" data-i18n="hero.eyebrow">International Relations · Digital history · Web development</p>
-        <h1 id="h1" aria-label="I research the past and build the web people read it on."><span class="w"><span style="--i:0">I</span></span> <span class="w"><span style="--i:1">research</span></span> <span class="w"><span style="--i:2">the</span></span> <span class="w"><span style="--i:3">past</span></span> <span class="w"><span style="--i:4">and</span></span> <em><span class="w"><span style="--i:5">build</span></span> <span class="w"><span style="--i:6">the</span></span> <span class="w"><span style="--i:7">web</span></span></em> <span class="w"><span style="--i:8">people</span></span> <span class="w"><span style="--i:9">read</span></span> <span class="w"><span style="--i:10">it</span></span> <span class="w"><span style="--i:11">on.</span></span></h1>
-        <p class="roles seq" style="--d:1.1s">Samuel Praise Etah,
-          <span class="rot" id="rot"><span class="on">digital historian.</span><span>web developer.</span><span>International Relations graduate.</span><span>independent researcher.</span></span>
-        </p>
-        <p class="lede seq" style="--d:1.25s" data-i18n="hero.lede">I make fast, honest websites (a digital history of Cameroon and an exam-prep platform) built to load on a low-cost Android phone on slow mobile data.</p>
-        <div class="cta seq" style="--d:1.4s">
-          <a class="btn primary" href="#work"><span data-i18n="hero.cta1">See my work</span> <span class="arr">→</span></a>
-          <a class="btn" href="mailto:samueletah54@gmail.com" data-i18n="hero.cta2">Email me</a>
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="meta seq" style="--d:.05s"><span class="pulse"></span><span data-i18n="hero.status">Open to web projects &amp; research</span><span class="sep">/</span><span data-i18n="hero.place">Yaoundé, Cameroon</span> · <b id="clock">--:--</b> WAT</p>
+        <h1 aria-label="Samuel Praise Etah"><span class="w"><span style="--i:0">Samuel</span></span> <span class="w"><span style="--i:1">Praise</span></span> <span class="w"><span style="--i:2">Etah<b class="dot">.</b></span></span></h1>
+        <p class="roles seq" style="--d:.75s"><span data-i18n="hero.r1">Digital historian</span><i>•</i><span data-i18n="hero.r2">Web developer</span><i>•</i><span data-i18n="hero.r3">International Relations graduate</span></p>
+        <p class="lede seq" style="--d:.9s" data-i18n="hero.lede">I research Cameroon’s past and build fast, honest websites that people can read on a low-cost phone, on slow mobile data.</p>
+        <div class="cta seq" style="--d:1.05s">
+          <a class="btn solid magnetic" href="#work"><span data-i18n="hero.cta1">Explore my work</span> <span aria-hidden="true">↓</span></a>
+          <a class="btn line magnetic" href="#contact"><span data-i18n="hero.cta2">Get in touch</span> <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-
-      <div class="hero-foot seq" style="--d:1.7s">
-        <a class="scroll-cue" href="#about"><span class="cue-line"></span><span data-i18n="hero.scroll">Scroll</span></a>
-        <span data-i18n="hero.range">Researching Cameroon, 1884 – 1972</span>
-      </div>
+      <figure class="fig seq" style="--d:.4s">
+        <div class="frame" id="frame">
+          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+          <div class="frame-in">
+            <svg viewBox="0 0 300 420" role="img" aria-label="Stylised survey map with the 1916 partition line">
+              <defs><pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="currentColor"/></pattern></defs>
+              <rect width="300" height="420" fill="url(#g)" class="f-grid"/>
+              <path class="f-con" d="M60 60 C 120 30, 210 50, 245 110 S 270 250, 235 310 S 140 400, 90 385 S 25 300, 45 230 S 20 100, 60 60Z"/>
+              <path class="f-con" d="M90 105 C 140 85, 200 100, 220 145 S 235 250, 205 290 S 135 350, 105 340 S 60 280, 75 225 S 60 135, 90 105Z"/>
+              <path class="f-con" d="M120 150 C 150 140, 185 150, 195 180 S 200 245, 180 265 S 140 300, 120 290 S 95 250, 105 215 S 100 165, 120 150Z"/>
+              <path class="f-line" d="M150 18 C 165 70, 125 110, 140 160 S 185 230, 155 285 S 120 350, 150 400"/>
+              <circle class="f-ring" cx="140" cy="160" r="8"/><circle class="f-pin" cx="140" cy="160" r="4" style="animation-delay:2s"/>
+              <text x="152" y="156" style="animation-delay:2.2s">1916</text>
+              <circle class="f-ring" cx="155" cy="285" r="8" style="animation-delay:1.4s"/><circle class="f-pin" cx="155" cy="285" r="4" style="animation-delay:2.8s"/>
+              <text x="167" y="281" style="animation-delay:3s">1961</text>
+            </svg>
+          </div>
+        </div>
+        <figcaption><span data-i18n="hero.fig">Fig. 01 — The line, 1916</span><span>03°52′N 11°31′E</span></figcaption>
+      </figure>
     </div>
-
-    <div class="ribbon" aria-hidden="true"><div class="ribbon-track" id="ribbon"><span>Partition, 1916</span><span class="d">✦</span><span>Trusteeship</span><span class="d">✦</span><span>The 1961 plebiscite</span><span class="d">✦</span><span>Reunification</span><span class="d">✦</span><span>Colonial memory</span><span class="d">✦</span><span>Oral history</span><span class="d">✦</span><span>Next.js</span><span class="d">✦</span><span>TypeScript</span><span class="d">✦</span><span>SVG cartography</span><span class="d">✦</span><span>Supabase</span><span class="d">✦</span><span>Chicago citations</span><span class="d">✦</span><span>English · Français · Deutsch</span><span class="d">✦</span><span>Partition, 1916</span><span class="d">✦</span><span>Trusteeship</span><span class="d">✦</span><span>The 1961 plebiscite</span><span class="d">✦</span><span>Reunification</span><span class="d">✦</span><span>Colonial memory</span><span class="d">✦</span><span>Oral history</span><span class="d">✦</span><span>Next.js</span><span class="d">✦</span><span>TypeScript</span><span class="d">✦</span><span>SVG cartography</span><span class="d">✦</span><span>Supabase</span><span class="d">✦</span><span>Chicago citations</span><span class="d">✦</span><span>English · Français · Deutsch</span><span class="d">✦</span></div></div>
+    <a class="scroll-cue seq" style="--d:1.4s" href="#about"><span class="cue-line"></span><span data-i18n="hero.scroll">Scroll</span></a>
   </section>
 
   <section id="about">
     <div class="wrap">
-      <div class="sec-head reveal"><span class="num">01</span><h2 data-i18n="about.h">About</h2><span class="kicker" data-i18n="about.k">Researcher · Builder</span></div>
-      <div class="facts reveal">
-        <div><b data-i18n="fact1.b">BA International Relations</b><span data-i18n="fact1.s">University of Yaoundé I</span></div>
-        <div><b data-i18n="fact2.b">Zero dependencies</b><span data-i18n="fact2.s">plain HTML, CSS, JS, Node</span></div>
-        <div><b data-i18n="fact3.b">English · French · German</b><span data-i18n="fact3.s">top · top · intermediate</span></div>
+      <div class="sec-head reveal">
+        <p class="label"><span class="num">01</span><span class="bar"></span><span data-i18n="about.label">About</span></p>
+        <h2><span data-i18n="about.h">From a line on a map <em>to</em> a life’s work.</span></h2>
       </div>
-      <div class="about">
-        <div class="reveal">
-          <p class="big" data-i18n="about.big">Growing up in Cameroon, I have lived with the consequences of a line drawn in 1916 by two European diplomats who barely knew the land they divided.</p>
-          <p data-i18n="about.p1">That line became my first serious project. <em>The Line</em> is a digital history of Cameroon’s partition, reunification and colonial memory, which I research, write, design and code myself. Along the way I found I enjoy the building as much as the research: turning sources into maps that draw themselves, timelines you can search, and pages that respect a reader’s data plan.</p>
-          <p data-i18n="about.p2">I studied International Relations at the University of Yaoundé I, and I work as a freelance web developer, taking client sites from design to deployment. I bring the same approach to every project, including an exam-prep platform for students sitting the GCE, Baccalauréat and IELTS.</p>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p class="big" data-i18n="about.p1">Growing up in Cameroon, I have lived with the consequences of a line drawn in 1916 by two European diplomats who barely knew the land they divided. That line became my first serious project: <em>The Line</em>, a digital history I research, write, design and code myself.</p>
+          <p data-i18n="about.p2">I studied International Relations at the University of Yaoundé I and work as a freelance web developer, from design to deployment. I enjoy the building as much as the research: maps that draw themselves, timelines you can search, and pages that respect a reader’s data plan.</p>
         </div>
-        <ul class="principles reveal">
-          <li><b data-i18n="pr1.b">Never invent</b><span data-i18n="pr1.s">Every fact sourced, every image licence-checked and credited, every uncertainty labelled.</span></li>
-          <li><b data-i18n="pr2.b">Build for the real reader</b><span data-i18n="pr2.s">Low-end phones, slow data, accessibility, reduced-motion support.</span></li>
-          <li><b data-i18n="pr3.b">Keep it simple</b><span data-i18n="pr3.s">No frameworks unless they earn their place. Content in plain files anyone can edit.</span></li>
-          <li><b data-i18n="pr4.b">Respect people</b><span data-i18n="pr4.s">No tracking, no cookies, consent first in oral history.</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="work">
-    <div class="wrap">
-      <div class="sec-head reveal"><span class="num">02</span><h2 data-i18n="work.h">Selected work</h2><span class="kicker" data-i18n="work.k">2026 · Live sites</span></div>
-      <div class="projects">
-
-        <article class="project reveal">
-          <a class="shot" href="https://the-line-eight.vercel.app/" target="_blank" rel="noopener" aria-label="The Line">
-            <div class="shot-bar"><i></i><i></i><i></i><span>the-line-eight.vercel.app</span></div>
-            <div class="shot-img"><img src="img/theline-1200.webp" srcset="img/theline-640.webp 640w, img/theline-1200.webp 1200w" sizes="(min-width: 900px) 560px, 100vw" width="1200" height="750" loading="lazy" decoding="async" alt="Home page of The Line: 1884, Germany claims Kamerun; 1916, Britain and France draw a line across it; 1961, a vote decides which side people join."></div>
-          </a>
-          <div>
-            <span class="tag live" data-i18n="tag.progress">Live · in progress</span>
-            <h3><span class="p-num">01</span>The Line</h3>
-            <p data-i18n="line.p"><strong>Partition, Reunification &amp; Colonial Memory in Cameroon.</strong> A nine-chapter digital history from German rule (1884) through the Anglo-French partition, UN trusteship, the 1961 plebiscite and the 1972 unitary state, plus how Cameroon, Africa and Europe remember it today.</p>
-            <ul>
-              <li data-i18n="line.l1">Primary sources checked word for word: League of Nations and UN texts, the British mandate, Hansard (1961), INA archives</li>
-              <li data-i18n="line.l2">Scroll-driven maps, the 1949 Colonial Office map georeferenced over a modern map, an animated map of African independence</li>
-              <li data-i18n="line.l3">Oral-history strand with consent options; my own zero-dependency Node build; no cookies, no tracking</li>
-            </ul>
-            <ul class="stack"><li>HTML</li><li>CSS</li><li>Vanilla JS</li><li>Node.js</li><li data-i18n="stack.svg">SVG cartography</li><li data-i18n="stack.arch">Archival research</li></ul>
-            <a class="go" href="https://the-line-eight.vercel.app/" target="_blank" rel="noopener"><span data-i18n="visit">Visit the site</span> <span class="arr">↗</span></a>
-          </div>
-        </article>
-
-        <article class="project flip reveal">
-          <a class="shot" href="https://examina-global.vercel.app" target="_blank" rel="noopener" aria-label="Examina Global">
-            <div class="shot-bar"><i></i><i></i><i></i><span>examina-global.vercel.app</span></div>
-            <div class="shot-img"><img src="img/examina-1200.webp" srcset="img/examina-640.webp 640w, img/examina-1200.webp 1200w" sizes="(min-width: 900px) 560px, 100vw" width="1200" height="750" loading="lazy" decoding="async" alt="Home page of Examina Global: Prepare for the GCE, the Bac and IELTS, over a photo of two students reading."></div>
-          </a>
-          <div>
-            <span class="tag live" data-i18n="tag.live">Live</span>
-            <h3><span class="p-num">02</span>Examina Global</h3>
-            <p data-i18n="ex.p"><strong>Exam preparation, in English and French.</strong> A platform for students in Cameroon preparing for the GCE O/A-Levels, the Baccalauréat and IELTS, organised by stream: Science or Arts, Academic or General Training.</p>
-            <ul>
-              <li data-i18n="ex.l1">109 worked questions, 28 curated videos and timed mock exams that submit automatically, then show a full review</li>
-              <li data-i18n="ex.l2">Study guides, a week-by-week revision planner and an IELTS band calculator</li>
-              <li data-i18n="ex.l3">Free student accounts; a brand built around an “E” drawn as a globe</li>
-            </ul>
-            <ul class="stack"><li>Next.js</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>Supabase</li><li>EN / FR</li></ul>
-            <a class="go" href="https://examina-global.vercel.app" target="_blank" rel="noopener"><span data-i18n="visit">Visit the site</span> <span class="arr">↗</span></a>
-          </div>
-        </article>
-      </div>
-
-      <h3 class="sub reveal" data-i18n="num.h">By the numbers</h3>
-      <div class="numbers reveal">
-        <div><b data-count="9">9</b><span data-i18n="num.1">referenced history chapters</span><small>The Line</small></div>
-        <div><b data-count="24">24</b><span data-i18n="num.2">historical profiles</span><small>The Line</small></div>
-        <div><b data-count="50" data-plus>50<sup>+</sup></b><span data-i18n="num.3">licence-checked archival images</span><small>The Line</small></div>
-        <div><b data-count="109">109</b><span data-i18n="num.4">worked exam questions</span><small>Examina</small></div>
-        <div><b data-count="28">28</b><span data-i18n="num.5">curated lesson videos</span><small>Examina</small></div>
-        <div><b data-count="2">2</b><span data-i18n="num.6">languages on every page</span><small>Examina</small></div>
+        <dl class="facts reveal">
+          <div><dt><span data-i18n="about.k1">Base</span></dt><dd><span data-i18n="hero.place">Yaoundé, Cameroon</span></dd></div>
+          <div><dt><span data-i18n="about.k2">Education</span></dt><dd><span data-i18n="about.v2">Licence (BA), International Relations · University of Yaoundé I</span></dd></div>
+          <div><dt><span data-i18n="about.k3">Founder</span></dt><dd><em>The Line</em> · Examina Global</dd></div>
+          <div><dt><span data-i18n="about.k4">Languages</span></dt><dd><span data-i18n="about.v4">English · French · German · Pidgin</span></dd></div>
+          <div><dt><span data-i18n="about.k5">Status</span></dt><dd><span class="pulse"></span><span data-i18n="about.v5">Open to web projects and research collaborations</span></dd></div>
+        </dl>
       </div>
     </div>
   </section>
 
   <section id="expertise">
     <div class="wrap">
-      <div class="sec-head reveal"><span class="num">03</span><h2 data-i18n="exp.h">Expertise</h2><span class="kicker" data-i18n="exp.k">Code · Archives · Languages</span></div>
-      <div class="skills">
-        <div class="skill reveal"><h3 data-i18n="exp1.h">Front-end engineering</h3><ul><li data-i18n="exp1.1">Semantic HTML, modern CSS, vanilla JavaScript</li><li>React, Next.js, TypeScript, Tailwind CSS, Supabase</li><li data-i18n="exp1.3">Static site generation with Node</li><li data-i18n="exp1.4">SVG maps and scroll-driven storytelling</li><li data-i18n="exp1.5">Accessibility and performance on low-end devices</li><li>Git &amp; GitHub</li></ul></div>
-        <div class="skill reveal"><h3 data-i18n="exp2.h">Historical research</h3><ul><li data-i18n="exp2.1">Primary sources: mandate texts, UN trusteeship records, colonial maps</li><li data-i18n="exp2.2">Chicago-style citation</li><li data-i18n="exp2.3">Image licensing and attribution</li><li data-i18n="exp2.4">Source criticism, oral-history methods and research ethics</li></ul></div>
-        <div class="skill reveal"><h3 data-i18n="lang.h">Languages</h3>
-          <ul class="langs">
-            <li><div><b data-i18n="lang.en">English</b><span data-i18n="lang.en.s">First language · IELTS band 7</span></div><i class="meter" style="--v:100%"></i></li>
-            <li><div><b data-i18n="lang.fr">French</b><span data-i18n="lang.fr.s">Fluent</span></div><i class="meter" style="--v:95%"></i></li>
-            <li><div><b data-i18n="lang.de">German</b><span data-i18n="lang.de.s">Intermediate learner · A2 completed</span></div><i class="meter" style="--v:50%"></i></li>
-            <li><div><b data-i18n="lang.pi">Cameroonian Pidgin</b><span data-i18n="lang.pi.s">Spoken</span></div></li>
+      <div class="sec-head reveal">
+        <p class="label"><span class="num">02</span><span class="bar"></span><span data-i18n="exp.label">Expertise</span></p>
+        <h2><span data-i18n="exp.h">Skills with <em>sources.</em></span></h2>
+      </div>
+      <ol class="exp">
+        <li class="reveal"><span class="exp-n">01</span><div><h3><span data-i18n="exp1.h">Front-end engineering</span></h3><p><span data-i18n="exp1.p">Interfaces that load fast on low-end phones and read well in any language, from first sketch to deployed product.</span></p></div><ul class="chips"><li>HTML &amp; CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind CSS</li><li>Node.js</li><li><span data-i18n="chip.a11y">Accessibility</span></li></ul></li>
+        <li class="reveal"><span class="exp-n">02</span><div><h3><span data-i18n="exp2.h">Digital history &amp; research</span></h3><p><span data-i18n="exp2.p">Primary sources read word for word, every image licence-checked and every uncertainty flagged in the open.</span></p></div><ul class="chips"><li><span data-i18n="chip.arch">Archival research</span></li><li><span data-i18n="chip.cite">Chicago citations</span></li><li><span data-i18n="chip.lic">Image licensing</span></li><li><span data-i18n="chip.oral">Oral history &amp; consent</span></li></ul></li>
+        <li class="reveal"><span class="exp-n">03</span><div><h3><span data-i18n="exp3.h">Maps &amp; storytelling</span></h3><p><span data-i18n="exp3.p">Hand-built SVG maps and scroll-driven narratives that turn archives into something people want to read.</span></p></div><ul class="chips"><li><span data-i18n="chip.svg">SVG cartography</span></li><li><span data-i18n="chip.scroll">Scrollytelling</span></li><li><span data-i18n="chip.geo">Georeferencing</span></li><li>Natural Earth</li></ul></li>
+        <li class="reveal"><span class="exp-n">04</span><div><h3><span data-i18n="exp4.h">Product &amp; brand</span></h3><p><span data-i18n="exp4.p">Blueprints, budgets, risk registers and brand systems, scoped honestly before a line of code.</span></p></div><ul class="chips"><li><span data-i18n="chip.plan">Roadmaps</span></li><li><span data-i18n="chip.brand">Brand systems</span></li><li><span data-i18n="chip.budget">Budgets in FCFA</span></li><li><span data-i18n="chip.risk">Risk registers</span></li><li>Supabase</li><li>Vercel</li></ul></li>
+        <li class="reveal"><span class="exp-n">05</span><div><h3><span data-i18n="exp5.h">Languages</span></h3><p><span data-i18n="exp5.p">Working across three European languages and Cameroonian Pidgin, for readers and clients on both sides of the line.</span></p></div>
+          <ul class="meters">
+            <li><span><span data-i18n="lang.en">English</span></span><i class="meter" style="--v:100%"></i><small><span data-i18n="lang.en.s">First language · IELTS 7</span></small></li>
+            <li><span><span data-i18n="lang.fr">French</span></span><i class="meter" style="--v:95%"></i><small><span data-i18n="lang.fr.s">Fluent</span></small></li>
+            <li><span><span data-i18n="lang.de">German</span></span><i class="meter" style="--v:50%"></i><small><span data-i18n="lang.de.s">Intermediate · A2 completed</span></small></li>
           </ul>
-        </div>
-        <div class="skill reveal"><h3 data-i18n="exp4.h">Product &amp; brand</h3><ul><li data-i18n="exp4.1">Product blueprints and roadmaps</li><li data-i18n="exp4.2">Brand identity and design systems</li><li data-i18n="exp4.3">Budgeting and risk registers</li><li data-i18n="exp4.4">Bilingual (EN/FR) content</li></ul></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="label"><span class="num">03</span><span class="bar"></span><span data-i18n="work.label">Selected work</span></p>
+        <h2><span data-i18n="work.h">Work you can <em>open</em> today.</span></h2>
+      </div>
+      <div class="cases">
+        <article class="case reveal" id="the-line">
+          <a class="shot" href="https://the-line-eight.vercel.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <span class="shot-bar"><i></i><i></i><i></i><span>the-line-eight.vercel.app</span></span>
+            <span class="shot-img"><img src="img/theline-1200.webp" srcset="img/theline-640.webp 640w, img/theline-1200.webp 1200w" sizes="(min-width: 960px) 600px, 100vw" width="1200" height="750" loading="lazy" decoding="async" alt="Home page of The Line: 1884, Germany claims Kamerun; 1916, Britain and France draw a line across it; 1961, a vote decides which side people join."></span>
+          </a>
+          <div class="case-body">
+            <p class="case-meta"><span class="live-dot"></span><span data-i18n="work.live">Live</span><span class="sep">/</span><span data-i18n="line.kick">Digital history · Founder</span></p>
+            <h3><span class="case-num">01</span>The Line</h3>
+            <p class="case-sum"><span data-i18n="line.sum">A nine-chapter digital history of Cameroon’s partition, reunification and colonial memory, from German rule in 1884 to the unitary state of 1972, and how Africa and Europe remember it today.</span></p>
+            <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Node.js</li><li><span data-i18n="chip.svg">SVG cartography</span></li><li><span data-i18n="chip.arch">Archival research</span></li></ul>
+            <div class="case-actions">
+              <button class="case-toggle" type="button" aria-expanded="false" aria-controls="the-line-cs"><span class="plus" aria-hidden="true"></span><span data-i18n="cs.open">View case study</span></button>
+              <a class="arrow-link" href="https://the-line-eight.vercel.app/" target="_blank" rel="noopener"><span data-i18n="visit">Visit live site</span> <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="case-study" id="the-line-cs" hidden>
+              <dl>
+                <div><dt><span data-i18n="cs.ctx">Context</span></dt><dd><span data-i18n="line.ctx">Cameroon’s partition and reunification still shape the country, yet most sources sit in archives, in two colonial languages, out of reach for readers at home.</span></dd></div>
+                <div><dt><span data-i18n="cs.role">Role</span></dt><dd><span data-i18n="line.role">Founder, researcher, writer, designer and developer: sources, chapters, maps, a zero-dependency Node build and deployment.</span></dd></div>
+                <div><dt><span data-i18n="cs.out">Outcome</span></dt><dd><span data-i18n="line.out">A live site: 9 referenced chapters, 24 profiles, 50+ timeline events, 50+ licence-checked images, seven archive films and a georeferenced 1949 map.</span></dd></div>
+                <div><dt><span data-i18n="cs.les">Lesson</span></dt><dd><span data-i18n="line.les">Verify every quotation, credit every image, and present historians’ disagreements fairly.</span></dd></div>
+              </dl>
+            </div>
+          </div>
+        </article>
+
+        <article class="case reveal flip" id="examina">
+          <a class="shot" href="https://examina-global.vercel.app" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <span class="shot-bar"><i></i><i></i><i></i><span>examina-global.vercel.app</span></span>
+            <span class="shot-img"><img src="img/examina-1200.webp" srcset="img/examina-640.webp 640w, img/examina-1200.webp 1200w" sizes="(min-width: 960px) 600px, 100vw" width="1200" height="750" loading="lazy" decoding="async" alt="Home page of Examina Global: Prepare for the GCE, the Bac and IELTS, over a photo of two students reading."></span>
+          </a>
+          <div class="case-body">
+            <p class="case-meta"><span class="live-dot"></span><span data-i18n="work.live">Live</span><span class="sep">/</span><span data-i18n="ex.kick">Education platform · Product &amp; build</span></p>
+            <h3><span class="case-num">02</span>Examina Global</h3>
+            <p class="case-sum"><span data-i18n="ex.sum">Exam preparation for students in Cameroon sitting the GCE, the Baccalauréat and IELTS, in English and French, organised by stream.</span></p>
+            <ul class="chips"><li>Next.js</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>Supabase</li><li>EN / FR</li></ul>
+            <div class="case-actions">
+              <button class="case-toggle" type="button" aria-expanded="false" aria-controls="examina-cs"><span class="plus" aria-hidden="true"></span><span data-i18n="cs.open">View case study</span></button>
+              <a class="arrow-link" href="https://examina-global.vercel.app" target="_blank" rel="noopener"><span data-i18n="visit">Visit live site</span> <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="case-study" id="examina-cs" hidden>
+              <dl>
+                <div><dt><span data-i18n="cs.ctx">Context</span></dt><dd><span data-i18n="ex.ctx">Students need clear teaching, honest practice and measurable progress, in the language of their exam, on the phone they already own.</span></dd></div>
+                <div><dt><span data-i18n="cs.role">Role</span></dt><dd><span data-i18n="ex.role">Product, brand and full-stack build: the blueprint, the “E as a globe” identity, the Next.js app, content structure and deployment.</span></dd></div>
+                <div><dt><span data-i18n="cs.out">Outcome</span></dt><dd><span data-i18n="ex.out">A live bilingual platform: 109 worked questions, 28 curated videos, timed mock exams, study guides, a revision planner and an IELTS band calculator.</span></dd></div>
+                <div><dt><span data-i18n="cs.les">Lesson</span></dt><dd><span data-i18n="ex.les">Practice is presented as practice, never as an official result. Plain words beat hype.</span></dd></div>
+              </dl>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
 
   <section id="record">
     <div class="wrap">
-      <div class="sec-head reveal"><span class="num">04</span><h2 data-i18n="rec.h">Record</h2><span class="kicker" data-i18n="rec.k">2016 → today</span></div>
-      <ol class="timeline reveal">
-        <li><time>2016</time><h3 data-i18n="rec1.h">GCE Ordinary Level</h3><p data-i18n="rec.cm">Cameroon.</p></li>
-        <li><time>2018</time><h3 data-i18n="rec2.h">GCE Advanced Level</h3><p data-i18n="rec.cm">Cameroon.</p></li>
-        <li><time data-i18n="rec3.t">University</time><h3 data-i18n="rec3.h">Licence (BA) in International Relations, University of Yaoundé I</h3><p data-i18n="rec3.p">Graduated in International Relations in Yaoundé, Cameroon.</p></li>
-        <li><time data-i18n="rec4.t">Freelance</time><h3 data-i18n="rec4.h">Web developer</h3><p data-i18n="rec4.p">Websites for clients and independent projects, from design to deployment: responsive interfaces, performance for mobile users, publishing workflows. Includes Examina Global.</p></li>
-        <li><time data-i18n="rec5.t">Oct 2026 – present</time><h3 data-i18n="rec5.h">Founder, researcher &amp; developer, <em>The Line</em></h3><p data-i18n="rec5.p">Researching, writing and coding a digital history of Cameroon’s partition and reunification.</p></li>
+      <div class="sec-head reveal">
+        <p class="label"><span class="num">04</span><span class="bar"></span><span data-i18n="rec.label">Record</span></p>
+        <h2><span data-i18n="rec.h">A short record of <em>learning.</em></span></h2>
+      </div>
+      <ol class="record">
+        <li class="reveal"><span class="yr">2016</span><div><h3><span data-i18n="rec1.r">GCE Ordinary Level</span></h3><p class="org"><span data-i18n="rec.cm">Cameroon</span></p><p><span data-i18n="rec1.p">Secondary school certificate.</span></p></div></li>
+        <li class="reveal"><span class="yr">2018</span><div><h3><span data-i18n="rec2.r">GCE Advanced Level</span></h3><p class="org"><span data-i18n="rec.cm">Cameroon</span></p><p><span data-i18n="rec2.p">Upper secondary certificate, the gateway to university.</span></p></div></li>
+        <li class="reveal"><span class="yr"><span data-i18n="rec3.y">University</span></span><div><h3><span data-i18n="rec3.r">Licence (BA) in International Relations</span></h3><p class="org"><span data-i18n="rec3.o">University of Yaoundé I</span></p><p><span data-i18n="rec3.p">International relations, diplomacy and the history of decolonisation.</span></p></div></li>
+        <li class="reveal"><span class="yr"><span data-i18n="rec4.y">Freelance</span></span><div><h3><span data-i18n="rec4.r">Web developer</span></h3><p class="org"><span data-i18n="rec4.o">Clients &amp; independent projects</span></p><p><span data-i18n="rec4.p">Websites from design to deployment: responsive interfaces, mobile performance, publishing workflows. Includes Examina Global.</span></p></div></li>
+        <li class="reveal now"><span class="yr">2026</span><div><h3><span data-i18n="rec5.r">Founder, researcher &amp; developer</span></h3><p class="org"><em>The Line</em></p><p><span data-i18n="rec5.p">Researching, writing and coding a digital history of Cameroon’s partition and reunification. October 2026 to today.</span></p></div></li>
       </ol>
     </div>
   </section>
 
   <section id="distinctions">
     <div class="wrap">
-      <div class="sec-head reveal"><span class="num">05</span><h2 data-i18n="dis.h">Distinctions</h2><span class="kicker" data-i18n="dis.k">Certified &amp; proven</span></div>
-      <div class="dist">
-        <article class="reveal"><span class="mark-ico">✦</span><small data-i18n="dis1.s">English · IELTS</small><b data-i18n="dis1.b">Band 7</b><p data-i18n="dis1.p">Overall band score in the International English Language Testing System.</p></article>
-        <article class="reveal"><span class="mark-ico">✦</span><small data-i18n="dis2.s">German · CEFR</small><b>A1 &amp; A2</b><p data-i18n="dis2.p">Both levels of the Common European Framework completed, and still learning.</p></article>
-        <article class="reveal"><span class="mark-ico">✦</span><small data-i18n="dis3.s">Degree</small><b data-i18n="dis3.b">Licence (BA)</b><p data-i18n="dis3.p">International Relations, University of Yaoundé I.</p></article>
-        <article class="reveal"><span class="mark-ico">✦</span><small data-i18n="dis4.s">Shipped</small><b data-i18n="dis4.b">2 live platforms</b><p data-i18n="dis4.p">The Line and Examina Global: researched, designed, built and deployed from scratch.</p></article>
+      <div class="sec-head reveal">
+        <p class="label"><span class="num">05</span><span class="bar"></span><span data-i18n="dis.label">Distinctions</span></p>
+        <h2><span data-i18n="dis.h">Proof, <em>not</em> promises.</span></h2>
       </div>
+      <ul class="dist">
+        <li class="reveal"><span class="star">✦</span><span data-i18n="dis1">IELTS — overall band 7 in English</span><span class="yr-tag">IELTS</span></li>
+        <li class="reveal"><span class="star">✦</span><span data-i18n="dis2">German — CEFR levels A1 and A2 completed</span><span class="yr-tag">CEFR</span></li>
+        <li class="reveal"><span class="star">✦</span><span data-i18n="dis3">Licence (BA) in International Relations — University of Yaoundé I</span><span class="yr-tag">UY1</span></li>
+        <li class="reveal"><span class="star">✦</span><span data-i18n="dis4">Founder — <em>The Line</em>, a digital history of Cameroon</span><span class="yr-tag">2026</span></li>
+        <li class="reveal"><span class="star">✦</span><span data-i18n="dis5">Builder — Examina Global, a bilingual exam-prep platform</span><span class="yr-tag">2026</span></li>
+        <li class="reveal"><span class="star">✦</span><span data-i18n="dis6">2 live platforms · 3 languages · 0 trackers</span><span class="yr-tag">∑</span></li>
+      </ul>
     </div>
   </section>
 
   <section id="process">
     <div class="wrap">
-      <div class="sec-head reveal"><span class="num">06</span><h2 data-i18n="proc.h">Process</h2><span class="kicker" data-i18n="proc.k">How I work</span></div>
-      <ol class="process reveal">
-        <li><span class="n">01</span><h3 data-i18n="proc1.h">Research</h3><p data-i18n="proc1.p">Start from the sources and the real question: archives, readers, users. Every fact checked, every uncertainty flagged.</p></li>
-        <li><span class="n">02</span><h3 data-i18n="proc2.h">Design</h3><p data-i18n="proc2.p">Design for the real reader: a low-cost phone, slow data, two languages. Structure and type before decoration.</p></li>
-        <li><span class="n">03</span><h3 data-i18n="proc3.h">Build</h3><p data-i18n="proc3.p">Lean code that lasts: static where possible, frameworks only where they earn their place. Accessible and fast by default.</p></li>
-        <li><span class="n">04</span><h3 data-i18n="proc4.h">Ship &amp; verify</h3><p data-i18n="proc4.p">Publish, test on real devices, check every link and source, then keep improving in the open.</p></li>
+      <div class="sec-head reveal">
+        <p class="label"><span class="num">06</span><span class="bar"></span><span data-i18n="proc.label">Process</span></p>
+        <h2><span data-i18n="proc.h">A method built on <em>evidence.</em></span></h2>
+      </div>
+      <ol class="steps">
+        <li class="reveal"><span class="step-n">01</span><h3><span data-i18n="p1.h">Sources</span></h3><p><span data-i18n="p1.p">I start from the evidence and the real question: archives, readers, users. Nothing is invented.</span></p></li><li class="reveal"><span class="step-n">02</span><h3><span data-i18n="p2.h">Structure</span></h3><p><span data-i18n="p2.p">Content, architecture and technology choices, written down and scoped honestly before design begins.</span></p></li><li class="reveal"><span class="step-n">03</span><h3><span data-i18n="p3.h">Design</span></h3><p><span data-i18n="p3.p">Type, layout and motion as one system, designed for a low-cost phone and two or three languages.</span></p></li><li class="reveal"><span class="step-n">04</span><h3><span data-i18n="p4.h">Build</span></h3><p><span data-i18n="p4.p">Lean, readable code: static where possible, frameworks only where they earn their place.</span></p></li><li class="reveal"><span class="step-n">05</span><h3><span data-i18n="p5.h">Verify</span></h3><p><span data-i18n="p5.p">Every link, source and translation checked; tested on real devices, with reduced motion and slow data.</span></p></li><li class="reveal"><span class="step-n">06</span><h3><span data-i18n="p6.h">Launch</span></h3><p><span data-i18n="p6.p">Deployed, documented and kept improving in the open, not abandoned on launch day.</span></p></li>
       </ol>
     </div>
   </section>
 
-  <section class="contact" id="contact">
-    <div class="wrap reveal">
-      <p class="eyebrow" data-i18n="con.eyebrow">Get in touch</p>
-      <h2 data-i18n="con.h">Let’s build something <em>worth reading.</em></h2>
-      <p data-i18n="con.p">Open to web projects, research collaborations and conversations about Cameroon’s history. Email is the best way to reach me.</p>
-      <div class="mail-row">
-        <a class="big-mail" href="mailto:samueletah54@gmail.com">samueletah54@gmail.com</a>
-        <button class="copy" type="button" id="copy" data-email="samueletah54@gmail.com" data-i18n="con.copy">Copy</button>
+  <section id="signals">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="label"><span class="num">07</span><span class="bar"></span><span data-i18n="sig.label">Signals</span></p>
+        <h2><span data-i18n="sig.h">The numbers <em>behind</em> the work.</span></h2>
       </div>
-      <div class="cta">
-        <a class="btn primary magnetic" href="mailto:samueletah54@gmail.com"><span data-i18n="con.write">Write to me</span> <span class="arr">→</span></a>
-        <a class="btn magnetic" href="https://the-line-eight.vercel.app/cv/" target="_blank" rel="noopener"><span data-i18n="con.cv">Full CV</span> ↗</a>
-        <a class="btn magnetic" href="https://github.com/samueletah54-art" target="_blank" rel="noopener">GitHub ↗</a>
+      <div class="signals reveal">
+        <div><b data-count="9">9</b><span><span data-i18n="sig1">Referenced history chapters</span></span></div>
+        <div><b data-count="24">24</b><span><span data-i18n="sig2">Historical profiles</span></span></div>
+        <div><b data-count="50" data-plus>50+</b><span><span data-i18n="sig3">Licence-checked archival images</span></span></div>
+        <div><b data-count="109">109</b><span><span data-i18n="sig4">Worked exam questions</span></span></div>
+        <div><b data-count="28">28</b><span><span data-i18n="sig5">Curated lesson videos</span></span></div>
+        <div><b data-count="3">3</b><span><span data-i18n="sig6">Languages on this site</span></span></div>
+      </div>
+      <p class="built-label"><span data-i18n="sig.built">Built with</span></p>
+      <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>HTML</span><i>✦</i><span>CSS</span><i>✦</i><span>JavaScript</span><i>✦</i><span>TypeScript</span><i>✦</i><span>Node.js</span><i>✦</i><span>React</span><i>✦</i><span>Next.js</span><i>✦</i><span>Tailwind CSS</span><i>✦</i><span>Supabase</span><i>✦</i><span>SVG</span><i>✦</i><span>Git</span><i>✦</i><span>GitHub</span><i>✦</i><span>Vercel</span><i>✦</i><span>Natural Earth</span><i>✦</i><span>HTML</span><i>✦</i><span>CSS</span><i>✦</i><span>JavaScript</span><i>✦</i><span>TypeScript</span><i>✦</i><span>Node.js</span><i>✦</i><span>React</span><i>✦</i><span>Next.js</span><i>✦</i><span>Tailwind CSS</span><i>✦</i><span>Supabase</span><i>✦</i><span>SVG</span><i>✦</i><span>Git</span><i>✦</i><span>GitHub</span><i>✦</i><span>Vercel</span><i>✦</i><span>Natural Earth</span><i>✦</i></div></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="label"><span class="num">08</span><span class="bar"></span><span data-i18n="con.label">Contact</span></p>
+        <h2><span data-i18n="con.h">Let’s build something <em>worth</em> reading.</span></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="reveal">
+          <p class="con-p"><span data-i18n="con.p">A history to tell, a site that should load anywhere, a platform to launch: tell me what you are building and who it is for.</span></p>
+          <p class="local"><span class="pulse"></span><span data-i18n="con.time">Local time in Yaoundé</span> · <b id="clock2">--:--</b> WAT</p>
+        </div>
+        <div class="reveal">
+          <p class="pick"><span data-i18n="con.pick">Pick a channel — every row is one click</span></p>
+          <ul class="channels">
+            <li><a href="mailto:samueletah54@gmail.com"><span class="ch-k"><span data-i18n="con.email">Email</span></span><span class="ch-v">samueletah54@gmail.com</span><span class="ch-a">↗</span></a><button class="copy" id="copy" type="button" data-email="samueletah54@gmail.com"><span data-i18n="con.copy">Copy</span></button></li>
+            <li><a href="https://github.com/samueletah54-art" target="_blank" rel="noopener"><span class="ch-k">GitHub</span><span class="ch-v">github.com/samueletah54-art</span><span class="ch-a">↗</span></a></li>
+            <li><a href="https://the-line-eight.vercel.app/cv/" target="_blank" rel="noopener"><span class="ch-k"><span data-i18n="con.cv">Curriculum vitae</span></span><span class="ch-v"><span data-i18n="con.cvv">Read the full CV</span></span><span class="ch-a">↗</span></a></li>
+            <li><a href="https://the-line-eight.vercel.app/" target="_blank" rel="noopener"><span class="ch-k">The Line</span><span class="ch-v">the-line-eight.vercel.app</span><span class="ch-a">↗</span></a></li>
+            <li><a href="https://examina-global.vercel.app" target="_blank" rel="noopener"><span class="ch-k">Examina</span><span class="ch-v">examina-global.vercel.app</span><span class="ch-a">↗</span></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -616,233 +612,275 @@
 
 <footer>
   <div class="wrap">
-    <div class="foot-top">
-      <div class="foot-sign">Samuel Praise Etah<br><em data-i18n="foot.sign">history, built for the web.</em></div>
-      <nav class="foot-links" aria-label="Footer">
-        <a href="https://the-line-eight.vercel.app/" target="_blank" rel="noopener">The Line ↗</a>
-        <a href="https://examina-global.vercel.app" target="_blank" rel="noopener">Examina Global ↗</a>
-        <a href="https://github.com/samueletah54-art" target="_blank" rel="noopener">GitHub ↗</a>
-        <a href="mailto:samueletah54@gmail.com">Email</a>
-      </nav>
-    </div>
-    <div class="foot-bottom">
-      <span>© <span id="yr">2026</span> Samuel Praise Etah · <span data-i18n="hero.place">Yaoundé, Cameroon</span></span>
-      <span data-i18n="foot.made">Hand-built. No cookies, no tracking.</span>
-      <button class="to-top" type="button" id="toTop" data-i18n="foot.top">Back to top ↑</button>
+    <p class="foot-big" aria-hidden="true">Samuel Etah<b>.</b></p>
+    <div class="foot-row">
+      <span>© <span id="yr">2026</span> Samuel Praise Etah — <span data-i18n="hero.place">Yaoundé, Cameroon</span></span>
+      <span>03°52′N 11°31′E</span>
+      <span><span data-i18n="foot.made">Hand-built · no cookies, no tracking</span></span>
+      <button class="to-top" id="toTop" type="button"><span data-i18n="foot.top">Back to top</span> ↑</button>
     </div>
   </div>
 </footer>
 
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Index" hidden>
+  <div class="pal-box">
+    <input id="palInput" type="text" autocomplete="off" spellcheck="false" placeholder="Jump to a section, project or link…" data-i18n-ph="idx.ph" aria-label="Search">
+    <ul id="palList" role="listbox"></ul>
+    <p class="pal-hint"><span data-i18n="idx.hint">↑↓ to move · Enter to open · Esc to close</span></p>
+  </div>
+</div>
+
 <script>
-  (function () {
-    var root = document.documentElement, btn = document.getElementById('theme');
-    try { var saved = localStorage.getItem('theme'); if (saved) root.setAttribute('data-theme', saved); } catch (e) {}
-    btn.addEventListener('click', function () {
-      var dark = root.getAttribute('data-theme')
-        ? root.getAttribute('data-theme') === 'dark'
-        : matchMedia('(prefers-color-scheme: dark)').matches;
-      var next = dark ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('theme', next); } catch (e) {}
-    });
-    document.getElementById('yr').textContent = new Date().getFullYear();
+(function () {
+  var root = document.documentElement;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
 
-    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // ---------- Theme ----------
+  var themeBtn = $('#theme');
+  themeBtn.addEventListener('click', function () {
+    var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', next);
+    $('meta[name="theme-color"]').setAttribute('content', next === 'light' ? '#f2efe7' : '#070707');
+    store('theme', next);
+    if (stars) stars.recolor();
+  });
 
-    // ---- Languages ----
-    var I18N = { en: {"_title": "Samuel Praise Etah — Digital history & web", "_h1": "I research the past and *build the web* people read it on.", "_roles": ["digital historian.", "web developer.", "International Relations graduate.", "independent researcher."], "_ribbon": ["Partition, 1916", "Trusteeship", "The 1961 plebiscite", "Reunification", "Colonial memory", "Oral history", "Next.js", "TypeScript", "SVG cartography", "Supabase", "Chicago citations", "English · Français · Deutsch"], "_copied": "Copied ✓", "_skip": "Skip to content", "_menu": "Menu", "_theme": "Switch colour theme"}, fr: {"_title": "Samuel Praise Etah · Histoire numérique et développement web", "_h1": "J'explore l'histoire et *je construis le web* qui la raconte.", "_roles": ["historien du numérique.", "développeur web.", "diplômé en relations internationales.", "chercheur indépendant."], "_ribbon": ["Partage, 1916", "Tutelle", "Le plébiscite de 1961", "Réunification", "Mémoire coloniale", "Histoire orale", "Next.js", "TypeScript", "Cartographie SVG", "Supabase", "Citations Chicago", "English · Français · Deutsch"], "_copied": "Copié ✓", "_skip": "Aller au contenu", "_menu": "Menu", "_theme": "Changer de thème", "nav.about": "À propos", "nav.work": "Travaux", "nav.expertise": "Expertise", "nav.record": "Parcours", "nav.distinctions": "Distinctions", "nav.process": "Méthode", "nav.contact": "Contact", "hero.status": "Disponible pour projets web et collaborations de recherche", "hero.place": "Yaoundé, Cameroun", "hero.eyebrow": "Relations internationales · Histoire numérique · Développement web", "hero.lede": "Je crée des sites web rapides et honnêtes (une histoire numérique du Cameroun et une plateforme de préparation aux examens), pensés pour s'afficher sur un téléphone Android bon marché, même avec une connexion mobile lente.", "hero.cta1": "Voir mes travaux", "hero.cta2": "M'écrire", "hero.scroll": "Défiler", "hero.range": "Recherches sur le Cameroun, 1884 – 1972", "about.h": "À propos", "about.k": "Chercheur · Bâtisseur", "fact1.b": "Licence en relations internationales", "fact1.s": "Université de Yaoundé I", "fact2.b": "Zéro dépendance", "fact2.s": "HTML, CSS, JS et Node purs", "fact3.b": "Anglais · Français · Allemand", "fact3.s": "courant · courant · intermédiaire", "about.big": "J'ai grandi au Cameroun avec les conséquences d'une ligne tracée en 1916 par deux diplomates européens qui connaissaient à peine la terre qu'ils divisaient.", "about.p1": "Cette ligne est devenue mon premier grand projet. <em>The Line</em> est une histoire numérique du partage, de la réunification et de la mémoire coloniale du Cameroun, que je recherche, rédige, conçois et code moi-même. En chemin, j'ai découvert que j'aime autant construire que chercher : transformer des sources en cartes qui se dessinent seules, en frises chronologiques consultables, en pages qui respectent le forfait du lecteur.", "about.p2": "J'ai étudié les relations internationales à l'Université de Yaoundé I et je travaille comme développeur web indépendant, de la conception au déploiement. J'applique la même approche à chaque projet, dont une plateforme de préparation au GCE, au Baccalauréat et à l'IELTS.", "pr1.b": "Ne jamais inventer", "pr1.s": "Chaque fait sourcé, chaque image vérifiée et créditée, chaque incertitude signalée.", "pr2.b": "Construire pour le vrai lecteur", "pr2.s": "Téléphones modestes, données lentes, accessibilité, animations réduites.", "pr3.b": "Rester simple", "pr3.s": "Pas de framework s'il n'est pas utile. Du contenu dans des fichiers simples, modifiables par tous.", "pr4.b": "Respecter les personnes", "pr4.s": "Ni pistage ni cookies ; le consentement d'abord en histoire orale.", "work.h": "Travaux choisis", "work.k": "2026 · Sites en ligne", "tag.progress": "En ligne · en cours", "tag.live": "En ligne", "visit": "Voir le site", "line.p": "<strong>Partage, réunification et mémoire coloniale au Cameroun.</strong> Une histoire numérique en neuf chapitres, de la domination allemande (1884) au partage franco-britannique, à la tutelle de l'ONU, au plébiscite de 1961 et à l'État unitaire de 1972, et la façon dont le Cameroun, l'Afrique et l'Europe s'en souviennent aujourd'hui.", "line.l1": "Sources primaires vérifiées mot à mot : textes de la Société des Nations et de l'ONU, mandat britannique, Hansard (1961), archives de l'INA", "line.l2": "Cartes animées au défilement, la carte du Colonial Office de 1949 géoréférencée sur une carte moderne, une carte animée des indépendances africaines", "line.l3": "Volet d'histoire orale avec options de consentement ; mon propre générateur Node sans dépendance ; sans cookies ni pistage", "stack.svg": "Cartographie SVG", "stack.arch": "Recherche d'archives", "ex.p": "<strong>Préparation aux examens, en anglais et en français.</strong> Une plateforme pour les élèves du Cameroun qui préparent le GCE (O/A Level), le Baccalauréat et l'IELTS, organisée par filière : scientifique ou littéraire, Academic ou General Training.", "ex.l1": "109 questions corrigées, 28 vidéos sélectionnées et des examens blancs chronométrés, soumis automatiquement puis corrigés en détail", "ex.l2": "Guides de révision, un planning de révision semaine par semaine et un calculateur de score IELTS", "ex.l3": "Comptes élèves gratuits ; une identité visuelle autour d'un « E » dessiné comme un globe", "num.h": "En chiffres", "num.1": "chapitres d'histoire référencés", "num.2": "portraits historiques", "num.3": "images d'archives aux licences vérifiées", "num.4": "questions d'examen corrigées", "num.5": "vidéos de cours sélectionnées", "num.6": "langues sur chaque page", "exp.h": "Expertise", "exp.k": "Code · Archives · Langues", "exp1.h": "Ingénierie front-end", "exp1.1": "HTML sémantique, CSS moderne, JavaScript natif", "exp1.3": "Génération de sites statiques avec Node", "exp1.4": "Cartes SVG et récits animés au défilement", "exp1.5": "Accessibilité et performance sur appareils modestes", "exp2.h": "Recherche historique", "exp2.1": "Sources primaires : textes des mandats, archives de la tutelle de l'ONU, cartes coloniales", "exp2.2": "Citations au format Chicago", "exp2.3": "Licences et crédits d'images", "exp2.4": "Critique des sources, méthodes d'histoire orale et éthique de la recherche", "lang.h": "Langues", "lang.en": "Anglais", "lang.en.s": "Langue maternelle · IELTS 7", "lang.fr": "Français", "lang.fr.s": "Courant", "lang.de": "Allemand", "lang.de.s": "Niveau intermédiaire · A2 validé", "lang.pi": "Pidgin camerounais", "lang.pi.s": "Parlé", "exp4.h": "Produit et marque", "exp4.1": "Cahiers des charges et feuilles de route", "exp4.2": "Identité visuelle et systèmes de design", "exp4.3": "Budgets et registres des risques", "exp4.4": "Contenu bilingue (EN/FR)", "rec.h": "Parcours", "rec.k": "2016 → aujourd'hui", "rec.cm": "Cameroun.", "rec1.h": "GCE Ordinary Level", "rec2.h": "GCE Advanced Level", "rec3.t": "Université", "rec3.h": "Licence en relations internationales, Université de Yaoundé I", "rec3.p": "Diplômé en relations internationales à Yaoundé, Cameroun.", "rec4.t": "Indépendant", "rec4.h": "Développeur web", "rec4.p": "Sites pour des clients et des projets personnels, de la conception au déploiement : interfaces adaptatives, performance sur mobile, chaînes de publication. Dont Examina Global.", "rec5.t": "Oct. 2026 – aujourd'hui", "rec5.h": "Fondateur, chercheur et développeur, <em>The Line</em>", "rec5.p": "Recherche, rédaction et développement d'une histoire numérique du partage et de la réunification du Cameroun.", "dis.h": "Distinctions", "dis.k": "Certifié et démontré", "dis1.s": "Anglais · IELTS", "dis1.b": "Score 7", "dis1.p": "Score global à l'International English Language Testing System.", "dis2.s": "Allemand · CECRL", "dis2.p": "Les niveaux A1 et A2 du Cadre européen commun validés, et l’apprentissage continue.", "dis3.s": "Diplôme", "dis3.b": "Licence", "dis3.p": "Relations internationales, Université de Yaoundé I.", "dis4.s": "Réalisé", "dis4.b": "2 plateformes en ligne", "dis4.p": "The Line et Examina Global : recherchées, conçues, développées et déployées de A à Z.", "proc.h": "Méthode", "proc.k": "Ma façon de travailler", "proc1.h": "Chercher", "proc1.p": "Partir des sources et de la vraie question : archives, lecteurs, utilisateurs. Chaque fait vérifié, chaque incertitude signalée.", "proc2.h": "Concevoir", "proc2.p": "Concevoir pour le vrai lecteur : un téléphone modeste, des données lentes, deux langues. La structure et la typographie avant le décor.", "proc3.h": "Construire", "proc3.p": "Un code sobre et durable : statique quand c'est possible, des frameworks seulement s'ils sont utiles. Accessible et rapide par défaut.", "proc4.h": "Publier et vérifier", "proc4.p": "Mettre en ligne, tester sur de vrais appareils, vérifier chaque lien et chaque source, puis continuer à améliorer.", "con.eyebrow": "Me contacter", "con.h": "Construisons quelque chose <em>qui mérite d'être lu.</em>", "con.p": "Ouvert aux projets web, aux collaborations de recherche et aux échanges sur l'histoire du Cameroun. Le courriel est le meilleur moyen de me joindre.", "con.copy": "Copier", "con.write": "Écrivez-moi", "con.cv": "CV complet", "foot.sign": "l'histoire, construite pour le web.", "foot.made": "Fait main. Sans cookies, sans pistage.", "foot.top": "Haut de page ↑"}, de: {"_title": "Samuel Praise Etah · Digitale Geschichte und Webentwicklung", "_h1": "Ich erforsche Geschichte und *baue das Web*, das sie erzählt.", "_roles": ["digitaler Historiker.", "Webentwickler.", "Absolvent der Internationalen Beziehungen.", "unabhängiger Forscher."], "_ribbon": ["Teilung, 1916", "Treuhandschaft", "Das Plebiszit von 1961", "Wiedervereinigung", "Koloniale Erinnerung", "Oral History", "Next.js", "TypeScript", "SVG-Kartografie", "Supabase", "Chicago-Zitierweise", "English · Français · Deutsch"], "_copied": "Kopiert ✓", "_skip": "Zum Inhalt", "_menu": "Menü", "_theme": "Farbschema wechseln", "nav.about": "Über mich", "nav.work": "Projekte", "nav.expertise": "Expertise", "nav.record": "Werdegang", "nav.distinctions": "Auszeichnungen", "nav.process": "Arbeitsweise", "nav.contact": "Kontakt", "hero.status": "Offen für Webprojekte und Forschungskooperationen", "hero.place": "Yaoundé, Kamerun", "hero.eyebrow": "Internationale Beziehungen · Digitale Geschichte · Webentwicklung", "hero.lede": "Ich entwickle schnelle, ehrliche Websites (eine digitale Geschichte Kameruns und eine Plattform zur Prüfungsvorbereitung), die auch auf einem günstigen Android-Handy mit langsamer Mobilverbindung laden.", "hero.cta1": "Meine Projekte", "hero.cta2": "Schreiben Sie mir", "hero.scroll": "Scrollen", "hero.range": "Forschung zu Kamerun, 1884 – 1972", "about.h": "Über mich", "about.k": "Forscher · Entwickler", "fact1.b": "B.A. Internationale Beziehungen", "fact1.s": "Universität Yaoundé I", "fact2.b": "Null Abhängigkeiten", "fact2.s": "reines HTML, CSS, JS, Node", "fact3.b": "Englisch · Französisch · Deutsch", "fact3.s": "fließend · fließend · Mittelstufe", "about.big": "Ich bin in Kamerun mit den Folgen einer Linie aufgewachsen, die 1916 von zwei europäischen Diplomaten gezogen wurde, die das Land, das sie teilten, kaum kannten.", "about.p1": "Diese Linie wurde mein erstes großes Projekt. <em>The Line</em> ist eine digitale Geschichte der Teilung, Wiedervereinigung und kolonialen Erinnerung Kameruns, die ich selbst recherchiere, schreibe, gestalte und programmiere. Dabei habe ich gemerkt, dass mir das Bauen genauso viel Freude macht wie die Forschung: Quellen in Karten verwandeln, die sich selbst zeichnen, in durchsuchbare Zeitleisten und in Seiten, die das Datenvolumen der Leser respektieren.", "about.p2": "Ich habe Internationale Beziehungen an der Universität Yaoundé I studiert und arbeite als freiberuflicher Webentwickler, vom Entwurf bis zur Veröffentlichung. Diesen Ansatz verfolge ich in jedem Projekt, auch bei einer Lernplattform für Schüler, die GCE, Baccalauréat und IELTS ablegen.", "pr1.b": "Nichts erfinden", "pr1.s": "Jede Tatsache belegt, jedes Bild lizenzgeprüft und genannt, jede Unsicherheit gekennzeichnet.", "pr2.b": "Für echte Leser bauen", "pr2.s": "Einfache Handys, langsame Daten, Barrierefreiheit, reduzierte Bewegung.", "pr3.b": "Einfach bleiben", "pr3.s": "Frameworks nur, wenn sie sich lohnen. Inhalte in einfachen Dateien, die jeder bearbeiten kann.", "pr4.b": "Menschen respektieren", "pr4.s": "Kein Tracking, keine Cookies; in der Oral History zuerst die Einwilligung.", "work.h": "Ausgewählte Projekte", "work.k": "2026 · Online", "tag.progress": "Online · in Arbeit", "tag.live": "Online", "visit": "Website ansehen", "line.p": "<strong>Teilung, Wiedervereinigung und koloniale Erinnerung in Kamerun.</strong> Eine digitale Geschichte in neun Kapiteln: von der deutschen Herrschaft (1884) über die britisch-französische Teilung, die UN-Treuhandschaft und das Plebiszit von 1961 bis zum Einheitsstaat von 1972, und wie Kamerun, Afrika und Europa heute daran erinnern.", "line.l1": "Primärquellen Wort für Wort geprüft: Texte des Völkerbunds und der UN, das britische Mandat, Hansard (1961), INA-Archive", "line.l2": "Scroll-gesteuerte Karten, die Karte des Colonial Office von 1949 georeferenziert über einer modernen Karte, eine animierte Karte der afrikanischen Unabhängigkeit", "line.l3": "Oral-History-Teil mit Einwilligungsoptionen; mein eigenes abhängigkeitsfreies Node-Build; keine Cookies, kein Tracking", "stack.svg": "SVG-Kartografie", "stack.arch": "Archivforschung", "ex.p": "<strong>Prüfungsvorbereitung auf Englisch und Französisch.</strong> Eine Plattform für Schüler in Kamerun, die sich auf GCE (O/A Level), Baccalauréat und IELTS vorbereiten, nach Zweig geordnet: naturwissenschaftlich oder geisteswissenschaftlich, Academic oder General Training.", "ex.l1": "109 durchgerechnete Aufgaben, 28 ausgewählte Videos und zeitgesteuerte Probeprüfungen, die automatisch abgegeben und danach ausführlich besprochen werden", "ex.l2": "Lernleitfäden, ein wöchentlicher Lernplan und ein IELTS-Band-Rechner", "ex.l3": "Kostenlose Schülerkonten; eine Marke rund um ein „E“, das als Globus gezeichnet ist", "num.h": "In Zahlen", "num.1": "belegte Geschichtskapitel", "num.2": "historische Porträts", "num.3": "lizenzgeprüfte Archivbilder", "num.4": "durchgerechnete Prüfungsaufgaben", "num.5": "ausgewählte Lernvideos", "num.6": "Sprachen auf jeder Seite", "exp.h": "Expertise", "exp.k": "Code · Archive · Sprachen", "exp1.h": "Frontend-Entwicklung", "exp1.1": "Semantisches HTML, modernes CSS, reines JavaScript", "exp1.3": "Statische Websites mit Node generieren", "exp1.4": "SVG-Karten und Scroll-Storytelling", "exp1.5": "Barrierefreiheit und Leistung auf einfachen Geräten", "exp2.h": "Historische Forschung", "exp2.1": "Primärquellen: Mandatstexte, Akten der UN-Treuhandschaft, Kolonialkarten", "exp2.2": "Zitieren nach Chicago", "exp2.3": "Bildlizenzen und Bildnachweise", "exp2.4": "Quellenkritik, Methoden der Oral History und Forschungsethik", "lang.h": "Sprachen", "lang.en": "Englisch", "lang.en.s": "Muttersprache · IELTS 7", "lang.fr": "Französisch", "lang.fr.s": "Fließend", "lang.de": "Deutsch", "lang.de.s": "Mittelstufe · A2 abgeschlossen", "lang.pi": "Kamerunisches Pidgin", "lang.pi.s": "Gesprochen", "exp4.h": "Produkt und Marke", "exp4.1": "Produktkonzepte und Roadmaps", "exp4.2": "Markenidentität und Designsysteme", "exp4.3": "Budgets und Risikoregister", "exp4.4": "Zweisprachige Inhalte (EN/FR)", "rec.h": "Werdegang", "rec.k": "2016 → heute", "rec.cm": "Kamerun.", "rec1.h": "GCE Ordinary Level", "rec2.h": "GCE Advanced Level", "rec3.t": "Universität", "rec3.h": "Licence (B.A.) in Internationalen Beziehungen, Universität Yaoundé I", "rec3.p": "Abschluss in Internationalen Beziehungen in Yaoundé, Kamerun.", "rec4.t": "Freiberuflich", "rec4.h": "Webentwickler", "rec4.p": "Websites für Kunden und eigene Projekte, vom Entwurf bis zur Veröffentlichung: responsive Oberflächen, Leistung auf Mobilgeräten, Publikationsabläufe. Darunter Examina Global.", "rec5.t": "Okt. 2026 – heute", "rec5.h": "Gründer, Forscher und Entwickler, <em>The Line</em>", "rec5.p": "Recherche, Texte und Programmierung einer digitalen Geschichte der Teilung und Wiedervereinigung Kameruns.", "dis.h": "Auszeichnungen", "dis.k": "Zertifiziert & belegt", "dis1.s": "Englisch · IELTS", "dis1.b": "Band 7", "dis1.p": "Gesamtergebnis im International English Language Testing System.", "dis2.s": "Deutsch · GER", "dis2.p": "Die Stufen A1 und A2 des Gemeinsamen Europäischen Referenzrahmens abgeschlossen, und ich lerne weiter.", "dis3.s": "Abschluss", "dis3.b": "Licence (B.A.)", "dis3.p": "Internationale Beziehungen, Universität Yaoundé I.", "dis4.s": "Umgesetzt", "dis4.b": "2 Live-Plattformen", "dis4.p": "The Line und Examina Global: recherchiert, gestaltet, entwickelt und veröffentlicht, von Grund auf.", "proc.h": "Arbeitsweise", "proc.k": "So arbeite ich", "proc1.h": "Recherchieren", "proc1.p": "Bei den Quellen und der eigentlichen Frage anfangen: Archive, Leser, Nutzer. Jede Tatsache geprüft, jede Unsicherheit gekennzeichnet.", "proc2.h": "Gestalten", "proc2.p": "Für den echten Leser gestalten: ein günstiges Handy, langsame Daten, zwei Sprachen. Struktur und Typografie vor Dekoration.", "proc3.h": "Entwickeln", "proc3.p": "Schlanker, langlebiger Code: statisch, wo möglich, Frameworks nur, wo sie sich lohnen. Barrierefrei und schnell von Anfang an.", "proc4.h": "Veröffentlichen & prüfen", "proc4.p": "Online stellen, auf echten Geräten testen, jeden Link und jede Quelle prüfen und dann offen weiter verbessern.", "con.eyebrow": "Kontakt", "con.h": "Lassen Sie uns etwas bauen, <em>das sich zu lesen lohnt.</em>", "con.p": "Offen für Webprojekte, Forschungskooperationen und Gespräche über die Geschichte Kameruns. Am besten erreichen Sie mich per E-Mail.", "con.copy": "Kopieren", "con.write": "Schreiben Sie mir", "con.cv": "Lebenslauf", "foot.sign": "Geschichte, gebaut fürs Web.", "foot.made": "Handgemacht. Keine Cookies, kein Tracking.", "foot.top": "Nach oben ↑"} };
-    var nodes = document.querySelectorAll('[data-i18n]');
-    nodes.forEach(function (el) { var k = el.getAttribute('data-i18n'); if (!(k in I18N.en)) I18N.en[k] = el.innerHTML; });
-    var lang = 'en';
-
-    function renderH1(text) {
-      var i = 0, em = false, html = [];
-      text.split('*').forEach(function (chunk) {
-        var w = chunk.split(/\s+/).filter(Boolean).map(function (word) {
-          return '<span class="w"><span style="--i:' + (i++) + '">' + word + '</span></span>';
-        }).join(' ');
-        if (w) html.push(em ? '<em>' + w + '</em>' : w);
-        em = !em;
-      });
-      var h1 = document.getElementById('h1');
-      h1.innerHTML = html.join(' ');
-      h1.setAttribute('aria-label', text.replace(/\*/g, ''));
-    }
-    function renderRoles(list) {
-      document.getElementById('rot').innerHTML = list.map(function (r, k) { return '<span' + (k ? '' : ' class="on"') + '>' + r + '</span>'; }).join('');
-    }
-    function renderRibbon(list) {
-      var one = list.map(function (t) { return '<span>' + t + '</span><span class="d">✦</span>'; }).join('');
-      document.getElementById('ribbon').innerHTML = one + one;
-    }
-    function t(key) { return (I18N[lang] && I18N[lang][key] != null) ? I18N[lang][key] : I18N.en[key]; }
-
-    function setLang(next, first) {
-      if (!I18N[next]) next = 'en';
-      if (next === lang && !first) return;
-      lang = next;
-      root.setAttribute('lang', lang);
-      nodes.forEach(function (el) { var v = t(el.getAttribute('data-i18n')); if (v != null) el.innerHTML = v; });
-      if (!(first && lang === 'en')) { renderH1(t('_h1')); renderRoles(t('_roles')); renderRibbon(t('_ribbon')); }
-      document.title = t('_title');
-      document.querySelector('.skip').textContent = t('_skip');
-      document.getElementById('menuBtn').setAttribute('aria-label', t('_menu'));
-      btn.setAttribute('aria-label', t('_theme'));
-      document.querySelectorAll('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
-      try { localStorage.setItem('lang', lang); } catch (e) {}
-      if (!first) {
+  // ---------- Languages ----------
+  var I18N = {"en": {"about.v2": "Licence (BA), International Relations · University of Yaoundé I", "chip.risk": "Risk registers", "rec3.o": "University of Yaoundé I", "hero.r3": "International Relations graduate", "dis4": "Founder — <em>The Line</em>, a digital history of Cameroon", "foot.made": "Hand-built · no cookies, no tracking", "exp1.p": "Interfaces that load fast on low-end phones and read well in any language, from first sketch to deployed product.", "idx.sec": "Sections", "dis1": "IELTS — overall band 7 in English", "p1.h": "Sources", "about.k3": "Founder", "exp4.h": "Product &amp; brand", "rec4.o": "Clients &amp; independent projects", "sig6": "Languages on this site", "hdr.index": "Index", "cs.out": "Outcome", "about.p2": "I studied International Relations at the University of Yaoundé I and work as a freelance web developer, from design to deployment. I enjoy the building as much as the research: maps that draw themselves, timelines you can search, and pages that respect a reader’s data plan.", "con.p": "A history to tell, a site that should load anywhere, a platform to launch: tell me what you are building and who it is for.", "lang.de.s": "Intermediate · A2 completed", "lang.de": "German", "con.copy": "Copy", "nav.work": "Work", "hero.status": "Open to web projects &amp; research", "about.label": "About", "chip.brand": "Brand systems", "cs.role": "Role", "rec.cm": "Cameroon", "exp5.h": "Languages", "rec4.r": "Web developer", "rec1.r": "GCE Ordinary Level", "hero.cta1": "Explore my work", "about.v4": "English · French · German · Pidgin", "rec.h": "A short record of <em>learning.</em>", "con.time": "Local time in Yaoundé", "lang.en.s": "First language · IELTS 7", "rec3.y": "University", "dis.label": "Distinctions", "idx.proj": "Projects", "exp5.p": "Working across three European languages and Cameroonian Pidgin, for readers and clients on both sides of the line.", "cs.open": "View case study", "about.k1": "Base", "work.label": "Selected work", "rec3.p": "International relations, diplomacy and the history of decolonisation.", "rec5.r": "Founder, researcher &amp; developer", "line.ctx": "Cameroon’s partition and reunification still shape the country, yet most sources sit in archives, in two colonial languages, out of reach for readers at home.", "line.kick": "Digital history · Founder", "idx.hint": "↑↓ to move · Enter to open · Esc to close", "proc.label": "Process", "line.out": "A live site: 9 referenced chapters, 24 profiles, 50+ timeline events, 50+ licence-checked images, seven archive films and a georeferenced 1949 map.", "hero.lede": "I research Cameroon’s past and build fast, honest websites that people can read on a low-cost phone, on slow mobile data.", "about.p1": "Growing up in Cameroon, I have lived with the consequences of a line drawn in 1916 by two European diplomats who barely knew the land they divided. That line became my first serious project: <em>The Line</em>, a digital history I research, write, design and code myself.", "exp3.h": "Maps &amp; storytelling", "con.cvv": "Read the full CV", "lang.fr": "French", "cs.close": "Close case study", "chip.cite": "Chicago citations", "p5.p": "Every link, source and translation checked; tested on real devices, with reduced motion and slow data.", "con.email": "Email", "line.sum": "A nine-chapter digital history of Cameroon’s partition, reunification and colonial memory, from German rule in 1884 to the unitary state of 1972, and how Africa and Europe remember it today.", "chip.oral": "Oral history &amp; consent", "p6.p": "Deployed, documented and kept improving in the open, not abandoned on launch day.", "idx.ph": "Jump to a section, project or link…", "p4.h": "Build", "about.h": "From a line on a map <em>to</em> a life’s work.", "rec2.r": "GCE Advanced Level", "sig4": "Worked exam questions", "ex.out": "A live bilingual platform: 109 worked questions, 28 curated videos, timed mock exams, study guides, a revision planner and an IELTS band calculator.", "p3.h": "Design", "rec1.p": "Secondary school certificate.", "ex.les": "Practice is presented as practice, never as an official result. Plain words beat hype.", "about.v5": "Open to web projects and research collaborations", "chip.scroll": "Scrollytelling", "nav.expertise": "Expertise", "con.pick": "Pick a channel — every row is one click", "foot.top": "Back to top", "idx.empty": "No match", "hero.scroll": "Scroll", "p4.p": "Lean, readable code: static where possible, frameworks only where they earn their place.", "chip.geo": "Georeferencing", "ex.role": "Product, brand and full-stack build: the blueprint, the “E as a globe” identity, the Next.js app, content structure and deployment.", "lang.fr.s": "Fluent", "nav.contact": "Contact", "exp1.h": "Front-end engineering", "sig3": "Licence-checked archival images", "rec4.p": "Websites from design to deployment: responsive interfaces, mobile performance, publishing workflows. Includes Examina Global.", "p3.p": "Type, layout and motion as one system, designed for a low-cost phone and two or three languages.", "about.k4": "Languages", "exp.label": "Expertise", "idx.links": "Links", "sig.label": "Signals", "exp4.p": "Blueprints, budgets, risk registers and brand systems, scoped honestly before a line of code.", "about.k5": "Status", "rec2.p": "Upper secondary certificate, the gateway to university.", "chip.svg": "SVG cartography", "hero.place": "Yaoundé, Cameroon", "p2.h": "Structure", "hero.r1": "Digital historian", "nav.distinctions": "Distinctions", "exp2.p": "Primary sources read word for word, every image licence-checked and every uncertainty flagged in the open.", "chip.arch": "Archival research", "exp.h": "Skills with <em>sources.</em>", "con.h": "Let’s build something <em>worth</em> reading.", "dis.h": "Proof, <em>not</em> promises.", "hero.cta2": "Get in touch", "exp2.h": "Digital history &amp; research", "proc.h": "A method built on <em>evidence.</em>", "nav.about": "About", "chip.lic": "Image licensing", "sig5": "Curated lesson videos", "work.h": "Work you can <em>open</em> today.", "con.cv": "Curriculum vitae", "rec.label": "Record", "chip.budget": "Budgets in FCFA", "ex.ctx": "Students need clear teaching, honest practice and measurable progress, in the language of their exam, on the phone they already own.", "lang.en": "English", "sig.built": "Built with", "rec4.y": "Freelance", "line.les": "Verify every quotation, credit every image, and present historians’ disagreements fairly.", "dis6": "2 live platforms · 3 languages · 0 trackers", "rec3.r": "Licence (BA) in International Relations", "sig1": "Referenced history chapters", "chip.a11y": "Accessibility", "dis5": "Builder — Examina Global, a bilingual exam-prep platform", "visit": "Visit live site", "hero.fig": "Fig. 01 — The line, 1916", "p2.p": "Content, architecture and technology choices, written down and scoped honestly before design begins.", "con.label": "Contact", "hero.r2": "Web developer", "exp3.p": "Hand-built SVG maps and scroll-driven narratives that turn archives into something people want to read.", "sig2": "Historical profiles", "dis3": "Licence (BA) in International Relations — University of Yaoundé I", "ex.sum": "Exam preparation for students in Cameroon sitting the GCE, the Baccalauréat and IELTS, in English and French, organised by stream.", "p1.p": "I start from the evidence and the real question: archives, readers, users. Nothing is invented.", "p6.h": "Launch", "dis2": "German — CEFR levels A1 and A2 completed", "about.k2": "Education", "cs.les": "Lesson", "work.live": "Live", "ex.kick": "Education platform · Product &amp; build", "nav.record": "Record", "sig.h": "The numbers <em>behind</em> the work.", "nav.process": "Process", "rec5.p": "Researching, writing and coding a digital history of Cameroon’s partition and reunification. October 2026 to today.", "p5.h": "Verify", "cs.ctx": "Context", "chip.plan": "Roadmaps", "line.role": "Founder, researcher, writer, designer and developer: sources, chapters, maps, a zero-dependency Node build and deployment.", "_title": "Samuel Praise Etah — Digital historian & web developer", "_copied": "Copied ✓", "_skip": "Skip to content", "_menu": "Menu", "_theme": "Switch light or dark theme"}, "fr": {"about.v2": "Licence en relations internationales · Université de Yaoundé I", "chip.risk": "Registres des risques", "rec3.o": "Université de Yaoundé I", "hero.r3": "Diplômé en relations internationales", "dis4": "Fondateur — <em>The Line</em>, une histoire numérique du Cameroun", "foot.made": "Fait main · sans cookies ni pistage", "exp1.p": "Des interfaces rapides sur téléphones modestes et lisibles dans toutes les langues, de l’esquisse au produit en ligne.", "idx.sec": "Sections", "dis1": "IELTS — score global de 7 en anglais", "p1.h": "Sources", "about.k3": "Fondateur", "exp4.h": "Produit &amp; marque", "rec4.o": "Clients &amp; projets personnels", "sig6": "Langues sur ce site", "hdr.index": "Index", "cs.out": "Résultat", "about.p2": "J’ai étudié les relations internationales à l’Université de Yaoundé I et je travaille comme développeur web indépendant, de la conception au déploiement. J’aime autant construire que chercher : des cartes qui se dessinent seules, des frises consultables, des pages qui respectent le forfait du lecteur.", "con.p": "Une histoire à raconter, un site qui doit charger partout, une plateforme à lancer : dites-moi ce que vous construisez et pour qui.", "lang.de.s": "Intermédiaire · A2 validé", "lang.de": "Allemand", "con.copy": "Copier", "nav.work": "Travaux", "hero.status": "Disponible : web &amp; recherche", "about.label": "À propos", "chip.brand": "Identités visuelles", "cs.role": "Rôle", "rec.cm": "Cameroun", "exp5.h": "Langues", "rec4.r": "Développeur web", "rec1.r": "GCE Ordinary Level", "hero.cta1": "Voir mes travaux", "about.v4": "Anglais · Français · Allemand · Pidgin", "rec.h": "Un court récit d’<em>apprentissage.</em>", "con.time": "Heure locale à Yaoundé", "lang.en.s": "Langue maternelle · IELTS 7", "rec3.y": "Université", "dis.label": "Distinctions", "idx.proj": "Projets", "exp5.p": "Je travaille dans trois langues européennes et en pidgin camerounais, pour des lecteurs des deux côtés de la ligne.", "cs.open": "Voir l’étude de cas", "about.k1": "Base", "work.label": "Travaux choisis", "rec3.p": "Relations internationales, diplomatie et histoire de la décolonisation.", "rec5.r": "Fondateur, chercheur &amp; développeur", "line.ctx": "Le partage et la réunification façonnent encore le Cameroun, mais la plupart des sources dorment dans des archives, en deux langues coloniales, hors de portée des lecteurs du pays.", "line.kick": "Histoire numérique · Fondateur", "idx.hint": "↑↓ pour naviguer · Entrée pour ouvrir · Échap pour fermer", "proc.label": "Méthode", "line.out": "Un site en ligne : 9 chapitres référencés, 24 portraits, plus de 50 événements, plus de 50 images aux licences vérifiées, sept films d’archives et une carte de 1949 géoréférencée.", "hero.lede": "Je fais des recherches sur l’histoire du Cameroun et je crée des sites rapides et honnêtes, lisibles sur un téléphone bon marché, même avec une connexion lente.", "about.p1": "J’ai grandi au Cameroun avec les conséquences d’une ligne tracée en 1916 par deux diplomates européens qui connaissaient à peine la terre qu’ils divisaient. Cette ligne est devenue mon premier grand projet : <em>The Line</em>, une histoire numérique que je recherche, rédige, conçois et code moi-même.", "exp3.h": "Cartes &amp; récits", "con.cvv": "Lire le CV complet", "lang.fr": "Français", "cs.close": "Fermer l’étude de cas", "chip.cite": "Citations Chicago", "p5.p": "Chaque lien, source et traduction vérifiés ; tests sur de vrais appareils, animations réduites et données lentes.", "con.email": "Courriel", "line.sum": "Une histoire numérique en neuf chapitres du partage, de la réunification et de la mémoire coloniale du Cameroun, de la domination allemande en 1884 à l’État unitaire de 1972, et de la façon dont l’Afrique et l’Europe s’en souviennent.", "chip.oral": "Histoire orale &amp; consentement", "p6.p": "Déployé, documenté et amélioré en continu, pas abandonné le jour du lancement.", "idx.ph": "Aller à une section, un projet ou un lien…", "p4.h": "Développement", "about.h": "D’une ligne sur une carte <em>à</em> l’œuvre d’une vie.", "rec2.r": "GCE Advanced Level", "sig4": "Questions d’examen corrigées", "ex.out": "Une plateforme bilingue en ligne : 109 questions corrigées, 28 vidéos, des examens blancs chronométrés, des guides, un planning de révision et un calculateur IELTS.", "p3.h": "Design", "rec1.p": "Certificat d’études secondaires.", "ex.les": "Un exercice reste un exercice, jamais un résultat officiel. Les mots simples valent mieux que le battage.", "about.v5": "Disponible pour projets web et collaborations de recherche", "chip.scroll": "Récits au défilement", "nav.expertise": "Expertise", "con.pick": "Choisissez un canal — chaque ligne est un clic", "foot.top": "Haut de page", "idx.empty": "Aucun résultat", "hero.scroll": "Défiler", "p4.p": "Un code sobre et lisible : statique si possible, des frameworks seulement s’ils sont utiles.", "chip.geo": "Géoréférencement", "ex.role": "Produit, marque et développement complet : le cahier des charges, l’identité « E en globe », l’application Next.js, la structure des contenus et le déploiement.", "lang.fr.s": "Courant", "nav.contact": "Contact", "exp1.h": "Ingénierie front-end", "sig3": "Images d’archives vérifiées", "rec4.p": "Des sites de la conception au déploiement : interfaces adaptatives, performance mobile, chaînes de publication. Dont Examina Global.", "p3.p": "Typographie, mise en page et animation comme un seul système, pensés pour un téléphone modeste et plusieurs langues.", "about.k4": "Langues", "exp.label": "Expertise", "idx.links": "Liens", "sig.label": "Repères", "exp4.p": "Cahiers des charges, budgets, registres des risques et identités visuelles, cadrés honnêtement avant de coder.", "about.k5": "Statut", "rec2.p": "Certificat de fin d’études secondaires, la porte de l’université.", "chip.svg": "Cartographie SVG", "hero.place": "Yaoundé, Cameroun", "p2.h": "Structure", "hero.r1": "Historien du numérique", "nav.distinctions": "Distinctions", "exp2.p": "Des sources primaires lues mot à mot, chaque image vérifiée, chaque incertitude signalée ouvertement.", "chip.arch": "Recherche d’archives", "exp.h": "Des compétences <em>sourcées.</em>", "con.h": "Construisons quelque chose qui <em>mérite</em> d’être lu.", "dis.h": "Des preuves, <em>pas</em> des promesses.", "hero.cta2": "Me contacter", "exp2.h": "Histoire numérique &amp; recherche", "proc.h": "Une méthode fondée sur les <em>preuves.</em>", "nav.about": "À propos", "chip.lic": "Licences d’images", "sig5": "Vidéos de cours sélectionnées", "work.h": "Des travaux à <em>ouvrir</em> dès aujourd’hui.", "con.cv": "Curriculum vitae", "rec.label": "Parcours", "chip.budget": "Budgets en FCFA", "ex.ctx": "Les élèves ont besoin d’un enseignement clair, d’exercices honnêtes et de progrès mesurables, dans la langue de leur examen, sur le téléphone qu’ils ont déjà.", "lang.en": "Anglais", "sig.built": "Construit avec", "rec4.y": "Indépendant", "line.les": "Vérifier chaque citation, créditer chaque image et présenter honnêtement les désaccords entre historiens.", "dis6": "2 plateformes en ligne · 3 langues · 0 traceur", "rec3.r": "Licence en relations internationales", "sig1": "Chapitres d’histoire référencés", "chip.a11y": "Accessibilité", "dis5": "Créateur — Examina Global, une plateforme bilingue de préparation aux examens", "visit": "Voir le site", "hero.fig": "Fig. 01 — La ligne, 1916", "p2.p": "Contenus, architecture et choix techniques, écrits et cadrés honnêtement avant le design.", "con.label": "Contact", "hero.r2": "Développeur web", "exp3.p": "Des cartes SVG faites main et des récits au défilement qui rendent les archives captivantes.", "sig2": "Portraits historiques", "dis3": "Licence en relations internationales — Université de Yaoundé I", "ex.sum": "La préparation aux examens pour les élèves du Cameroun qui passent le GCE, le Baccalauréat et l’IELTS, en anglais et en français, organisée par filière.", "p1.p": "Je pars des preuves et de la vraie question : archives, lecteurs, utilisateurs. Rien n’est inventé.", "p6.h": "Lancement", "dis2": "Allemand — niveaux A1 et A2 du CECRL validés", "about.k2": "Formation", "cs.les": "Leçon", "work.live": "En ligne", "ex.kick": "Plateforme éducative · Produit &amp; développement", "nav.record": "Parcours", "sig.h": "Les chiffres <em>derrière</em> le travail.", "nav.process": "Méthode", "rec5.p": "Recherche, rédaction et développement d’une histoire numérique du partage et de la réunification du Cameroun. Depuis octobre 2026.", "p5.h": "Vérification", "cs.ctx": "Contexte", "chip.plan": "Feuilles de route", "line.role": "Fondateur, chercheur, auteur, designer et développeur : sources, chapitres, cartes, générateur Node sans dépendance et déploiement.", "_title": "Samuel Praise Etah — Historien du numérique & développeur web", "_copied": "Copié ✓", "_skip": "Aller au contenu", "_menu": "Menu", "_theme": "Basculer thème clair ou sombre"}, "de": {"about.v2": "Licence (B.A.), Internationale Beziehungen · Universität Yaoundé I", "chip.risk": "Risikoregister", "rec3.o": "Universität Yaoundé I", "hero.r3": "Absolvent Internationale Beziehungen", "dis4": "Gründer — <em>The Line</em>, eine digitale Geschichte Kameruns", "foot.made": "Handgemacht · keine Cookies, kein Tracking", "exp1.p": "Oberflächen, die auf einfachen Handys schnell laden und in jeder Sprache gut lesbar sind, von der Skizze bis zum fertigen Produkt.", "idx.sec": "Abschnitte", "dis1": "IELTS — Gesamtband 7 in Englisch", "p1.h": "Quellen", "about.k3": "Gründer", "exp4.h": "Produkt &amp; Marke", "rec4.o": "Kunden &amp; eigene Projekte", "sig6": "Sprachen auf dieser Website", "hdr.index": "Index", "cs.out": "Ergebnis", "about.p2": "Ich habe Internationale Beziehungen an der Universität Yaoundé I studiert und arbeite als freiberuflicher Webentwickler, vom Entwurf bis zur Veröffentlichung. Das Bauen macht mir so viel Freude wie die Forschung: Karten, die sich selbst zeichnen, durchsuchbare Zeitleisten und Seiten, die das Datenvolumen der Leser respektieren.", "con.p": "Eine Geschichte, die erzählt werden will, eine Website, die überall laden soll, eine Plattform zum Start: Erzählen Sie mir, was Sie bauen und für wen.", "lang.de.s": "Mittelstufe · A2 abgeschlossen", "lang.de": "Deutsch", "con.copy": "Kopieren", "nav.work": "Projekte", "hero.status": "Offen für Web &amp; Forschung", "about.label": "Über mich", "chip.brand": "Markensysteme", "cs.role": "Rolle", "rec.cm": "Kamerun", "exp5.h": "Sprachen", "rec4.r": "Webentwickler", "rec1.r": "GCE Ordinary Level", "hero.cta1": "Projekte ansehen", "about.v4": "Englisch · Französisch · Deutsch · Pidgin", "rec.h": "Eine kurze Geschichte des <em>Lernens.</em>", "con.time": "Ortszeit in Yaoundé", "lang.en.s": "Muttersprache · IELTS 7", "rec3.y": "Universität", "dis.label": "Auszeichnungen", "idx.proj": "Projekte", "exp5.p": "Ich arbeite in drei europäischen Sprachen und in kamerunischem Pidgin, für Leser auf beiden Seiten der Linie.", "cs.open": "Fallstudie ansehen", "about.k1": "Standort", "work.label": "Ausgewählte Projekte", "rec3.p": "Internationale Beziehungen, Diplomatie und die Geschichte der Dekolonisierung.", "rec5.r": "Gründer, Forscher &amp; Entwickler", "line.ctx": "Teilung und Wiedervereinigung prägen Kamerun bis heute, doch die meisten Quellen liegen in Archiven, in zwei Kolonialsprachen, außer Reichweite der Leser im Land.", "line.kick": "Digitale Geschichte · Gründer", "idx.hint": "↑↓ bewegen · Enter öffnen · Esc schließen", "proc.label": "Arbeitsweise", "line.out": "Eine Live-Website: 9 belegte Kapitel, 24 Porträts, über 50 Ereignisse, über 50 lizenzgeprüfte Bilder, sieben Archivfilme und eine georeferenzierte Karte von 1949.", "hero.lede": "Ich erforsche die Geschichte Kameruns und baue schnelle, ehrliche Websites, die man auch auf einem günstigen Handy mit langsamer Verbindung lesen kann.", "about.p1": "Ich bin in Kamerun mit den Folgen einer Linie aufgewachsen, die 1916 von zwei europäischen Diplomaten gezogen wurde, die das Land kaum kannten. Diese Linie wurde mein erstes großes Projekt: <em>The Line</em>, eine digitale Geschichte, die ich selbst recherchiere, schreibe, gestalte und programmiere.", "exp3.h": "Karten &amp; Storytelling", "con.cvv": "Vollständigen Lebenslauf lesen", "lang.fr": "Französisch", "cs.close": "Fallstudie schließen", "chip.cite": "Chicago-Zitierweise", "p5.p": "Jeder Link, jede Quelle und Übersetzung geprüft; getestet auf echten Geräten, mit reduzierter Bewegung und langsamen Daten.", "con.email": "E-Mail", "line.sum": "Eine digitale Geschichte in neun Kapiteln über Teilung, Wiedervereinigung und koloniale Erinnerung Kameruns, von der deutschen Herrschaft 1884 bis zum Einheitsstaat 1972, und wie Afrika und Europa heute daran erinnern.", "chip.oral": "Oral History &amp; Einwilligung", "p6.p": "Veröffentlicht, dokumentiert und offen weiterentwickelt, nicht am Starttag vergessen.", "idx.ph": "Zu Abschnitt, Projekt oder Link springen…", "p4.h": "Entwicklung", "about.h": "Von einer Linie auf der Karte <em>zur</em> Lebensaufgabe.", "rec2.r": "GCE Advanced Level", "sig4": "Prüfungsaufgaben mit Lösung", "ex.out": "Eine zweisprachige Live-Plattform: 109 Aufgaben mit Lösungen, 28 Videos, zeitgesteuerte Probeprüfungen, Lernleitfäden, ein Lernplaner und ein IELTS-Rechner.", "p3.h": "Gestaltung", "rec1.p": "Sekundarschulabschluss.", "ex.les": "Übung bleibt Übung, nie ein offizielles Ergebnis. Klare Worte schlagen Hype.", "about.v5": "Offen für Webprojekte und Forschungskooperationen", "chip.scroll": "Scrollytelling", "nav.expertise": "Expertise", "con.pick": "Wählen Sie einen Kanal — jede Zeile ist ein Klick", "foot.top": "Nach oben", "idx.empty": "Keine Treffer", "hero.scroll": "Scrollen", "p4.p": "Schlanker, lesbarer Code: statisch, wo möglich, Frameworks nur, wo sie sich lohnen.", "chip.geo": "Georeferenzierung", "ex.role": "Produkt, Marke und Full-Stack-Entwicklung: das Konzept, die Identität „E als Globus“, die Next.js-App, die Inhaltsstruktur und die Veröffentlichung.", "lang.fr.s": "Fließend", "nav.contact": "Kontakt", "exp1.h": "Frontend-Entwicklung", "sig3": "Lizenzgeprüfte Archivbilder", "rec4.p": "Websites vom Entwurf bis zur Veröffentlichung: responsive Oberflächen, mobile Leistung, Publikationsabläufe. Darunter Examina Global.", "p3.p": "Typografie, Layout und Bewegung als ein System, für ein günstiges Handy und mehrere Sprachen gestaltet.", "about.k4": "Sprachen", "exp.label": "Expertise", "idx.links": "Links", "sig.label": "Kennzahlen", "exp4.p": "Konzepte, Budgets, Risikoregister und Markensysteme, ehrlich geplant, bevor eine Zeile Code entsteht.", "about.k5": "Status", "rec2.p": "Abschluss der Oberstufe, das Tor zur Universität.", "chip.svg": "SVG-Kartografie", "hero.place": "Yaoundé, Kamerun", "p2.h": "Struktur", "hero.r1": "Digitaler Historiker", "nav.distinctions": "Auszeichnungen", "exp2.p": "Primärquellen Wort für Wort gelesen, jedes Bild lizenzgeprüft, jede Unsicherheit offen gekennzeichnet.", "chip.arch": "Archivforschung", "exp.h": "Fähigkeiten mit <em>Quellen.</em>", "con.h": "Lassen Sie uns etwas bauen, das sich zu <em>lesen</em> lohnt.", "dis.h": "Belege, <em>keine</em> Versprechen.", "hero.cta2": "Kontakt aufnehmen", "exp2.h": "Digitale Geschichte &amp; Forschung", "proc.h": "Eine Methode, die auf <em>Belegen</em> beruht.", "nav.about": "Über mich", "chip.lic": "Bildlizenzen", "sig5": "Ausgewählte Lernvideos", "work.h": "Projekte, die Sie heute <em>öffnen</em> können.", "con.cv": "Lebenslauf", "rec.label": "Werdegang", "chip.budget": "Budgets in FCFA", "ex.ctx": "Schüler brauchen klaren Unterricht, ehrliches Üben und messbaren Fortschritt, in der Sprache ihrer Prüfung, auf dem Handy, das sie schon haben.", "lang.en": "Englisch", "sig.built": "Gebaut mit", "rec4.y": "Freiberuflich", "line.les": "Jedes Zitat prüfen, jedes Bild nennen und die Meinungsverschiedenheiten der Historiker fair darstellen.", "dis6": "2 Live-Plattformen · 3 Sprachen · 0 Tracker", "rec3.r": "Licence (B.A.) in Internationalen Beziehungen", "sig1": "Belegte Geschichtskapitel", "chip.a11y": "Barrierefreiheit", "dis5": "Entwickler — Examina Global, eine zweisprachige Lernplattform", "visit": "Website ansehen", "hero.fig": "Abb. 01 — Die Linie, 1916", "p2.p": "Inhalte, Architektur und Technik, schriftlich festgehalten und ehrlich geplant, bevor das Design beginnt.", "con.label": "Kontakt", "hero.r2": "Webentwickler", "exp3.p": "Handgebaute SVG-Karten und Scroll-Erzählungen, die Archive in etwas verwandeln, das man gern liest.", "sig2": "Historische Porträts", "dis3": "Licence (B.A.) in Internationalen Beziehungen — Universität Yaoundé I", "ex.sum": "Prüfungsvorbereitung für Schüler in Kamerun, die GCE, Baccalauréat und IELTS ablegen, auf Englisch und Französisch, nach Zweig geordnet.", "p1.p": "Ich beginne bei den Belegen und der eigentlichen Frage: Archive, Leser, Nutzer. Nichts wird erfunden.", "p6.h": "Start", "dis2": "Deutsch — GER-Stufen A1 und A2 abgeschlossen", "about.k2": "Studium", "cs.les": "Lehre", "work.live": "Online", "ex.kick": "Lernplattform · Produkt &amp; Entwicklung", "nav.record": "Werdegang", "sig.h": "Die Zahlen <em>hinter</em> der Arbeit.", "nav.process": "Arbeitsweise", "rec5.p": "Recherche, Texte und Programmierung einer digitalen Geschichte der Teilung und Wiedervereinigung Kameruns. Seit Oktober 2026.", "p5.h": "Prüfung", "cs.ctx": "Kontext", "chip.plan": "Roadmaps", "line.role": "Gründer, Forscher, Autor, Designer und Entwickler: Quellen, Kapitel, Karten, ein abhängigkeitsfreies Node-Build und die Veröffentlichung.", "_title": "Samuel Praise Etah — Digitaler Historiker & Webentwickler", "_copied": "Kopiert ✓", "_skip": "Zum Inhalt", "_menu": "Menü", "_theme": "Helles oder dunkles Design"}};
+  var lang = 'en';
+  function t(k) { var d = I18N[lang] || I18N.en; return d[k] != null ? d[k] : I18N.en[k]; }
+  function setLang(next, first) {
+    if (!I18N[next]) next = 'en';
+    lang = next;
+    root.setAttribute('lang', lang);
+    $$('[data-i18n]').forEach(function (el) { var v = t(el.getAttribute('data-i18n')); if (v != null) el.innerHTML = v; });
+    $$('[data-i18n-ph]').forEach(function (el) { el.setAttribute('placeholder', t(el.getAttribute('data-i18n-ph'))); });
+    document.title = t('_title');
+    $('.skip').textContent = t('_skip');
+    $('#menuBtn').setAttribute('aria-label', t('_menu'));
+    themeBtn.setAttribute('aria-label', t('_theme'));
+    $$('.lang button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
+    store('lang', lang);
+    if (!first) {
+      try {
         var u = new URL(location.href);
         if (lang === 'en') u.searchParams.delete('lang'); else u.searchParams.set('lang', lang);
         history.replaceState(null, '', u);
+      } catch (e) {}
+    }
+    if (!$('#palette').hidden) renderPalette($('#palInput').value);
+  }
+  $$('.lang button').forEach(function (b) { b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); }); });
+  var startLang = 'en';
+  try { startLang = new URLSearchParams(location.search).get('lang') || store('lang') || 'en'; } catch (e) {}
+  setLang(startLang, true);
+
+  // ---------- Menu ----------
+  var header = $('#hdr'), menuBtn = $('#menuBtn');
+  function closeMenu() { header.classList.remove('menu-open'); menuBtn.setAttribute('aria-expanded', 'false'); }
+  menuBtn.addEventListener('click', function () { menuBtn.setAttribute('aria-expanded', String(header.classList.toggle('menu-open'))); });
+  $$('#menu a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+
+  // ---------- Index palette ----------
+  var pal = $('#palette'), palInput = $('#palInput'), palList = $('#palList'), sel = 0, items = [];
+  function paletteItems() {
+    var secs = ['about', 'expertise', 'work', 'record', 'distinctions', 'process', 'contact'].map(function (id) {
+      return { g: t('idx.sec'), label: t('nav.' + id), hint: '#' + id, go: '#' + id };
+    });
+    secs.splice(6, 0, { g: t('idx.sec'), label: t('sig.label'), hint: '#signals', go: '#signals' });
+    return secs.concat([
+      { g: t('idx.proj'), label: 'The Line', hint: '01', go: '#the-line' },
+      { g: t('idx.proj'), label: 'Examina Global', hint: '02', go: '#examina' },
+      { g: t('idx.links'), label: 'the-line-eight.vercel.app', hint: '↗', go: 'https://the-line-eight.vercel.app/' },
+      { g: t('idx.links'), label: 'examina-global.vercel.app', hint: '↗', go: 'https://examina-global.vercel.app' },
+      { g: t('idx.links'), label: t('con.cv'), hint: '↗', go: 'https://the-line-eight.vercel.app/cv/' },
+      { g: t('idx.links'), label: 'GitHub', hint: '↗', go: 'https://github.com/samueletah54-art' },
+      { g: t('idx.links'), label: 'samueletah54@gmail.com', hint: '✉', go: 'mailto:samueletah54@gmail.com' }
+    ]);
+  }
+  function renderPalette(q) {
+    q = (q || '').toLowerCase().trim();
+    items = paletteItems().filter(function (it) { return !q || (it.label + ' ' + it.g).toLowerCase().indexOf(q) > -1; });
+    sel = Math.min(sel, Math.max(items.length - 1, 0));
+    var html = '', last = '';
+    items.forEach(function (it, i) {
+      if (it.g !== last) { html += '<li class="grp" role="presentation">' + it.g + '</li>'; last = it.g; }
+      html += '<li class="it' + (i === sel ? ' sel' : '') + '" role="option" aria-selected="' + (i === sel) + '" data-i="' + i + '"><span>' + it.label + '</span><small>' + it.hint + '</small></li>';
+    });
+    palList.innerHTML = html || '<li class="none">' + t('idx.empty') + '</li>';
+  }
+  function openPalette() { pal.hidden = false; sel = 0; palInput.value = ''; renderPalette(''); setTimeout(function () { palInput.focus(); }, 10); }
+  function closePalette() { pal.hidden = true; $('#idxBtn').focus({ preventScroll: true }); }
+  function choose(i) {
+    var it = items[i]; if (!it) return;
+    closePalette();
+    if (it.go.charAt(0) === '#') { var el = $(it.go); if (el) el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); }
+    else if (it.go.indexOf('mailto:') === 0) location.href = it.go;
+    else window.open(it.go, '_blank', 'noopener');
+  }
+  $('#idxBtn').addEventListener('click', openPalette);
+  palInput.addEventListener('input', function () { sel = 0; renderPalette(palInput.value); });
+  palList.addEventListener('click', function (e) { var li = e.target.closest('.it'); if (li) choose(+li.getAttribute('data-i')); });
+  pal.addEventListener('click', function (e) { if (e.target === pal) closePalette(); });
+  palInput.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (!items.length) return;
+      sel = (sel + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length;
+      renderPalette(palInput.value);
+      var s = $('.it.sel', palList); if (s) s.scrollIntoView({ block: 'nearest' });
+    } else if (e.key === 'Enter') { e.preventDefault(); choose(sel); }
+  });
+  addEventListener('keydown', function (e) {
+    var typing = /INPUT|TEXTAREA/.test((document.activeElement || {}).tagName || '');
+    if ((e.key === 'k' || e.key === 'K') && (e.ctrlKey || e.metaKey)) { e.preventDefault(); pal.hidden ? openPalette() : closePalette(); }
+    else if (e.key === '/' && !typing && pal.hidden) { e.preventDefault(); openPalette(); }
+    else if (e.key === 'Escape') { if (!pal.hidden) closePalette(); closeMenu(); }
+  });
+
+  // ---------- Clock ----------
+  try {
+    var fmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Douala' });
+    var tick = function () { var v = fmt.format(new Date()); $('#clock').textContent = v; $('#clock2').textContent = v; };
+    tick(); setInterval(tick, 15000);
+  } catch (e) {}
+  $('#yr').textContent = new Date().getFullYear();
+
+  // ---------- Starfield ----------
+  var stars = (function () {
+    var cv = $('#stars'), ctx = cv.getContext && cv.getContext('2d');
+    if (!ctx) return null;
+    var w, h, dpr, pts = [], rgb = '234,232,225', mx = 0, my = 0, run = true, raf;
+    function recolor() { rgb = getComputedStyle(root).getPropertyValue('--star').trim() || rgb; if (reduce) draw(0); }
+    function size() {
+      dpr = Math.min(devicePixelRatio || 1, 2); w = innerWidth; h = innerHeight;
+      cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.min(170, Math.round(w * h / 9000));
+      pts = [];
+      for (var i = 0; i < n; i++) pts.push({ x: Math.random() * w, y: Math.random() * h, r: Math.random() * 1.1 + .25, z: Math.random() * .8 + .2, p: Math.random() * 6.28, s: Math.random() * .02 + .005 });
+      if (reduce) draw(0);
+    }
+    function draw(time) {
+      ctx.clearRect(0, 0, w, h);
+      var sy = scrollY;
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i];
+        var a = reduce ? .5 : .25 + .55 * (0.5 + 0.5 * Math.sin(p.p + time * p.s * .06));
+        var x = p.x + mx * p.z * 14, y = (p.y - sy * p.z * .12 + my * p.z * 14) % h;
+        if (y < 0) y += h;
+        ctx.fillStyle = 'rgba(' + rgb + ',' + a.toFixed(3) + ')';
+        ctx.beginPath(); ctx.arc(x, y, p.r, 0, 6.283); ctx.fill();
       }
     }
-    document.querySelectorAll('.lang button').forEach(function (b) {
-      b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); });
-    });
-    var start = 'en';
-    try { start = new URLSearchParams(location.search).get('lang') || localStorage.getItem('lang') || 'en'; } catch (e) {}
-    setLang(start, true);
-
-    // ---- Mobile menu ----
-    var header = document.getElementById('hdr'), menuBtn = document.getElementById('menuBtn');
-    function closeMenu() { header.classList.remove('menu-open'); menuBtn.setAttribute('aria-expanded', 'false'); }
-    menuBtn.addEventListener('click', function () {
-      var open = header.classList.toggle('menu-open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-    });
-    document.querySelectorAll('#menu a').forEach(function (a) { a.addEventListener('click', closeMenu); });
-    addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
-
-    // ---- Progress bar ----
-    var bar = document.getElementById('progress'), ticking = false;
-    function setBar() {
-      var max = document.documentElement.scrollHeight - innerHeight;
-      bar.style.transform = 'scaleX(' + (max > 0 ? scrollY / max : 0) + ')';
-      ticking = false;
-    }
-    addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(setBar); } }, { passive: true });
-    setBar();
-
-    // ---- Hero ----
-    var clock = document.getElementById('clock');
-    try {
-      var fmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Africa/Douala' });
-      var tickClock = function () { clock.textContent = fmt.format(new Date()); };
-      tickClock(); setInterval(tickClock, 15000);
-    } catch (e) { clock.parentNode.style.display = 'none'; }
-
-    var r = 0;
+    function loop(time) { if (run) { draw(time); raf = requestAnimationFrame(loop); } }
+    size(); recolor();
+    addEventListener('resize', function () { clearTimeout(size.t); size.t = setTimeout(size, 150); });
     if (!reduce) {
-      setInterval(function () {
-        var roles = document.querySelectorAll('#rot > span');
-        if (roles.length < 2) return;
-        r = r % roles.length;
-        var cur = roles[r], nxt = roles[(r + 1) % roles.length];
-        roles.forEach(function (x) { if (x !== cur) x.classList.remove('on'); });
-        cur.classList.remove('on'); cur.classList.add('out');
-        nxt.classList.remove('out'); nxt.classList.add('on');
-        setTimeout(function () { cur.classList.remove('out'); }, 750);
-        r = (r + 1) % roles.length;
-      }, 2600);
-    }
-
-    var hero = document.querySelector('.hero'), map = document.getElementById('heroMap');
-    var fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
-    if (!reduce && fine) {
-      hero.addEventListener('pointermove', function (e) {
-        var b = hero.getBoundingClientRect();
-        map.style.setProperty('--px', ((e.clientX - b.left) / b.width - .5) * -24 + 'px');
-        map.style.setProperty('--py', ((e.clientY - b.top) / b.height - .5) * -24 + 'px');
-      });
-      hero.addEventListener('pointerleave', function () { map.style.setProperty('--px', '0px'); map.style.setProperty('--py', '0px'); });
-    }
-
-    // ---- Numbers ----
-    function runCount(el) {
-      var end = +el.getAttribute('data-count'), plus = el.hasAttribute('data-plus'), t0 = null, dur = 1400;
-      function step(ts) {
-        if (!t0) t0 = ts;
-        var k = Math.min(1, (ts - t0) / dur), v = Math.round(end * (1 - Math.pow(1 - k, 3)));
-        el.innerHTML = v + (plus ? '<sup>+</sup>' : '');
-        if (k < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    }
-
-    // ---- Header + timeline on scroll ----
-    var lastY = scrollY;
-    var tl = document.querySelector('.timeline'), tlItems = tl ? tl.querySelectorAll('li') : [];
-    function onScroll() {
-      var y = scrollY;
-      header.classList.toggle('scrolled', y > 8);
-      header.classList.toggle('hide', !reduce && !header.classList.contains('menu-open') && y > lastY && y > 400);
-      lastY = y;
-      if (tl) {
-        var b = tl.getBoundingClientRect(), mid = innerHeight * .65;
-        tl.style.setProperty('--tl', reduce ? 1 : Math.max(0, Math.min(1, (mid - b.top) / b.height)));
-        tlItems.forEach(function (li) { li.classList.toggle('done', reduce || li.getBoundingClientRect().top < mid); });
-      }
-    }
-    addEventListener('scroll', function () { requestAnimationFrame(onScroll); }, { passive: true });
-    onScroll();
-
-    // ---- Reveal, counters, active nav ----
-    var links = {};
-    document.querySelectorAll('#menu a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
-    var els = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window)) {
-      els.forEach(function (el) { el.classList.add('in'); });
-    } else {
-      var io = new IntersectionObserver(function (es) {
-        es.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          e.target.classList.add('in');
-          if (!reduce) e.target.querySelectorAll('[data-count]').forEach(runCount);
-          io.unobserve(e.target);
-        });
-      }, { threshold: 0.12 });
-      els.forEach(function (el) { io.observe(el); });
-
-      var nio = new IntersectionObserver(function (es) {
-        es.forEach(function (e) {
-          var a = links[e.target.id];
-          if (a && e.isIntersecting) {
-            Object.keys(links).forEach(function (k) { links[k].classList.remove('active'); });
-            a.classList.add('active');
-          }
-        });
-      }, { rootMargin: '-45% 0px -50% 0px' });
-      document.querySelectorAll('main section[id]').forEach(function (sct) { nio.observe(sct); });
-    }
-
-    // ---- Cards and buttons ----
-    if (fine) {
-      document.querySelectorAll('.project').forEach(function (c) {
-        c.addEventListener('pointermove', function (e) {
-          var b = c.getBoundingClientRect();
-          c.style.setProperty('--mx', (e.clientX - b.left) + 'px');
-          c.style.setProperty('--my', (e.clientY - b.top) + 'px');
-        });
-      });
-      if (!reduce) document.querySelectorAll('.magnetic').forEach(function (m) {
-        m.addEventListener('pointermove', function (e) {
-          var b = m.getBoundingClientRect();
-          m.style.transform = 'translate(' + (e.clientX - b.left - b.width / 2) * .25 + 'px,' + (e.clientY - b.top - b.height / 2) * .35 + 'px)';
-        });
-        m.addEventListener('pointerleave', function () { m.style.transform = ''; });
-      });
-    }
-
-    // ---- Contact ----
-    var copy = document.getElementById('copy');
-    copy.addEventListener('click', function () {
-      var mail = copy.getAttribute('data-email');
-      function done() { copy.textContent = t('_copied'); copy.classList.add('ok'); setTimeout(function () { copy.textContent = t('con.copy'); copy.classList.remove('ok'); }, 1800); }
-      if (navigator.clipboard) navigator.clipboard.writeText(mail).then(done, function () { location.href = 'mailto:' + mail; });
-      else location.href = 'mailto:' + mail;
-    });
-    document.getElementById('toTop').addEventListener('click', function () { scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
+      if (fine) addEventListener('pointermove', function (e) { mx = e.clientX / w - .5; my = e.clientY / h - .5; }, { passive: true });
+      document.addEventListener('visibilitychange', function () { run = !document.hidden; if (run) raf = requestAnimationFrame(loop); else cancelAnimationFrame(raf); });
+      raf = requestAnimationFrame(loop);
+    } else { addEventListener('scroll', function () { draw(0); }, { passive: true }); }
+    return { recolor: recolor };
   })();
+
+  // ---------- Cursor + frame tilt + magnetic ----------
+  if (fine && !reduce) {
+    var cur = $('#cursor'), cx = -100, cy = -100, tx = -100, ty = -100;
+    addEventListener('pointermove', function (e) { tx = e.clientX; ty = e.clientY; cur.classList.add('on'); }, { passive: true });
+    document.addEventListener('pointerleave', function () { cur.classList.remove('on'); });
+    (function follow() { cx += (tx - cx) * .2; cy += (ty - cy) * .2; cur.style.transform = 'translate(' + cx + 'px,' + cy + 'px)'; requestAnimationFrame(follow); })();
+    document.addEventListener('pointerover', function (e) { cur.classList.toggle('big', !!e.target.closest('a, button, .chips li, .case-toggle')); });
+
+    var frame = $('#frame'), fig = $('.fig');
+    fig.addEventListener('pointermove', function (e) {
+      var b = fig.getBoundingClientRect(), x = (e.clientX - b.left) / b.width - .5, y = (e.clientY - b.top) / b.height - .5;
+      frame.style.transform = 'perspective(900px) rotateY(' + x * 8 + 'deg) rotateX(' + -y * 8 + 'deg)';
+    });
+    fig.addEventListener('pointerleave', function () { frame.style.transform = ''; });
+
+    $$('.magnetic').forEach(function (m) {
+      m.addEventListener('pointermove', function (e) {
+        var b = m.getBoundingClientRect();
+        m.style.transform = 'translate(' + (e.clientX - b.left - b.width / 2) * .2 + 'px,' + (e.clientY - b.top - b.height / 2) * .3 + 'px)';
+      });
+      m.addEventListener('pointerleave', function () { m.style.transform = ''; });
+    });
+  }
+
+  // ---------- Scroll: progress + header ----------
+  var bar = $('#progress'), lastY = scrollY, ticking = false;
+  function onScroll() {
+    var y = scrollY, max = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? y / max : 0) + ')';
+    header.classList.toggle('scrolled', y > 10);
+    header.classList.toggle('hide', !reduce && !header.classList.contains('menu-open') && y > lastY && y > 500);
+    lastY = y; ticking = false;
+  }
+  addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+
+  // ---------- Reveal, counters, active nav ----------
+  function count(el) {
+    var end = +el.getAttribute('data-count'), plus = el.hasAttribute('data-plus'), t0 = null;
+    function step(ts) {
+      if (!t0) t0 = ts;
+      var k = Math.min(1, (ts - t0) / 1500);
+      el.textContent = Math.round(end * (1 - Math.pow(1 - k, 3))) + (plus ? '+' : '');
+      if (k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var links = {};
+  $$('#menu a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in');
+        if (!reduce) $$('[data-count]', e.target).forEach(count);
+        io.unobserve(e.target);
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+    $$('.reveal').forEach(function (el, i) { el.style.transitionDelay = (el.parentElement.children.length > 1 ? (Array.prototype.indexOf.call(el.parentElement.children, el) % 6) * .07 : 0) + 's'; io.observe(el); });
+    var nio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        Object.keys(links).forEach(function (k) { links[k].classList.toggle('active', k === e.target.id); });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    $$('main section[id]').forEach(function (s) { nio.observe(s); });
+  } else { $$('.reveal').forEach(function (el) { el.classList.add('in'); }); }
+
+  // ---------- Case studies ----------
+  $$('.case-toggle').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var panel = document.getElementById(b.getAttribute('aria-controls')), open = b.getAttribute('aria-expanded') !== 'true';
+      b.setAttribute('aria-expanded', String(open));
+      panel.hidden = !open;
+      var label = $('[data-i18n]', b);
+      label.setAttribute('data-i18n', open ? 'cs.close' : 'cs.open');
+      label.innerHTML = t(open ? 'cs.close' : 'cs.open');
+    });
+  });
+
+  // ---------- Contact ----------
+  var copy = $('#copy');
+  copy.addEventListener('click', function () {
+    var mail = copy.getAttribute('data-email');
+    function done() {
+      copy.textContent = t('_copied'); copy.classList.add('ok');
+      setTimeout(function () { copy.innerHTML = t('con.copy'); copy.classList.remove('ok'); }, 1800);
+    }
+    if (navigator.clipboard) navigator.clipboard.writeText(mail).then(done, function () { location.href = 'mailto:' + mail; });
+    else location.href = 'mailto:' + mail;
+  });
+  $('#toTop').addEventListener('click', function () { scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
+})();
+
 </script>
 </body>
 </html>
