@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Samuel Praise Etah — Digital historian &amp; web developer</title>
 <meta name="description" content="Samuel Praise Etah — digital historian and web developer from Yaoundé, Cameroon. The Line and Examina Global, in English, French and German.">
-<meta name="theme-color" content="#070707">
+<meta name="theme-color" content="#0c120f">
 <meta name="author" content="Samuel Praise Etah">
 <meta property="og:title" content="Samuel Praise Etah — Digital historian &amp; web developer">
 <meta property="og:description" content="I research Cameroon's past and build fast, honest websites for readers on low-cost phones.">
@@ -19,26 +19,28 @@
 <link rel="alternate" hreflang="en" href="https://samuel-etah.vercel.app/">
 <link rel="alternate" hreflang="fr" href="https://samuel-etah.vercel.app/?lang=fr">
 <link rel="alternate" hreflang="de" href="https://samuel-etah.vercel.app/?lang=de">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23070707'/%3E%3Ctext x='7' y='23' font-family='Arial' font-weight='700' font-size='18' fill='%23eae8e1'%3ES%3C/text%3E%3Ccircle cx='24' cy='21' r='3' fill='%23c9a878'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%230c120f'/%3E%3Cpath d='M18 3 C 22 10, 12 16, 16 22 S 13 28, 15 31' stroke='%23e0603f' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 <script>try{var th=localStorage.getItem('theme');if(th)document.documentElement.setAttribute('data-theme',th)}catch(e){}</script>
 <style>
   :root, :root[data-theme="dark"] {
-    --bg: #070707; --bg2: #0e0e0d; --ink: #eae8e1; --smoke: #8b887d; --silver: #5c5a53;
-    --line: rgba(234, 232, 225, .12); --line2: rgba(234, 232, 225, .22);
-    --accent: #c9a878; --accent-ink: #070707; --star: 234, 232, 225;
-    --grotesk: "Space Grotesk", system-ui, sans-serif;
-    --mono: "IBM Plex Mono", ui-monospace, monospace;
-    --serif: "Instrument Serif", Georgia, serif;
+    --bg: #0c120f; --bg2: #121a16; --ink: #efe9dc; --smoke: #9aa39a; --silver: #5d675f;
+    --line: rgba(239, 233, 220, .11); --line2: rgba(239, 233, 220, .22);
+    --accent: #e0603f; --accent-ink: #0c120f; --gold: #d9a441; --star: 239, 233, 220;
+    --paper: #efe7d4; --paper-ink: #2a2a22; --land: #3a4a40; --br: #c9a46a; --fr: #6f9fb8; --cm: #5fa173; --ng: #8f978f;
+    --grotesk: "Manrope", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+    --serif: "Fraunces", Georgia, serif;
     --max: 76rem;
     color-scheme: dark;
   }
   :root[data-theme="light"] {
-    --bg: #f2efe7; --bg2: #e9e5da; --ink: #131312; --smoke: #66625a; --silver: #9a958a;
-    --line: rgba(19, 19, 18, .12); --line2: rgba(19, 19, 18, .24);
-    --accent: #946f3c; --accent-ink: #f2efe7; --star: 19, 19, 18;
+    --bg: #f4efe4; --bg2: #ebe4d4; --ink: #14201a; --smoke: #5d665f; --silver: #9aa098;
+    --line: rgba(20, 32, 26, .12); --line2: rgba(20, 32, 26, .24);
+    --accent: #b8432a; --accent-ink: #f4efe4; --gold: #a87a1e; --star: 20, 32, 26;
+    --paper: #fffaf0; --paper-ink: #2a2a22; --land: #d9cfb6; --br: #d2a35a; --fr: #7fa8bf; --cm: #6aa77d; --ng: #a9a294;
     color-scheme: light;
   }
 
@@ -344,17 +346,148 @@
     section { padding: 2rem 0; break-inside: avoid; }
   }
 
+  /* ================= Identity layer: Samuel ================= */
+  body { font-family: var(--grotesk); }
+  h1, h2 { font-family: var(--serif); font-variation-settings: "opsz" 144; }
+  h1 { font-weight: 400; letter-spacing: -.035em; line-height: .95; }
+  h1 .w:nth-child(2) > span { font-style: italic; font-weight: 300; color: var(--accent); }
+  h2 { font-weight: 400; letter-spacing: -.03em; line-height: 1.02; }
+  h2 em, .foot-q em { font-weight: 300; }
+  em { font-family: var(--serif); font-variation-settings: "opsz" 144; }
+  .case h3, .tm-text h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -.02em; }
+  .dot { color: var(--accent); }
+
+  .logo { display: inline-flex; align-items: center; gap: .6rem; font: 500 1rem var(--serif); letter-spacing: -.01em; }
+  .logo i { font-style: italic; color: var(--accent); }
+  .mono-mark { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid var(--line2); font: 500 .62rem var(--mono); letter-spacing: .08em; transition: border-color .3s, transform .6s; }
+  .logo:hover .mono-mark { border-color: var(--accent); transform: rotate(-20deg); }
+
+  .btn, .box-btn, .lang, .icon-btn, .to-top, .copy, .tm-play { border-radius: 999px; }
+  .lang { overflow: hidden; }
+  .btn { padding: 0 1.5rem; }
+  .btn.solid { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.solid:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .lang button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+  .cv-btn { border-color: var(--line2); color: var(--ink); }
+  .cv-btn:hover { color: var(--accent); }
+  .pulse, .live-dot { background: #7bd389; }
+
+  .label .num { font-family: var(--serif); font-style: italic; font-size: .95rem; letter-spacing: .02em; text-transform: none; color: var(--accent); }
+  .label .bar { height: 2px; background: var(--accent); width: 1.6rem; }
+
+  .or-link { display: inline-flex; align-items: center; gap: .75rem; margin-top: 1.5rem; font: 400 .72rem var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--smoke); transition: color .3s; }
+  .or-line { width: 2rem; height: 1px; background: var(--accent); transition: width .4s cubic-bezier(.2,.8,.2,1); }
+  .or-link:hover { color: var(--ink); }
+  .or-link:hover .or-line { width: 3.5rem; }
+
+  /* Hero map card + stamp */
+  .card-fig { margin: 0; position: relative; justify-self: center; width: min(100%, 22rem); }
+  .card { position: relative; background: var(--paper); color: var(--paper-ink); padding: .9rem .9rem 1rem; transform: rotate(-2.2deg); box-shadow: 0 30px 60px -25px rgba(0,0,0,.55), 0 2px 0 rgba(0,0,0,.08); transition: transform .7s cubic-bezier(.2,.8,.2,1); }
+  .card::before { content: ""; position: absolute; left: 50%; top: -12px; width: 70px; height: 22px; transform: translateX(-50%) rotate(2deg); background: color-mix(in srgb, var(--gold) 45%, transparent); opacity: .7; }
+  .card-head { display: flex; justify-content: space-between; font: 500 .62rem var(--mono); letter-spacing: .16em; text-transform: uppercase; color: #6b6555; padding: 0 .15rem .6rem; border-bottom: 1px solid rgba(42,42,34,.18); margin-bottom: .6rem; }
+  .card-map { aspect-ratio: 300 / 420; color: #3c3b33; background: #f6efdc; }
+  .card-map svg { display: block; width: 100%; height: 100%; }
+  .card .f-grid { opacity: .12; }
+  .card .f-con { opacity: .3; }
+  .card .f-line { stroke: #c9472b; stroke-width: 2.6; }
+  .card .f-pin { fill: #c9472b; }
+  .card .f-ring { fill: none; stroke: #c9472b; }
+  .card-map text { fill: #5a5547; }
+  .card figcaption { margin-top: .65rem; font: 400 .62rem var(--mono); letter-spacing: .12em; text-transform: uppercase; color: #6b6555; display: block; }
+  .stamp { position: absolute; width: 7.5rem; height: 7.5rem; right: -2.2rem; bottom: -2.4rem; color: var(--accent); }
+  .st-text { transform-box: view-box; transform-origin: 60px 60px; animation: spin 26s linear infinite; }
+  .st-ring { fill: none; stroke: currentColor; stroke-width: 1; opacity: .7; }
+  .st-text { font: 600 8.6px var(--mono); letter-spacing: .14em; fill: currentColor; }
+  .st-mid { font: italic 500 20px var(--serif); fill: currentColor; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @media (max-width: 959px) { .stamp { right: -.8rem; bottom: -1.8rem; width: 6rem; height: 6rem; } }
+
+  /* Surveyor cursor */
+  .cursor { width: 26px; height: 26px; margin: -13px 0 0 -13px; border-color: color-mix(in srgb, var(--accent) 60%, transparent); }
+  .cursor .cross::before, .cursor .cross::after { content: ""; position: absolute; left: 50%; top: 50%; background: var(--accent); transform: translate(-50%, -50%); }
+  .cursor .cross::before { width: 5px; height: 1px; }
+  .cursor .cross::after { width: 1px; height: 5px; }
+  .cursor.big { width: 52px; height: 52px; margin: -26px 0 0 -26px; background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  .coords { position: fixed; left: 0; top: 0; z-index: 70; pointer-events: none; font: 400 .6rem var(--mono); letter-spacing: .08em; color: var(--accent); white-space: nowrap; opacity: 0; transition: opacity .3s; }
+  .coords.on { opacity: .85; }
+
+  /* Time machine */
+  .tm-intro { color: var(--smoke); max-width: 36rem; margin: -1.5rem 0 3rem; font-size: 1.08rem; }
+  .tm { display: grid; gap: 2.5rem; align-items: center; border: 1px solid var(--line); padding: clamp(1.25rem, 4vw, 3rem); background: color-mix(in srgb, var(--bg2) 70%, transparent); position: relative; }
+  @media (min-width: 900px) { .tm { grid-template-columns: minmax(0, .85fr) 1fr; gap: 4rem; } }
+  .tm-map { max-width: 22rem; width: 100%; justify-self: center; }
+  .tm-map svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .r { transition: fill .8s ease; fill: var(--land); }
+  .hatch-l { stroke: var(--ng); stroke-width: 2; }
+  .tm-outline { fill: none; stroke: var(--ink); stroke-width: 1.2; opacity: .6; }
+  .tm-line { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 470; stroke-dashoffset: 470; transition: stroke-dashoffset 1.2s cubic-bezier(.6,0,.2,1), opacity .6s, stroke-width .6s; }
+  .tm-split { stroke: var(--ink); stroke-width: 1.2; stroke-dasharray: 3 4; opacity: 0; transition: opacity .6s; }
+  .ml { font: 600 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; fill: var(--ink); opacity: 0; transition: opacity .6s; }
+  #tmMap[data-stage="0"] .ml-de { opacity: 1; }
+  #tmMap:not([data-stage="0"]) .tm-line { stroke-dashoffset: 0; }
+  #tmMap[data-stage="1"] .r-wn, #tmMap[data-stage="1"] .r-ws, #tmMap[data-stage="2"] .r-wn, #tmMap[data-stage="2"] .r-ws,
+  #tmMap[data-stage="3"] .r-wn, #tmMap[data-stage="3"] .r-ws, #tmMap[data-stage="4"] .r-wn, #tmMap[data-stage="4"] .r-ws { fill: var(--br); }
+  #tmMap[data-stage="1"] .r-east, #tmMap[data-stage="2"] .r-east, #tmMap[data-stage="3"] .r-east { fill: var(--fr); }
+  #tmMap[data-stage="1"] .ml-br, #tmMap[data-stage="2"] .ml-br, #tmMap[data-stage="3"] .ml-br, #tmMap[data-stage="4"] .ml-br,
+  #tmMap[data-stage="1"] .ml-fr, #tmMap[data-stage="2"] .ml-fr, #tmMap[data-stage="3"] .ml-fr { opacity: 1; }
+  #tmMap[data-stage="4"] .r-east, #tmMap[data-stage="5"] .r-east, #tmMap[data-stage="5"] .r-ws, #tmMap[data-stage="6"] .r-east, #tmMap[data-stage="6"] .r-ws { fill: var(--cm); }
+  #tmMap[data-stage="4"] .ml-cm, #tmMap[data-stage="5"] .ml-cm, #tmMap[data-stage="6"] .ml-cm { opacity: 1; }
+  #tmMap[data-stage="5"] .r-wn, #tmMap[data-stage="6"] .r-wn { fill: url(#hatch); }
+  #tmMap[data-stage="5"] .ml-ng, #tmMap[data-stage="6"] .ml-ng, #tmMap[data-stage="5"] .tm-split, #tmMap[data-stage="6"] .tm-split { opacity: 1; }
+  #tmMap[data-stage="5"] .tm-line { stroke-dasharray: 6 6; stroke-dashoffset: 0; stroke-width: 2.2; }
+  #tmMap[data-stage="6"] .tm-line { stroke-dasharray: 1 7; stroke-dashoffset: 0; opacity: .7; stroke-width: 2.2; }
+  .tm-note { margin: 1rem 0 0; font: 400 .64rem var(--mono); letter-spacing: .08em; color: var(--smoke); text-align: center; }
+  .tm-year { margin: 0; font: 300 clamp(4.5rem, 12vw, 8.5rem)/.9 var(--serif); font-variation-settings: "opsz" 144; letter-spacing: -.05em; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .tm-text { min-height: 9.5rem; margin: 1rem 0 1.5rem; }
+  .tm-text h3 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: .6rem; }
+  .tm-text p { margin: 0; color: var(--smoke); max-width: 30rem; }
+  .tm-text.swap { animation: fade-up .55s cubic-bezier(.2,.8,.2,1); }
+  .tm-controls { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+  .tm-play { flex: none; display: inline-flex; align-items: center; gap: .55rem; height: 2.4rem; padding: 0 1rem; border: 1px solid var(--line2); background: none; color: var(--ink); font: 500 .68rem var(--mono); letter-spacing: .14em; text-transform: uppercase; cursor: pointer; transition: border-color .25s; }
+  .tm-play:hover { border-color: var(--accent); }
+  .tm-ic { width: 0; height: 0; border-left: 8px solid var(--accent); border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+  .tm-play[aria-pressed="true"] .tm-ic { width: 8px; height: 10px; border: 0; border-left: 3px solid var(--accent); border-right: 3px solid var(--accent); }
+  #tmRange { flex: 1; min-width: 0; -webkit-appearance: none; appearance: none; height: 2px; background: linear-gradient(90deg, var(--accent) var(--p, 0%), var(--line2) var(--p, 0%)); cursor: pointer; }
+  #tmRange::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+  #tmRange::-moz-range-thumb { width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+  .tm-ticks { list-style: none; margin: 0 0 1.75rem; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+  .tm-ticks button { background: none; border: 1px solid var(--line); color: var(--smoke); font: 400 .7rem var(--mono); letter-spacing: .06em; padding: .3rem .55rem; border-radius: 999px; cursor: pointer; transition: border-color .25s, color .25s, background .25s; }
+  .tm-ticks button:hover { border-color: var(--accent); color: var(--ink); }
+  .tm-ticks button[aria-current="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  /* Footer */
+  .foot-top { display: grid; gap: 1rem; margin-bottom: 2.5rem; }
+  .foot-q { margin: 0; font: 300 clamp(2.4rem, 7vw, 5.5rem)/1 var(--serif); font-variation-settings: "opsz" 144; letter-spacing: -.035em; }
+  .foot-line { width: 100%; height: 40px; }
+  .foot-line path { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 700; stroke-dashoffset: 700; transition: stroke-dashoffset 2.4s cubic-bezier(.6,0,.2,1); }
+  footer.in .foot-line path { stroke-dashoffset: 0; }
+
+  .case-num, .exp-n, .yr, .step-n, .star { color: var(--accent); }
+  .step-n { font-family: var(--serif); font-weight: 300; }
+  .marquee span { font-family: var(--serif); font-style: italic; font-weight: 300; }
+  .shot img { filter: sepia(.25) saturate(.85); }
+  .case:hover .shot img { filter: none; }
+  ::selection { background: var(--accent); color: #fff; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .st-text { animation: none !important; }
+    .tm-line { transition: none; }
+    .foot-line path { stroke-dashoffset: 0; }
+    .coords { display: none; }
+  }
+
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
 <canvas id="stars" aria-hidden="true"></canvas>
-<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cross"></span></div>
+<div class="coords" id="coords" aria-hidden="true"></div>
 
 <header class="top" id="hdr">
   <div class="wrap bar-row">
-    <a class="logo" href="#top">SAMUEL ETAH<b>.</b></a>
+    <a class="logo" href="#top"><span class="mono-mark">SE</span>Samuel <i>Etah</i></a>
     <nav aria-label="Main">
       <ul id="menu">
         <li><a href="#about"><span data-i18n="nav.about">About</span></a></li>
@@ -390,11 +523,12 @@
           <a class="btn solid magnetic" href="#work"><span data-i18n="hero.cta1">Explore my work</span> <span aria-hidden="true">↓</span></a>
           <a class="btn line magnetic" href="#contact"><span data-i18n="hero.cta2">Get in touch</span> <span aria-hidden="true">↗</span></a>
         </div>
+        <a class="or-link seq" style="--d:1.2s" href="#explore"><span class="or-line"></span><span data-i18n="hero.or">or travel 1884 → 1972</span></a>
       </div>
-      <figure class="fig seq" style="--d:.4s">
-        <div class="frame" id="frame">
-          <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
-          <div class="frame-in">
+      <figure class="card-fig seq" style="--d:.4s">
+        <div class="card" id="frame">
+          <div class="card-head"><span>Kamerun, 1916</span><span>No. 01</span></div>
+          <div class="card-map">
             <svg viewBox="0 0 300 420" role="img" aria-label="Stylised survey map with the 1916 partition line">
               <defs><pattern id="g" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="currentColor"/></pattern></defs>
               <rect width="300" height="420" fill="url(#g)" class="f-grid"/>
@@ -408,8 +542,14 @@
               <text x="167" y="281" style="animation-delay:3s">1961</text>
             </svg>
           </div>
+          <figcaption><span data-i18n="card.cap">Cat. SPE-1916 · Partition line, schematic</span></figcaption>
         </div>
-        <figcaption><span data-i18n="hero.fig">Fig. 01 — The line, 1916</span><span>03°52′N 11°31′E</span></figcaption>
+        <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true">
+          <defs><path id="circ" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0"/></defs>
+          <circle cx="60" cy="60" r="57" class="st-ring"/><circle cx="60" cy="60" r="36" class="st-ring"/>
+          <text class="st-text"><textPath href="#circ" data-i18n="stamp">DIGITAL HISTORIAN ✦ WEB DEVELOPER ✦ YAOUNDÉ ✦ </textPath></text>
+          <text class="st-mid" x="60" y="66" text-anchor="middle">SPE</text>
+        </svg>
       </figure>
     </div>
     <a class="scroll-cue seq" style="--d:1.4s" href="#about"><span class="cue-line"></span><span data-i18n="hero.scroll">Scroll</span></a>
@@ -418,7 +558,7 @@
   <section id="about">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="label"><span class="num">01</span><span class="bar"></span><span data-i18n="about.label">About</span></p>
+        <p class="label"><span class="num">Pl. I</span><span class="bar"></span><span data-i18n="about.label">About</span></p>
         <h2><span data-i18n="about.h">From a line on a map <em>to</em> a life’s work.</span></h2>
       </div>
       <div class="about-grid">
@@ -440,7 +580,7 @@
   <section id="expertise">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="label"><span class="num">02</span><span class="bar"></span><span data-i18n="exp.label">Expertise</span></p>
+        <p class="label"><span class="num">Pl. II</span><span class="bar"></span><span data-i18n="exp.label">Expertise</span></p>
         <h2><span data-i18n="exp.h">Skills with <em>sources.</em></span></h2>
       </div>
       <ol class="exp">
@@ -462,7 +602,7 @@
   <section id="work">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="label"><span class="num">03</span><span class="bar"></span><span data-i18n="work.label">Selected work</span></p>
+        <p class="label"><span class="num">Pl. III</span><span class="bar"></span><span data-i18n="work.label">Selected work</span></p>
         <h2><span data-i18n="work.h">Work you can <em>open</em> today.</span></h2>
       </div>
       <div class="cases">
@@ -520,10 +660,59 @@
     </div>
   </section>
 
+  <section id="explore" class="explore">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="label"><span class="num">Pl. IV</span><span class="bar"></span><span data-i18n="tl.label">Time machine</span></p>
+        <h2><span data-i18n="tl.h">Drag through <em>a century.</em></span></h2>
+      </div>
+      <p class="tm-intro reveal"><span data-i18n="tl.p">A small preview of <em>The Line</em>: move from 1884 to 1972 and watch the map of Cameroon change.</span></p>
+      <div class="tm reveal">
+        <div class="tm-map">
+          <svg viewBox="0 0 300 420" id="tmMap" data-stage="0" role="img" aria-labelledby="tmTitle">
+            <defs>
+              <clipPath id="cW"><polygon points="0,0 197,0 186,52 172,100 154,150 130,200 112,240 98,280 86,320 74,360 66,420 0,420"/></clipPath>
+              <clipPath id="cE"><polygon points="300,0 197,0 186,52 172,100 154,150 130,200 112,240 98,280 86,320 74,360 66,420 300,420"/></clipPath>
+              <clipPath id="cN"><rect x="0" y="0" width="300" height="236"/></clipPath>
+              <clipPath id="cS"><rect x="0" y="236" width="300" height="200"/></clipPath>
+              <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="hatch-l"/></pattern>
+            </defs>
+            <g clip-path="url(#cE)"><path class="r r-east" d="M200 8 L222 22 L228 70 L238 118 L262 150 L290 215 L282 262 L292 318 L296 398 L232 402 L170 398 L112 408 L80 380 L64 348 L40 330 L56 300 L84 284 L104 252 L120 214 L150 170 L168 124 L182 78 L190 36 Z"/></g>
+            <g clip-path="url(#cW)"><g clip-path="url(#cN)"><path class="r r-wn" d="M200 8 L222 22 L228 70 L238 118 L262 150 L290 215 L282 262 L292 318 L296 398 L232 402 L170 398 L112 408 L80 380 L64 348 L40 330 L56 300 L84 284 L104 252 L120 214 L150 170 L168 124 L182 78 L190 36 Z"/></g><g clip-path="url(#cS)"><path class="r r-ws" d="M200 8 L222 22 L228 70 L238 118 L262 150 L290 215 L282 262 L292 318 L296 398 L232 402 L170 398 L112 408 L80 380 L64 348 L40 330 L56 300 L84 284 L104 252 L120 214 L150 170 L168 124 L182 78 L190 36 Z"/></g></g>
+            <g clip-path="url(#cW)"><line class="tm-split" x1="0" y1="236" x2="300" y2="236"/></g>
+            <path class="tm-outline" d="M200 8 L222 22 L228 70 L238 118 L262 150 L290 215 L282 262 L292 318 L296 398 L232 402 L170 398 L112 408 L80 380 L64 348 L40 330 L56 300 L84 284 L104 252 L120 214 L150 170 L168 124 L182 78 L190 36 Z"/>
+            <polyline class="tm-line" points="197,0 186,52 172,100 154,150 130,200 112,240 98,280 86,320 74,360 66,420"/>
+            <text class="ml ml-de" x="175" y="262" text-anchor="middle" data-i18n="map.de">German Kamerun</text>
+            <text class="ml ml-br" x="30" y="296" text-anchor="end" data-i18n="map.br">British</text>
+            <text class="ml ml-fr" x="200" y="262" text-anchor="middle" data-i18n="map.fr">French</text>
+            <text class="ml ml-ng" x="128" y="140" text-anchor="end" data-i18n="map.ng">to Nigeria</text>
+            <text class="ml ml-cm" x="190" y="262" text-anchor="middle" data-i18n="map.cm">Cameroon</text>
+          </svg>
+          <p class="tm-note"><span data-i18n="tl.note">Schematic map, not to scale. The full story, with sources, is on The Line.</span></p>
+        </div>
+        <div class="tm-panel">
+          <p class="tm-year" id="tmYear" aria-hidden="true">1884</p>
+          <div class="tm-text" aria-live="polite">
+            <h3 id="tmTitle">German protectorate</h3>
+            <p id="tmBody">Germany claims Kamerun after treaties with Duala rulers on the coast.</p>
+          </div>
+          <div class="tm-controls">
+            <button class="tm-play" id="tmPlay" type="button" aria-pressed="false"><span class="tm-ic" aria-hidden="true"></span><span id="tmPlayLabel" data-i18n="tl.play">Play</span></button>
+            <input type="range" id="tmRange" min="0" max="6" step="1" value="0" aria-label="Year" aria-valuetext="1884">
+          </div>
+          <ol class="tm-ticks" id="tmTicks">
+            <li><button type="button" data-i="0" aria-current="true">1884</button></li><li><button type="button" data-i="1">1916</button></li><li><button type="button" data-i="2">1922</button></li><li><button type="button" data-i="3">1946</button></li><li><button type="button" data-i="4">1960</button></li><li><button type="button" data-i="5">1961</button></li><li><button type="button" data-i="6">1972</button></li>
+          </ol>
+          <a class="arrow-link" href="https://the-line-eight.vercel.app/" target="_blank" rel="noopener"><span data-i18n="tl.more">Read the full story</span> <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="record">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="label"><span class="num">04</span><span class="bar"></span><span data-i18n="rec.label">Record</span></p>
+        <p class="label"><span class="num">Pl. V</span><span class="bar"></span><span data-i18n="rec.label">Record</span></p>
         <h2><span data-i18n="rec.h">A short record of <em>learning.</em></span></h2>
       </div>
       <ol class="record">
@@ -539,7 +728,7 @@
   <section id="distinctions">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="label"><span class="num">05</span><span class="bar"></span><span data-i18n="dis.label">Distinctions</span></p>
+        <p class="label"><span class="num">Pl. VI</span><span class="bar"></span><span data-i18n="dis.label">Distinctions</span></p>
         <h2><span data-i18n="dis.h">Proof, <em>not</em> promises.</span></h2>
       </div>
       <ul class="dist">
@@ -556,7 +745,7 @@
   <section id="process">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="label"><span class="num">06</span><span class="bar"></span><span data-i18n="proc.label">Process</span></p>
+        <p class="label"><span class="num">Pl. VII</span><span class="bar"></span><span data-i18n="proc.label">Process</span></p>
         <h2><span data-i18n="proc.h">A method built on <em>evidence.</em></span></h2>
       </div>
       <ol class="steps">
@@ -568,7 +757,7 @@
   <section id="signals">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="label"><span class="num">07</span><span class="bar"></span><span data-i18n="sig.label">Signals</span></p>
+        <p class="label"><span class="num">Pl. VIII</span><span class="bar"></span><span data-i18n="sig.label">In numbers</span></p>
         <h2><span data-i18n="sig.h">The numbers <em>behind</em> the work.</span></h2>
       </div>
       <div class="signals reveal">
@@ -587,7 +776,7 @@
   <section class="contact" id="contact">
     <div class="wrap">
       <div class="sec-head reveal">
-        <p class="label"><span class="num">08</span><span class="bar"></span><span data-i18n="con.label">Contact</span></p>
+        <p class="label"><span class="num">Pl. IX</span><span class="bar"></span><span data-i18n="con.label">Contact</span></p>
         <h2><span data-i18n="con.h">Let’s build something <em>worth</em> reading.</span></h2>
       </div>
       <div class="contact-grid">
@@ -612,11 +801,14 @@
 
 <footer>
   <div class="wrap">
-    <p class="foot-big" aria-hidden="true">Samuel Etah<b>.</b></p>
+    <div class="foot-top">
+      <p class="foot-q"><span data-i18n="foot.q">History, <em>built for the web.</em></span></p>
+      <svg class="foot-line" viewBox="0 0 600 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 C 80 5, 140 35, 220 20 S 360 4, 430 22 S 540 36, 600 18"/></svg>
+    </div>
     <div class="foot-row">
       <span>© <span id="yr">2026</span> Samuel Praise Etah — <span data-i18n="hero.place">Yaoundé, Cameroon</span></span>
       <span>03°52′N 11°31′E</span>
-      <span><span data-i18n="foot.made">Hand-built · no cookies, no tracking</span></span>
+      <span><span data-i18n="foot.col">Set in Fraunces, Manrope &amp; JetBrains Mono. Hand-built in Yaoundé.</span></span>
       <button class="to-top" id="toTop" type="button"><span data-i18n="foot.top">Back to top</span> ↑</button>
     </div>
   </div>
@@ -650,7 +842,7 @@
   });
 
   // ---------- Languages ----------
-  var I18N = {"en": {"about.v2": "Licence (BA), International Relations · University of Yaoundé I", "chip.risk": "Risk registers", "rec3.o": "University of Yaoundé I", "hero.r3": "International Relations graduate", "dis4": "Founder — <em>The Line</em>, a digital history of Cameroon", "foot.made": "Hand-built · no cookies, no tracking", "exp1.p": "Interfaces that load fast on low-end phones and read well in any language, from first sketch to deployed product.", "idx.sec": "Sections", "dis1": "IELTS — overall band 7 in English", "p1.h": "Sources", "about.k3": "Founder", "exp4.h": "Product &amp; brand", "rec4.o": "Clients &amp; independent projects", "sig6": "Languages on this site", "hdr.index": "Index", "cs.out": "Outcome", "about.p2": "I studied International Relations at the University of Yaoundé I and work as a freelance web developer, from design to deployment. I enjoy the building as much as the research: maps that draw themselves, timelines you can search, and pages that respect a reader’s data plan.", "con.p": "A history to tell, a site that should load anywhere, a platform to launch: tell me what you are building and who it is for.", "lang.de.s": "Intermediate · A2 completed", "lang.de": "German", "con.copy": "Copy", "nav.work": "Work", "hero.status": "Open to web projects &amp; research", "about.label": "About", "chip.brand": "Brand systems", "cs.role": "Role", "rec.cm": "Cameroon", "exp5.h": "Languages", "rec4.r": "Web developer", "rec1.r": "GCE Ordinary Level", "hero.cta1": "Explore my work", "about.v4": "English · French · German · Pidgin", "rec.h": "A short record of <em>learning.</em>", "con.time": "Local time in Yaoundé", "lang.en.s": "First language · IELTS 7", "rec3.y": "University", "dis.label": "Distinctions", "idx.proj": "Projects", "exp5.p": "Working across three European languages and Cameroonian Pidgin, for readers and clients on both sides of the line.", "cs.open": "View case study", "about.k1": "Base", "work.label": "Selected work", "rec3.p": "International relations, diplomacy and the history of decolonisation.", "rec5.r": "Founder, researcher &amp; developer", "line.ctx": "Cameroon’s partition and reunification still shape the country, yet most sources sit in archives, in two colonial languages, out of reach for readers at home.", "line.kick": "Digital history · Founder", "idx.hint": "↑↓ to move · Enter to open · Esc to close", "proc.label": "Process", "line.out": "A live site: 9 referenced chapters, 24 profiles, 50+ timeline events, 50+ licence-checked images, seven archive films and a georeferenced 1949 map.", "hero.lede": "I research Cameroon’s past and build fast, honest websites that people can read on a low-cost phone, on slow mobile data.", "about.p1": "Growing up in Cameroon, I have lived with the consequences of a line drawn in 1916 by two European diplomats who barely knew the land they divided. That line became my first serious project: <em>The Line</em>, a digital history I research, write, design and code myself.", "exp3.h": "Maps &amp; storytelling", "con.cvv": "Read the full CV", "lang.fr": "French", "cs.close": "Close case study", "chip.cite": "Chicago citations", "p5.p": "Every link, source and translation checked; tested on real devices, with reduced motion and slow data.", "con.email": "Email", "line.sum": "A nine-chapter digital history of Cameroon’s partition, reunification and colonial memory, from German rule in 1884 to the unitary state of 1972, and how Africa and Europe remember it today.", "chip.oral": "Oral history &amp; consent", "p6.p": "Deployed, documented and kept improving in the open, not abandoned on launch day.", "idx.ph": "Jump to a section, project or link…", "p4.h": "Build", "about.h": "From a line on a map <em>to</em> a life’s work.", "rec2.r": "GCE Advanced Level", "sig4": "Worked exam questions", "ex.out": "A live bilingual platform: 109 worked questions, 28 curated videos, timed mock exams, study guides, a revision planner and an IELTS band calculator.", "p3.h": "Design", "rec1.p": "Secondary school certificate.", "ex.les": "Practice is presented as practice, never as an official result. Plain words beat hype.", "about.v5": "Open to web projects and research collaborations", "chip.scroll": "Scrollytelling", "nav.expertise": "Expertise", "con.pick": "Pick a channel — every row is one click", "foot.top": "Back to top", "idx.empty": "No match", "hero.scroll": "Scroll", "p4.p": "Lean, readable code: static where possible, frameworks only where they earn their place.", "chip.geo": "Georeferencing", "ex.role": "Product, brand and full-stack build: the blueprint, the “E as a globe” identity, the Next.js app, content structure and deployment.", "lang.fr.s": "Fluent", "nav.contact": "Contact", "exp1.h": "Front-end engineering", "sig3": "Licence-checked archival images", "rec4.p": "Websites from design to deployment: responsive interfaces, mobile performance, publishing workflows. Includes Examina Global.", "p3.p": "Type, layout and motion as one system, designed for a low-cost phone and two or three languages.", "about.k4": "Languages", "exp.label": "Expertise", "idx.links": "Links", "sig.label": "Signals", "exp4.p": "Blueprints, budgets, risk registers and brand systems, scoped honestly before a line of code.", "about.k5": "Status", "rec2.p": "Upper secondary certificate, the gateway to university.", "chip.svg": "SVG cartography", "hero.place": "Yaoundé, Cameroon", "p2.h": "Structure", "hero.r1": "Digital historian", "nav.distinctions": "Distinctions", "exp2.p": "Primary sources read word for word, every image licence-checked and every uncertainty flagged in the open.", "chip.arch": "Archival research", "exp.h": "Skills with <em>sources.</em>", "con.h": "Let’s build something <em>worth</em> reading.", "dis.h": "Proof, <em>not</em> promises.", "hero.cta2": "Get in touch", "exp2.h": "Digital history &amp; research", "proc.h": "A method built on <em>evidence.</em>", "nav.about": "About", "chip.lic": "Image licensing", "sig5": "Curated lesson videos", "work.h": "Work you can <em>open</em> today.", "con.cv": "Curriculum vitae", "rec.label": "Record", "chip.budget": "Budgets in FCFA", "ex.ctx": "Students need clear teaching, honest practice and measurable progress, in the language of their exam, on the phone they already own.", "lang.en": "English", "sig.built": "Built with", "rec4.y": "Freelance", "line.les": "Verify every quotation, credit every image, and present historians’ disagreements fairly.", "dis6": "2 live platforms · 3 languages · 0 trackers", "rec3.r": "Licence (BA) in International Relations", "sig1": "Referenced history chapters", "chip.a11y": "Accessibility", "dis5": "Builder — Examina Global, a bilingual exam-prep platform", "visit": "Visit live site", "hero.fig": "Fig. 01 — The line, 1916", "p2.p": "Content, architecture and technology choices, written down and scoped honestly before design begins.", "con.label": "Contact", "hero.r2": "Web developer", "exp3.p": "Hand-built SVG maps and scroll-driven narratives that turn archives into something people want to read.", "sig2": "Historical profiles", "dis3": "Licence (BA) in International Relations — University of Yaoundé I", "ex.sum": "Exam preparation for students in Cameroon sitting the GCE, the Baccalauréat and IELTS, in English and French, organised by stream.", "p1.p": "I start from the evidence and the real question: archives, readers, users. Nothing is invented.", "p6.h": "Launch", "dis2": "German — CEFR levels A1 and A2 completed", "about.k2": "Education", "cs.les": "Lesson", "work.live": "Live", "ex.kick": "Education platform · Product &amp; build", "nav.record": "Record", "sig.h": "The numbers <em>behind</em> the work.", "nav.process": "Process", "rec5.p": "Researching, writing and coding a digital history of Cameroon’s partition and reunification. October 2026 to today.", "p5.h": "Verify", "cs.ctx": "Context", "chip.plan": "Roadmaps", "line.role": "Founder, researcher, writer, designer and developer: sources, chapters, maps, a zero-dependency Node build and deployment.", "_title": "Samuel Praise Etah — Digital historian & web developer", "_copied": "Copied ✓", "_skip": "Skip to content", "_menu": "Menu", "_theme": "Switch light or dark theme"}, "fr": {"about.v2": "Licence en relations internationales · Université de Yaoundé I", "chip.risk": "Registres des risques", "rec3.o": "Université de Yaoundé I", "hero.r3": "Diplômé en relations internationales", "dis4": "Fondateur — <em>The Line</em>, une histoire numérique du Cameroun", "foot.made": "Fait main · sans cookies ni pistage", "exp1.p": "Des interfaces rapides sur téléphones modestes et lisibles dans toutes les langues, de l’esquisse au produit en ligne.", "idx.sec": "Sections", "dis1": "IELTS — score global de 7 en anglais", "p1.h": "Sources", "about.k3": "Fondateur", "exp4.h": "Produit &amp; marque", "rec4.o": "Clients &amp; projets personnels", "sig6": "Langues sur ce site", "hdr.index": "Index", "cs.out": "Résultat", "about.p2": "J’ai étudié les relations internationales à l’Université de Yaoundé I et je travaille comme développeur web indépendant, de la conception au déploiement. J’aime autant construire que chercher : des cartes qui se dessinent seules, des frises consultables, des pages qui respectent le forfait du lecteur.", "con.p": "Une histoire à raconter, un site qui doit charger partout, une plateforme à lancer : dites-moi ce que vous construisez et pour qui.", "lang.de.s": "Intermédiaire · A2 validé", "lang.de": "Allemand", "con.copy": "Copier", "nav.work": "Travaux", "hero.status": "Disponible : web &amp; recherche", "about.label": "À propos", "chip.brand": "Identités visuelles", "cs.role": "Rôle", "rec.cm": "Cameroun", "exp5.h": "Langues", "rec4.r": "Développeur web", "rec1.r": "GCE Ordinary Level", "hero.cta1": "Voir mes travaux", "about.v4": "Anglais · Français · Allemand · Pidgin", "rec.h": "Un court récit d’<em>apprentissage.</em>", "con.time": "Heure locale à Yaoundé", "lang.en.s": "Langue maternelle · IELTS 7", "rec3.y": "Université", "dis.label": "Distinctions", "idx.proj": "Projets", "exp5.p": "Je travaille dans trois langues européennes et en pidgin camerounais, pour des lecteurs des deux côtés de la ligne.", "cs.open": "Voir l’étude de cas", "about.k1": "Base", "work.label": "Travaux choisis", "rec3.p": "Relations internationales, diplomatie et histoire de la décolonisation.", "rec5.r": "Fondateur, chercheur &amp; développeur", "line.ctx": "Le partage et la réunification façonnent encore le Cameroun, mais la plupart des sources dorment dans des archives, en deux langues coloniales, hors de portée des lecteurs du pays.", "line.kick": "Histoire numérique · Fondateur", "idx.hint": "↑↓ pour naviguer · Entrée pour ouvrir · Échap pour fermer", "proc.label": "Méthode", "line.out": "Un site en ligne : 9 chapitres référencés, 24 portraits, plus de 50 événements, plus de 50 images aux licences vérifiées, sept films d’archives et une carte de 1949 géoréférencée.", "hero.lede": "Je fais des recherches sur l’histoire du Cameroun et je crée des sites rapides et honnêtes, lisibles sur un téléphone bon marché, même avec une connexion lente.", "about.p1": "J’ai grandi au Cameroun avec les conséquences d’une ligne tracée en 1916 par deux diplomates européens qui connaissaient à peine la terre qu’ils divisaient. Cette ligne est devenue mon premier grand projet : <em>The Line</em>, une histoire numérique que je recherche, rédige, conçois et code moi-même.", "exp3.h": "Cartes &amp; récits", "con.cvv": "Lire le CV complet", "lang.fr": "Français", "cs.close": "Fermer l’étude de cas", "chip.cite": "Citations Chicago", "p5.p": "Chaque lien, source et traduction vérifiés ; tests sur de vrais appareils, animations réduites et données lentes.", "con.email": "Courriel", "line.sum": "Une histoire numérique en neuf chapitres du partage, de la réunification et de la mémoire coloniale du Cameroun, de la domination allemande en 1884 à l’État unitaire de 1972, et de la façon dont l’Afrique et l’Europe s’en souviennent.", "chip.oral": "Histoire orale &amp; consentement", "p6.p": "Déployé, documenté et amélioré en continu, pas abandonné le jour du lancement.", "idx.ph": "Aller à une section, un projet ou un lien…", "p4.h": "Développement", "about.h": "D’une ligne sur une carte <em>à</em> l’œuvre d’une vie.", "rec2.r": "GCE Advanced Level", "sig4": "Questions d’examen corrigées", "ex.out": "Une plateforme bilingue en ligne : 109 questions corrigées, 28 vidéos, des examens blancs chronométrés, des guides, un planning de révision et un calculateur IELTS.", "p3.h": "Design", "rec1.p": "Certificat d’études secondaires.", "ex.les": "Un exercice reste un exercice, jamais un résultat officiel. Les mots simples valent mieux que le battage.", "about.v5": "Disponible pour projets web et collaborations de recherche", "chip.scroll": "Récits au défilement", "nav.expertise": "Expertise", "con.pick": "Choisissez un canal — chaque ligne est un clic", "foot.top": "Haut de page", "idx.empty": "Aucun résultat", "hero.scroll": "Défiler", "p4.p": "Un code sobre et lisible : statique si possible, des frameworks seulement s’ils sont utiles.", "chip.geo": "Géoréférencement", "ex.role": "Produit, marque et développement complet : le cahier des charges, l’identité « E en globe », l’application Next.js, la structure des contenus et le déploiement.", "lang.fr.s": "Courant", "nav.contact": "Contact", "exp1.h": "Ingénierie front-end", "sig3": "Images d’archives vérifiées", "rec4.p": "Des sites de la conception au déploiement : interfaces adaptatives, performance mobile, chaînes de publication. Dont Examina Global.", "p3.p": "Typographie, mise en page et animation comme un seul système, pensés pour un téléphone modeste et plusieurs langues.", "about.k4": "Langues", "exp.label": "Expertise", "idx.links": "Liens", "sig.label": "Repères", "exp4.p": "Cahiers des charges, budgets, registres des risques et identités visuelles, cadrés honnêtement avant de coder.", "about.k5": "Statut", "rec2.p": "Certificat de fin d’études secondaires, la porte de l’université.", "chip.svg": "Cartographie SVG", "hero.place": "Yaoundé, Cameroun", "p2.h": "Structure", "hero.r1": "Historien du numérique", "nav.distinctions": "Distinctions", "exp2.p": "Des sources primaires lues mot à mot, chaque image vérifiée, chaque incertitude signalée ouvertement.", "chip.arch": "Recherche d’archives", "exp.h": "Des compétences <em>sourcées.</em>", "con.h": "Construisons quelque chose qui <em>mérite</em> d’être lu.", "dis.h": "Des preuves, <em>pas</em> des promesses.", "hero.cta2": "Me contacter", "exp2.h": "Histoire numérique &amp; recherche", "proc.h": "Une méthode fondée sur les <em>preuves.</em>", "nav.about": "À propos", "chip.lic": "Licences d’images", "sig5": "Vidéos de cours sélectionnées", "work.h": "Des travaux à <em>ouvrir</em> dès aujourd’hui.", "con.cv": "Curriculum vitae", "rec.label": "Parcours", "chip.budget": "Budgets en FCFA", "ex.ctx": "Les élèves ont besoin d’un enseignement clair, d’exercices honnêtes et de progrès mesurables, dans la langue de leur examen, sur le téléphone qu’ils ont déjà.", "lang.en": "Anglais", "sig.built": "Construit avec", "rec4.y": "Indépendant", "line.les": "Vérifier chaque citation, créditer chaque image et présenter honnêtement les désaccords entre historiens.", "dis6": "2 plateformes en ligne · 3 langues · 0 traceur", "rec3.r": "Licence en relations internationales", "sig1": "Chapitres d’histoire référencés", "chip.a11y": "Accessibilité", "dis5": "Créateur — Examina Global, une plateforme bilingue de préparation aux examens", "visit": "Voir le site", "hero.fig": "Fig. 01 — La ligne, 1916", "p2.p": "Contenus, architecture et choix techniques, écrits et cadrés honnêtement avant le design.", "con.label": "Contact", "hero.r2": "Développeur web", "exp3.p": "Des cartes SVG faites main et des récits au défilement qui rendent les archives captivantes.", "sig2": "Portraits historiques", "dis3": "Licence en relations internationales — Université de Yaoundé I", "ex.sum": "La préparation aux examens pour les élèves du Cameroun qui passent le GCE, le Baccalauréat et l’IELTS, en anglais et en français, organisée par filière.", "p1.p": "Je pars des preuves et de la vraie question : archives, lecteurs, utilisateurs. Rien n’est inventé.", "p6.h": "Lancement", "dis2": "Allemand — niveaux A1 et A2 du CECRL validés", "about.k2": "Formation", "cs.les": "Leçon", "work.live": "En ligne", "ex.kick": "Plateforme éducative · Produit &amp; développement", "nav.record": "Parcours", "sig.h": "Les chiffres <em>derrière</em> le travail.", "nav.process": "Méthode", "rec5.p": "Recherche, rédaction et développement d’une histoire numérique du partage et de la réunification du Cameroun. Depuis octobre 2026.", "p5.h": "Vérification", "cs.ctx": "Contexte", "chip.plan": "Feuilles de route", "line.role": "Fondateur, chercheur, auteur, designer et développeur : sources, chapitres, cartes, générateur Node sans dépendance et déploiement.", "_title": "Samuel Praise Etah — Historien du numérique & développeur web", "_copied": "Copié ✓", "_skip": "Aller au contenu", "_menu": "Menu", "_theme": "Basculer thème clair ou sombre"}, "de": {"about.v2": "Licence (B.A.), Internationale Beziehungen · Universität Yaoundé I", "chip.risk": "Risikoregister", "rec3.o": "Universität Yaoundé I", "hero.r3": "Absolvent Internationale Beziehungen", "dis4": "Gründer — <em>The Line</em>, eine digitale Geschichte Kameruns", "foot.made": "Handgemacht · keine Cookies, kein Tracking", "exp1.p": "Oberflächen, die auf einfachen Handys schnell laden und in jeder Sprache gut lesbar sind, von der Skizze bis zum fertigen Produkt.", "idx.sec": "Abschnitte", "dis1": "IELTS — Gesamtband 7 in Englisch", "p1.h": "Quellen", "about.k3": "Gründer", "exp4.h": "Produkt &amp; Marke", "rec4.o": "Kunden &amp; eigene Projekte", "sig6": "Sprachen auf dieser Website", "hdr.index": "Index", "cs.out": "Ergebnis", "about.p2": "Ich habe Internationale Beziehungen an der Universität Yaoundé I studiert und arbeite als freiberuflicher Webentwickler, vom Entwurf bis zur Veröffentlichung. Das Bauen macht mir so viel Freude wie die Forschung: Karten, die sich selbst zeichnen, durchsuchbare Zeitleisten und Seiten, die das Datenvolumen der Leser respektieren.", "con.p": "Eine Geschichte, die erzählt werden will, eine Website, die überall laden soll, eine Plattform zum Start: Erzählen Sie mir, was Sie bauen und für wen.", "lang.de.s": "Mittelstufe · A2 abgeschlossen", "lang.de": "Deutsch", "con.copy": "Kopieren", "nav.work": "Projekte", "hero.status": "Offen für Web &amp; Forschung", "about.label": "Über mich", "chip.brand": "Markensysteme", "cs.role": "Rolle", "rec.cm": "Kamerun", "exp5.h": "Sprachen", "rec4.r": "Webentwickler", "rec1.r": "GCE Ordinary Level", "hero.cta1": "Projekte ansehen", "about.v4": "Englisch · Französisch · Deutsch · Pidgin", "rec.h": "Eine kurze Geschichte des <em>Lernens.</em>", "con.time": "Ortszeit in Yaoundé", "lang.en.s": "Muttersprache · IELTS 7", "rec3.y": "Universität", "dis.label": "Auszeichnungen", "idx.proj": "Projekte", "exp5.p": "Ich arbeite in drei europäischen Sprachen und in kamerunischem Pidgin, für Leser auf beiden Seiten der Linie.", "cs.open": "Fallstudie ansehen", "about.k1": "Standort", "work.label": "Ausgewählte Projekte", "rec3.p": "Internationale Beziehungen, Diplomatie und die Geschichte der Dekolonisierung.", "rec5.r": "Gründer, Forscher &amp; Entwickler", "line.ctx": "Teilung und Wiedervereinigung prägen Kamerun bis heute, doch die meisten Quellen liegen in Archiven, in zwei Kolonialsprachen, außer Reichweite der Leser im Land.", "line.kick": "Digitale Geschichte · Gründer", "idx.hint": "↑↓ bewegen · Enter öffnen · Esc schließen", "proc.label": "Arbeitsweise", "line.out": "Eine Live-Website: 9 belegte Kapitel, 24 Porträts, über 50 Ereignisse, über 50 lizenzgeprüfte Bilder, sieben Archivfilme und eine georeferenzierte Karte von 1949.", "hero.lede": "Ich erforsche die Geschichte Kameruns und baue schnelle, ehrliche Websites, die man auch auf einem günstigen Handy mit langsamer Verbindung lesen kann.", "about.p1": "Ich bin in Kamerun mit den Folgen einer Linie aufgewachsen, die 1916 von zwei europäischen Diplomaten gezogen wurde, die das Land kaum kannten. Diese Linie wurde mein erstes großes Projekt: <em>The Line</em>, eine digitale Geschichte, die ich selbst recherchiere, schreibe, gestalte und programmiere.", "exp3.h": "Karten &amp; Storytelling", "con.cvv": "Vollständigen Lebenslauf lesen", "lang.fr": "Französisch", "cs.close": "Fallstudie schließen", "chip.cite": "Chicago-Zitierweise", "p5.p": "Jeder Link, jede Quelle und Übersetzung geprüft; getestet auf echten Geräten, mit reduzierter Bewegung und langsamen Daten.", "con.email": "E-Mail", "line.sum": "Eine digitale Geschichte in neun Kapiteln über Teilung, Wiedervereinigung und koloniale Erinnerung Kameruns, von der deutschen Herrschaft 1884 bis zum Einheitsstaat 1972, und wie Afrika und Europa heute daran erinnern.", "chip.oral": "Oral History &amp; Einwilligung", "p6.p": "Veröffentlicht, dokumentiert und offen weiterentwickelt, nicht am Starttag vergessen.", "idx.ph": "Zu Abschnitt, Projekt oder Link springen…", "p4.h": "Entwicklung", "about.h": "Von einer Linie auf der Karte <em>zur</em> Lebensaufgabe.", "rec2.r": "GCE Advanced Level", "sig4": "Prüfungsaufgaben mit Lösung", "ex.out": "Eine zweisprachige Live-Plattform: 109 Aufgaben mit Lösungen, 28 Videos, zeitgesteuerte Probeprüfungen, Lernleitfäden, ein Lernplaner und ein IELTS-Rechner.", "p3.h": "Gestaltung", "rec1.p": "Sekundarschulabschluss.", "ex.les": "Übung bleibt Übung, nie ein offizielles Ergebnis. Klare Worte schlagen Hype.", "about.v5": "Offen für Webprojekte und Forschungskooperationen", "chip.scroll": "Scrollytelling", "nav.expertise": "Expertise", "con.pick": "Wählen Sie einen Kanal — jede Zeile ist ein Klick", "foot.top": "Nach oben", "idx.empty": "Keine Treffer", "hero.scroll": "Scrollen", "p4.p": "Schlanker, lesbarer Code: statisch, wo möglich, Frameworks nur, wo sie sich lohnen.", "chip.geo": "Georeferenzierung", "ex.role": "Produkt, Marke und Full-Stack-Entwicklung: das Konzept, die Identität „E als Globus“, die Next.js-App, die Inhaltsstruktur und die Veröffentlichung.", "lang.fr.s": "Fließend", "nav.contact": "Kontakt", "exp1.h": "Frontend-Entwicklung", "sig3": "Lizenzgeprüfte Archivbilder", "rec4.p": "Websites vom Entwurf bis zur Veröffentlichung: responsive Oberflächen, mobile Leistung, Publikationsabläufe. Darunter Examina Global.", "p3.p": "Typografie, Layout und Bewegung als ein System, für ein günstiges Handy und mehrere Sprachen gestaltet.", "about.k4": "Sprachen", "exp.label": "Expertise", "idx.links": "Links", "sig.label": "Kennzahlen", "exp4.p": "Konzepte, Budgets, Risikoregister und Markensysteme, ehrlich geplant, bevor eine Zeile Code entsteht.", "about.k5": "Status", "rec2.p": "Abschluss der Oberstufe, das Tor zur Universität.", "chip.svg": "SVG-Kartografie", "hero.place": "Yaoundé, Kamerun", "p2.h": "Struktur", "hero.r1": "Digitaler Historiker", "nav.distinctions": "Auszeichnungen", "exp2.p": "Primärquellen Wort für Wort gelesen, jedes Bild lizenzgeprüft, jede Unsicherheit offen gekennzeichnet.", "chip.arch": "Archivforschung", "exp.h": "Fähigkeiten mit <em>Quellen.</em>", "con.h": "Lassen Sie uns etwas bauen, das sich zu <em>lesen</em> lohnt.", "dis.h": "Belege, <em>keine</em> Versprechen.", "hero.cta2": "Kontakt aufnehmen", "exp2.h": "Digitale Geschichte &amp; Forschung", "proc.h": "Eine Methode, die auf <em>Belegen</em> beruht.", "nav.about": "Über mich", "chip.lic": "Bildlizenzen", "sig5": "Ausgewählte Lernvideos", "work.h": "Projekte, die Sie heute <em>öffnen</em> können.", "con.cv": "Lebenslauf", "rec.label": "Werdegang", "chip.budget": "Budgets in FCFA", "ex.ctx": "Schüler brauchen klaren Unterricht, ehrliches Üben und messbaren Fortschritt, in der Sprache ihrer Prüfung, auf dem Handy, das sie schon haben.", "lang.en": "Englisch", "sig.built": "Gebaut mit", "rec4.y": "Freiberuflich", "line.les": "Jedes Zitat prüfen, jedes Bild nennen und die Meinungsverschiedenheiten der Historiker fair darstellen.", "dis6": "2 Live-Plattformen · 3 Sprachen · 0 Tracker", "rec3.r": "Licence (B.A.) in Internationalen Beziehungen", "sig1": "Belegte Geschichtskapitel", "chip.a11y": "Barrierefreiheit", "dis5": "Entwickler — Examina Global, eine zweisprachige Lernplattform", "visit": "Website ansehen", "hero.fig": "Abb. 01 — Die Linie, 1916", "p2.p": "Inhalte, Architektur und Technik, schriftlich festgehalten und ehrlich geplant, bevor das Design beginnt.", "con.label": "Kontakt", "hero.r2": "Webentwickler", "exp3.p": "Handgebaute SVG-Karten und Scroll-Erzählungen, die Archive in etwas verwandeln, das man gern liest.", "sig2": "Historische Porträts", "dis3": "Licence (B.A.) in Internationalen Beziehungen — Universität Yaoundé I", "ex.sum": "Prüfungsvorbereitung für Schüler in Kamerun, die GCE, Baccalauréat und IELTS ablegen, auf Englisch und Französisch, nach Zweig geordnet.", "p1.p": "Ich beginne bei den Belegen und der eigentlichen Frage: Archive, Leser, Nutzer. Nichts wird erfunden.", "p6.h": "Start", "dis2": "Deutsch — GER-Stufen A1 und A2 abgeschlossen", "about.k2": "Studium", "cs.les": "Lehre", "work.live": "Online", "ex.kick": "Lernplattform · Produkt &amp; Entwicklung", "nav.record": "Werdegang", "sig.h": "Die Zahlen <em>hinter</em> der Arbeit.", "nav.process": "Arbeitsweise", "rec5.p": "Recherche, Texte und Programmierung einer digitalen Geschichte der Teilung und Wiedervereinigung Kameruns. Seit Oktober 2026.", "p5.h": "Prüfung", "cs.ctx": "Kontext", "chip.plan": "Roadmaps", "line.role": "Gründer, Forscher, Autor, Designer und Entwickler: Quellen, Kapitel, Karten, ein abhängigkeitsfreies Node-Build und die Veröffentlichung.", "_title": "Samuel Praise Etah — Digitaler Historiker & Webentwickler", "_copied": "Kopiert ✓", "_skip": "Zum Inhalt", "_menu": "Menü", "_theme": "Helles oder dunkles Design"}};
+  var I18N = {"en": {"tl3.t": "UN trusteeship", "chip.budget": "Budgets in FCFA", "dis1": "IELTS — overall band 7 in English", "chip.cite": "Chicago citations", "work.h": "Work you can <em>open</em> today.", "tl.note": "Schematic map, not to scale. The full story, with sources, is on The Line.", "rec.cm": "Cameroon", "about.k3": "Founder", "foot.top": "Back to top", "ex.out": "A live bilingual platform: 109 worked questions, 28 curated videos, timed mock exams, study guides, a revision planner and an IELTS band calculator.", "rec3.o": "University of Yaoundé I", "nav.record": "Record", "rec3.y": "University", "ex.sum": "Exam preparation for students in Cameroon sitting the GCE, the Baccalauréat and IELTS, in English and French, organised by stream.", "exp4.p": "Blueprints, budgets, risk registers and brand systems, scoped honestly before a line of code.", "rec1.p": "Secondary school certificate.", "map.de": "German Kamerun", "rec1.r": "GCE Ordinary Level", "rec2.p": "Upper secondary certificate, the gateway to university.", "p2.h": "Structure", "cs.role": "Role", "hero.r2": "Web developer", "chip.svg": "SVG cartography", "exp4.h": "Product &amp; brand", "sig4": "Worked exam questions", "rec3.p": "International relations, diplomacy and the history of decolonisation.", "con.cv": "Curriculum vitae", "ex.les": "Practice is presented as practice, never as an official result. Plain words beat hype.", "about.p2": "I studied International Relations at the University of Yaoundé I and work as a freelance web developer, from design to deployment. I enjoy the building as much as the research: maps that draw themselves, timelines you can search, and pages that respect a reader’s data plan.", "con.pick": "Pick a channel — every row is one click", "sig2": "Historical profiles", "chip.geo": "Georeferencing", "chip.risk": "Risk registers", "rec3.r": "Licence (BA) in International Relations", "exp1.h": "Front-end engineering", "nav.expertise": "Expertise", "lang.de": "German", "rec4.y": "Freelance", "nav.process": "Process", "line.out": "A live site: 9 referenced chapters, 24 profiles, 50+ timeline events, 50+ licence-checked images, seven archive films and a georeferenced 1949 map.", "tl.label": "Time machine", "exp2.p": "Primary sources read word for word, every image licence-checked and every uncertainty flagged in the open.", "idx.empty": "No match", "hero.r3": "International Relations graduate", "exp1.p": "Interfaces that load fast on low-end phones and read well in any language, from first sketch to deployed product.", "dis.label": "Distinctions", "con.time": "Local time in Yaoundé", "dis.h": "Proof, <em>not</em> promises.", "tl0.t": "German protectorate", "visit": "Visit live site", "p6.p": "Deployed, documented and kept improving in the open, not abandoned on launch day.", "about.k2": "Education", "dis2": "German — CEFR levels A1 and A2 completed", "lang.fr.s": "Fluent", "map.ng": "to Nigeria", "ex.kick": "Education platform · Product &amp; build", "p6.h": "Launch", "hero.scroll": "Scroll", "about.v5": "Open to web projects and research collaborations", "chip.a11y": "Accessibility", "map.br": "British", "tl.more": "Read the full story", "p1.p": "I start from the evidence and the real question: archives, readers, users. Nothing is invented.", "sig6": "Languages on this site", "chip.oral": "Oral history &amp; consent", "p1.h": "Sources", "stamp": "DIGITAL HISTORIAN ✦ WEB DEVELOPER ✦ YAOUNDÉ ✦ ", "cs.close": "Close case study", "ex.ctx": "Students need clear teaching, honest practice and measurable progress, in the language of their exam, on the phone they already own.", "about.k1": "Base", "p5.h": "Verify", "rec.label": "Record", "p3.p": "Type, layout and motion as one system, designed for a low-cost phone and two or three languages.", "exp5.p": "Working across three European languages and Cameroonian Pidgin, for readers and clients on both sides of the line.", "idx.proj": "Projects", "con.label": "Contact", "line.kick": "Digital history · Founder", "about.h": "From a line on a map <em>to</em> a life’s work.", "rec2.r": "GCE Advanced Level", "dis4": "Founder — <em>The Line</em>, a digital history of Cameroon", "hero.r1": "Digital historian", "p2.p": "Content, architecture and technology choices, written down and scoped honestly before design begins.", "nav.about": "About", "proc.h": "A method built on <em>evidence.</em>", "lang.en": "English", "rec5.p": "Researching, writing and coding a digital history of Cameroon’s partition and reunification. October 2026 to today.", "hero.lede": "I research Cameroon’s past and build fast, honest websites that people can read on a low-cost phone, on slow mobile data.", "dis5": "Builder — Examina Global, a bilingual exam-prep platform", "nav.work": "Work", "hero.cta2": "Get in touch", "sig1": "Referenced history chapters", "con.copy": "Copy", "tl6.t": "A unitary state", "chip.brand": "Brand systems", "chip.arch": "Archival research", "proc.label": "Process", "p3.h": "Design", "sig.h": "The numbers <em>behind</em> the work.", "lang.en.s": "First language · IELTS 7", "rec.h": "A short record of <em>learning.</em>", "work.label": "Selected work", "cs.open": "View case study", "tl0.p": "Germany claims Kamerun after treaties with Duala rulers on the coast.", "nav.distinctions": "Distinctions", "about.label": "About", "rec5.r": "Founder, researcher &amp; developer", "cs.ctx": "Context", "cs.out": "Outcome", "rec4.o": "Clients &amp; independent projects", "dis6": "2 live platforms · 3 languages · 0 trackers", "tl5.p": "In February, Southern Cameroons votes to join Cameroun and Northern Cameroons votes for Nigeria. Reunification follows on 1 October.", "idx.sec": "Sections", "nav.contact": "Contact", "chip.scroll": "Scrollytelling", "line.sum": "A nine-chapter digital history of Cameroon’s partition, reunification and colonial memory, from German rule in 1884 to the unitary state of 1972, and how Africa and Europe remember it today.", "idx.links": "Links", "idx.ph": "Jump to a section, project or link…", "hdr.index": "Index", "p4.p": "Lean, readable code: static where possible, frameworks only where they earn their place.", "exp3.h": "Maps &amp; storytelling", "about.k4": "Languages", "map.fr": "French", "tl1.p": "After the Allied campaign, Britain and France split the territory: a narrow western strip to Britain, the rest to France.", "hero.cta1": "Explore my work", "lang.de.s": "Intermediate · A2 completed", "p5.p": "Every link, source and translation checked; tested on real devices, with reduced motion and slow data.", "tl.pause": "Pause", "exp2.h": "Digital history &amp; research", "ex.role": "Product, brand and full-stack build: the blueprint, the “E as a globe” identity, the Next.js app, content structure and deployment.", "tl2.t": "League of Nations mandates", "con.h": "Let’s build something <em>worth</em> reading.", "exp.h": "Skills with <em>sources.</em>", "tl.play": "Play", "tl1.t": "The line is drawn", "about.p1": "Growing up in Cameroon, I have lived with the consequences of a line drawn in 1916 by two European diplomats who barely knew the land they divided. That line became my first serious project: <em>The Line</em>, a digital history I research, write, design and code myself.", "tl4.t": "Independence", "chip.lic": "Image licensing", "sig3": "Licence-checked archival images", "lang.fr": "French", "hero.or": "or travel 1884 → 1972", "work.live": "Live", "rec4.r": "Web developer", "cs.les": "Lesson", "exp.label": "Expertise", "about.v4": "English · French · German · Pidgin", "tl.h": "Drag through <em>a century.</em>", "dis3": "Licence (BA) in International Relations — University of Yaoundé I", "tl2.p": "The division is confirmed: British Cameroons and French Cameroun become League of Nations mandates.", "line.ctx": "Cameroon’s partition and reunification still shape the country, yet most sources sit in archives, in two colonial languages, out of reach for readers at home.", "exp3.p": "Hand-built SVG maps and scroll-driven narratives that turn archives into something people want to read.", "hero.status": "Open to web projects &amp; research", "chip.plan": "Roadmaps", "idx.hint": "↑↓ to move · Enter to open · Esc to close", "sig.label": "In numbers", "hero.place": "Yaoundé, Cameroon", "about.k5": "Status", "tl.p": "A small preview of <em>The Line</em>: move from 1884 to 1972 and watch the map of Cameroon change.", "con.email": "Email", "line.les": "Verify every quotation, credit every image, and present historians’ disagreements fairly.", "tl5.t": "Plebiscite and reunification", "line.role": "Founder, researcher, writer, designer and developer: sources, chapters, maps, a zero-dependency Node build and deployment.", "map.cm": "Cameroon", "rec4.p": "Websites from design to deployment: responsive interfaces, mobile performance, publishing workflows. Includes Examina Global.", "sig.built": "Built with", "tl3.p": "Both territories become United Nations trust territories, with self-government or independence as the stated goal.", "foot.col": "Set in Fraunces, Manrope &amp; JetBrains Mono. Hand-built in Yaoundé.", "foot.q": "History, <em>built for the web.</em>", "p4.h": "Build", "con.cvv": "Read the full CV", "tl4.p": "On 1 January, French-administered Cameroun becomes independent. The British side waits.", "about.v2": "Licence (BA), International Relations · University of Yaoundé I", "sig5": "Curated lesson videos", "con.p": "A history to tell, a site that should load anywhere, a platform to launch: tell me what you are building and who it is for.", "exp5.h": "Languages", "card.cap": "Cat. SPE-1916 · Partition line, schematic", "tl6.p": "After the May referendum, the federation becomes the United Republic of Cameroon. The line survives in memory.", "_title": "Samuel Praise Etah — Digital historian & web developer", "_copied": "Copied ✓", "_skip": "Skip to content", "_menu": "Menu", "_theme": "Switch light or dark theme"}, "fr": {"tl3.t": "Tutelle de l’ONU", "chip.budget": "Budgets en FCFA", "dis1": "IELTS — score global de 7 en anglais", "chip.cite": "Citations Chicago", "work.h": "Des travaux à <em>ouvrir</em> dès aujourd’hui.", "tl.note": "Carte schématique, sans échelle. L’histoire complète, sources à l’appui, est sur The Line.", "rec.cm": "Cameroun", "about.k3": "Fondateur", "foot.top": "Haut de page", "ex.out": "Une plateforme bilingue en ligne : 109 questions corrigées, 28 vidéos, des examens blancs chronométrés, des guides, un planning de révision et un calculateur IELTS.", "rec3.o": "Université de Yaoundé I", "nav.record": "Parcours", "rec3.y": "Université", "ex.sum": "La préparation aux examens pour les élèves du Cameroun qui passent le GCE, le Baccalauréat et l’IELTS, en anglais et en français, organisée par filière.", "exp4.p": "Cahiers des charges, budgets, registres des risques et identités visuelles, cadrés honnêtement avant de coder.", "rec1.p": "Certificat d’études secondaires.", "map.de": "Kamerun allemand", "rec1.r": "GCE Ordinary Level", "rec2.p": "Certificat de fin d’études secondaires, la porte de l’université.", "p2.h": "Structure", "cs.role": "Rôle", "hero.r2": "Développeur web", "chip.svg": "Cartographie SVG", "exp4.h": "Produit &amp; marque", "sig4": "Questions d’examen corrigées", "rec3.p": "Relations internationales, diplomatie et histoire de la décolonisation.", "con.cv": "Curriculum vitae", "ex.les": "Un exercice reste un exercice, jamais un résultat officiel. Les mots simples valent mieux que le battage.", "about.p2": "J’ai étudié les relations internationales à l’Université de Yaoundé I et je travaille comme développeur web indépendant, de la conception au déploiement. J’aime autant construire que chercher : des cartes qui se dessinent seules, des frises consultables, des pages qui respectent le forfait du lecteur.", "con.pick": "Choisissez un canal — chaque ligne est un clic", "sig2": "Portraits historiques", "chip.geo": "Géoréférencement", "chip.risk": "Registres des risques", "rec3.r": "Licence en relations internationales", "exp1.h": "Ingénierie front-end", "nav.expertise": "Expertise", "lang.de": "Allemand", "rec4.y": "Indépendant", "nav.process": "Méthode", "line.out": "Un site en ligne : 9 chapitres référencés, 24 portraits, plus de 50 événements, plus de 50 images aux licences vérifiées, sept films d’archives et une carte de 1949 géoréférencée.", "tl.label": "Machine à remonter le temps", "exp2.p": "Des sources primaires lues mot à mot, chaque image vérifiée, chaque incertitude signalée ouvertement.", "idx.empty": "Aucun résultat", "hero.r3": "Diplômé en relations internationales", "exp1.p": "Des interfaces rapides sur téléphones modestes et lisibles dans toutes les langues, de l’esquisse au produit en ligne.", "dis.label": "Distinctions", "con.time": "Heure locale à Yaoundé", "dis.h": "Des preuves, <em>pas</em> des promesses.", "tl0.t": "Protectorat allemand", "visit": "Voir le site", "p6.p": "Déployé, documenté et amélioré en continu, pas abandonné le jour du lancement.", "about.k2": "Formation", "dis2": "Allemand — niveaux A1 et A2 du CECRL validés", "lang.fr.s": "Courant", "map.ng": "au Nigeria", "ex.kick": "Plateforme éducative · Produit &amp; développement", "p6.h": "Lancement", "hero.scroll": "Défiler", "about.v5": "Disponible pour projets web et collaborations de recherche", "chip.a11y": "Accessibilité", "map.br": "Britannique", "tl.more": "Lire l’histoire complète", "p1.p": "Je pars des preuves et de la vraie question : archives, lecteurs, utilisateurs. Rien n’est inventé.", "sig6": "Langues sur ce site", "chip.oral": "Histoire orale &amp; consentement", "p1.h": "Sources", "stamp": "HISTORIEN NUMÉRIQUE ✦ DÉVELOPPEUR WEB ✦ YAOUNDÉ ✦ ", "cs.close": "Fermer l’étude de cas", "ex.ctx": "Les élèves ont besoin d’un enseignement clair, d’exercices honnêtes et de progrès mesurables, dans la langue de leur examen, sur le téléphone qu’ils ont déjà.", "about.k1": "Base", "p5.h": "Vérification", "rec.label": "Parcours", "p3.p": "Typographie, mise en page et animation comme un seul système, pensés pour un téléphone modeste et plusieurs langues.", "exp5.p": "Je travaille dans trois langues européennes et en pidgin camerounais, pour des lecteurs des deux côtés de la ligne.", "idx.proj": "Projets", "con.label": "Contact", "line.kick": "Histoire numérique · Fondateur", "about.h": "D’une ligne sur une carte <em>à</em> l’œuvre d’une vie.", "rec2.r": "GCE Advanced Level", "dis4": "Fondateur — <em>The Line</em>, une histoire numérique du Cameroun", "hero.r1": "Historien du numérique", "p2.p": "Contenus, architecture et choix techniques, écrits et cadrés honnêtement avant le design.", "nav.about": "À propos", "proc.h": "Une méthode fondée sur les <em>preuves.</em>", "lang.en": "Anglais", "rec5.p": "Recherche, rédaction et développement d’une histoire numérique du partage et de la réunification du Cameroun. Depuis octobre 2026.", "hero.lede": "Je fais des recherches sur l’histoire du Cameroun et je crée des sites rapides et honnêtes, lisibles sur un téléphone bon marché, même avec une connexion lente.", "dis5": "Créateur — Examina Global, une plateforme bilingue de préparation aux examens", "nav.work": "Travaux", "hero.cta2": "Me contacter", "sig1": "Chapitres d’histoire référencés", "con.copy": "Copier", "tl6.t": "Un État unitaire", "chip.brand": "Identités visuelles", "chip.arch": "Recherche d’archives", "proc.label": "Méthode", "p3.h": "Design", "sig.h": "Les chiffres <em>derrière</em> le travail.", "lang.en.s": "Langue maternelle · IELTS 7", "rec.h": "Un court récit d’<em>apprentissage.</em>", "work.label": "Travaux choisis", "cs.open": "Voir l’étude de cas", "tl0.p": "L’Allemagne revendique le Kamerun après des traités avec les chefs duala de la côte.", "nav.distinctions": "Distinctions", "about.label": "À propos", "rec5.r": "Fondateur, chercheur &amp; développeur", "cs.ctx": "Contexte", "cs.out": "Résultat", "rec4.o": "Clients &amp; projets personnels", "dis6": "2 plateformes en ligne · 3 langues · 0 traceur", "tl5.p": "En février, le Southern Cameroons vote pour rejoindre le Cameroun et le Northern Cameroons pour le Nigeria. La réunification suit le 1er octobre.", "idx.sec": "Sections", "nav.contact": "Contact", "chip.scroll": "Récits au défilement", "line.sum": "Une histoire numérique en neuf chapitres du partage, de la réunification et de la mémoire coloniale du Cameroun, de la domination allemande en 1884 à l’État unitaire de 1972, et de la façon dont l’Afrique et l’Europe s’en souviennent.", "idx.links": "Liens", "idx.ph": "Aller à une section, un projet ou un lien…", "hdr.index": "Index", "p4.p": "Un code sobre et lisible : statique si possible, des frameworks seulement s’ils sont utiles.", "exp3.h": "Cartes &amp; récits", "about.k4": "Langues", "map.fr": "Français", "tl1.p": "Après la campagne alliée, la Grande-Bretagne et la France se partagent le territoire : une bande étroite à l’ouest pour la Grande-Bretagne, le reste pour la France.", "hero.cta1": "Voir mes travaux", "lang.de.s": "Intermédiaire · A2 validé", "p5.p": "Chaque lien, source et traduction vérifiés ; tests sur de vrais appareils, animations réduites et données lentes.", "tl.pause": "Pause", "exp2.h": "Histoire numérique &amp; recherche", "ex.role": "Produit, marque et développement complet : le cahier des charges, l’identité « E en globe », l’application Next.js, la structure des contenus et le déploiement.", "tl2.t": "Mandats de la Société des Nations", "con.h": "Construisons quelque chose qui <em>mérite</em> d’être lu.", "exp.h": "Des compétences <em>sourcées.</em>", "tl.play": "Lecture", "tl1.t": "La ligne est tracée", "about.p1": "J’ai grandi au Cameroun avec les conséquences d’une ligne tracée en 1916 par deux diplomates européens qui connaissaient à peine la terre qu’ils divisaient. Cette ligne est devenue mon premier grand projet : <em>The Line</em>, une histoire numérique que je recherche, rédige, conçois et code moi-même.", "tl4.t": "Indépendance", "chip.lic": "Licences d’images", "sig3": "Images d’archives vérifiées", "lang.fr": "Français", "hero.or": "ou voyagez de 1884 à 1972", "work.live": "En ligne", "rec4.r": "Développeur web", "cs.les": "Leçon", "exp.label": "Expertise", "about.v4": "Anglais · Français · Allemand · Pidgin", "tl.h": "Traversez <em>un siècle.</em>", "dis3": "Licence en relations internationales — Université de Yaoundé I", "tl2.p": "Le partage est confirmé : le Cameroun britannique et le Cameroun français deviennent des mandats de la Société des Nations.", "line.ctx": "Le partage et la réunification façonnent encore le Cameroun, mais la plupart des sources dorment dans des archives, en deux langues coloniales, hors de portée des lecteurs du pays.", "exp3.p": "Des cartes SVG faites main et des récits au défilement qui rendent les archives captivantes.", "hero.status": "Disponible : web &amp; recherche", "chip.plan": "Feuilles de route", "idx.hint": "↑↓ pour naviguer · Entrée pour ouvrir · Échap pour fermer", "sig.label": "En chiffres", "hero.place": "Yaoundé, Cameroun", "about.k5": "Statut", "tl.p": "Un petit aperçu de <em>The Line</em> : avancez de 1884 à 1972 et regardez la carte du Cameroun changer.", "con.email": "Courriel", "line.les": "Vérifier chaque citation, créditer chaque image et présenter honnêtement les désaccords entre historiens.", "tl5.t": "Plébiscite et réunification", "line.role": "Fondateur, chercheur, auteur, designer et développeur : sources, chapitres, cartes, générateur Node sans dépendance et déploiement.", "map.cm": "Cameroun", "rec4.p": "Des sites de la conception au déploiement : interfaces adaptatives, performance mobile, chaînes de publication. Dont Examina Global.", "sig.built": "Construit avec", "tl3.p": "Les deux territoires passent sous tutelle des Nations unies, avec l’autonomie ou l’indépendance pour objectif affiché.", "foot.col": "Composé en Fraunces, Manrope &amp; JetBrains Mono. Fait main à Yaoundé.", "foot.q": "L’histoire, <em>construite pour le web.</em>", "p4.h": "Développement", "con.cvv": "Lire le CV complet", "tl4.p": "Le 1er janvier, le Cameroun sous administration française devient indépendant. La partie britannique attend.", "about.v2": "Licence en relations internationales · Université de Yaoundé I", "sig5": "Vidéos de cours sélectionnées", "con.p": "Une histoire à raconter, un site qui doit charger partout, une plateforme à lancer : dites-moi ce que vous construisez et pour qui.", "exp5.h": "Langues", "card.cap": "Cat. SPE-1916 · Ligne de partage, schéma", "tl6.p": "Après le référendum de mai, la fédération devient la République unie du Cameroun. La ligne survit dans les mémoires.", "_title": "Samuel Praise Etah — Historien du numérique & développeur web", "_copied": "Copié ✓", "_skip": "Aller au contenu", "_menu": "Menu", "_theme": "Basculer thème clair ou sombre"}, "de": {"tl3.t": "UN-Treuhandschaft", "chip.budget": "Budgets in FCFA", "dis1": "IELTS — Gesamtband 7 in Englisch", "chip.cite": "Chicago-Zitierweise", "work.h": "Projekte, die Sie heute <em>öffnen</em> können.", "tl.note": "Schematische Karte, nicht maßstabsgetreu. Die ganze Geschichte mit Quellen steht auf The Line.", "rec.cm": "Kamerun", "about.k3": "Gründer", "foot.top": "Nach oben", "ex.out": "Eine zweisprachige Live-Plattform: 109 Aufgaben mit Lösungen, 28 Videos, zeitgesteuerte Probeprüfungen, Lernleitfäden, ein Lernplaner und ein IELTS-Rechner.", "rec3.o": "Universität Yaoundé I", "nav.record": "Werdegang", "rec3.y": "Universität", "ex.sum": "Prüfungsvorbereitung für Schüler in Kamerun, die GCE, Baccalauréat und IELTS ablegen, auf Englisch und Französisch, nach Zweig geordnet.", "exp4.p": "Konzepte, Budgets, Risikoregister und Markensysteme, ehrlich geplant, bevor eine Zeile Code entsteht.", "rec1.p": "Sekundarschulabschluss.", "map.de": "Deutsch-Kamerun", "rec1.r": "GCE Ordinary Level", "rec2.p": "Abschluss der Oberstufe, das Tor zur Universität.", "p2.h": "Struktur", "cs.role": "Rolle", "hero.r2": "Webentwickler", "chip.svg": "SVG-Kartografie", "exp4.h": "Produkt &amp; Marke", "sig4": "Prüfungsaufgaben mit Lösung", "rec3.p": "Internationale Beziehungen, Diplomatie und die Geschichte der Dekolonisierung.", "con.cv": "Lebenslauf", "ex.les": "Übung bleibt Übung, nie ein offizielles Ergebnis. Klare Worte schlagen Hype.", "about.p2": "Ich habe Internationale Beziehungen an der Universität Yaoundé I studiert und arbeite als freiberuflicher Webentwickler, vom Entwurf bis zur Veröffentlichung. Das Bauen macht mir so viel Freude wie die Forschung: Karten, die sich selbst zeichnen, durchsuchbare Zeitleisten und Seiten, die das Datenvolumen der Leser respektieren.", "con.pick": "Wählen Sie einen Kanal — jede Zeile ist ein Klick", "sig2": "Historische Porträts", "chip.geo": "Georeferenzierung", "chip.risk": "Risikoregister", "rec3.r": "Licence (B.A.) in Internationalen Beziehungen", "exp1.h": "Frontend-Entwicklung", "nav.expertise": "Expertise", "lang.de": "Deutsch", "rec4.y": "Freiberuflich", "nav.process": "Arbeitsweise", "line.out": "Eine Live-Website: 9 belegte Kapitel, 24 Porträts, über 50 Ereignisse, über 50 lizenzgeprüfte Bilder, sieben Archivfilme und eine georeferenzierte Karte von 1949.", "tl.label": "Zeitmaschine", "exp2.p": "Primärquellen Wort für Wort gelesen, jedes Bild lizenzgeprüft, jede Unsicherheit offen gekennzeichnet.", "idx.empty": "Keine Treffer", "hero.r3": "Absolvent Internationale Beziehungen", "exp1.p": "Oberflächen, die auf einfachen Handys schnell laden und in jeder Sprache gut lesbar sind, von der Skizze bis zum fertigen Produkt.", "dis.label": "Auszeichnungen", "con.time": "Ortszeit in Yaoundé", "dis.h": "Belege, <em>keine</em> Versprechen.", "tl0.t": "Deutsches Schutzgebiet", "visit": "Website ansehen", "p6.p": "Veröffentlicht, dokumentiert und offen weiterentwickelt, nicht am Starttag vergessen.", "about.k2": "Studium", "dis2": "Deutsch — GER-Stufen A1 und A2 abgeschlossen", "lang.fr.s": "Fließend", "map.ng": "zu Nigeria", "ex.kick": "Lernplattform · Produkt &amp; Entwicklung", "p6.h": "Start", "hero.scroll": "Scrollen", "about.v5": "Offen für Webprojekte und Forschungskooperationen", "chip.a11y": "Barrierefreiheit", "map.br": "Britisch", "tl.more": "Ganze Geschichte lesen", "p1.p": "Ich beginne bei den Belegen und der eigentlichen Frage: Archive, Leser, Nutzer. Nichts wird erfunden.", "sig6": "Sprachen auf dieser Website", "chip.oral": "Oral History &amp; Einwilligung", "p1.h": "Quellen", "stamp": "DIGITALER HISTORIKER ✦ WEBENTWICKLER ✦ YAOUNDÉ ✦ ", "cs.close": "Fallstudie schließen", "ex.ctx": "Schüler brauchen klaren Unterricht, ehrliches Üben und messbaren Fortschritt, in der Sprache ihrer Prüfung, auf dem Handy, das sie schon haben.", "about.k1": "Standort", "p5.h": "Prüfung", "rec.label": "Werdegang", "p3.p": "Typografie, Layout und Bewegung als ein System, für ein günstiges Handy und mehrere Sprachen gestaltet.", "exp5.p": "Ich arbeite in drei europäischen Sprachen und in kamerunischem Pidgin, für Leser auf beiden Seiten der Linie.", "idx.proj": "Projekte", "con.label": "Kontakt", "line.kick": "Digitale Geschichte · Gründer", "about.h": "Von einer Linie auf der Karte <em>zur</em> Lebensaufgabe.", "rec2.r": "GCE Advanced Level", "dis4": "Gründer — <em>The Line</em>, eine digitale Geschichte Kameruns", "hero.r1": "Digitaler Historiker", "p2.p": "Inhalte, Architektur und Technik, schriftlich festgehalten und ehrlich geplant, bevor das Design beginnt.", "nav.about": "Über mich", "proc.h": "Eine Methode, die auf <em>Belegen</em> beruht.", "lang.en": "Englisch", "rec5.p": "Recherche, Texte und Programmierung einer digitalen Geschichte der Teilung und Wiedervereinigung Kameruns. Seit Oktober 2026.", "hero.lede": "Ich erforsche die Geschichte Kameruns und baue schnelle, ehrliche Websites, die man auch auf einem günstigen Handy mit langsamer Verbindung lesen kann.", "dis5": "Entwickler — Examina Global, eine zweisprachige Lernplattform", "nav.work": "Projekte", "hero.cta2": "Kontakt aufnehmen", "sig1": "Belegte Geschichtskapitel", "con.copy": "Kopieren", "tl6.t": "Ein Einheitsstaat", "chip.brand": "Markensysteme", "chip.arch": "Archivforschung", "proc.label": "Arbeitsweise", "p3.h": "Gestaltung", "sig.h": "Die Zahlen <em>hinter</em> der Arbeit.", "lang.en.s": "Muttersprache · IELTS 7", "rec.h": "Eine kurze Geschichte des <em>Lernens.</em>", "work.label": "Ausgewählte Projekte", "cs.open": "Fallstudie ansehen", "tl0.p": "Deutschland beansprucht Kamerun nach Verträgen mit Duala-Herrschern an der Küste.", "nav.distinctions": "Auszeichnungen", "about.label": "Über mich", "rec5.r": "Gründer, Forscher &amp; Entwickler", "cs.ctx": "Kontext", "cs.out": "Ergebnis", "rec4.o": "Kunden &amp; eigene Projekte", "dis6": "2 Live-Plattformen · 3 Sprachen · 0 Tracker", "tl5.p": "Im Februar stimmt Southern Cameroons für den Anschluss an Kamerun, Northern Cameroons für Nigeria. Am 1. Oktober folgt die Wiedervereinigung.", "idx.sec": "Abschnitte", "nav.contact": "Kontakt", "chip.scroll": "Scrollytelling", "line.sum": "Eine digitale Geschichte in neun Kapiteln über Teilung, Wiedervereinigung und koloniale Erinnerung Kameruns, von der deutschen Herrschaft 1884 bis zum Einheitsstaat 1972, und wie Afrika und Europa heute daran erinnern.", "idx.links": "Links", "idx.ph": "Zu Abschnitt, Projekt oder Link springen…", "hdr.index": "Index", "p4.p": "Schlanker, lesbarer Code: statisch, wo möglich, Frameworks nur, wo sie sich lohnen.", "exp3.h": "Karten &amp; Storytelling", "about.k4": "Sprachen", "map.fr": "Französisch", "tl1.p": "Nach dem alliierten Feldzug teilen Großbritannien und Frankreich das Gebiet: ein schmaler Streifen im Westen an Großbritannien, der Rest an Frankreich.", "hero.cta1": "Projekte ansehen", "lang.de.s": "Mittelstufe · A2 abgeschlossen", "p5.p": "Jeder Link, jede Quelle und Übersetzung geprüft; getestet auf echten Geräten, mit reduzierter Bewegung und langsamen Daten.", "tl.pause": "Pause", "exp2.h": "Digitale Geschichte &amp; Forschung", "ex.role": "Produkt, Marke und Full-Stack-Entwicklung: das Konzept, die Identität „E als Globus“, die Next.js-App, die Inhaltsstruktur und die Veröffentlichung.", "tl2.t": "Völkerbundsmandate", "con.h": "Lassen Sie uns etwas bauen, das sich zu <em>lesen</em> lohnt.", "exp.h": "Fähigkeiten mit <em>Quellen.</em>", "tl.play": "Abspielen", "tl1.t": "Die Linie wird gezogen", "about.p1": "Ich bin in Kamerun mit den Folgen einer Linie aufgewachsen, die 1916 von zwei europäischen Diplomaten gezogen wurde, die das Land kaum kannten. Diese Linie wurde mein erstes großes Projekt: <em>The Line</em>, eine digitale Geschichte, die ich selbst recherchiere, schreibe, gestalte und programmiere.", "tl4.t": "Unabhängigkeit", "chip.lic": "Bildlizenzen", "sig3": "Lizenzgeprüfte Archivbilder", "lang.fr": "Französisch", "hero.or": "oder reisen Sie 1884 → 1972", "work.live": "Online", "rec4.r": "Webentwickler", "cs.les": "Lehre", "exp.label": "Expertise", "about.v4": "Englisch · Französisch · Deutsch · Pidgin", "tl.h": "Reisen Sie durch <em>ein Jahrhundert.</em>", "dis3": "Licence (B.A.) in Internationalen Beziehungen — Universität Yaoundé I", "tl2.p": "Die Teilung wird bestätigt: Britisch- und Französisch-Kamerun werden Mandatsgebiete des Völkerbunds.", "line.ctx": "Teilung und Wiedervereinigung prägen Kamerun bis heute, doch die meisten Quellen liegen in Archiven, in zwei Kolonialsprachen, außer Reichweite der Leser im Land.", "exp3.p": "Handgebaute SVG-Karten und Scroll-Erzählungen, die Archive in etwas verwandeln, das man gern liest.", "hero.status": "Offen für Web &amp; Forschung", "chip.plan": "Roadmaps", "idx.hint": "↑↓ bewegen · Enter öffnen · Esc schließen", "sig.label": "In Zahlen", "hero.place": "Yaoundé, Kamerun", "about.k5": "Status", "tl.p": "Eine kleine Vorschau auf <em>The Line</em>: Gehen Sie von 1884 bis 1972 und sehen Sie, wie sich die Karte Kameruns verändert.", "con.email": "E-Mail", "line.les": "Jedes Zitat prüfen, jedes Bild nennen und die Meinungsverschiedenheiten der Historiker fair darstellen.", "tl5.t": "Plebiszit und Wiedervereinigung", "line.role": "Gründer, Forscher, Autor, Designer und Entwickler: Quellen, Kapitel, Karten, ein abhängigkeitsfreies Node-Build und die Veröffentlichung.", "map.cm": "Kamerun", "rec4.p": "Websites vom Entwurf bis zur Veröffentlichung: responsive Oberflächen, mobile Leistung, Publikationsabläufe. Darunter Examina Global.", "sig.built": "Gebaut mit", "tl3.p": "Beide Gebiete werden Treuhandgebiete der Vereinten Nationen, mit Selbstregierung oder Unabhängigkeit als erklärtem Ziel.", "foot.col": "Gesetzt in Fraunces, Manrope &amp; JetBrains Mono. Handgemacht in Yaoundé.", "foot.q": "Geschichte, <em>gebaut fürs Web.</em>", "p4.h": "Entwicklung", "con.cvv": "Vollständigen Lebenslauf lesen", "tl4.p": "Am 1. Januar wird das französisch verwaltete Kamerun unabhängig. Die britische Seite wartet.", "about.v2": "Licence (B.A.), Internationale Beziehungen · Universität Yaoundé I", "sig5": "Ausgewählte Lernvideos", "con.p": "Eine Geschichte, die erzählt werden will, eine Website, die überall laden soll, eine Plattform zum Start: Erzählen Sie mir, was Sie bauen und für wen.", "exp5.h": "Sprachen", "card.cap": "Kat. SPE-1916 · Teilungslinie, schematisch", "tl6.p": "Nach dem Referendum im Mai wird die Föderation zur Vereinigten Republik Kamerun. Die Linie lebt in der Erinnerung weiter.", "_title": "Samuel Praise Etah — Digitaler Historiker & Webentwickler", "_copied": "Kopiert ✓", "_skip": "Zum Inhalt", "_menu": "Menü", "_theme": "Helles oder dunkles Design"}};
   var lang = 'en';
   function t(k) { var d = I18N[lang] || I18N.en; return d[k] != null ? d[k] : I18N.en[k]; }
   function setLang(next, first) {
@@ -673,6 +865,7 @@
       } catch (e) {}
     }
     if (!$('#palette').hidden) renderPalette($('#palInput').value);
+    if (typeof tm !== 'undefined' && tm) tm.refresh();
   }
   $$('.lang button').forEach(function (b) { b.addEventListener('click', function () { setLang(b.getAttribute('data-lang')); }); });
   var startLang = 'en';
@@ -692,6 +885,7 @@
       return { g: t('idx.sec'), label: t('nav.' + id), hint: '#' + id, go: '#' + id };
     });
     secs.splice(6, 0, { g: t('idx.sec'), label: t('sig.label'), hint: '#signals', go: '#signals' });
+    secs.splice(3, 0, { g: t('idx.sec'), label: t('tl.label') + ' · 1884 → 1972', hint: '#explore', go: '#explore' });
     return secs.concat([
       { g: t('idx.proj'), label: 'The Line', hint: '01', go: '#the-line' },
       { g: t('idx.proj'), label: 'Examina Global', hint: '02', go: '#examina' },
@@ -750,30 +944,39 @@
   } catch (e) {}
   $('#yr').textContent = new Date().getFullYear();
 
-  // ---------- Starfield ----------
+  // ---------- Topographic background ----------
   var stars = (function () {
     var cv = $('#stars'), ctx = cv.getContext && cv.getContext('2d');
     if (!ctx) return null;
-    var w, h, dpr, pts = [], rgb = '234,232,225', mx = 0, my = 0, run = true, raf;
-    function recolor() { rgb = getComputedStyle(root).getPropertyValue('--star').trim() || rgb; if (reduce) draw(0); }
+    var w, h, dpr, rgb = '239,233,220', acc = '224,96,63', run = true, raf, mx = 0, my = 0;
+    function recolor() {
+      var cs = getComputedStyle(root);
+      rgb = cs.getPropertyValue('--star').trim() || rgb;
+      if (reduce) draw(0);
+    }
     function size() {
       dpr = Math.min(devicePixelRatio || 1, 2); w = innerWidth; h = innerHeight;
       cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      var n = Math.min(170, Math.round(w * h / 9000));
-      pts = [];
-      for (var i = 0; i < n; i++) pts.push({ x: Math.random() * w, y: Math.random() * h, r: Math.random() * 1.1 + .25, z: Math.random() * .8 + .2, p: Math.random() * 6.28, s: Math.random() * .02 + .005 });
       if (reduce) draw(0);
     }
     function draw(time) {
+      var tt = time * 0.00004, sy = scrollY * 0.05, n = Math.max(10, Math.round(h / 52));
       ctx.clearRect(0, 0, w, h);
-      var sy = scrollY;
-      for (var i = 0; i < pts.length; i++) {
-        var p = pts[i];
-        var a = reduce ? .5 : .25 + .55 * (0.5 + 0.5 * Math.sin(p.p + time * p.s * .06));
-        var x = p.x + mx * p.z * 14, y = (p.y - sy * p.z * .12 + my * p.z * 14) % h;
-        if (y < 0) y += h;
-        ctx.fillStyle = 'rgba(' + rgb + ',' + a.toFixed(3) + ')';
-        ctx.beginPath(); ctx.arc(x, y, p.r, 0, 6.283); ctx.fill();
+      ctx.lineWidth = 1;
+      for (var k = 0; k < n; k++) {
+        var base = (k + .5) * h / n;
+        ctx.beginPath();
+        for (var x = -20; x <= w + 20; x += 18) {
+          var y = base
+            + Math.sin(x * 0.0042 + k * 0.55 + tt * 6) * 22
+            + Math.sin(x * 0.011 - k * 0.3 + tt * 9) * 7
+            + Math.cos(k * 0.8 + tt * 3) * 10 - sy % (h / n)
+            + my * (k % 3) * 6;
+          x === -20 ? ctx.moveTo(x + mx * 8, y) : ctx.lineTo(x + mx * 8, y);
+        }
+        var major = k % 5 === 0;
+        ctx.strokeStyle = 'rgba(' + rgb + ',' + (major ? .085 : .04) + ')';
+        ctx.stroke();
       }
     }
     function loop(time) { if (run) { draw(time); raf = requestAnimationFrame(loop); } }
@@ -790,15 +993,22 @@
   // ---------- Cursor + frame tilt + magnetic ----------
   if (fine && !reduce) {
     var cur = $('#cursor'), cx = -100, cy = -100, tx = -100, ty = -100;
-    addEventListener('pointermove', function (e) { tx = e.clientX; ty = e.clientY; cur.classList.add('on'); }, { passive: true });
-    document.addEventListener('pointerleave', function () { cur.classList.remove('on'); });
+    var coords = $('#coords');
+    addEventListener('pointermove', function (e) {
+      tx = e.clientX; ty = e.clientY; cur.classList.add('on'); coords.classList.add('on');
+      // map the viewport onto Cameroon's bounding box (about 1.65–13.08°N, 8.5–16.2°E)
+      var lat = 13.08 - (ty / innerHeight) * 11.43, lon = 8.5 + (tx / innerWidth) * 7.7;
+      coords.textContent = lat.toFixed(2) + '°N ' + lon.toFixed(2) + '°E';
+      coords.style.transform = 'translate(' + (tx + 22) + 'px,' + (ty + 14) + 'px)';
+    }, { passive: true });
+    document.addEventListener('pointerleave', function () { cur.classList.remove('on'); coords.classList.remove('on'); });
     (function follow() { cx += (tx - cx) * .2; cy += (ty - cy) * .2; cur.style.transform = 'translate(' + cx + 'px,' + cy + 'px)'; requestAnimationFrame(follow); })();
     document.addEventListener('pointerover', function (e) { cur.classList.toggle('big', !!e.target.closest('a, button, .chips li, .case-toggle')); });
 
-    var frame = $('#frame'), fig = $('.fig');
+    var frame = $('#frame'), fig = $('.card-fig');
     fig.addEventListener('pointermove', function (e) {
       var b = fig.getBoundingClientRect(), x = (e.clientX - b.left) / b.width - .5, y = (e.clientY - b.top) / b.height - .5;
-      frame.style.transform = 'perspective(900px) rotateY(' + x * 8 + 'deg) rotateX(' + -y * 8 + 'deg)';
+      frame.style.transform = 'perspective(900px) rotate(-1deg) rotateY(' + x * 10 + 'deg) rotateX(' + -y * 10 + 'deg)';
     });
     fig.addEventListener('pointerleave', function () { frame.style.transform = ''; });
 
@@ -866,6 +1076,58 @@
       label.innerHTML = t(open ? 'cs.close' : 'cs.open');
     });
   });
+
+  // ---------- Time machine ----------
+  var tm = (function () {
+    var map = $('#tmMap'); if (!map) return null;
+    var YEARS = ['1884', '1916', '1922', '1946', '1960', '1961', '1972'];
+    var range = $('#tmRange'), yearEl = $('#tmYear'), title = $('#tmTitle'), body = $('#tmBody'), text = $('.tm-text');
+    var ticks = $$('#tmTicks button'), play = $('#tmPlay'), playLabel = $('#tmPlayLabel'), cur = 0, timer = null, yt = null;
+    function animateYear(from, to) {
+      if (reduce) { yearEl.textContent = to; return; }
+      cancelAnimationFrame(yt);
+      var a = +from, b = +to, t0 = null;
+      (function step(ts) {
+        if (!t0) t0 = ts;
+        var k = Math.min(1, (ts - t0) / 700), e = 1 - Math.pow(1 - k, 3);
+        yearEl.textContent = Math.round(a + (b - a) * e);
+        if (k < 1) yt = requestAnimationFrame(step);
+      })(performance.now());
+    }
+    function go(i, quiet) {
+      var prev = cur; cur = (i + YEARS.length) % YEARS.length;
+      map.setAttribute('data-stage', cur);
+      range.value = cur;
+      range.setAttribute('aria-valuetext', YEARS[cur]);
+      range.style.setProperty('--p', (cur / (YEARS.length - 1) * 100) + '%');
+      ticks.forEach(function (b, k) { if (k === cur) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current'); });
+      title.innerHTML = t('tl' + cur + '.t'); body.innerHTML = t('tl' + cur + '.p');
+      if (!quiet) { animateYear(YEARS[prev], YEARS[cur]); text.classList.remove('swap'); void text.offsetWidth; text.classList.add('swap'); }
+      else yearEl.textContent = YEARS[cur];
+    }
+    function stop() { clearInterval(timer); timer = null; play.setAttribute('aria-pressed', 'false'); playLabel.setAttribute('data-i18n', 'tl.play'); playLabel.innerHTML = t('tl.play'); }
+    function start() {
+      if (cur === YEARS.length - 1) go(0);
+      timer = setInterval(function () { if (cur >= YEARS.length - 1) stop(); else go(cur + 1); }, 2600);
+      play.setAttribute('aria-pressed', 'true'); playLabel.setAttribute('data-i18n', 'tl.pause'); playLabel.innerHTML = t('tl.pause');
+    }
+    range.addEventListener('input', function () { stop(); go(+range.value); });
+    ticks.forEach(function (b) { b.addEventListener('click', function () { stop(); go(+b.getAttribute('data-i')); }); });
+    play.addEventListener('click', function () { timer ? stop() : start(); });
+    go(0, true);
+    // start playing once, the first time the section comes into view
+    if ('IntersectionObserver' in window && !reduce) {
+      var once = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { once.disconnect(); setTimeout(function () { if (cur === 0 && !timer) start(); }, 700); } }, { threshold: .5 });
+      once.observe(map);
+    }
+    return { refresh: function () { go(cur, true); } };
+  })();
+
+  // footer line draws when reached
+  if ('IntersectionObserver' in window) {
+    var fio = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { $('footer').classList.add('in'); fio.disconnect(); } }, { threshold: .3 });
+    fio.observe($('footer'));
+  } else { $('footer').classList.add('in'); }
 
   // ---------- Contact ----------
   var copy = $('#copy');
