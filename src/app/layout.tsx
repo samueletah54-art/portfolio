@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter_Tight, JetBrains_Mono } from "next/font/google";
 import { site } from "@/content/site";
+import { LangProvider } from "@/components/LangProvider";
 import "./globals.css";
 
 const interTight = Inter_Tight({ variable: "--font-inter-tight", subsets: ["latin"], display: "swap" });
@@ -8,19 +9,19 @@ const jetbrainsMono = JetBrains_Mono({ variable: "--font-jetbrains-mono", subset
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: `${site.name} | ${site.title}`, template: `%s | ${site.name}` },
-  description: site.pitch,
+  title: { default: `${site.name} | ${site.title.en}`, template: `%s | ${site.name}` },
+  description: `${site.pitch.en} ${site.alsoLine.en}`,
   authors: [{ name: site.name, url: site.url }],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     url: site.url,
-    title: `${site.name} | ${site.title}`,
-    description: site.pitch,
+    title: `${site.name} | ${site.title.en}`,
+    description: site.pitch.en,
     siteName: site.name,
     locale: "en_GB",
   },
-  twitter: { card: "summary_large_image", title: `${site.name} | ${site.title}`, description: site.pitch },
+  twitter: { card: "summary_large_image", title: `${site.name} | ${site.title.en}`, description: site.pitch.en },
 };
 
 export const viewport: Viewport = {
@@ -46,7 +47,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         >
           Skip to content
         </a>
-        {children}
+        <LangProvider>{children}</LangProvider>
       </body>
     </html>
   );

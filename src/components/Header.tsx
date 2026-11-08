@@ -3,16 +3,14 @@
 import { useEffect, useState } from "react";
 import { site } from "@/content/site";
 import { ThemeToggle } from "./ThemeToggle";
+import { LangToggle } from "./LangToggle";
+import { useLang } from "./LangProvider";
 
-const links = [
-  { href: "#about", label: "About", n: "01" },
-  { href: "#work", label: "Work", n: "02" },
-  { href: "#skills", label: "Skills", n: "03" },
-  { href: "#services", label: "Services", n: "04" },
-  { href: "#contact", label: "Contact", n: "05" },
-];
+const ids = ["about", "work", "skills", "services", "contact"] as const;
 
 export function Header() {
+  const { t } = useLang();
+  const links = ids.map((id, i) => ({ href: `#${id}`, label: t.nav[id], n: `0${i + 1}` }));
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -53,11 +51,20 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <a
+            href={site.cv}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden h-10 items-center rounded-full border border-line px-4 font-mono text-xs uppercase tracking-[0.14em] transition-colors hover:border-accent hover:text-accent sm:inline-flex"
+          >
+            {t.nav.cv} <span aria-hidden="true" className="ml-1">↗</span>
+          </a>
+          <LangToggle />
           <ThemeToggle />
           <button
             type="button"
             className="grid h-10 w-10 place-items-center rounded-full border border-line md:hidden"
-            aria-label={open ? "Close menu" : "Open menu"}
+            aria-label={open ? t.menuClose : t.menuOpen}
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen((o) => !o)}
@@ -82,6 +89,12 @@ export function Header() {
                 </a>
               </li>
             ))}
+            <li>
+              <a href={site.cv} target="_blank" rel="noopener noreferrer" className="flex items-baseline gap-3 py-4 text-2xl font-semibold tracking-tight">
+                <span className="font-mono text-xs text-accent">↗</span>
+                {t.nav.cv}
+              </a>
+            </li>
           </ul>
         </nav>
       )}

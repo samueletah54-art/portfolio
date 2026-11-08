@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/content/site";
 
-export const alt = `${site.name}, ${site.title}`;
+export const alt = `${site.name}, ${site.title.en}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -34,10 +34,10 @@ export default function OpengraphImage() {
           </div>
           <div style={{ display: "flex", marginTop: 28, fontSize: 40, color: "#ededea" }}>
             <span style={{ color: "#3ddc84", marginRight: 16 }}>$</span>
-            {site.title}
+            {site.title.en}
           </div>
         </div>
-        <div style={{ display: "flex", fontSize: 26, color: "#9a9f99" }}>Business websites · Landing pages · Maintenance &amp; security</div>
+        <div style={{ display: "flex", fontSize: 26, color: "#9a9f99" }}>Websites · Security · Video editing · Ghostwriting</div>
       </div>
     ),
     size,
