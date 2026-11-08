@@ -1,0 +1,87 @@
+"use client";
+
+import { useState } from "react";
+import { site } from "@/content/site";
+
+// Sends through Web3Forms (free, no backend) when NEXT_PUBLIC_WEB3FORMS_KEY is set.
+// Without a key it opens the visitor's email app with the message filled in.
+const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+
+type Status = "idle" | "sending" | "sent" | "error";
+
+export function ContactForm() {
+  const [status, setStatus] = useState<Status>("idle");
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    if (data.get("botcheck")) return;
+
+    if (!accessKey) {
+      const subject = `Website enquiry from ${data.get("name")}`;
+      const body = `${data.get("message")}\n\n${data.get("name")} (${data.get("email")})`;
+      window.location.href = `mailto:${site.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      setStatus("sent");
+      return;
+    }
+
+    setStatus("sending");
+    data.append("access_key", accessKey);
+    data.append("subject", `Website enquiry from ${data.get("name")}`);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body: data });
+      const json = await res.json();
+      if (json.success) {
+        setStatus("sent");
+        form.reset();
+      } else setStatus("error");
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  const field =
+    "mt-2 w-full rounded-xl border border-line bg-bg-2 px-4 py-3 text-base text-fg placeholder:text-muted/70 transition-colors focus:border-accent focus:outline-none";
+
+  return (
+    <form onSubmit={onSubmit} className="grid gap-5" noValidate={false}>
+      <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+      <div className="grid gap-5 sm:grid-cols-2">
+        <label className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
+          Name
+          <input name="name" required maxLength={80} autoComplete="name" className={field} />
+        </label>
+        <label className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
+          Email
+          <input name="email" type="email" required maxLength={120} autoComplete="email" className={field} />
+        </label>
+      </div>
+      <label className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
+        Project details
+        <textarea name="message" required rows={5} maxLength={4000} className={`${field} resize-y`} placeholder="What do you need, and by when?" />
+      </label>
+      <div className="flex flex-wrap items-center gap-4">
+        <button
+          type="submit"
+          disabled={status === "sending"}
+          className="inline-flex h-12 items-center gap-2 rounded-full bg-accent px-6 font-medium text-accent-fg transition-transform hover:-translate-y-0.5 disabled:opacity-60"
+        >
+          {status === "sending" ? "Sending…" : "Send message"} <span aria-hidden="true">→</span>
+        </button>
+        <p role="status" aria-live="polite" className="text-sm text-muted">
+          {status === "sent" && (accessKey ? "Thanks, your message is on its way. I'll reply soon." : "Your email app should open with the message ready to send.")}
+          {status === "error" && (
+            <>
+              Something went wrong. Please email{" "}
+              <a className="text-accent underline" href={`mailto:${site.contact.email}`}>
+                {site.contact.email}
+              </a>
+              .
+            </>
+          )}
+        </p>
+      </div>
+    </form>
+  );
+}
