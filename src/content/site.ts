@@ -1,399 +1,372 @@
-// All editable text for the site lives here, in English and French.
-// Change it and redeploy; no component edits needed. A value of `null` hides that item.
+// Everything about you lives here. Edit and redeploy; no component changes needed.
+// Text fields come in English (en) and French (fr).
 
 export type Lang = "en" | "fr";
 export const langs: Lang[] = ["en", "fr"];
-
-type Text = Record<Lang, string>;
-
-export type Project = {
-  name: string;
-  kind: Text;
-  description: Text;
-  imageAlt: Text;
-  stack: string[];
-  image: string;
-  live: string | null;
-  github: string | null;
-  year: string;
-};
+export type Text = Record<Lang, string>;
+export type TextList = Record<Lang, string[]>;
 
 export const site = {
   url: "https://samuel-etah-dev.vercel.app",
-  name: "Samuel Etah",
+  name: "Samuel ETAH",
+  fullName: "Samuel Praise ETAH",
   location: "Yaoundé, Cameroon",
-  cv: "https://the-line-eight.vercel.app/cv/",
-  // Paste a YouTube link to your best 20–40 second reel here; the player appears automatically.
-  reel: null as string | null,
-
-  title: {
-    en: "Engineer & writer",
-    fr: "Ingénieur web & rédacteur",
-  } as Text,
-  pitch: {
-    en: "I build fast, secure websites for businesses, schools and organisations, and I write the words that make people read them.",
-    fr: "Je crée des sites web rapides et sécurisés pour les entreprises, les écoles et les organisations, et j'écris les textes qui donnent envie de les lire.",
-  } as Text,
-  alsoLine: {
-    en: "Also available for video editing and ghostwriting.",
-    fr: "Également disponible pour le montage vidéo et la rédaction en prête-plume.",
-  } as Text,
-
-  projects: [
-    {
-      name: "Examina Global",
-      kind: { en: "Education platform", fr: "Plateforme éducative" },
-      year: "2026",
-      description: {
-        en: "Exam preparation for Cameroon's GCE O/A Level, Baccalauréat and IELTS: 109 worked questions, timed mock exams, a revision planner and an IELTS band calculator, in English and French.",
-        fr: "Préparation aux examens camerounais (GCE O/A Level, Baccalauréat) et à l'IELTS : 109 questions corrigées, examens blancs chronométrés, un planning de révision et un calculateur de score IELTS, en anglais et en français.",
-      },
-      stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-      image: "/projects/examina.webp",
-      imageAlt: {
-        en: "Examina Global home page: Prepare for the GCE, the Bac and IELTS.",
-        fr: "Page d'accueil d'Examina Global : préparez le GCE, le Bac et l'IELTS.",
-      },
-      live: "https://examina-global.vercel.app",
-      github: "https://github.com/samueletah54-art/examina-global",
-    },
-    {
-      name: "Mboa Phones",
-      kind: { en: "E-commerce storefront", fr: "Boutique en ligne" },
-      year: "2026",
-      description: {
-        en: "A bilingual storefront for a smartphone shop in Yaoundé: catalogue with search and filters, product pages, favourites, and ordering through WhatsApp with the model and price pre-filled.",
-        fr: "Une boutique bilingue pour un vendeur de smartphones à Yaoundé : catalogue avec recherche et filtres, fiches produits, favoris et commande par WhatsApp avec le modèle et le prix déjà remplis.",
-      },
-      stack: ["HTML", "CSS", "JavaScript", "i18n (FR/EN)"],
-      image: "/projects/mboa-phones.webp",
-      imageAlt: {
-        en: "Mboa Phones home page: Votre prochain téléphone. Un choix plus malin.",
-        fr: "Page d'accueil de Mboa Phones : Votre prochain téléphone. Un choix plus malin.",
-      },
-      live: null,
-      github: null,
-    },
-    {
-      name: "The Line",
-      kind: { en: "Digital humanities archive", fr: "Archive numérique d'histoire" },
-      year: "2026",
-      description: {
-        en: "A digital archive on Cameroon's partition, reunification and colonial memory: nine referenced chapters, scroll-driven maps, a searchable timeline and an oral-history strand.",
-        fr: "Une archive numérique sur la partition, la réunification et la mémoire coloniale du Cameroun : neuf chapitres sourcés, des cartes animées au défilement, une frise chronologique consultable et un volet d'histoire orale.",
-      },
-      stack: ["HTML", "CSS", "JavaScript", "Node.js", "SVG"],
-      image: "/projects/the-line.webp",
-      imageAlt: {
-        en: "The Line home page: 1884 Germany claims Kamerun, 1916 Britain and France draw a line across it.",
-        fr: "Page d'accueil de The Line : 1884, l'Allemagne revendique le Kamerun ; 1916, la Grande-Bretagne et la France y tracent une ligne.",
-      },
-      live: "https://the-line-eight.vercel.app",
-      github: "https://github.com/samueletah54-art/The-line-",
-    },
-  ] satisfies Project[],
-
+  // Switch the green "Available for work" badge on or off here.
+  availableForWork: true,
   contact: {
     email: "samueletah54@gmail.com",
-    whatsapp: "+237671857479" as string | null,
+    whatsapp: "+237671857479",
     github: "https://github.com/samueletah54-art",
-    linkedin: null as string | null, // e.g. "https://www.linkedin.com/in/your-name"
-    instagram: "https://www.instagram.com/samuelisco22/" as string | null, // e.g. "https://www.instagram.com/your-handle"
-    x: "https://x.com/samuel_izko" as string | null, // e.g. "https://x.com/your-handle"
-    threads: null as string | null, // e.g. "https://www.threads.net/@your-handle"
+    instagram: "https://www.instagram.com/samuelisco22/",
+    x: "https://x.com/samuel_izko",
+    linkedin: null as string | null, // add your LinkedIn URL when you have one
   },
 };
 
-// Blog posts. Add a new object to publish a post; the newest goes first.
-export type Post = { slug: string; date: string; title: Text; summary: Text; body: Record<Lang, string[]> };
+export const whatsappLink = (text?: string) =>
+  `https://wa.me/${site.contact.whatsapp.replace(/\D/g, "")}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 
-export const posts: Post[] = [
+/* ---------- Blog categories ---------- */
+export const categories: { slug: string; name: Text; blurb: Text }[] = [
+  { slug: "web-development", name: { en: "Web Development", fr: "Développement web" }, blurb: { en: "Building fast, useful websites.", fr: "Créer des sites rapides et utiles." } },
+  { slug: "react", name: { en: "React", fr: "React" }, blurb: { en: "Components, hooks and Next.js.", fr: "Composants, hooks et Next.js." } },
+  { slug: "javascript", name: { en: "JavaScript", fr: "JavaScript" }, blurb: { en: "The language of the web, explained simply.", fr: "Le langage du web, expliqué simplement." } },
+  { slug: "css", name: { en: "CSS", fr: "CSS" }, blurb: { en: "Layout, colour and motion.", fr: "Mise en page, couleur et animation." } },
+  { slug: "cybersecurity", name: { en: "Cybersecurity", fr: "Cybersécurité" }, blurb: { en: "Keeping sites and people safe.", fr: "Protéger les sites et les gens." } },
+  { slug: "video-editing", name: { en: "Video Editing", fr: "Montage vidéo" }, blurb: { en: "Vox-style explainers and motion.", fr: "Vidéos explicatives et motion design." } },
+  { slug: "writing", name: { en: "Writing", fr: "Écriture" }, blurb: { en: "Clear words, ghostwriting, copy.", fr: "Des mots clairs, prête-plume, rédaction." } },
+  { slug: "career", name: { en: "Career", fr: "Carrière" }, blurb: { en: "Freelancing and learning from Cameroon.", fr: "Freelance et apprentissage depuis le Cameroun." } },
+  { slug: "general", name: { en: "General", fr: "Général" }, blurb: { en: "Everything else.", fr: "Tout le reste." } },
+];
+
+/* ---------- Projects and case studies ---------- */
+export type Project = {
+  slug: string;
+  name: string;
+  kind: Text;
+  year: string;
+  summary: Text;
+  stack: string[];
+  image: string;
+  imageAlt: Text;
+  live: string | null;
+  github: string | null;
+  problem: Text;
+  built: TextList;
+  result: Text;
+  screenshots?: string[];
+  beforeAfter?: { before: string; after: string };
+};
+
+export const projects: Project[] = [
   {
-    slug: "my-story",
-    date: "2026-11-09",
-    title: {
-      en: "From International Relations to building the web",
-      fr: "Des relations internationales au développement web",
-    },
+    slug: "examina-global",
+    name: "Examina Global",
+    kind: { en: "Education platform", fr: "Plateforme éducative" },
+    year: "2026",
     summary: {
-      en: "How a degree about diplomacy, a year of ghostwriting and a lot of late nights turned into a career in code.",
-      fr: "Comment une licence en diplomatie, une année comme prête-plume et beaucoup de nuits blanches sont devenues un métier dans le code.",
+      en: "Bilingual exam preparation for Cameroon's GCE O/A Level, Baccalauréat and IELTS.",
+      fr: "Préparation bilingue aux examens camerounais (GCE O/A Level, Baccalauréat) et à l'IELTS.",
     },
-    body: {
-      en: [
-        "I studied International Relations at the University of Yaoundé I. It was not a computer science degree, but it taught me two things I use every day: how to research a question properly, and how to explain it clearly to someone who was not in the room.",
-        "In 2025 I started working as a ghostwriter. Clients would give me an idea and a deadline, and I would turn it into writing they could publish under their own name. Ghostwriting teaches you to listen first, to match someone else's voice, and to deliver on time.",
-        "Around the same time I started teaching myself to code. I did not learn from a single course. I learned by building things people could use: Examina Global, an exam-prep platform for Cameroonian students in English and French; a bilingual storefront for a phone shop in Yaoundé; and The Line, an interactive history of Cameroon's partition with maps and a timeline.",
-        "Building for Cameroon changes how you build. Most visitors are on low-cost Android phones and pay for every megabyte, so a fast, light page is not a nice extra: it decides whether someone sees your site at all. Many readers switch between English and French, so bilingual is the default. And because clients trust you with their business, security has to be built in from the start, which is why I am now deepening my skills in web security.",
-        "Today I build websites for businesses, schools and organisations, and I still write. The two jobs turn out to be the same job: understand what people need, then make it clear and easy for them. If you have a project, I would like to hear about it.",
-      ],
-      fr: [
-        "J'ai étudié les relations internationales à l'Université de Yaoundé I. Ce n'était pas une formation en informatique, mais elle m'a appris deux choses que j'utilise tous les jours : chercher sérieusement la réponse à une question, et l'expliquer clairement à quelqu'un qui n'était pas là.",
-        "En 2025, j'ai commencé à travailler comme prête-plume. Des clients me confiaient une idée et une échéance, et j'en faisais un texte qu'ils pouvaient publier sous leur propre nom. Ce métier apprend à écouter d'abord, à épouser la voix de quelqu'un d'autre et à livrer à temps.",
-        "À la même période, j'ai appris à coder seul. Pas avec un seul cours, mais en construisant des choses utiles : Examina Global, une plateforme de préparation aux examens pour les élèves camerounais, en anglais et en français ; une boutique bilingue pour un vendeur de téléphones à Yaoundé ; et The Line, une histoire interactive de la partition du Cameroun, avec des cartes et une frise chronologique.",
-        "Construire pour le Cameroun change la façon de construire. La plupart des visiteurs utilisent des téléphones Android bon marché et paient chaque mégaoctet : une page rapide et légère n'est pas un bonus, elle décide si votre site sera vu ou non. Beaucoup de lecteurs passent de l'anglais au français, donc le bilinguisme est la norme. Et comme les clients vous confient leur activité, la sécurité doit être pensée dès le départ ; c'est pourquoi je renforce aujourd'hui mes compétences en sécurité web.",
-        "Aujourd'hui, je crée des sites pour des entreprises, des écoles et des organisations, et j'écris toujours. Les deux métiers se rejoignent : comprendre ce dont les gens ont besoin, puis le rendre clair et simple. Si vous avez un projet, j'aimerais en parler.",
-      ],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    image: "/projects/examina.webp",
+    imageAlt: { en: "Examina Global home page", fr: "Page d'accueil d'Examina Global" },
+    live: "https://examina-global.vercel.app",
+    github: "https://github.com/samueletah54-art/examina-global",
+    problem: {
+      en: "Students preparing for national exams in Cameroon had few practice resources online that work in both English and French and load on a cheap phone.",
+      fr: "Les élèves qui préparent les examens nationaux au Cameroun avaient peu de ressources en ligne, en anglais et en français, utilisables sur un téléphone bon marché.",
     },
+    built: {
+      en: ["109 worked exam questions with explanations", "Timed mock exams and a revision planner", "An IELTS band calculator", "Full English and French versions"],
+      fr: ["109 questions d'examen corrigées et expliquées", "Des examens blancs chronométrés et un planning de révision", "Un calculateur de score IELTS", "Des versions complètes en anglais et en français"],
+    },
+    result: {
+      en: "A live platform students can use today, with 109 questions and 28 curated lesson videos.",
+      fr: "Une plateforme en ligne utilisable dès aujourd'hui, avec 109 questions et 28 vidéos de cours sélectionnées.",
+    },
+    screenshots: ["/projects/examina.webp"],
+  },
+  {
+    slug: "mboa-phones",
+    name: "Mboa Phones",
+    kind: { en: "E-commerce storefront", fr: "Boutique en ligne" },
+    year: "2026",
+    summary: {
+      en: "A bilingual storefront for a smartphone shop in Yaoundé, with ordering through WhatsApp.",
+      fr: "Une boutique bilingue pour un vendeur de smartphones à Yaoundé, avec commande par WhatsApp.",
+    },
+    stack: ["HTML", "CSS", "JavaScript", "i18n (FR/EN)"],
+    image: "/projects/mboa-phones.webp",
+    imageAlt: { en: "Mboa Phones home page", fr: "Page d'accueil de Mboa Phones" },
+    live: null,
+    github: null,
+    problem: {
+      en: "The shop sold mostly through WhatsApp chats and walk-ins, with no catalogue customers could browse on their own.",
+      fr: "La boutique vendait surtout par WhatsApp et en magasin, sans catalogue que les clients pouvaient consulter seuls.",
+    },
+    built: {
+      en: ["A searchable catalogue with filters", "Product pages and favourites", "Ordering through WhatsApp with the model and price pre-filled", "French and English"],
+      fr: ["Un catalogue avec recherche et filtres", "Des fiches produits et des favoris", "La commande par WhatsApp avec le modèle et le prix déjà remplis", "Français et anglais"],
+    },
+    result: {
+      en: "Launching soon. Customers will be able to choose a phone and order in one tap.",
+      fr: "Lancement imminent. Les clients pourront choisir un téléphone et commander en un geste.",
+    },
+    screenshots: ["/projects/mboa-phones.webp"],
+  },
+  {
+    slug: "the-line",
+    name: "The Line",
+    kind: { en: "Interactive history website", fr: "Site d'histoire interactif" },
+    year: "2026",
+    summary: {
+      en: "A digital history of Cameroon's partition and reunification, with maps and a timeline.",
+      fr: "Une histoire numérique de la partition et de la réunification du Cameroun, avec cartes et frise.",
+    },
+    stack: ["HTML", "CSS", "JavaScript", "Node.js", "SVG"],
+    image: "/projects/the-line.webp",
+    imageAlt: { en: "The Line home page", fr: "Page d'accueil de The Line" },
+    live: "https://the-line-eight.vercel.app",
+    github: "https://github.com/samueletah54-art/The-line-",
+    problem: {
+      en: "The story of how Cameroon was divided in 1916 and reunified is scattered across archives that are hard to find and harder to read.",
+      fr: "L'histoire de la division du Cameroun en 1916 et de sa réunification est dispersée dans des archives difficiles à trouver et à lire.",
+    },
+    built: {
+      en: ["Nine referenced chapters", "Scroll-driven maps and a searchable timeline", "24 historical profiles and 50+ licence-checked images", "An oral-history strand with a consent process"],
+      fr: ["Neuf chapitres sourcés", "Des cartes animées au défilement et une frise consultable", "24 portraits historiques et plus de 50 images aux licences vérifiées", "Un volet d'histoire orale avec un protocole de consentement"],
+    },
+    result: {
+      en: "A live, fast, static site that reads well on a phone and cites every source.",
+      fr: "Un site statique rapide, en ligne, lisible sur téléphone et qui cite chaque source.",
+    },
+    screenshots: ["/projects/the-line.webp"],
   },
 ];
 
-// Interface and section text, per language.
-export const copy = {
-  en: {
-    nav: { about: "About", experience: "Experience", work: "Projects", craft: "Motion & writing", skills: "Skills", services: "Services", writing: "Writing", contact: "Contact", cv: "CV" },
-    availability: "Available for new projects",
-    viewWork: "View work",
-    contactBtn: "Contact",
-    menuOpen: "Open menu",
-    menuClose: "Close menu",
-    langLabel: "Language",
-
-    aboutTitle: ["From International Relations to ", "building the web."],
-    about: [
-      "I'm Samuel, an engineer and writer based in Yaoundé, Cameroon. I build websites that load fast on the phones people actually use, and I write: articles, long-form pieces and the words on the sites I make.",
-      "I didn't start in tech. I studied International Relations at the University of Yaoundé I, where I learned to research carefully and write clearly. In 2025 I put that to work as a ghostwriter, writing for clients under their own names.",
-      "Then I taught myself to code by shipping real things: an exam-prep platform for Cameroonian students, a storefront for a phone shop in Yaoundé and an interactive history of my country's partition. Today I build for businesses, schools and organisations, and I'm deepening my security skills so every site I hand over can be trusted.",
-      "When I'm not coding or writing, I edit Vox-style explainer videos.",
-    ],
-    facts: [
-      { label: "Based in", value: "Yaoundé, Cameroon" },
-      { label: "Background", value: "BA International Relations, University of Yaoundé I" },
-      { label: "Languages", value: "English · French · German (A2)" },
-      { label: "Focus", value: "Business websites, web apps, security" },
-    ],
-    proof: [
-      { n: "2", label: "Live platforms" },
-      { n: "3", label: "Languages spoken" },
-      { n: "7.0", label: "IELTS band" },
-      { n: "109", label: "Exam questions built" },
-    ],
-    experienceTitle: "Experience",
-    craft: {
-      motionTitle: "Vox-style motion",
-      motionIntro: "Explainer videos that make a complex story easy to follow: a clear script, then kinetic text, animated maps and archive footage cut to the voice-over.",
-      motionMakes: ["YouTube explainers", "Short-form videos for social media", "Animated maps and timelines", "Kinetic typography"],
-      reelLabel: "Showreel",
-      reelPlay: "Play the reel",
-      writingTitle: "Ghostwriting",
-      writingIntro: "Writing published under my clients' names: researched properly, written in their voice and delivered on deadline, in English or French.",
-      writingMakes: ["Articles and opinion pieces", "Speeches", "Memoirs", "Editing and French–English translation"],
-      confidential: "Client work stays confidential. Samples are available on request, and my own writing is in the Writing section.",
-      processLabel: "How I work",
-      motionSteps: ["Script", "Storyboard", "Motion", "Sound & export"],
-      writingSteps: ["Interview", "Outline", "Draft in your voice", "Revise together"],
-      ask: "Ask for a sample",
+/* ---------- Services ---------- */
+export const services: { slug: string; icon: string; title: Text; text: Text; included: TextList; timeline: Text }[] = [
+  {
+    slug: "web-development",
+    icon: "code",
+    title: { en: "Web development", fr: "Développement web" },
+    text: {
+      en: "A complete website for your business, school or organisation, built to load fast on mobile data.",
+      fr: "Un site complet pour votre entreprise, école ou organisation, pensé pour se charger vite sur les données mobiles.",
     },
-    experience: [
-      { year: "2026", role: "Freelance web developer", org: "Clients & independent projects" },
-      { year: "2025", role: "Ghostwriter", org: "Independent" },
-      { year: "Degree", role: "Licence (BA), International Relations", org: "University of Yaoundé I" },
-    ],
-
-    workTitle: ["Selected projects, ", "live", " and in use."],
-    liveSite: "Live site",
-    opens: "opens {name} in a new tab",
-    source: "source code of {name}",
-    soon: "Launching soon",
-    stack: "Stack",
-
-    skillsTitle: ["The tools I ", "ship", " with."],
-    skills: [
-      { group: "Languages", items: ["HTML", "CSS", "JavaScript", "TypeScript", "SQL"] },
-      { group: "Frameworks", items: ["React", "Next.js", "Tailwind CSS", "Node.js"] },
-      { group: "Tools", items: ["Git & GitHub", "Vercel", "Supabase", "VS Code"] },
-      { group: "Security", items: ["HTTPS & security headers", "Input validation", "Privacy-first analytics"] },
-      { group: "Video", items: ["CapCut", "Kinetic typography", "Map animation", "Script to edit"] },
-    ],
-
-    servicesTitle: ["What I can ", "build", " for you."],
-    services: [
-      {
-        title: "Business websites",
-        description:
-          "A complete site for your shop, school or organisation: fast on mobile data, bilingual if you need it, easy for customers to contact you.",
-      },
-      {
-        title: "Landing pages",
-        description:
-          "One focused page for a product, an event or a campaign, built to load instantly and turn visits into WhatsApp messages or sign-ups.",
-      },
-      {
-        title: "Maintenance & security",
-        description: "Updates, backups, security headers and fixes after launch, so your site stays online, safe and current.",
-      },
-    ],
-    alsoTitle: "Also available",
-    also: [
-      {
-        title: "Video editing",
-        description:
-          "Vox-style explainer videos: kinetic text, animated maps and archive footage cut to a script, for YouTube channels, brands and documentaries.",
-      },
-      {
-        title: "Ghostwriting",
-        description:
-          "Articles and long-form writing published under your name: researched properly, written in your voice, delivered on deadline. English or French.",
-      },
-    ],
-
-    contactTitle: ["Have a project? ", "Let's talk."],
-    contactIntro: "Tell me what you need. WhatsApp is the fastest way to reach me; email and the form below work too.",
-    form: {
-      name: "Name",
-      email: "Email",
-      details: "Project details",
-      placeholder: "What do you need, and by when?",
-      send: "Send message",
-      sending: "Sending…",
-      sent: "Thanks, your message is on its way. I'll reply soon.",
-      sentMail: "Your email app should open with the message ready to send.",
-      error: "Something went wrong. Please email",
-      subject: "Website enquiry from",
-      cvFull: "View full CV",
+    included: {
+      en: ["Design and build, mobile first", "English and French if you need it", "WhatsApp and contact buttons", "Basic SEO and analytics", "Hosting set-up and handover"],
+      fr: ["Conception et réalisation, mobile d'abord", "Anglais et français si besoin", "Boutons WhatsApp et contact", "Référencement de base et statistiques", "Mise en ligne et passation"],
     },
-    writingIntro: "Notes on building for the web, writing, and working from Cameroon.",
-    readPost: "Read",
-    allPosts: "Back to home",
-    minRead: "min read",
-    nowLabel: "Now",
-    now: "Launching the Mboa Phones storefront, deepening my web security skills and editing explainer videos.",
-    copy: "Copy",
-    whatsappCta: "Chat on WhatsApp",
-    sound: { on: "Turn sounds on", off: "Turn sounds off" },
-    search: { button: "Search", placeholder: "Search sections, projects, posts…", none: "Nothing found", sections: "Sections", projects: "Projects", writing: "Writing", links: "Contact & links" },
-    copied: "Email copied ✓",
-    builtWith: "Built with Next.js, Tailwind CSS & Framer Motion",
-    toTop: "Back to top",
+    timeline: { en: "2–4 weeks", fr: "2 à 4 semaines" },
   },
-
-  fr: {
-    nav: { about: "Profil", experience: "Expérience", work: "Projets", craft: "Vidéo & écriture", skills: "Compétences", services: "Services", writing: "Écrits", contact: "Contact", cv: "CV" },
-    availability: "Disponible pour de nouveaux projets",
-    viewWork: "Voir les projets",
-    contactBtn: "Contact",
-    menuOpen: "Ouvrir le menu",
-    menuClose: "Fermer le menu",
-    langLabel: "Langue",
-
-    aboutTitle: ["Des relations internationales ", "au développement web."],
-    about: [
-      "Je suis Samuel, ingénieur web et rédacteur à Yaoundé, au Cameroun. Je crée des sites qui se chargent vite sur les téléphones que les gens utilisent vraiment, et j'écris : des articles, des textes longs et les mots des sites que je construis.",
-      "Je ne viens pas de la tech. J'ai étudié les relations internationales à l'Université de Yaoundé I, où j'ai appris à chercher avec rigueur et à écrire clairement. En 2025, j'ai mis cela à profit comme prête-plume, en écrivant pour des clients sous leur propre nom.",
-      "Puis j'ai appris à coder en réalisant de vrais projets : une plateforme de préparation aux examens pour les élèves camerounais, une boutique en ligne pour un vendeur de téléphones à Yaoundé et une histoire interactive de la partition de mon pays. Aujourd'hui, je crée pour des entreprises, des écoles et des organisations, et je renforce mes compétences en sécurité pour que chaque site livré soit digne de confiance.",
-      "Quand je ne code pas et n'écris pas, je monte des vidéos explicatives dans le style Vox.",
-    ],
-    facts: [
-      { label: "Basé à", value: "Yaoundé, Cameroun" },
-      { label: "Formation", value: "Licence en relations internationales, Université de Yaoundé I" },
-      { label: "Langues", value: "Anglais · Français · Allemand (A2)" },
-      { label: "Spécialité", value: "Sites d'entreprise, applications web, sécurité" },
-    ],
-    proof: [
-      { n: "2", label: "Plateformes en ligne" },
-      { n: "3", label: "Langues parlées" },
-      { n: "7.0", label: "Score IELTS" },
-      { n: "109", label: "Questions d'examen créées" },
-    ],
-    experienceTitle: "Expérience",
-    craft: {
-      motionTitle: "Motion design style Vox",
-      motionIntro: "Des vidéos explicatives qui rendent une histoire complexe facile à suivre : un script clair, puis du texte animé, des cartes animées et des images d'archives montées sur la voix off.",
-      motionMakes: ["Vidéos explicatives YouTube", "Vidéos courtes pour les réseaux sociaux", "Cartes et frises animées", "Typographie animée"],
-      reelLabel: "Bande démo",
-      reelPlay: "Lire la bande démo",
-      writingTitle: "Prête-plume",
-      writingIntro: "Des textes publiés sous le nom de mes clients : bien documentés, écrits dans leur voix et livrés dans les délais, en anglais ou en français.",
-      writingMakes: ["Articles et tribunes", "Discours", "Mémoires", "Relecture et traduction anglais–français"],
-      confidential: "Le travail des clients reste confidentiel. Des extraits sont disponibles sur demande, et mes propres textes sont dans la rubrique Écrits.",
-      processLabel: "Ma méthode",
-      motionSteps: ["Script", "Storyboard", "Animation", "Son et export"],
-      writingSteps: ["Entretien", "Plan", "Rédaction dans votre voix", "Révision ensemble"],
-      ask: "Demander un extrait",
+  {
+    slug: "website-redesign",
+    icon: "refresh",
+    title: { en: "Website redesign", fr: "Refonte de site" },
+    text: {
+      en: "Your current site, faster, clearer and easier to use, without losing what already works.",
+      fr: "Votre site actuel, plus rapide, plus clair et plus simple, sans perdre ce qui fonctionne déjà.",
     },
-    experience: [
-      { year: "2026", role: "Développeur web freelance", org: "Clients et projets indépendants" },
-      { year: "2025", role: "Prête-plume", org: "Indépendant" },
-      { year: "Diplôme", role: "Licence en relations internationales", org: "Université de Yaoundé I" },
-    ],
-
-    workTitle: ["Des projets ", "en ligne", " et utilisés."],
-    liveSite: "Voir le site",
-    opens: "ouvre {name} dans un nouvel onglet",
-    source: "code source de {name}",
-    soon: "Bientôt en ligne",
-    stack: "Technologies",
-
-    skillsTitle: ["Les outils avec lesquels je ", "livre", "."],
-    skills: [
-      { group: "Langages", items: ["HTML", "CSS", "JavaScript", "TypeScript", "SQL"] },
-      { group: "Frameworks", items: ["React", "Next.js", "Tailwind CSS", "Node.js"] },
-      { group: "Outils", items: ["Git & GitHub", "Vercel", "Supabase", "VS Code"] },
-      { group: "Sécurité", items: ["HTTPS et en-têtes de sécurité", "Validation des entrées", "Statistiques respectueuses de la vie privée"] },
-      { group: "Vidéo", items: ["CapCut", "Typographie animée", "Cartes animées", "Du script au montage"] },
-    ],
-
-    servicesTitle: ["Ce que je peux ", "créer", " pour vous."],
-    services: [
-      {
-        title: "Sites d'entreprise",
-        description:
-          "Un site complet pour votre boutique, école ou organisation : rapide sur les données mobiles, bilingue si besoin, et facile à contacter pour vos clients.",
-      },
-      {
-        title: "Pages de présentation",
-        description:
-          "Une page ciblée pour un produit, un événement ou une campagne, qui se charge instantanément et transforme les visites en messages WhatsApp ou en inscriptions.",
-      },
-      {
-        title: "Maintenance et sécurité",
-        description:
-          "Mises à jour, sauvegardes, en-têtes de sécurité et corrections après la mise en ligne, pour que votre site reste disponible, sûr et à jour.",
-      },
-    ],
-    alsoTitle: "Également disponible",
-    also: [
-      {
-        title: "Montage vidéo",
-        description:
-          "Vidéos explicatives dans le style Vox : texte animé, cartes animées et images d'archives montées sur un script, pour des chaînes YouTube, des marques et des documentaires.",
-      },
-      {
-        title: "Prête-plume",
-        description:
-          "Articles et textes longs publiés sous votre nom : bien documentés, écrits dans votre voix, livrés dans les délais. En anglais ou en français.",
-      },
-    ],
-
-    contactTitle: ["Un projet ? ", "Parlons-en."],
-    contactIntro: "Dites-moi ce dont vous avez besoin. WhatsApp est le moyen le plus rapide de me joindre ; l'e-mail et le formulaire ci-dessous fonctionnent aussi.",
-    form: {
-      name: "Nom",
-      email: "E-mail",
-      details: "Votre projet",
-      placeholder: "De quoi avez-vous besoin, et pour quand ?",
-      send: "Envoyer",
-      sending: "Envoi…",
-      sent: "Merci, votre message est envoyé. Je vous réponds rapidement.",
-      sentMail: "Votre messagerie devrait s'ouvrir avec le message prêt à envoyer.",
-      error: "Une erreur est survenue. Écrivez-moi à",
-      subject: "Demande via le site de",
-      cvFull: "Voir le CV complet",
+    included: {
+      en: ["Audit of speed, content and design", "New design and cleaner structure", "Content moved over carefully", "Before/after report"],
+      fr: ["Audit de vitesse, contenu et design", "Nouveau design et structure plus claire", "Migration soignée du contenu", "Rapport avant/après"],
     },
-    writingIntro: "Des notes sur le web, l'écriture et le travail depuis le Cameroun.",
-    readPost: "Lire",
-    allPosts: "Retour à l'accueil",
-    minRead: "min de lecture",
-    nowLabel: "En ce moment",
-    now: "Je lance la boutique Mboa Phones, je renforce mes compétences en sécurité web et je monte des vidéos explicatives.",
-    copy: "Copier",
-    whatsappCta: "Discuter sur WhatsApp",
-    sound: { on: "Activer les sons", off: "Couper les sons" },
-    search: { button: "Rechercher", placeholder: "Rechercher une section, un projet, un article…", none: "Aucun résultat", sections: "Sections", projects: "Projets", writing: "Écrits", links: "Contact et liens" },
-    copied: "E-mail copié ✓",
-    builtWith: "Réalisé avec Next.js, Tailwind CSS et Framer Motion",
-    toTop: "Haut de page",
+    timeline: { en: "2–3 weeks", fr: "2 à 3 semaines" },
   },
+  {
+    slug: "security-audit",
+    icon: "shield",
+    title: { en: "Security audits", fr: "Audits de sécurité" },
+    text: {
+      en: "A practical check of your website's security basics, with a clear list of fixes in plain language.",
+      fr: "Une vérification concrète des bases de sécurité de votre site, avec une liste claire de corrections.",
+    },
+    included: {
+      en: ["HTTPS and security headers check", "Forms, logins and spam protection", "Outdated software and plugins", "Written report with priorities"],
+      fr: ["Vérification HTTPS et en-têtes de sécurité", "Formulaires, connexions et anti-spam", "Logiciels et extensions obsolètes", "Rapport écrit avec priorités"],
+    },
+    timeline: { en: "3–5 days", fr: "3 à 5 jours" },
+  },
+  {
+    slug: "video-editing",
+    icon: "video",
+    title: { en: "Video editing", fr: "Montage vidéo" },
+    text: {
+      en: "Vox-style explainer videos: a clear script, kinetic text, animated maps and archive footage.",
+      fr: "Des vidéos explicatives dans le style Vox : un script clair, du texte animé, des cartes et des archives.",
+    },
+    included: {
+      en: ["Script review", "Storyboard", "Motion graphics and edit", "Sound, subtitles and export for YouTube or social media"],
+      fr: ["Relecture du script", "Storyboard", "Animation et montage", "Son, sous-titres et export pour YouTube ou les réseaux"],
+    },
+    timeline: { en: "1–2 weeks per video", fr: "1 à 2 semaines par vidéo" },
+  },
+];
+
+/* ---------- Courses (placeholders until launch) ---------- */
+export type Course = {
+  slug: string;
+  title: Text;
+  promise: Text;
+  level: Text;
+  status: "soon" | "open";
+  colors: [string, string];
+  icon: string;
+  learn: TextList;
+  forWho: TextList;
+  notFor: TextList;
+  modules: { title: Text; lessons: TextList }[];
 };
 
-export type Copy = (typeof copy)["en"];
+export const courses: Course[] = [
+  {
+    slug: "html-css-from-zero",
+    title: { en: "HTML & CSS from Zero", fr: "HTML et CSS de zéro" },
+    promise: { en: "Build and publish your first real website, even if you've never written code.", fr: "Créez et publiez votre premier vrai site, même sans avoir jamais codé." },
+    level: { en: "Beginner", fr: "Débutant" },
+    status: "soon",
+    colors: ["#16a34a", "#2dd4bf"],
+    icon: "</>",
+    learn: { en: ["How web pages are built", "Layout with Flexbox and Grid", "Responsive design for phones", "Publishing your site for free"], fr: ["Comment une page web est construite", "La mise en page avec Flexbox et Grid", "Le design adapté aux téléphones", "Publier votre site gratuitement"] },
+    forWho: { en: ["Complete beginners", "Students and career changers"], fr: ["Les grands débutants", "Les étudiants et les personnes en reconversion"] },
+    notFor: { en: ["People who already build sites"], fr: ["Ceux qui créent déjà des sites"] },
+    modules: [
+      { title: { en: "Getting started", fr: "Premiers pas" }, lessons: { en: ["Your tools", "Your first page"], fr: ["Vos outils", "Votre première page"] } },
+      { title: { en: "Styling with CSS", fr: "Le style avec CSS" }, lessons: { en: ["Colours and fonts", "Flexbox", "Grid"], fr: ["Couleurs et polices", "Flexbox", "Grid"] } },
+      { title: { en: "Going live", fr: "Mise en ligne" }, lessons: { en: ["Responsive design", "Publishing"], fr: ["Design adaptatif", "Publication"] } },
+    ],
+  },
+  {
+    slug: "javascript-for-real-projects",
+    title: { en: "JavaScript for Real Projects", fr: "JavaScript pour de vrais projets" },
+    promise: { en: "Go from copying snippets to building interactive features you understand.", fr: "Passez du copier-coller à des fonctionnalités interactives que vous comprenez." },
+    level: { en: "Beginner–intermediate", fr: "Débutant à intermédiaire" },
+    status: "soon",
+    colors: ["#ca8a04", "#ffe14d"],
+    icon: "JS",
+    learn: { en: ["Variables, functions and the DOM", "Fetching data from APIs", "Building a small app", "Debugging with confidence"], fr: ["Variables, fonctions et DOM", "Récupérer des données d'API", "Créer une petite application", "Déboguer avec assurance"] },
+    forWho: { en: ["People who know some HTML and CSS"], fr: ["Ceux qui connaissent un peu HTML et CSS"] },
+    notFor: { en: ["Experienced JavaScript developers"], fr: ["Les développeurs JavaScript expérimentés"] },
+    modules: [
+      { title: { en: "The basics", fr: "Les bases" }, lessons: { en: ["Values and variables", "Functions"], fr: ["Valeurs et variables", "Fonctions"] } },
+      { title: { en: "The browser", fr: "Le navigateur" }, lessons: { en: ["The DOM", "Events", "Fetch"], fr: ["Le DOM", "Les événements", "Fetch"] } },
+      { title: { en: "Project", fr: "Projet" }, lessons: { en: ["Build a WhatsApp order form"], fr: ["Créer un formulaire de commande WhatsApp"] } },
+    ],
+  },
+  {
+    slug: "web-security-basics",
+    title: { en: "Web Security Basics for Developers", fr: "Les bases de la sécurité web pour développeurs" },
+    promise: { en: "Ship websites that don't get hacked by the most common attacks.", fr: "Livrez des sites qui résistent aux attaques les plus courantes." },
+    level: { en: "Intermediate", fr: "Intermédiaire" },
+    status: "soon",
+    colors: ["#0f766e", "#4ade80"],
+    icon: "🛡",
+    learn: { en: ["HTTPS and security headers", "XSS, CSRF and injection, explained", "Safe forms and logins", "A security checklist for every launch"], fr: ["HTTPS et en-têtes de sécurité", "XSS, CSRF et injections, expliqués", "Formulaires et connexions sûrs", "Une checklist sécurité pour chaque lancement"] },
+    forWho: { en: ["Developers who build sites for clients"], fr: ["Les développeurs qui créent des sites pour des clients"] },
+    notFor: { en: ["Complete beginners to code"], fr: ["Les grands débutants en code"] },
+    modules: [
+      { title: { en: "Foundations", fr: "Fondations" }, lessons: { en: ["How attacks happen", "HTTPS and headers"], fr: ["Comment les attaques arrivent", "HTTPS et en-têtes"] } },
+      { title: { en: "Common attacks", fr: "Attaques courantes" }, lessons: { en: ["XSS", "CSRF", "Injection"], fr: ["XSS", "CSRF", "Injection"] } },
+      { title: { en: "Launch checklist", fr: "Checklist de lancement" }, lessons: { en: ["Audit your own site"], fr: ["Auditer votre propre site"] } },
+    ],
+  },
+  {
+    slug: "vox-style-video-editing",
+    title: { en: "Vox-Style Video Editing", fr: "Montage vidéo style Vox" },
+    promise: { en: "Turn a script into a clear, engaging explainer video with free tools.", fr: "Transformez un script en vidéo explicative claire et captivante avec des outils gratuits." },
+    level: { en: "Beginner–intermediate", fr: "Débutant à intermédiaire" },
+    status: "soon",
+    colors: ["#2b6cb0", "#4fa3e0"],
+    icon: "▶",
+    learn: { en: ["Writing a script that holds attention", "Kinetic typography", "Animated maps and archive footage", "Sound and export for YouTube"], fr: ["Écrire un script qui retient l'attention", "La typographie animée", "Cartes animées et images d'archives", "Son et export pour YouTube"] },
+    forWho: { en: ["YouTubers and storytellers", "Anyone curious about motion design"], fr: ["Les YouTubeurs et les conteurs", "Les curieux du motion design"] },
+    notFor: { en: ["Professional motion designers"], fr: ["Les motion designers professionnels"] },
+    modules: [
+      { title: { en: "Story first", fr: "L'histoire d'abord" }, lessons: { en: ["Script", "Storyboard"], fr: ["Script", "Storyboard"] } },
+      { title: { en: "Motion", fr: "Animation" }, lessons: { en: ["Kinetic text", "Maps"], fr: ["Texte animé", "Cartes"] } },
+      { title: { en: "Finish", fr: "Finition" }, lessons: { en: ["Sound", "Export"], fr: ["Son", "Export"] } },
+    ],
+  },
+];
+
+/* ---------- About ---------- */
+export const about = {
+  bio: {
+    en: [
+      "I'm Samuel, a web developer based in Yaoundé, Cameroon. I build websites that load fast on the phones people actually use, work in English and French, and are secure by default.",
+      "I didn't start in tech. I studied International Relations at the University of Yaoundé I, then worked as a ghostwriter in 2025 before teaching myself to code by shipping real projects.",
+      "Today I build for businesses, schools and organisations, I'm deepening my cybersecurity skills, and I edit Vox-style explainer videos.",
+    ],
+    fr: [
+      "Je suis Samuel, développeur web à Yaoundé, au Cameroun. Je crée des sites qui se chargent vite sur les téléphones que les gens utilisent vraiment, en anglais et en français, et sécurisés par défaut.",
+      "Je ne viens pas de la tech. J'ai étudié les relations internationales à l'Université de Yaoundé I, puis j'ai travaillé comme prête-plume en 2025 avant d'apprendre à coder en réalisant de vrais projets.",
+      "Aujourd'hui, je crée pour des entreprises, des écoles et des organisations, je renforce mes compétences en cybersécurité et je monte des vidéos explicatives dans le style Vox.",
+    ],
+  } as TextList,
+  skills: [
+    { group: { en: "Front-end", fr: "Front-end" } as Text, items: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"] },
+    { group: { en: "Back-end & tools", fr: "Back-end et outils" } as Text, items: ["Node.js", "Supabase", "SQL", "Git & GitHub", "Vercel"] },
+    { group: { en: "Security", fr: "Sécurité" } as Text, items: ["HTTPS & headers", "Input validation", "Privacy-first analytics"] },
+    { group: { en: "Video & writing", fr: "Vidéo et écriture" } as Text, items: ["CapCut", "Kinetic typography", "Ghostwriting", "EN ↔ FR translation"] },
+  ],
+  timeline: [
+    { year: "2026", title: { en: "Freelance web developer", fr: "Développeur web freelance" } as Text, text: { en: "Examina Global, Mboa Phones and The Line.", fr: "Examina Global, Mboa Phones et The Line." } as Text },
+    { year: "2025", title: { en: "Ghostwriter", fr: "Prête-plume" } as Text, text: { en: "Articles, speeches and memoirs published under clients' names.", fr: "Articles, discours et mémoires publiés sous le nom des clients." } as Text },
+    { year: "UY1", title: { en: "Licence (BA) in International Relations", fr: "Licence en relations internationales" } as Text, text: { en: "University of Yaoundé I.", fr: "Université de Yaoundé I." } as Text },
+    { year: "2018", title: { en: "GCE Advanced Level", fr: "GCE Advanced Level" } as Text, text: { en: "Cameroon.", fr: "Cameroun." } as Text },
+  ],
+  languages: { en: "English (first language, IELTS 7) · French (fluent) · German (A2) · Pidgin", fr: "Anglais (langue maternelle, IELTS 7) · Français (courant) · Allemand (A2) · Pidgin" } as Text,
+};
+
+/* ---------- /uses ---------- */
+export const uses: { group: Text; items: { name: string; note: Text }[] }[] = [
+  {
+    group: { en: "Hardware", fr: "Matériel" },
+    items: [
+      { name: "Windows PC", note: { en: "Main machine for code and editing", fr: "Machine principale pour le code et le montage" } },
+      { name: "iMac", note: { en: "Second machine", fr: "Deuxième machine" } },
+      { name: "Android phone", note: { en: "I test every site on it", fr: "Je teste chaque site dessus" } },
+    ],
+  },
+  {
+    group: { en: "Code", fr: "Code" },
+    items: [
+      { name: "VS Code", note: { en: "Editor", fr: "Éditeur" } },
+      { name: "Next.js + Tailwind CSS", note: { en: "My default stack", fr: "Ma stack par défaut" } },
+      { name: "Git & GitHub", note: { en: "Version control", fr: "Gestion de versions" } },
+      { name: "Vercel", note: { en: "Hosting", fr: "Hébergement" } },
+      { name: "Supabase", note: { en: "Database and auth", fr: "Base de données et authentification" } },
+      { name: "Claude", note: { en: "AI pair-programmer and editor", fr: "Assistant IA pour coder et relire" } },
+    ],
+  },
+  {
+    group: { en: "Video & writing", fr: "Vidéo et écriture" },
+    items: [
+      { name: "CapCut", note: { en: "Editing and motion", fr: "Montage et animation" } },
+      { name: "Google Docs", note: { en: "Drafts and client writing", fr: "Brouillons et rédaction client" } },
+    ],
+  },
+];
+
+/* ---------- /now ---------- */
+export const now = {
+  updated: "2026-11-09",
+  items: {
+    en: [
+      "Launching the Mboa Phones storefront.",
+      "Deepening my web security skills.",
+      "Recording my first course: HTML & CSS from Zero.",
+      "Writing a new blog post every two weeks.",
+      "Editing Vox-style explainer videos.",
+    ],
+    fr: [
+      "Je lance la boutique Mboa Phones.",
+      "Je renforce mes compétences en sécurité web.",
+      "J'enregistre mon premier cours : HTML et CSS de zéro.",
+      "J'écris un nouvel article toutes les deux semaines.",
+      "Je monte des vidéos explicatives dans le style Vox.",
+    ],
+  } as TextList,
+};

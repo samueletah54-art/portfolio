@@ -2,43 +2,49 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { site, posts } from "@/content/site";
+import { projects } from "@/content/site";
 import { useLang } from "./LangProvider";
 import { useSound } from "./Sound";
-import { sectionIds } from "./SideNav";
+import { usePosts } from "./PostIndex";
+import { typing } from "./ThemeToggle";
+import { Icon } from "./Icons";
 
-type Item = { group: string; label: string; hint: string; go: string; external?: boolean };
+type Item = { group: string; label: string; sub?: string; go: string };
 
-// Search button + Ctrl/Cmd+K palette: jump to any section, project, post or contact link.
+// Search button + command palette. Opens with the button, Ctrl/Cmd+K, or "/".
 export function Search() {
   const { lang, t } = useLang();
   const { play } = useSound();
+  const posts = usePosts();
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
   const [sel, setSel] = useState(0);
   const input = useRef<HTMLInputElement>(null);
 
-  const items = useMemo<Item[]>(() => {
-    const c = site.contact;
-    return [
-      ...sectionIds.map((id) => ({ group: t.search.sections, label: t.nav[id], hint: `#${id}`, go: `/#${id}` })),
-      ...site.projects.map((p) => ({ group: t.search.projects, label: p.name, hint: p.kind[lang], go: p.live ?? "/#work", external: !!p.live })),
-      ...posts.map((p) => ({ group: t.search.writing, label: p.title[lang], hint: p.date, go: `/writing/${p.slug}` })),
+  const items = useMemo<Item[]>(
+    () => [
+      ...posts.map((p) => ({ group: t.search.posts, label: p[lang].title, sub: p[lang].subtitle, go: `/blog/${p.slug}` })),
+      ...projects.map((p) => ({ group: t.search.projects, label: p.name, sub: p.kind[lang], go: `/projects/${p.slug}` })),
       ...[
-        c.whatsapp && { group: t.search.links, label: "WhatsApp", hint: c.whatsapp, go: `https://wa.me/${c.whatsapp.replace(/\D/g, "")}`, external: true },
-        { group: t.search.links, label: t.form.email, hint: c.email, go: `mailto:${c.email}`, external: true },
-        { group: t.search.links, label: t.nav.cv, hint: "PDF / web", go: site.cv, external: true },
-        { group: t.search.links, label: "GitHub", hint: "github.com", go: c.github, external: true },
-        c.instagram && { group: t.search.links, label: "Instagram", hint: "@samuelisco22", go: c.instagram, external: true },
-        c.x && { group: t.search.links, label: "X", hint: "@samuel_izko", go: c.x, external: true },
-      ].filter(Boolean) as Item[],
-    ];
-  }, [lang, t]);
+        ["/", t.nav.home],
+        ["/blog", t.nav.blog],
+        ["/courses", t.nav.courses],
+        ["/projects", t.nav.projects],
+        ["/services", t.nav.services],
+        ["/about", t.nav.about],
+        ["/contact", t.nav.contact],
+        ["/uses", t.nav.uses],
+        ["/now", t.nav.now],
+        ["/cv", t.nav.cv],
+      ].map(([go, label]) => ({ group: t.search.pages, label, go })),
+    ],
+    [posts, lang, t],
+  );
 
   const shown = useMemo(() => {
     const s = q.trim().toLowerCase();
-    return s ? items.filter((i) => `${i.label} ${i.hint} ${i.group}`.toLowerCase().includes(s)) : items;
+    return s ? items.filter((i) => `${i.label} ${i.sub ?? ""}`.toLowerCase().includes(s)) : items;
   }, [items, q]);
 
   useEffect(() => {
@@ -46,60 +52,47 @@ export function Search() {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
         setOpen((o) => !o);
-      }
-      if (e.key === "Escape") setOpen(false);
+      } else if (e.key === "/" && !typing(e.target)) {
+        e.preventDefault();
+        setOpen(true);
+      } else if (e.key === "Escape") setOpen(false);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
   useEffect(() => {
-    if (open) {
-      play("open");
-      setQ("");
-      setSel(0);
-      setTimeout(() => input.current?.focus(), 10);
-    }
+    if (!open) return;
+    play("open");
+    setQ("");
+    setSel(0);
+    const id = setTimeout(() => input.current?.focus(), 10);
+    return () => clearTimeout(id);
   }, [open, play]);
 
-  function go(i: Item | undefined) {
+  function go(i?: Item) {
     if (!i) return;
     setOpen(false);
-    if (i.external) window.open(i.go, i.go.startsWith("mailto:") ? "_self" : "_blank", "noopener");
-    else router.push(i.go);
+    router.push(i.go);
   }
 
-  let lastGroup = "";
+  let last = "";
   return (
     <>
-      <button
-        type="button"
-        data-no-sound
-        onClick={() => setOpen(true)}
-        aria-label={t.search.button}
-        title={`${t.search.button} (Ctrl K)`}
-        className="boop grid h-10 w-10 place-items-center rounded-full border border-line text-fg transition-colors hover:border-accent hover:text-accent"
-      >
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" aria-hidden="true">
-          <circle cx="11" cy="11" r="7" />
-          <path d="m20 20-3.5-3.5" />
-        </svg>
+      <button type="button" data-no-sound onClick={() => setOpen(true)} aria-label={t.icons.search} title={`${t.icons.search} (/ or Ctrl K)`} className="icon-btn boop">
+        <Icon name="search" size={18} />
       </button>
-
       {open && (
-        <div className="fixed inset-0 z-[80] flex items-start justify-center bg-bg/70 px-4 pt-[12vh] backdrop-blur-sm" onClick={() => setOpen(false)}>
+        <div className="fixed inset-0 z-[90] flex items-start justify-center bg-black/50 px-4 pt-[10vh] backdrop-blur-sm" onClick={() => setOpen(false)}>
           <div
             role="dialog"
             aria-modal="true"
-            aria-label={t.search.button}
+            aria-label={t.icons.search}
             onClick={(e) => e.stopPropagation()}
-            className="search-pop w-full max-w-lg overflow-hidden rounded-2xl border border-line bg-bg-2 shadow-[0_30px_80px_-20px_rgb(0_0_0/0.5)]"
+            className="pop-in w-full max-w-lg overflow-hidden rounded-2xl border border-line bg-bg-3 shadow-[var(--shadow)]"
           >
             <div className="flex items-center gap-3 border-b border-line px-4">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" className="text-accent" aria-hidden="true">
-                <circle cx="11" cy="11" r="7" />
-                <path d="m20 20-3.5-3.5" />
-              </svg>
+              <Icon name="search" size={18} className="text-accent" />
               <input
                 ref={input}
                 value={q}
@@ -120,29 +113,30 @@ export function Search() {
                 aria-label={t.search.placeholder}
                 className="h-14 w-full bg-transparent text-base outline-none placeholder:text-muted"
               />
-              <kbd className="rounded border border-line px-1.5 py-0.5 font-mono text-[10px] text-muted">ESC</kbd>
+              <kbd className="hidden rounded border border-line px-1.5 py-0.5 font-mono text-[10px] text-muted sm:block">ESC</kbd>
             </div>
-            <ul className="max-h-[50vh] overflow-y-auto p-2" role="listbox">
-              {shown.length === 0 && <li className="px-3 py-6 text-center text-sm text-muted">{t.search.none}</li>}
+            <ul className="max-h-[55vh] overflow-y-auto p-2" role="listbox" aria-label={t.icons.search}>
+              {shown.length === 0 && <li className="px-3 py-8 text-center text-sm text-muted">{t.search.none}</li>}
               {shown.map((i, n) => {
-                const head = i.group !== lastGroup ? i.group : null;
-                lastGroup = i.group;
+                const head = i.group !== last ? i.group : null;
+                last = i.group;
                 return (
-                  <li key={`${i.group}-${i.label}`} role="option" aria-selected={n === sel}>
-                    {head && <p className="px-3 pb-1 pt-3 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">{head}</p>}
+                  <li key={`${i.go}-${i.label}`} role="option" aria-selected={n === sel}>
+                    {head && <p className="px-3 pb-1 pt-3 text-[11px] font-bold uppercase tracking-widest text-muted">{head}</p>}
                     <button
                       type="button"
                       onMouseEnter={() => setSel(n)}
                       onClick={() => go(i)}
-                      className={`flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-left text-sm ${n === sel ? "bg-accent/15 text-fg" : "text-muted"}`}
+                      className={`flex w-full min-h-11 flex-col justify-center rounded-xl px-3 py-2 text-left ${n === sel ? "bg-accent-soft" : ""}`}
                     >
-                      <span className="truncate">{i.label}</span>
-                      <span className="shrink-0 font-mono text-[11px] text-muted">{i.external ? "↗" : i.hint.startsWith("#") ? i.hint : "→"}</span>
+                      <span className="font-semibold">{i.label}</span>
+                      {i.sub && <span className="line-clamp-1 text-sm text-muted">{i.sub}</span>}
                     </button>
                   </li>
                 );
               })}
             </ul>
+            <p className="border-t border-line px-4 py-2.5 text-xs text-muted">{t.search.hint}</p>
           </div>
         </div>
       )}

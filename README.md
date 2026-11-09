@@ -1,31 +1,69 @@
-# Samuel Etah — portfolio
+# Samuel ETAH — portfolio and blog
 
-Personal portfolio for Samuel Etah, web developer and security enthusiast in Yaoundé, Cameroon.
-Next.js (App Router) · TypeScript · Tailwind CSS · Framer Motion.
+Hand-coded with Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion and MDX. Hosted on Vercel.
+Brand: "Code. Secure. Create." Dark by default (#1e2129) with green (#4ade80), yellow (#ffe14d) and a blue footer.
 
 ## Edit the content
 
-All text, projects, skills, services and contact links live in **`src/content/site.ts`**.
-Change it, commit, push: Vercel redeploys automatically. Setting a value to `null` hides it.
+| What | Where |
+| --- | --- |
+| Profile, links, projects, services, courses, /uses, /now, CV | `src/content/site.ts` |
+| "Available for work" badge on/off | `availableForWork` in `src/content/site.ts` |
+| Testimonials (stay hidden while empty; add only real ones) | `src/content/testimonials.ts` |
+| Interface text, English and French | `src/i18n/en.ts`, `src/i18n/fr.ts` (same keys; a test checks this) |
+| Blog posts | `content/posts/<slug>/en.mdx` and `fr.mdx` |
+| Avatar images | `public/avatar/` (hero-sitting, footer-peek, wave, 404) |
+| Project screenshots | `public/projects/` (1200×750 WebP) |
 
-Project screenshots go in `public/projects/` (1200×750 WebP works best).
+### Write a post
+
+Create `content/posts/my-new-post/en.mdx` (and `fr.mdx` for French):
+
+```mdx
+---
+title: "Your title"
+subtitle: "One line under the title"
+excerpt: "Two lines shown in the article list"
+date: "2026-11-20"
+category: "web-development"   # a slug from categories in site.ts
+popular: false                # true shows it under Popular content
+---
+
+## A heading (appears in the table of contents)
+
+Your text. Code blocks get highlighting and a Copy button.
+```
+
+## Environment variables (Vercel → Project → Settings → Environment Variables)
+
+All optional. Without them the forms open the visitor's email app instead.
+
+| Name | What for | Where to get it |
+| --- | --- | --- |
+| `NEXT_PUBLIC_FORMSPREE_ID` | Contact form | Create a form at formspree.io; the ID is the part after `/f/` |
+| `NEXT_PUBLIC_NEWSLETTER_ENDPOINT` | Newsletter signup | A form endpoint that accepts an `email` field (e.g. a second Formspree form, or Buttondown's embed URL) |
+
+These values are public by design (they are form addresses, not secrets). Never put private keys in a `NEXT_PUBLIC_` variable.
+
+## Security
+
+- Security headers on every page (CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy) in `next.config.ts`
+- `/.well-known/security.txt` in `public/`
+- Forms: hidden honeypot field plus Formspree's own spam and rate limiting
 
 ## Run locally
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
-npm run build    # production build, also runs lint and type checks
+npm run dev        # http://localhost:3000
+npm run build      # production build
+npx vitest run     # tests
 ```
 
-## Contact form
+## Keyboard shortcuts
 
-The form sends through [Web3Forms](https://web3forms.com) (free, no backend).
-Get an access key there with your email, then in Vercel: **Project → Settings → Environment Variables**,
-add `NEXT_PUBLIC_WEB3FORMS_KEY` and redeploy. Without a key the form opens the visitor's email app instead.
+`/` or Ctrl/Cmd+K: search · `T`: switch theme · click the hero avatar 5 times for a surprise.
 
-## Custom domain
+## Still to do (phase 2: course platform)
 
-Buy a domain (Vercel, Namecheap, etc.), then in Vercel: **Project → Settings → Domains → Add**.
-Vercel shows the DNS records to add at your registrar; HTTPS is issued automatically.
-Finally update `url` in `src/content/site.ts` so SEO tags and the sitemap use the new address.
+Payments (card + Mobile Money), student accounts, lesson player, certificates. Needs accounts for Supabase, a payment provider and video hosting first.

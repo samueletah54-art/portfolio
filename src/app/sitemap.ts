@@ -1,9 +1,15 @@
 import type { MetadataRoute } from "next";
-import { site, posts } from "@/content/site";
+import { site, categories, projects, courses } from "@/content/site";
+import { getAllPosts } from "@/lib/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const u = (p: string) => `${site.url}${p}`;
+  const pages = ["", "/blog", "/projects", "/services", "/courses", "/about", "/contact", "/uses", "/now", "/cv", "/privacy"];
   return [
-    { url: site.url, lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
-    ...posts.map((p) => ({ url: `${site.url}/writing/${p.slug}`, lastModified: new Date(p.date), changeFrequency: "yearly" as const, priority: 0.7 })),
+    ...pages.map((p) => ({ url: u(p), changeFrequency: "weekly" as const, priority: p === "" ? 1 : 0.7 })),
+    ...getAllPosts().map((p) => ({ url: u(`/blog/${p.slug}`), lastModified: new Date(p.date), priority: 0.8 })),
+    ...categories.map((c) => ({ url: u(`/category/${c.slug}`), priority: 0.5 })),
+    ...projects.map((p) => ({ url: u(`/projects/${p.slug}`), priority: 0.6 })),
+    ...courses.map((c) => ({ url: u(`/courses/${c.slug}`), priority: 0.6 })),
   ];
 }

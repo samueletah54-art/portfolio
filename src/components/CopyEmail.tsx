@@ -28,7 +28,7 @@ export function CopyEmail() {
           onClick={copy}
           className="rounded-full border border-line px-3 py-1.5 font-mono text-xs uppercase tracking-[0.14em] text-muted transition-colors hover:border-accent hover:text-accent"
         >
-          {t.copy}
+          {t.contact.copy}
         </button>
         <AnimatePresence>
           {done && (
@@ -40,7 +40,7 @@ export function CopyEmail() {
               transition={{ type: "spring", stiffness: 400, damping: 22 }}
               className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-accent px-3 py-1.5 font-mono text-xs text-accent-fg"
             >
-              {t.copied}
+              {t.contact.copied}
             </m.span>
           )}
         </AnimatePresence>

@@ -1,0 +1,60 @@
+---
+title: "5 checks for a website that loads fast on a cheap phone"
+subtitle: "Simple fixes that make a real difference for visitors on mobile data."
+date: "2026-11-08"
+category: "web-development"
+popular: true
+---
+
+Most of the people who visit a website in Cameroon do it on an entry-level Android phone, on mobile data they pay for. A page that takes ten seconds to load is a page nobody sees. Here are five checks I run on every site I build.
+
+## 1. Shrink your images
+
+Images are usually the heaviest part of a page. Save them as WebP or AVIF and serve the size the screen needs, not a 4000-pixel photo.
+
+```html
+<img
+  src="/shop-640.webp"
+  srcset="/shop-640.webp 640w, /shop-1200.webp 1200w"
+  sizes="(min-width: 768px) 50vw, 100vw"
+  width="640"
+  height="400"
+  loading="lazy"
+  alt="Phones on display in the shop"
+/>
+```
+
+Setting `width` and `height` also stops the page from jumping while it loads.
+
+## 2. Load fewer fonts
+
+Every font file is another download. Use one or two families, and let the browser show text straight away:
+
+```css
+@font-face {
+  font-family: "Nunito";
+  src: url("/fonts/nunito.woff2") format("woff2");
+  font-display: swap;
+}
+```
+
+## 3. Ship less JavaScript
+
+A static page with a little JavaScript beats a heavy app for most business sites. Before adding a library, ask whether a few lines of code would do.
+
+```js
+// A WhatsApp order button needs no library at all
+const phone = "237600000000";
+const text = encodeURIComponent("Hello, I'd like to order the Galaxy A15");
+link.href = `https://wa.me/${phone}?text=${text}`;
+```
+
+## 4. Test on a real, slow connection
+
+Open Chrome DevTools, go to the Network tab and choose **Slow 4G**. Then load your site on an actual budget phone. What feels fine on office Wi-Fi often isn't.
+
+## 5. Measure, then fix
+
+Run [PageSpeed Insights](https://pagespeed.web.dev/) on the mobile setting. Aim for a score above 90, and fix the biggest item on the list first.
+
+> A fast website is not a luxury here. It is the difference between a customer and a closed tab.

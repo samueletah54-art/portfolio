@@ -1,0 +1,60 @@
+---
+title: "5 vérifications pour un site rapide sur un téléphone bon marché"
+subtitle: "Des corrections simples qui changent tout pour les visiteurs sur données mobiles."
+date: "2026-11-08"
+category: "web-development"
+popular: true
+---
+
+La plupart des gens qui visitent un site au Cameroun le font sur un téléphone Android d'entrée de gamme, avec des données mobiles qu'ils paient. Une page qui met dix secondes à charger est une page que personne ne voit. Voici cinq vérifications que je fais sur chaque site.
+
+## 1. Allégez vos images
+
+Les images sont souvent la partie la plus lourde d'une page. Enregistrez-les en WebP ou AVIF et servez la taille dont l'écran a besoin, pas une photo de 4 000 pixels.
+
+```html
+<img
+  src="/boutique-640.webp"
+  srcset="/boutique-640.webp 640w, /boutique-1200.webp 1200w"
+  sizes="(min-width: 768px) 50vw, 100vw"
+  width="640"
+  height="400"
+  loading="lazy"
+  alt="Téléphones exposés dans la boutique"
+/>
+```
+
+Indiquer `width` et `height` évite aussi que la page saute pendant le chargement.
+
+## 2. Chargez moins de polices
+
+Chaque police est un téléchargement de plus. Utilisez une ou deux familles, et laissez le navigateur afficher le texte tout de suite :
+
+```css
+@font-face {
+  font-family: "Nunito";
+  src: url("/fonts/nunito.woff2") format("woff2");
+  font-display: swap;
+}
+```
+
+## 3. Envoyez moins de JavaScript
+
+Pour la plupart des sites d'entreprise, une page statique avec un peu de JavaScript vaut mieux qu'une application lourde. Avant d'ajouter une bibliothèque, demandez-vous si quelques lignes suffiraient.
+
+```js
+// Un bouton de commande WhatsApp n'a besoin d'aucune bibliothèque
+const phone = "237600000000";
+const text = encodeURIComponent("Bonjour, je voudrais commander le Galaxy A15");
+link.href = `https://wa.me/${phone}?text=${text}`;
+```
+
+## 4. Testez sur une vraie connexion lente
+
+Ouvrez les outils de développement de Chrome, onglet Réseau, et choisissez **Slow 4G**. Puis ouvrez votre site sur un vrai téléphone d'entrée de gamme. Ce qui semble fluide au bureau ne l'est souvent pas.
+
+## 5. Mesurez, puis corrigez
+
+Lancez [PageSpeed Insights](https://pagespeed.web.dev/) en mode mobile. Visez un score au-dessus de 90 et corrigez d'abord le plus gros point de la liste.
+
+> Un site rapide n'est pas un luxe ici. C'est la différence entre un client et un onglet fermé.

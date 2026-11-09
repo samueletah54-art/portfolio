@@ -1,24 +1,23 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { copy, type Copy, type Lang } from "@/content/site";
+import type { Lang } from "@/content/site";
+import { en, type Dict } from "@/i18n/en";
+import { fr } from "@/i18n/fr";
 
-type Ctx = { lang: Lang; t: Copy; setLang: (l: Lang) => void };
+const dicts: Record<Lang, Dict> = { en, fr };
+type Ctx = { lang: Lang; t: Dict; setLang: (l: Lang) => void };
+const LangContext = createContext<Ctx>({ lang: "en", t: en, setLang: () => {} });
 
-const LangContext = createContext<Ctx>({ lang: "en", t: copy.en, setLang: () => {} });
-
-// English on first paint (good for search engines). After load: the visitor's saved choice,
-// otherwise French if their browser is set to French.
+// English is the default (and what search engines see). A visitor's choice is remembered.
 export function LangProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Lang>("en");
 
   useEffect(() => {
-    let saved: string | null = null;
     try {
-      saved = localStorage.getItem("lang");
+      const saved = localStorage.getItem("lang");
+      if (saved === "fr" || saved === "en") setLangState(saved);
     } catch {}
-    const initial: Lang = saved === "fr" || saved === "en" ? saved : navigator.language?.toLowerCase().startsWith("fr") ? "fr" : "en";
-    setLangState(initial);
   }, []);
 
   useEffect(() => {
@@ -32,7 +31,7 @@ export function LangProvider({ children }: { children: React.ReactNode }) {
     } catch {}
   }
 
-  return <LangContext.Provider value={{ lang, t: copy[lang], setLang }}>{children}</LangContext.Provider>;
+  return <LangContext.Provider value={{ lang, t: dicts[lang], setLang }}>{children}</LangContext.Provider>;
 }
 
 export const useLang = () => useContext(LangContext);

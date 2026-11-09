@@ -1,41 +1,45 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { site } from "@/content/site";
 import { useLang } from "./LangProvider";
 
-// Sends through Web3Forms (free, no backend) when NEXT_PUBLIC_WEB3FORMS_KEY is set.
-// Without a key it opens the visitor's email app with the message filled in.
-const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
-
-type Status = "idle" | "sending" | "sent" | "error";
+// Sends through Formspree when NEXT_PUBLIC_FORMSPREE_ID is set (free plan is enough).
+// Without it, it opens the visitor's email app with the message filled in.
+// Spam protection: a hidden honeypot field, a minimum fill time, and one send per 30 seconds.
+const formId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+type Status = "idle" | "sending" | "sent" | "mail" | "error" | "slow";
 
 export function ContactForm() {
   const { t } = useLang();
-  const f = t.form;
+  const c = t.contact;
   const [status, setStatus] = useState<Status>("idle");
+  const opened = useRef(Date.now());
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    if (data.get("botcheck")) return;
+    if (data.get("website")) return; // bots fill hidden fields
+    if (Date.now() - opened.current < 3000) return setStatus("slow");
+    try {
+      const last = Number(localStorage.getItem("contact:last") || 0);
+      if (Date.now() - last < 30_000) return setStatus("slow");
+      localStorage.setItem("contact:last", String(Date.now()));
+    } catch {}
 
-    if (!accessKey) {
-      const subject = `${f.subject} ${data.get("name")}`;
+    const subject = `${data.get("subject") || "Website enquiry"} — ${data.get("name")}`;
+    if (!formId) {
       const body = `${data.get("message")}\n\n${data.get("name")} (${data.get("email")})`;
       window.location.href = `mailto:${site.contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      setStatus("sent");
-      return;
+      return setStatus("mail");
     }
-
     setStatus("sending");
-    data.append("access_key", accessKey);
-    data.append("subject", `${f.subject} ${data.get("name")}`);
+    data.set("_subject", subject);
+    data.delete("website");
     try {
-      const res = await fetch("https://api.web3forms.com/submit", { method: "POST", body: data });
-      const json = await res.json();
-      if (json.success) {
+      const res = await fetch(`https://formspree.io/f/${formId}`, { method: "POST", body: data, headers: { Accept: "application/json" } });
+      if (res.ok) {
         setStatus("sent");
         form.reset();
       } else setStatus("error");
@@ -45,42 +49,48 @@ export function ContactForm() {
   }
 
   const field =
-    "mt-2 w-full rounded-xl border border-line bg-bg-2 px-4 py-3 text-base text-fg placeholder:text-muted/70 transition-colors focus:border-accent focus:outline-none";
+    "mt-2 w-full min-h-12 rounded-xl border border-line bg-bg-2 px-4 py-3 text-base text-fg placeholder:text-muted/70 transition-colors focus:border-accent focus:outline-none";
+  const label = "block text-sm font-bold";
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-5" noValidate={false}>
-      <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+    <form onSubmit={onSubmit} className="grid gap-5 rounded-2xl border border-line bg-bg-3/40 p-5 sm:p-7">
+      <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
-          {f.name}
+        <label className={label}>
+          {c.name}
           <input name="name" required maxLength={80} autoComplete="name" className={field} />
         </label>
-        <label className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
-          {f.email}
+        <label className={label}>
+          {c.email}
           <input name="email" type="email" required maxLength={120} autoComplete="email" className={field} />
         </label>
       </div>
-      <label className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
-        {f.details}
-        <textarea name="message" required rows={5} maxLength={4000} className={`${field} resize-y`} placeholder={f.placeholder} />
+      <label className={label}>
+        {c.subject}
+        <select name="subject" className={field} defaultValue={t.nav.services}>
+          {[t.services.title, t.courses.title, "Video", t.nav.about].map((o) => (
+            <option key={o}>{o}</option>
+          ))}
+        </select>
+      </label>
+      <label className={label}>
+        {c.message}
+        <textarea name="message" required rows={6} maxLength={4000} placeholder={c.placeholder} className={`${field} resize-y`} />
       </label>
       <div className="flex flex-wrap items-center gap-4">
-        <button
-          type="submit"
-          disabled={status === "sending"}
-          className="bg-gradient inline-flex h-12 items-center gap-2 rounded-full px-6 font-medium transition-transform hover:-translate-y-0.5 disabled:opacity-60"
-        >
-          {status === "sending" ? f.sending : f.send} <span aria-hidden="true">→</span>
+        <button type="submit" disabled={status === "sending"} className="btn btn-primary disabled:opacity-60">
+          {status === "sending" ? c.sending : c.send}
         </button>
-        <p role="status" aria-live="polite" className="text-sm text-muted">
-          {status === "sent" && (accessKey ? f.sent : f.sentMail)}
+        <p role="status" aria-live="polite" className="text-sm">
+          {status === "sent" && <span className="text-accent">{c.sent}</span>}
+          {status === "mail" && c.sentMail}
+          {status === "slow" && c.tooFast}
           {status === "error" && (
             <>
-              {f.error}{" "}
+              {c.error}{" "}
               <a className="text-accent underline" href={`mailto:${site.contact.email}`}>
                 {site.contact.email}
               </a>
-              .
             </>
           )}
         </p>

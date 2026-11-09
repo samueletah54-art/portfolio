@@ -3,7 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 
 // Small, soft interface sounds made on the fly with the Web Audio API (no audio files to download).
-// On by default; the speaker button in the header turns them off, and the choice is remembered.
+// Off by default; the speaker button turns them on, and the choice is remembered.
 type SoundName = "pop" | "on" | "off" | "open";
 type Ctx = { enabled: boolean; toggle: () => void; play: (s: SoundName) => void };
 
@@ -17,16 +17,15 @@ const recipes: Record<SoundName, { from: number; to: number; ms: number; type: O
 };
 
 export function SoundProvider({ children }: { children: React.ReactNode }) {
-  const [enabled, setEnabled] = useState(true);
+  const [enabled, setEnabled] = useState(false);
   const ctxRef = useRef<AudioContext | null>(null);
-  const enabledRef = useRef(true);
+  const enabledRef = useRef(false);
 
   useEffect(() => {
     try {
-      const saved = localStorage.getItem("sound");
-      if (saved === "off" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        setEnabled(false);
-        enabledRef.current = false;
+      if (localStorage.getItem("sound") === "on") {
+        setEnabled(true);
+        enabledRef.current = true;
       }
     } catch {}
   }, []);
@@ -93,7 +92,7 @@ export function SoundToggle({ labels }: { labels: { on: string; off: string } })
       aria-pressed={enabled}
       aria-label={enabled ? labels.off : labels.on}
       title={enabled ? labels.off : labels.on}
-      className="boop grid h-10 w-10 place-items-center rounded-full border border-line text-fg transition-colors hover:border-accent hover:text-accent"
+      className="icon-btn boop"
     >
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M11 5 6 9H3v6h3l5 4V5Z" fill="currentColor" />
