@@ -8,6 +8,8 @@ import { Projects } from "@/components/Projects";
 import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/Reveal";
 import { useLang } from "@/components/LangProvider";
+import { CursorGlow } from "@/components/CursorGlow";
+import { CopyEmail } from "@/components/CopyEmail";
 
 // Titles are stored as [plain, highlighted, plain?] so translations can place the accent word anywhere.
 const title = (parts: string[]) => (
@@ -42,8 +44,9 @@ export default function Home() {
 
   return (
     <>
+      <CursorGlow />
       <Header />
-      <main id="main">
+      <main id="main" className="relative z-10">
         <Hero />
 
         <Section id="about" number="01" label={t.nav.about} title={title(t.aboutTitle)}>
@@ -63,7 +66,7 @@ export default function Home() {
                 ))}
               </dl>
               <h3 className="mt-10 font-mono text-xs uppercase tracking-[0.16em] text-accent">{t.experienceTitle}</h3>
-              <ol className="mt-4 border-t border-line">
+              <ol className="dim-list mt-4 border-t border-line">
                 {t.experience.map((e) => (
                   <li key={e.role} className="grid grid-cols-[7rem_1fr] gap-4 border-b border-line py-4">
                     <span className="pt-0.5 font-mono text-xs text-muted">{e.year}</span>
@@ -113,10 +116,10 @@ export default function Home() {
         </Section>
 
         <Section id="services" number="04" label={t.nav.services} title={title(t.servicesTitle)}>
-          <ol className="grid gap-6 md:grid-cols-3">
+          <ol className="dim-list grid gap-6 md:grid-cols-3">
             {t.services.map((s, i) => (
               <Reveal as="li" key={s.title} delay={i * 0.08}>
-                <div className="group h-full rounded-2xl border border-line bg-bg-2/60 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60">
+                <div className="group h-full rounded-2xl border border-line bg-bg-2/60 p-7 transition-[transform,border-color] duration-500 ease-[cubic-bezier(.34,1.56,.64,1)] hover:-translate-y-1.5 hover:rotate-[-0.6deg] hover:border-accent/60">
                   <span className="font-mono text-sm text-accent">0{i + 1}</span>
                   <h3 className="mt-6 text-2xl font-semibold tracking-tight">{s.title}</h3>
                   <p className="mt-3 leading-relaxed text-muted">{s.description}</p>
@@ -130,7 +133,7 @@ export default function Home() {
               <span className="text-accent">+</span> {t.alsoTitle}
             </p>
           </Reveal>
-          <ul className="mt-6 grid gap-6 md:grid-cols-2">
+          <ul className="dim-list mt-6 grid gap-6 md:grid-cols-2">
             {t.also.map((s, i) => (
               <Reveal as="li" key={s.title} delay={i * 0.08}>
                 <div className="h-full rounded-2xl border border-dashed border-line p-7 transition-colors duration-300 hover:border-accent/60">
@@ -146,6 +149,10 @@ export default function Home() {
           <div className="grid gap-14 md:grid-cols-12">
             <Reveal className="md:col-span-5">
               <p className="text-lg leading-relaxed text-muted">{t.contactIntro}</p>
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <span className="font-mono text-sm">{site.contact.email}</span>
+                <CopyEmail />
+              </div>
               <ul className="mt-8 border-t border-line">
                 {channels.map((c) => (
                   <li key={c.href} className="border-b border-line">

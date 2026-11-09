@@ -11,6 +11,11 @@
   --accent: #0b7a40;
   --accent-fg: #ffffff;
   --grid: rgb(17 19 17 / 0.05);
+  --warm: #e08a00;
+  --pink: #e0457b;
+  --paper: #ffffff;
+  --ink: #111311;
+  --glow: rgb(11 122 64 / 0.07);
 }
 
 .dark {
@@ -22,6 +27,11 @@
   --accent: #3ddc84;
   --accent-fg: #06110a;
   --grid: rgb(237 237 234 / 0.04);
+  --warm: #ffb547;
+  --pink: #ff6f9c;
+  --paper: #f3f1ea;
+  --ink: #1a1c1a;
+  --glow: rgb(61 220 132 / 0.075);
 }
 
 @theme inline {
@@ -81,6 +91,74 @@ body {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+/* Mouse spotlight */
+.cursor-glow {
+  background: radial-gradient(600px circle at var(--x, -999px) var(--y, -999px), var(--glow), transparent 45%);
+}
+
+/* Lists that dim the other rows while one is hovered */
+@media (hover: hover) {
+  .dim-list > * > * {
+    transition: opacity 0.25s ease;
+  }
+  .dim-list:hover > * > * {
+    opacity: 0.45;
+  }
+  .dim-list:hover > *:hover > * {
+    opacity: 1;
+  }
+}
+
+/* Hero illustration */
+.hero-art g.ha-float {
+  animation: ha-float 6s ease-in-out infinite;
+}
+@keyframes ha-float {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.hero-art .ha-write {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: ha-write 6s ease-in-out infinite;
+}
+@keyframes ha-write {
+  0% { stroke-dashoffset: 1; }
+  25%, 85% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 1; }
+}
+.hero-art .ha-pen {
+  animation: ha-pen 1.2s ease-in-out infinite;
+}
+@keyframes ha-pen {
+  50% { transform: translate(-4px, 3px); }
+}
+.hero-art .ha-progress {
+  transform-box: fill-box;
+  transform-origin: left;
+  animation: ha-progress 5s linear infinite;
+}
+@keyframes ha-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.hero-art .ha-pulse {
+  animation: ha-pulse 2.4s ease-in-out infinite;
+}
+@keyframes ha-pulse {
+  50% { opacity: 0.55; }
+}
+.hero-art .ha-twinkle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ha-twinkle 3s ease-in-out infinite;
+}
+@keyframes ha-twinkle {
+  0%, 100% { transform: scale(0.6) rotate(0deg); opacity: 0.4; }
+  50% { transform: scale(1.1) rotate(45deg); opacity: 1; }
 }
 
 .hero-in {

@@ -8,7 +8,7 @@ import { useLang } from "./LangProvider";
 export function Projects() {
   const { lang, t } = useLang();
   return (
-    <ul className="grid gap-16 sm:gap-20">
+    <ul className="dim-list grid gap-16 sm:gap-20">
       {site.projects.map((p, i) => (
         <Reveal as="li" key={p.name}>
           <article className="group grid items-center gap-8 md:grid-cols-12 md:gap-12">
