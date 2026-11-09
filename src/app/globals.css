@@ -217,12 +217,12 @@ body.menu-open .wa-float {
 .hero-bg {
   background:
     radial-gradient(120% 90% at 15% 0%, #1f7a4a 0%, transparent 60%),
-    linear-gradient(180deg, #0f4a30 0%, #0c3b27 55%, var(--bg) 100%);
+    linear-gradient(180deg, #0f4a30 0%, #0c3b27 45%, #17271f 100%);
 }
 html:not(.dark) .hero-bg {
   background:
     radial-gradient(120% 90% at 15% 0%, #a7f3c4 0%, transparent 60%),
-    linear-gradient(180deg, #d1fadf 0%, #e3fbea 55%, var(--bg) 100%);
+    linear-gradient(180deg, #d1fadf 0%, #e3fbea 55%, #eef8f0 100%);
 }
 .blob {
   position: absolute;
@@ -273,6 +273,14 @@ html:not(.dark) .blob-3 { opacity: 0.12; }
 .group:hover .sweep,
 .group:focus-within .sweep {
   background-size: 100% 3px;
+}
+
+/* Mouse-following glow */
+.spotlight {
+  background: radial-gradient(600px circle at var(--x, -999px) var(--y, -999px), rgb(74 222 128 / 0.09), transparent 70%);
+}
+html:not(.dark) .spotlight {
+  background: radial-gradient(600px circle at var(--x, -999px) var(--y, -999px), rgb(21 128 61 / 0.07), transparent 70%);
 }
 
 /* Pop-ups */

@@ -47,7 +47,9 @@ function Stripes({ count, wobble }: { count: number; wobble: boolean }) {
   );
 }
 
-export function Hero() {
+// The avatar sitting on its hill with the green bars fanning out behind it.
+// Click it 5 times quickly for a surprise.
+export function AvatarArt({ className = "" }: { className?: string }) {
   const { t } = useLang();
   const { play } = useSound();
   const [wobble, setWobble] = useState(false);
@@ -64,7 +66,6 @@ export function Hero() {
     return () => mq.removeEventListener("change", set);
   }, []);
 
-  // Easter egg: click the avatar 5 times quickly and it spins and waves.
   function poke() {
     clicks.current += 1;
     if (timer.current) clearTimeout(timer.current);
@@ -78,82 +79,75 @@ export function Hero() {
   }
 
   return (
-    <section className="relative overflow-hidden" aria-labelledby="hero-title">
-      {/* Background: soft layered gradient blobs that drift slowly, full width, ending in a gentle wave */}
-      <div aria-hidden="true" className="hero-bg pointer-events-none absolute inset-0">
-        <span className="blob blob-1" />
-        <span className="blob blob-2" />
-        <span className="blob blob-3" />
-        <svg className="absolute inset-x-0 bottom-0 h-16 w-full sm:h-24" viewBox="0 0 1440 96" preserveAspectRatio="none">
-          <path d="M0 64 C 240 20, 480 20, 720 52 C 960 84, 1200 84, 1440 40 L1440 96 L0 96 Z" fill="var(--bg)" />
-        </svg>
+    <div className={`relative ${className}`} onPointerEnter={() => setWobble(true)} onPointerLeave={() => setWobble(false)}>
+      <svg viewBox="0 0 600 500" className="block h-auto w-full" aria-hidden="true">
+        <Stripes key={mobile ? "m" : "d"} count={mobile ? 7 : 13} wobble={wobble} />
+        <path d="M30 500 C 60 440, 150 408, 230 414 C 290 418, 320 400, 380 402 C 470 405, 545 445, 570 500 Z" fill="var(--hill)" />
+        <path d="M30 500 C 60 440, 150 408, 230 414 C 290 418, 320 400, 380 402 C 470 405, 545 445, 570 500" fill="none" stroke="var(--accent)" strokeOpacity="0.45" strokeWidth="3" strokeLinecap="round" />
+      </svg>
+      <div className="absolute bottom-[6%] left-1/2 w-[38%] -translate-x-1/2">
+        <button type="button" onClick={poke} aria-label={t.hero.avatarAlt} className={`block w-full ${egg ? "spin-wave" : ""}`} style={{ transformOrigin: "50% 60%" }}>
+          <Image
+            src={egg ? "/avatar/wave.png" : "/avatar/hero-sitting.png"}
+            alt={t.hero.avatarAlt}
+            width={463}
+            height={760}
+            priority
+            sizes="(min-width: 1024px) 220px, 38vw"
+            className="h-auto w-full drop-shadow-[0_18px_22px_rgb(0_0_0/0.45)]"
+          />
+        </button>
       </div>
-      <div className="relative mx-auto grid max-w-[1100px] items-center gap-4 px-5 pb-6 pt-8 sm:px-6 sm:pt-12 lg:grid-cols-2 lg:gap-10 lg:px-8 lg:pb-20">
-        <div className="relative z-10">
-          <p className="font-display text-lg font-bold text-muted">{t.hero.hello}</p>
-          <h1 id="hero-title" className="mt-1 text-[clamp(2.8rem,9vw,5.2rem)] font-black leading-[0.95] tracking-tight">
-            Samuel{" "}
-            <Sparkles>
-              <span className="text-accent">ETAH</span>
-            </Sparkles>
-          </h1>
-          <p className="mt-4 font-display text-2xl font-extrabold sm:text-3xl">
-            <span className="text-accent">Code.</span> <span className="text-[color:var(--accent-2)]">Secure.</span> <span className="text-yellow-text">Create.</span>
-          </p>
-          <p className="t-lead mt-5 max-w-xl text-muted">{t.hero.intro}</p>
-          <div className="mt-7 flex flex-wrap gap-3">
-            <Link href="/blog" className="btn btn-primary">
-              {t.hero.ctaPrimary}
-            </Link>
-            <Link href="/contact" className="btn btn-ghost">
-              {t.hero.ctaSecondary}
-            </Link>
-          </div>
-          {site.availableForWork && (
-            <p className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent xl:hidden">
-              <span className="pulse-dot relative inline-block h-2 w-2 rounded-full bg-accent text-accent" aria-hidden="true" />
-              {t.available}
-            </p>
-          )}
-        </div>
+      {egg && (
+        <p role="status" className="pop-in absolute left-1/2 top-4 -translate-x-1/2 whitespace-nowrap rounded-full bg-yellow px-4 py-2 text-sm font-bold text-yellow-fg">
+          {t.egg}
+        </p>
+      )}
+    </div>
+  );
+}
 
-        <div
-          className="relative mx-auto w-full max-w-[420px] sm:max-w-[520px] lg:max-w-none"
-          onPointerEnter={() => setWobble(true)}
-          onPointerLeave={() => setWobble(false)}
-        >
-          <svg viewBox="0 0 600 500" className="block h-auto w-full" aria-hidden="true">
-            <Stripes key={mobile ? "m" : "d"} count={mobile ? 7 : 13} wobble={wobble} />
-            {/* Dark rolling hill the avatar sits on */}
-            <path d="M30 500 C 60 440, 150 408, 230 414 C 290 418, 320 400, 380 402 C 470 405, 545 445, 570 500 Z" fill="var(--hill)" />
-            <path d="M30 500 C 60 440, 150 408, 230 414 C 290 418, 320 400, 380 402 C 470 405, 545 445, 570 500" fill="none" stroke="var(--accent)" strokeOpacity="0.45" strokeWidth="3" strokeLinecap="round" />
-          </svg>
-          <div className="absolute bottom-[6%] left-1/2 w-[38%] -translate-x-1/2">
-          <button
-            type="button"
-            onClick={poke}
-            aria-label={t.hero.avatarAlt}
-            className={`block w-full ${egg ? "spin-wave" : ""}`}
-            style={{ transformOrigin: "50% 60%" }}
-          >
-            <Image
-              src={egg ? "/avatar/wave.png" : "/avatar/hero-sitting.png"}
-              alt={t.hero.avatarAlt}
-              width={463}
-              height={760}
-              priority
-              sizes="(min-width: 1024px) 230px, 38vw"
-              className="h-auto w-full drop-shadow-[0_18px_22px_rgb(0_0_0/0.45)]"
-            />
-          </button>
-          </div>
-          {egg && (
-            <p role="status" className="pop-in absolute left-1/2 top-4 -translate-x-1/2 whitespace-nowrap rounded-full bg-yellow px-4 py-2 text-sm font-bold text-yellow-fg">
-              {t.egg}
-            </p>
-          )}
-        </div>
+// Green background layer for the top of the home page: drifting blobs over a green gradient.
+export function GreenBackdrop() {
+  return (
+    <div aria-hidden="true" className="hero-bg pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <span className="blob blob-1" />
+      <span className="blob blob-2" />
+      <span className="blob blob-3" />
+    </div>
+  );
+}
+
+// Name, tagline, intro and buttons (used in the sticky left column of the home page).
+export function Intro() {
+  const { t } = useLang();
+  return (
+    <div>
+      <p className="font-display text-lg font-bold text-muted">{t.hero.hello}</p>
+      <h1 id="hero-title" className="mt-1 text-[clamp(2.8rem,7vw,4.6rem)] font-black leading-[0.95] tracking-tight">
+        Samuel{" "}
+        <Sparkles>
+          <span className="text-accent">ETAH</span>
+        </Sparkles>
+      </h1>
+      <p className="mt-4 font-display text-2xl font-extrabold">
+        <span className="text-accent">Code.</span> <span className="text-[color:var(--accent-2)]">Secure.</span> <span className="text-yellow-text">Create.</span>
+      </p>
+      <p className="t-lead mt-4 max-w-md text-muted">{t.hero.intro}</p>
+      <div className="mt-6 flex flex-wrap gap-3">
+        <Link href="/blog" className="btn btn-primary">
+          {t.hero.ctaPrimary}
+        </Link>
+        <Link href="/contact" className="btn btn-ghost">
+          {t.hero.ctaSecondary}
+        </Link>
       </div>
-    </section>
+      {site.availableForWork && (
+        <p className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent xl:hidden">
+          <span className="pulse-dot relative inline-block h-2 w-2 rounded-full bg-accent text-accent" aria-hidden="true" />
+          {t.available}
+        </p>
+      )}
+    </div>
   );
 }

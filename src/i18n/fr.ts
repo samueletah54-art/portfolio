@@ -40,6 +40,12 @@ export const fr: Dict = {
     avatarAlt: "Avatar 3D de Samuel assis en tailleur, en sweat vert et casquette noire",
   },
   home: {
+    sAbout: "À propos",
+    sExperience: "Parcours",
+    sProjects: "Projets",
+    sWriting: "Écrits",
+    fullStory: "Lire mon histoire complète",
+    sections: "Sur cette page",
     categories: "Parcourir par catégorie",
     latest: "Articles et tutoriels",
     popular: "Contenus populaires",

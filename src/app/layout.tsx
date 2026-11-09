@@ -12,6 +12,7 @@ import { Footer } from "@/components/Footer";
 import { HireMe, WhatsAppFloat } from "@/components/Extras";
 import { ServiceWorker } from "@/components/ServiceWorker";
 import { Springs } from "@/components/Springs";
+import { Spotlight } from "@/components/Spotlight";
 import "./globals.css";
 
 const heading = Nunito({ variable: "--font-heading", subsets: ["latin"], weight: ["700", "800", "900"], display: "swap" });
@@ -87,6 +88,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </LangProvider>
         <ServiceWorker />
         <Springs />
+        <Spotlight />
         <Analytics />
       </body>
     </html>

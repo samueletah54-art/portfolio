@@ -38,6 +38,12 @@ export const en = {
     avatarAlt: "Samuel's 3D avatar sitting cross-legged in a green hoodie and black cap",
   },
   home: {
+    sAbout: "About",
+    sExperience: "Experience",
+    sProjects: "Projects",
+    sWriting: "Writing",
+    fullStory: "Read my full story",
+    sections: "On this page",
     categories: "Browse by category",
     latest: "Articles and tutorials",
     popular: "Popular content",
