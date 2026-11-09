@@ -7,7 +7,6 @@ import { LazyMotion, domAnimation, m, useReducedMotion } from "framer-motion";
 import { site } from "@/content/site";
 import { useLang } from "./LangProvider";
 import { useSound } from "./Sound";
-import { Sparkles } from "./Sparkles";
 
 const GREENS = ["#14532d", "#16a34a", "#4ade80", "#2dd4bf", "#a7f3d0"];
 
@@ -132,9 +131,13 @@ export function Intro() {
       <p className="font-display text-lg font-bold text-muted">{t.hero.hello}</p>
       <h1 id="hero-title" className="mt-1 text-[clamp(2.8rem,7vw,4.6rem)] font-black leading-[0.95] tracking-tight">
         Samuel{" "}
-        <Sparkles>
-          <span className="text-accent">ETAH</span>
-        </Sparkles>
+        <span className="relative inline-block text-accent">
+          ETAH
+          {/* A quick pen underline, slightly off, like it was drawn by hand */}
+          <svg viewBox="0 0 220 24" preserveAspectRatio="none" aria-hidden="true" className="absolute -bottom-3 left-[-2%] h-4 w-[104%] text-yellow-text">
+            <path d="M3 15 C 40 8, 95 6, 150 10 S 205 17, 217 9" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" />
+          </svg>
+        </span>
       </h1>
       <p className="mt-4 font-display text-2xl font-extrabold">
         <span className="text-accent">Code.</span> <span className="text-[color:var(--accent-2)]">Secure.</span> <span className="text-yellow-text">Create.</span>

@@ -2,13 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { about, projects, services } from "@/content/site";
+import { about, now, projects, services } from "@/content/site";
 import { testimonials } from "@/content/testimonials";
 import { useLang } from "@/components/LangProvider";
 import { AvatarArt, GreenBackdrop, Intro } from "@/components/Hero";
 import { usePosts } from "@/components/PostIndex";
 import { socials } from "@/components/Footer";
-import { useEffect, useState } from "react";
 import { CategoryPills } from "@/components/Blog";
 import { fmtMonth } from "@/lib/format";
 import { Icon } from "@/components/Icons";
@@ -95,46 +94,27 @@ export function Testimonials() {
   );
 }
 
-const SECTIONS = ["about", "experience", "projects", "writing"] as const;
-
-// Highlights the section currently in view, like a table of contents.
-function useActiveSection() {
-  const [active, setActive] = useState<string>("about");
-  useEffect(() => {
-    const els = SECTIONS.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
-    const io = new IntersectionObserver(
-      (entries) => {
-        const seen = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (seen[0]) setActive(seen[0].target.id);
-      },
-      { rootMargin: "-30% 0px -60% 0px" },
-    );
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
-  }, []);
-  return active;
-}
-
-function SectionNav() {
-  const { t } = useLang();
-  const active = useActiveSection();
-  const label: Record<string, string> = { about: t.home.sAbout, experience: t.home.sExperience, projects: t.home.sProjects, writing: t.home.sWriting };
+// A sticky note with what I'm working on this month. Real and dated, so it has to be kept current.
+function NowNote() {
+  const { lang, t } = useLang();
   return (
-    <nav aria-label={t.home.sections} className="hidden lg:block">
-      <ul className="mt-12 space-y-1">
-        {SECTIONS.map((id) => {
-          const on = active === id;
-          return (
-            <li key={id}>
-              <a href={`#${id}`} className="group flex min-h-10 items-center gap-4 py-1" aria-current={on ? "true" : undefined}>
-                <span className={`h-px transition-all duration-300 ${on ? "w-16 bg-accent" : "w-8 bg-muted group-hover:w-16 group-hover:bg-fg"}`} />
-                <span className={`text-xs font-black uppercase tracking-[0.18em] transition-colors ${on ? "text-fg" : "text-muted group-hover:text-fg"}`}>{label[id]}</span>
-              </a>
-            </li>
-          );
-        })}
+    <aside className="mt-10 max-w-sm -rotate-1 rounded-sm border border-line bg-bg-2 p-5 shadow-[var(--shadow)] lg:mt-12">
+      <p className="font-hand text-2xl text-accent">{t.home.nowNote}</p>
+      <ul className="mt-2 space-y-1.5 text-[15px] leading-snug text-muted">
+        {now.items[lang].slice(0, 3).map((x) => (
+          <li key={x} className="flex gap-2">
+            <span aria-hidden="true" className="text-accent">–</span>
+            {x}
+          </li>
+        ))}
       </ul>
-    </nav>
+      <p className="mt-3 flex items-baseline justify-between gap-3 text-xs text-muted">
+        <time dateTime={now.updated}>{fmtMonth(now.updated, lang)}</time>
+        <Link href="/now" className="font-hand text-lg text-fg hover:text-accent">
+          {t.home.nowMore} →
+        </Link>
+      </p>
+    </aside>
   );
 }
 
@@ -143,9 +123,8 @@ function MobileHeading({ children }: { children: React.ReactNode }) {
   return <h2 className="mb-6 font-display text-2xl font-black sm:text-3xl">{children}</h2>;
 }
 
-// Rows that dim their neighbours while one is hovered (large screens).
-const listCls = "group/list space-y-4";
-const rowCls = "transition-opacity duration-300 lg:group-hover/list:opacity-50 lg:hover:opacity-100!";
+const listCls = "space-y-4";
+const rowCls = "";
 const cardCls = "lift relative block rounded-2xl border border-transparent p-4 -mx-4 hover:border-line hover:bg-bg-2/70 sm:p-5 sm:-mx-5";
 
 export function HomeView() {
@@ -159,7 +138,7 @@ export function HomeView() {
         <div className="pt-10 lg:sticky lg:top-20 lg:flex lg:h-[calc(100vh-5rem)] lg:w-[46%] lg:shrink-0 lg:flex-col lg:justify-between lg:py-14">
           <div>
             <Intro />
-            <SectionNav />
+            <NowNote />
           </div>
           <ul className="mt-8 flex gap-2" aria-label={t.about.social}>
             {socials().map((s) => (
@@ -209,11 +188,12 @@ export function HomeView() {
           <section id="projects" aria-label={t.home.sProjects} className="mt-24 scroll-mt-24">
             <MobileHeading>{t.home.hProjects}</MobileHeading>
             <ul className={listCls}>
-              {projects.map((p) => (
+              {projects.map((p, i) => (
                 <li key={p.slug} className={rowCls}>
-                  <div className={`${cardCls} group grid gap-4 sm:grid-cols-[150px_1fr] sm:gap-6`}>
-                    <Image src={p.image} alt="" width={1200} height={750} sizes="150px" className="order-2 aspect-[16/10] h-auto w-full max-w-[220px] rounded-lg border border-line object-cover object-top sm:order-1" />
-                    <div className="order-1 sm:order-2">
+                  {/* The first project gets room to breathe; the rest stay compact */}
+                  <div className={`${cardCls} group grid gap-4 ${i === 0 ? "" : "sm:grid-cols-[150px_1fr] sm:gap-6"}`}>
+                    <Image src={p.image} alt="" width={1200} height={750} sizes={i === 0 ? "(min-width: 1024px) 560px, 100vw" : "150px"} className={`aspect-[16/10] h-auto w-full rounded-lg border border-line object-cover object-top ${i === 0 ? "" : "order-2 max-w-[220px] sm:order-1"}`} />
+                    <div className={i === 0 ? "" : "order-1 sm:order-2"}>
                       <p className="t-meta text-muted">
                         {p.kind[lang]} · {p.year}
                       </p>

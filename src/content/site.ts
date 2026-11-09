@@ -152,8 +152,8 @@ export const services: { slug: string; icon: string; title: Text; text: Text; in
     icon: "code",
     title: { en: "Web development", fr: "Développement web" },
     text: {
-      en: "A complete website for your business, school or organisation, built to load fast on mobile data.",
-      fr: "Un site complet pour votre entreprise, école ou organisation, pensé pour se charger vite sur les données mobiles.",
+      en: "A website for your shop, school or project, built for phones and mobile data first.",
+      fr: "Un site pour votre boutique, votre école ou votre projet, pensé d'abord pour le téléphone et les données mobiles.",
     },
     included: {
       en: ["Design and build, mobile first", "English and French if you need it", "WhatsApp and contact buttons", "Basic SEO and analytics", "Hosting set-up and handover"],
@@ -166,8 +166,8 @@ export const services: { slug: string; icon: string; title: Text; text: Text; in
     icon: "refresh",
     title: { en: "Website redesign", fr: "Refonte de site" },
     text: {
-      en: "Your current site, faster, clearer and easier to use, without losing what already works.",
-      fr: "Votre site actuel, plus rapide, plus clair et plus simple, sans perdre ce qui fonctionne déjà.",
+      en: "Your current site, made faster and clearer. I keep what already works.",
+      fr: "Votre site actuel, plus rapide et plus clair. Je garde ce qui marche déjà.",
     },
     included: {
       en: ["Audit of speed, content and design", "New design and cleaner structure", "Content moved over carefully", "Before/after report"],
@@ -180,8 +180,8 @@ export const services: { slug: string; icon: string; title: Text; text: Text; in
     icon: "shield",
     title: { en: "Security audits", fr: "Audits de sécurité" },
     text: {
-      en: "A practical check of your website's security basics, with a clear list of fixes in plain language.",
-      fr: "Une vérification concrète des bases de sécurité de votre site, avec une liste claire de corrections.",
+      en: "I check your site's security basics and send you a short list of fixes, in plain words.",
+      fr: "Je vérifie les bases de sécurité de votre site et je vous envoie une courte liste de corrections, en mots simples.",
     },
     included: {
       en: ["HTTPS and security headers check", "Forms, logins and spam protection", "Outdated software and plugins", "Written report with priorities"],
@@ -295,14 +295,14 @@ export const courses: Course[] = [
 export const about = {
   bio: {
     en: [
-      "I'm Samuel, a web developer based in Yaoundé, Cameroon. I build websites that load fast on the phones people actually use, work in English and French, and are secure by default.",
-      "I didn't start in tech. I studied International Relations at the University of Yaoundé I, then worked as a ghostwriter in 2025 before teaching myself to code by shipping real projects.",
-      "Today I build for businesses, schools and organisations, I'm deepening my cybersecurity skills, and I edit Vox-style explainer videos.",
+      "I studied International Relations at the University of Yaoundé I, not computer science. In 2025 I was a ghostwriter: articles, speeches and memoirs with someone else's name on the cover.",
+      "I taught myself to code by building things people around me needed: an exam-prep site for Cameroonian students, a shop for a phone seller in Yaoundé, and a history site about the line that split this country in 1916.",
+      "I test every site on a cheap Android phone before I call it done. If it's slow there, it isn't finished. I'm also going deeper into web security, because a fast site that gets hacked doesn't help anyone.",
     ],
     fr: [
-      "Je suis Samuel, développeur web à Yaoundé, au Cameroun. Je crée des sites qui se chargent vite sur les téléphones que les gens utilisent vraiment, en anglais et en français, et sécurisés par défaut.",
-      "Je ne viens pas de la tech. J'ai étudié les relations internationales à l'Université de Yaoundé I, puis j'ai travaillé comme prête-plume en 2025 avant d'apprendre à coder en réalisant de vrais projets.",
-      "Aujourd'hui, je crée pour des entreprises, des écoles et des organisations, je renforce mes compétences en cybersécurité et je monte des vidéos explicatives dans le style Vox.",
+      "J'ai étudié les relations internationales à l'Université de Yaoundé I, pas l'informatique. En 2025, j'étais prête-plume : des articles, des discours et des mémoires signés par quelqu'un d'autre.",
+      "J'ai appris à coder en construisant ce dont les gens autour de moi avaient besoin : un site de préparation aux examens pour les élèves camerounais, une boutique pour un vendeur de téléphones à Yaoundé, et un site d'histoire sur la ligne qui a coupé ce pays en deux en 1916.",
+      "Je teste chaque site sur un Android bon marché avant de le considérer comme fini. S'il est lent là-dessus, il n'est pas terminé. J'approfondis aussi la sécurité web, parce qu'un site rapide qui se fait pirater n'aide personne.",
     ],
   } as TextList,
   skills: [
