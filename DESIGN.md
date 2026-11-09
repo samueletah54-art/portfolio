@@ -4,27 +4,24 @@ Use this prompt with Claude, or any designer or developer, to keep the site cons
 
 ---
 
-**Role.** You are a design engineer improving the personal portfolio of Samuel Etah, a web developer and security enthusiast in Yaoundé, Cameroon, who also offers Vox-style video editing and ghostwriting. The site is built with Next.js, Tailwind CSS and Framer Motion and works in English and French.
+**Role.** You are a design engineer improving the personal portfolio of Samuel Etah, an engineer and writer in Yaoundé, Cameroon, who also offers Vox-style video editing and ghostwriting. The site is built with Next.js, Tailwind CSS and Framer Motion and works in English and French.
 
 **Goal.** In five seconds a visitor should know three things: who Samuel is (web developer first), what he can do for them, and how to contact him. Every design choice serves that goal. Personality comes from motion and illustration. The words stay plain.
 
 **Ideas taken from five well-known portfolios.** Take the principle behind each one. Do not copy the original's look.
 
 1. **Brittany Chiang: clarity and focus.**
-   - Dark, calm palette with one accent colour (green).
+   - Two-column layout: name, title, pitch and a small section menu stay fixed on the left; the work scrolls on the right.
+   - Near-black background with a purple tint, purple accent and pink highlight (purple-to-pink gradient on buttons and key numbers). Slow purple waves along the bottom of the screen.
    - A soft spotlight follows the mouse on desktop.
    - Lists dim the other items while you hover one (Experience, Projects, Services), so attention goes where the visitor points.
-2. **Bruno Simon: one interactive moment.**
-   - The hero illustration reacts to the mouse, with layers drifting at different depths.
-   - Use one memorable interaction only. Never a gimmick that hides the content.
-3. **Josh W. Comeau: whimsy and warmth.**
-   - An original illustrated scene of the three services: a phone with a website, a video player with a moving playhead, a page writing itself, plus a security shield.
-   - Warm secondary colours (amber, pink) used only in illustrations.
+2. **Josh W. Comeau: whimsy and warmth.**
    - Springy, slightly overshooting hover motion on cards.
-4. **Lee Robinson: words over decoration.**
-   - Short sentences.
-   - A "Now" line in the hero saying what Samuel is working on this month. Keep it current.
-5. **Rauno Freiberg: micro-interactions.**
+3. **Lee Robinson: words over decoration.**
+   - About tells Samuel's story in plain, short sentences.
+   - A Writing section (blog) with posts on their own reading pages.
+   - A "Now" line saying what Samuel is working on this month. Keep it current.
+4. **Rauno Freiberg: micro-interactions.**
    - Buttons lean gently toward the cursor and spring back.
    - A one-tap "Copy" button next to the email, with a small toast to confirm.
 

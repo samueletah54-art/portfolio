@@ -12,7 +12,7 @@ import { CopyEmail } from "@/components/CopyEmail";
 import { SideNav } from "@/components/SideNav";
 import { Block } from "@/components/Block";
 import { TypedTitle } from "@/components/TypedTitle";
-import { HeroArt } from "@/components/HeroArt";
+import { Waves } from "@/components/Waves";
 import { Magnetic } from "@/components/Magnetic";
 
 const icon = {
@@ -54,6 +54,7 @@ export default function Home() {
 
   return (
     <>
+      <Waves />
       <CursorGlow />
       <Header />
       <div className="relative z-10 mx-auto min-h-screen max-w-6xl px-5 sm:px-8 lg:flex lg:justify-between lg:gap-12 lg:px-12">
@@ -70,7 +71,7 @@ export default function Home() {
             <h1 className="mt-5 text-5xl font-semibold leading-[0.95] tracking-[-0.04em] sm:text-6xl">
               <a href="#top">
                 {site.name}
-                <span className="text-accent">.</span>
+                <span className="text-gradient">.</span>
               </a>
             </h1>
             <TypedTitle key={lang} text={site.title[lang]} />
@@ -81,7 +82,7 @@ export default function Home() {
               <Magnetic>
                 <a
                   href="#contact"
-                  className="inline-flex h-11 items-center gap-2 rounded-full bg-accent px-5 text-sm font-medium text-accent-fg transition-transform hover:-translate-y-0.5"
+                  className="bg-gradient inline-flex h-11 items-center gap-2 rounded-full px-5 text-sm font-medium shadow-[0_10px_30px_-10px_var(--accent)] transition-transform hover:-translate-y-0.5"
                 >
                   {t.contactBtn} <span aria-hidden="true">→</span>
                 </a>
@@ -129,10 +130,6 @@ export default function Home() {
 
         {/* Right: what I've done, scrolls */}
         <main id="main" className="pt-16 lg:w-[54%] lg:py-24">
-          <div className="hero-in mx-auto mb-16 max-w-[380px] lg:mb-20 lg:max-w-[420px]" style={{ animationDelay: "0.2s" }}>
-            <HeroArt />
-          </div>
-
           <Block id="about" label={t.nav.about}>
             <div className="space-y-4 leading-relaxed text-muted">
               {t.about.map((p, i) => (
@@ -144,7 +141,7 @@ export default function Home() {
             <ul className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-4">
               {t.proof.map((p) => (
                 <li key={p.label} className="bg-bg p-4">
-                  <span className="block text-2xl font-semibold tracking-tight">{p.n}</span>
+                  <span className="text-gradient block text-2xl font-semibold tracking-tight">{p.n}</span>
                   <span className="mt-1 block font-mono text-[11px] uppercase tracking-[0.12em] text-muted">{p.label}</span>
                 </li>
               ))}
@@ -243,7 +240,7 @@ export default function Home() {
           <Block id="contact" label={t.nav.contact}>
             <h3 className="text-3xl font-semibold tracking-tight sm:text-4xl">
               {t.contactTitle[0]}
-              <span className="text-accent">{t.contactTitle[1]}</span>
+              <span className="text-gradient">{t.contactTitle[1]}</span>
             </h3>
             <p className="mt-3 leading-relaxed text-muted">{t.contactIntro}</p>
             <div className="mt-5 flex flex-wrap items-center gap-3">

@@ -3,35 +3,43 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg: #f7f7f4;
-  --bg-2: #ededea;
-  --fg: #111311;
-  --muted: #555a55;
-  --line: rgb(17 19 17 / 0.12);
-  --accent: #0b7a40;
+  --bg: #fbf8ff;
+  --bg-2: #f1ebfb;
+  --fg: #1a1029;
+  --muted: #5e5472;
+  --line: rgb(26 16 41 / 0.12);
+  --accent: #7c3aed;
+  --accent-2: #db2777;
   --accent-fg: #ffffff;
-  --grid: rgb(17 19 17 / 0.05);
+  --grid: rgb(26 16 41 / 0.05);
   --warm: #e08a00;
-  --pink: #e0457b;
+  --pink: #db2777;
   --paper: #ffffff;
-  --ink: #111311;
-  --glow: rgb(11 122 64 / 0.07);
+  --ink: #1a1029;
+  --glow: rgb(124 58 237 / 0.08);
+  --wave-a: rgb(124 58 237 / 0.07);
+  --wave-b: rgb(219 39 119 / 0.05);
+  --on-gradient: #ffffff;
 }
 
 .dark {
-  --bg: #0a0b0a;
-  --bg-2: #131513;
-  --fg: #ededea;
-  --muted: #9a9f99;
-  --line: rgb(237 237 234 / 0.12);
-  --accent: #3ddc84;
-  --accent-fg: #06110a;
-  --grid: rgb(237 237 234 / 0.04);
-  --warm: #ffb547;
-  --pink: #ff6f9c;
-  --paper: #f3f1ea;
-  --ink: #1a1c1a;
-  --glow: rgb(61 220 132 / 0.075);
+  --bg: #0b0713;
+  --bg-2: #151022;
+  --fg: #ede9f6;
+  --muted: #a39bb8;
+  --line: rgb(237 233 246 / 0.11);
+  --accent: #a78bfa;
+  --accent-2: #f472b6;
+  --accent-fg: #12071f;
+  --grid: rgb(237 233 246 / 0.04);
+  --warm: #fbbf77;
+  --pink: #f472b6;
+  --paper: #f1ecfa;
+  --ink: #1a1029;
+  --glow: rgb(167 139 250 / 0.09);
+  --wave-a: rgb(139 92 246 / 0.09);
+  --wave-b: rgb(236 72 153 / 0.06);
+  --on-gradient: #12071f;
 }
 
 @theme inline {
@@ -41,6 +49,7 @@
   --color-muted: var(--muted);
   --color-line: var(--line);
   --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
   --color-accent-fg: var(--accent-fg);
   --font-sans: var(--font-inter-tight);
   --font-mono: var(--font-jetbrains-mono);
@@ -91,6 +100,32 @@ body {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+/* Purple-to-pink gradient for text and buttons */
+.text-gradient {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.bg-gradient {
+  background: linear-gradient(100deg, var(--accent), var(--accent-2));
+  color: var(--on-gradient);
+}
+
+/* Slow purple waves along the bottom of the screen */
+.wave {
+  animation: wave-drift 22s linear infinite;
+}
+.wave-2 {
+  animation-duration: 34s;
+  animation-direction: reverse;
+}
+@keyframes wave-drift {
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* Mouse spotlight */

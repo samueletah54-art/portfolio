@@ -6,6 +6,7 @@ import { useLang } from "./LangProvider";
 import { LangToggle } from "./LangToggle";
 import { ThemeToggle } from "./ThemeToggle";
 import { CursorGlow } from "./CursorGlow";
+import { Waves } from "./Waves";
 
 // A single blog post, in the visitor's chosen language, set for comfortable reading.
 export function PostView({ slug }: { slug: string }) {
@@ -17,6 +18,7 @@ export function PostView({ slug }: { slug: string }) {
 
   return (
     <>
+      <Waves />
       <CursorGlow />
       <div className="relative z-10 mx-auto max-w-2xl px-5 py-10 sm:px-8 sm:py-16">
         <div className="flex items-center justify-between gap-4">
@@ -51,7 +53,7 @@ export function PostView({ slug }: { slug: string }) {
           <Link href="/#writing" className="font-mono text-sm hover:text-accent">
             ← {t.allPosts}
           </Link>
-          <Link href="/#contact" className="inline-flex h-11 items-center gap-2 rounded-full bg-accent px-5 text-sm font-medium text-accent-fg">
+          <Link href="/#contact" className="bg-gradient inline-flex h-11 items-center gap-2 rounded-full px-5 text-sm font-medium">
             {t.contactBtn} →
           </Link>
         </div>

@@ -68,7 +68,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex h-12 items-center gap-2 rounded-full bg-accent px-6 font-medium text-accent-fg transition-transform hover:-translate-y-0.5 disabled:opacity-60"
+          className="bg-gradient inline-flex h-12 items-center gap-2 rounded-full px-6 font-medium transition-transform hover:-translate-y-0.5 disabled:opacity-60"
         >
           {status === "sending" ? f.sending : f.send} <span aria-hidden="true">→</span>
         </button>
