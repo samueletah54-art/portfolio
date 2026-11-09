@@ -12,7 +12,7 @@ Use this prompt with Claude, or any designer or developer, to keep the site cons
 
 1. **Brittany Chiang: clarity and focus.**
    - Two-column layout: name, title, pitch and a small section menu stay fixed on the left; the work scrolls on the right.
-   - Near-black background with a purple tint, purple accent and pink highlight (purple-to-pink gradient on buttons and key numbers). Slow purple waves along the bottom of the screen.
+   - Colours: deep ocean teal background (never black or purple), warm amber accent and coral highlight (amber-to-coral gradient on buttons and key numbers); light mode is warm cream with burnt orange. Slow teal waves along the bottom of the screen.
    - A soft spotlight follows the mouse on desktop.
    - Lists dim the other items while you hover one (Experience, Projects, Services), so attention goes where the visitor points.
 2. **Josh W. Comeau: whimsy and warmth.**

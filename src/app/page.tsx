@@ -22,6 +22,8 @@ const icon = {
   cv: "M6 2h9l5 5v15H6V2Zm8 1.5V8h4.5L14 3.5ZM9 12h8v1.5H9V12Zm0 3.5h8V17H9v-1.5Z",
   instagram:
     "M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2Zm0 4.6a5.2 5.2 0 1 0 0 10.4 5.2 5.2 0 0 0 0-10.4Zm0 8.6a3.4 3.4 0 1 1 0-6.8 3.4 3.4 0 0 1 0 6.8Zm5.4-9.9a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z",
+  whatsapp:
+    "M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3ZM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z",
   x: "M17.8 2.5h3.3l-7.2 8.2 8.5 11.3h-6.6l-5.2-6.8-6 6.8H1.3l7.7-8.8L.9 2.5h6.8l4.7 6.2 5.4-6.2Zm-1.2 17.5h1.8L6.9 4.4H5l11.6 15.6Z",
   threads:
     "M17.2 11.1c-.1 0-.2-.1-.3-.1-.2-3-1.8-4.7-4.6-4.7h-.1c-1.6 0-3 .7-3.9 2l1.5 1c.7-1 1.7-1.2 2.4-1.2 1 0 1.7.3 2.2.9.3.4.6 1 .7 1.7-.8-.1-1.6-.2-2.5-.1-2.5.1-4.1 1.6-4 3.6.1 1 .6 1.9 1.4 2.4.7.5 1.6.7 2.6.6 1.3-.1 2.3-.6 3-1.4.5-.7.9-1.5 1-2.6.6.4 1.1.9 1.4 1.5.5 1.1.5 2.8-.9 4.2-1.2 1.2-2.7 1.8-5 1.8-2.5 0-4.4-.8-5.6-2.4-1.2-1.5-1.8-3.6-1.8-6.3s.6-4.8 1.8-6.3C7.6 4.8 9.5 4 12 4c2.5 0 4.4.8 5.7 2.4.6.8 1.1 1.7 1.4 2.8l1.8-.5c-.4-1.4-1-2.6-1.8-3.6C17.5 3 15.1 2 12 2 8.9 2 6.5 3 4.9 5 3.5 6.8 2.7 9.1 2.7 12s.8 5.2 2.2 7c1.6 2 4 3 7.1 3 2.8 0 4.7-.7 6.3-2.3 2.1-2.1 2-4.7 1.4-6.2-.5-1.1-1.4-1.9-2.5-2.4Zm-4.4 4.3c-1.1.1-2.2-.4-2.3-1.4 0-.8.6-1.6 2.3-1.7h.6c.6 0 1.2.1 1.7.2-.2 2.3-1.3 2.8-2.3 2.9Z",
@@ -34,6 +36,7 @@ export default function Home() {
 
   const socials = [
     { label: "GitHub", href: contact.github, d: icon.github },
+    contact.whatsapp && { label: "WhatsApp", href: `https://wa.me/${contact.whatsapp.replace(/\D/g, "")}`, d: icon.whatsapp },
     { label: t.form.email, href: `mailto:${contact.email}`, d: icon.mail },
     contact.instagram && { label: "Instagram", href: contact.instagram, d: icon.instagram },
     contact.x && { label: "X", href: contact.x, d: icon.x },
@@ -50,6 +53,7 @@ export default function Home() {
     email: `mailto:${contact.email}`,
     knowsLanguage: ["en", "fr", "de"],
     address: { "@type": "PostalAddress", addressLocality: "Yaoundé", addressCountry: "CM" },
+    telephone: contact.whatsapp ?? undefined,
     sameAs: [contact.github, contact.linkedin, contact.instagram, contact.x, contact.threads].filter(Boolean),
   };
 
@@ -250,6 +254,19 @@ export default function Home() {
               <span className="text-gradient">{t.contactTitle[1]}</span>
             </h3>
             <p className="mt-3 leading-relaxed text-muted">{t.contactIntro}</p>
+            {contact.whatsapp && (
+              <a
+                href={`https://wa.me/${contact.whatsapp.replace(/\D/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient mt-6 inline-flex h-12 items-center gap-2.5 rounded-full px-6 font-medium shadow-[0_10px_30px_-12px_var(--accent)] transition-transform hover:-translate-y-0.5"
+              >
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                  <path d={icon.whatsapp} />
+                </svg>
+                {t.whatsappCta}
+              </a>
+            )}
             <div className="mt-5 flex flex-wrap items-center gap-3">
               <a href={`mailto:${contact.email}`} className="font-mono text-sm hover:text-accent">
                 {contact.email}

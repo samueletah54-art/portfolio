@@ -95,7 +95,7 @@ export const site = {
 
   contact: {
     email: "samueletah54@gmail.com",
-    whatsapp: null as string | null, // e.g. "+2376XXXXXXXX"
+    whatsapp: "+237671857479" as string | null,
     github: "https://github.com/samueletah54-art",
     linkedin: null as string | null, // e.g. "https://www.linkedin.com/in/your-name"
     instagram: "https://www.instagram.com/samuelisco22/" as string | null, // e.g. "https://www.instagram.com/your-handle"
@@ -238,7 +238,7 @@ export const copy = {
     ],
 
     contactTitle: ["Have a project? ", "Let's talk."],
-    contactIntro: "Tell me what you need. I usually reply by email; for quick questions, use any channel below.",
+    contactIntro: "Tell me what you need. WhatsApp is the fastest way to reach me; email and the form below work too.",
     form: {
       name: "Name",
       email: "Email",
@@ -259,6 +259,7 @@ export const copy = {
     nowLabel: "Now",
     now: "Launching the Mboa Phones storefront, deepening my web security skills and editing explainer videos.",
     copy: "Copy",
+    whatsappCta: "Chat on WhatsApp",
     copied: "Email copied ✓",
     builtWith: "Built with Next.js, Tailwind CSS & Framer Motion",
     toTop: "Back to top",
@@ -363,7 +364,7 @@ export const copy = {
     ],
 
     contactTitle: ["Un projet ? ", "Parlons-en."],
-    contactIntro: "Dites-moi ce dont vous avez besoin. Je réponds en général par e-mail ; pour une question rapide, utilisez l'un des canaux ci-dessous.",
+    contactIntro: "Dites-moi ce dont vous avez besoin. WhatsApp est le moyen le plus rapide de me joindre ; l'e-mail et le formulaire ci-dessous fonctionnent aussi.",
     form: {
       name: "Nom",
       email: "E-mail",
@@ -384,6 +385,7 @@ export const copy = {
     nowLabel: "En ce moment",
     now: "Je lance la boutique Mboa Phones, je renforce mes compétences en sécurité web et je monte des vidéos explicatives.",
     copy: "Copier",
+    whatsappCta: "Discuter sur WhatsApp",
     copied: "E-mail copié ✓",
     builtWith: "Réalisé avec Next.js, Tailwind CSS et Framer Motion",
     toTop: "Haut de page",
