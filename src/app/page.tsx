@@ -13,6 +13,8 @@ import { SideNav } from "@/components/SideNav";
 import { Block } from "@/components/Block";
 import { TypedTitle } from "@/components/TypedTitle";
 import { Waves } from "@/components/Waves";
+import { HeroArt } from "@/components/HeroArt";
+import { Sparkles } from "@/components/Sparkles";
 import { Craft } from "@/components/Craft";
 import { Magnetic } from "@/components/Magnetic";
 
@@ -75,7 +77,7 @@ export default function Home() {
             </p>
             <h1 className="mt-5 text-5xl font-semibold leading-[0.95] tracking-[-0.04em] sm:text-6xl">
               <a href="#top">
-                {site.name}
+                <Sparkles>{site.name}</Sparkles>
                 <span className="text-gradient">.</span>
               </a>
             </h1>
@@ -119,7 +121,7 @@ export default function Home() {
                     href={s.href}
                     target={s.href.startsWith("http") ? "_blank" : undefined}
                     rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="block text-muted transition-colors hover:text-accent"
+                    className="boop block text-muted transition-colors hover:text-accent"
                     title={s.label}
                   >
                     <span className="sr-only">{s.label}</span>
@@ -135,6 +137,9 @@ export default function Home() {
 
         {/* Right: what I've done, scrolls */}
         <main id="main" className="pt-16 lg:w-[54%] lg:py-24">
+          <div className="hero-in mx-auto mb-14 max-w-[360px] lg:mb-16 lg:max-w-[440px]" style={{ animationDelay: "0.2s" }}>
+            <HeroArt />
+          </div>
           <Block id="about" label={t.nav.about}>
             <div className="space-y-4 leading-relaxed text-muted">
               {t.about.map((p, i) => (
@@ -251,7 +256,9 @@ export default function Home() {
           <Block id="contact" label={t.nav.contact}>
             <h3 className="text-3xl font-semibold tracking-tight sm:text-4xl">
               {t.contactTitle[0]}
-              <span className="text-gradient">{t.contactTitle[1]}</span>
+              <Sparkles>
+                <span className="text-gradient">{t.contactTitle[1]}</span>
+              </Sparkles>
             </h3>
             <p className="mt-3 leading-relaxed text-muted">{t.contactIntro}</p>
             {contact.whatsapp && (

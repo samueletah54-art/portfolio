@@ -12,11 +12,13 @@ Use this prompt with Claude, or any designer or developer, to keep the site cons
 
 1. **Brittany Chiang: clarity and focus.**
    - Two-column layout: name, title, pitch and a small section menu stay fixed on the left; the work scrolls on the right.
-   - Colours: deep ocean teal background (never black or purple), warm amber accent and coral highlight (amber-to-coral gradient on buttons and key numbers); light mode is warm cream with burnt orange. Slow teal waves along the bottom of the screen.
+   - Colours: Plum & Rose. Deep plum background (never black), rose accent and lilac highlight (rose-to-lilac gradient on buttons and key numbers); light mode is soft blush. 12 alternative palettes are kept in the colour sheet.
    - A soft spotlight follows the mouse on desktop.
    - Lists dim the other items while you hover one (Experience, Projects, Services), so attention goes where the visitor points.
 2. **Josh W. Comeau: whimsy and warmth.**
-   - Springy, slightly overshooting hover motion on cards.
+   - An original, softly lit 3D-style illustration of the work: phone with a website, video player, page being written, security shield, code bubble, floating orb. It drifts with the mouse.
+   - Soft interface sounds (Web Audio, no files) with a speaker button to mute; a search button with Ctrl/Cmd+K.
+   - Sparkles around the name and key words; icons "boop" (wiggle) on hover; springy hover motion on cards.
 3. **Lee Robinson: words over decoration.**
    - About tells Samuel's story in plain, short sentences.
    - A Writing section (blog) with posts on their own reading pages.

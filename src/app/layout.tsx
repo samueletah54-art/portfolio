@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter_Tight, JetBrains_Mono } from "next/font/google";
 import { site } from "@/content/site";
 import { LangProvider } from "@/components/LangProvider";
+import { SoundProvider } from "@/components/Sound";
 import "./globals.css";
 
 const interTight = Inter_Tight({ variable: "--font-inter-tight", subsets: ["latin"], display: "swap" });
@@ -26,8 +27,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0e2a2f" },
-    { media: "(prefers-color-scheme: light)", color: "#fdf8f1" },
+    { media: "(prefers-color-scheme: dark)", color: "#2b1231" },
+    { media: "(prefers-color-scheme: light)", color: "#fff6f9" },
   ],
 };
 
@@ -47,7 +48,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         >
           Skip to content
         </a>
-        <LangProvider>{children}</LangProvider>
+        <LangProvider>
+          <SoundProvider>{children}</SoundProvider>
+        </LangProvider>
       </body>
     </html>
   );

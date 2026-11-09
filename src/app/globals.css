@@ -3,43 +3,43 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg: #fdf8f1;
-  --bg-2: #f5ece0;
-  --fg: #12302f;
-  --muted: #4d6664;
-  --line: rgb(18 48 47 / 0.13);
-  --accent: #b4530f;
-  --accent-2: #d9432f;
+  --bg: #fff6f9;
+  --bg-2: #fbe8f0;
+  --fg: #3b1534;
+  --muted: #7a5470;
+  --line: rgb(59 21 52 / 0.13);
+  --accent: #c2185b;
+  --accent-2: #8e44c9;
   --accent-fg: #ffffff;
-  --grid: rgb(18 48 47 / 0.05);
-  --warm: #b4530f;
-  --pink: #d9432f;
+  --grid: rgb(59 21 52 / 0.05);
+  --warm: #e0820b;
+  --pink: #e0457b;
   --paper: #ffffff;
-  --ink: #12302f;
-  --glow: rgb(217 119 6 / 0.08);
-  --wave-a: rgb(15 118 110 / 0.09);
-  --wave-b: rgb(217 119 6 / 0.07);
+  --ink: #3b1534;
+  --glow: rgb(194 24 91 / 0.07);
+  --wave-a: rgb(194 24 91 / 0.08);
+  --wave-b: rgb(142 68 201 / 0.07);
   --on-gradient: #ffffff;
 }
 
 .dark {
-  --bg: #0e2a2f;
-  --bg-2: #15393f;
-  --fg: #eef7f5;
-  --muted: #a8c4c0;
-  --line: rgb(238 247 245 / 0.13);
-  --accent: #ffb454;
-  --accent-2: #ff7a59;
-  --accent-fg: #0e2a2f;
-  --grid: rgb(238 247 245 / 0.05);
-  --warm: #ffb454;
-  --pink: #ff7a59;
-  --paper: #eef7f5;
-  --ink: #0e2a2f;
-  --glow: rgb(255 180 84 / 0.08);
-  --wave-a: rgb(45 180 165 / 0.13);
-  --wave-b: rgb(255 180 84 / 0.07);
-  --on-gradient: #0e2a2f;
+  --bg: #2b1231;
+  --bg-2: #3a1a42;
+  --fg: #fff1f6;
+  --muted: #dbb7cd;
+  --line: rgb(255 241 246 / 0.14);
+  --accent: #ff7eb3;
+  --accent-2: #c79bff;
+  --accent-fg: #2b1231;
+  --grid: rgb(255 241 246 / 0.05);
+  --warm: #ffc46b;
+  --pink: #ff7eb3;
+  --paper: #fff1f6;
+  --ink: #2b1231;
+  --glow: rgb(255 126 179 / 0.09);
+  --wave-a: rgb(255 126 179 / 0.12);
+  --wave-b: rgb(199 155 255 / 0.1);
+  --on-gradient: #2b1231;
 }
 
 @theme inline {
@@ -126,6 +126,42 @@ body {
   to {
     transform: translateX(-50%);
   }
+}
+
+/* Josh-style touches: sparkles, a playful "boop" on icons, a springy search pop-up */
+.sparkle {
+  transform: translate(-50%, -50%) scale(0);
+  animation: sparkle 0.9s ease-in-out forwards;
+}
+@keyframes sparkle {
+  50% {
+    transform: translate(-50%, -50%) scale(1) rotate(90deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0) rotate(180deg);
+  }
+}
+@media (hover: hover) {
+  .boop:hover svg {
+    animation: boop 0.45s cubic-bezier(0.3, 1.6, 0.6, 1);
+  }
+}
+@keyframes boop {
+  35% {
+    transform: rotate(-14deg) scale(1.18);
+  }
+}
+.search-pop {
+  animation: search-pop 0.28s cubic-bezier(0.3, 1.4, 0.6, 1);
+}
+@keyframes search-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+}
+.hero-art {
+  filter: drop-shadow(0 28px 40px rgb(0 0 0 / 0.28));
 }
 
 /* Mouse spotlight */

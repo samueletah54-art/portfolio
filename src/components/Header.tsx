@@ -5,6 +5,8 @@ import { site } from "@/content/site";
 import { ThemeToggle } from "./ThemeToggle";
 import { LangToggle } from "./LangToggle";
 import { useLang } from "./LangProvider";
+import { Search } from "./Search";
+import { SoundToggle } from "./Sound";
 import { sectionIds as ids } from "./SideNav";
 
 export function Header() {
@@ -58,6 +60,8 @@ export function Header() {
           >
             {t.nav.cv} <span aria-hidden="true" className="ml-1">↗</span>
           </a>
+          <Search />
+          <SoundToggle labels={t.sound} />
           <LangToggle />
           <ThemeToggle />
           <button
