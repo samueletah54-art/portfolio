@@ -25,12 +25,12 @@ export const site = {
   cv: "https://the-line-eight.vercel.app/cv/",
 
   title: {
-    en: "Web Developer & Security Enthusiast",
-    fr: "Développeur web & passionné de sécurité",
+    en: "Engineer & writer",
+    fr: "Ingénieur web & rédacteur",
   } as Text,
   pitch: {
-    en: "I build fast, secure websites for businesses, schools and organisations, designed for the phones your customers actually use.",
-    fr: "Je crée des sites web rapides et sécurisés pour les entreprises, les écoles et les organisations, pensés pour les téléphones que vos clients utilisent vraiment.",
+    en: "I build fast, secure websites for businesses, schools and organisations, and I write the words that make people read them.",
+    fr: "Je crée des sites web rapides et sécurisés pour les entreprises, les écoles et les organisations, et j'écris les textes qui donnent envie de les lire.",
   } as Text,
   alsoLine: {
     en: "Also available for video editing and ghostwriting.",
@@ -96,13 +96,50 @@ export const site = {
     whatsapp: null as string | null, // e.g. "+2376XXXXXXXX"
     github: "https://github.com/samueletah54-art",
     linkedin: null as string | null, // e.g. "https://www.linkedin.com/in/your-name"
+    instagram: null as string | null, // e.g. "https://www.instagram.com/your-handle"
+    x: null as string | null, // e.g. "https://x.com/your-handle"
+    threads: null as string | null, // e.g. "https://www.threads.net/@your-handle"
   },
 };
+
+// Blog posts. Add a new object to publish a post; the newest goes first.
+export type Post = { slug: string; date: string; title: Text; summary: Text; body: Record<Lang, string[]> };
+
+export const posts: Post[] = [
+  {
+    slug: "my-story",
+    date: "2026-11-09",
+    title: {
+      en: "From International Relations to building the web",
+      fr: "Des relations internationales au développement web",
+    },
+    summary: {
+      en: "How a degree about diplomacy, a year of ghostwriting and a lot of late nights turned into a career in code.",
+      fr: "Comment une licence en diplomatie, une année comme prête-plume et beaucoup de nuits blanches sont devenues un métier dans le code.",
+    },
+    body: {
+      en: [
+        "I studied International Relations at the University of Yaoundé I. It was not a computer science degree, but it taught me two things I use every day: how to research a question properly, and how to explain it clearly to someone who was not in the room.",
+        "In 2025 I started working as a ghostwriter. Clients would give me an idea and a deadline, and I would turn it into writing they could publish under their own name. Ghostwriting teaches you to listen first, to match someone else's voice, and to deliver on time.",
+        "Around the same time I started teaching myself to code. I did not learn from a single course. I learned by building things people could use: Examina Global, an exam-prep platform for Cameroonian students in English and French; a bilingual storefront for a phone shop in Yaoundé; and The Line, an interactive history of Cameroon's partition with maps and a timeline.",
+        "Building for Cameroon changes how you build. Most visitors are on low-cost Android phones and pay for every megabyte, so a fast, light page is not a nice extra: it decides whether someone sees your site at all. Many readers switch between English and French, so bilingual is the default. And because clients trust you with their business, security has to be built in from the start, which is why I am now deepening my skills in web security.",
+        "Today I build websites for businesses, schools and organisations, and I still write. The two jobs turn out to be the same job: understand what people need, then make it clear and easy for them. If you have a project, I would like to hear about it.",
+      ],
+      fr: [
+        "J'ai étudié les relations internationales à l'Université de Yaoundé I. Ce n'était pas une formation en informatique, mais elle m'a appris deux choses que j'utilise tous les jours : chercher sérieusement la réponse à une question, et l'expliquer clairement à quelqu'un qui n'était pas là.",
+        "En 2025, j'ai commencé à travailler comme prête-plume. Des clients me confiaient une idée et une échéance, et j'en faisais un texte qu'ils pouvaient publier sous leur propre nom. Ce métier apprend à écouter d'abord, à épouser la voix de quelqu'un d'autre et à livrer à temps.",
+        "À la même période, j'ai appris à coder seul. Pas avec un seul cours, mais en construisant des choses utiles : Examina Global, une plateforme de préparation aux examens pour les élèves camerounais, en anglais et en français ; une boutique bilingue pour un vendeur de téléphones à Yaoundé ; et The Line, une histoire interactive de la partition du Cameroun, avec des cartes et une frise chronologique.",
+        "Construire pour le Cameroun change la façon de construire. La plupart des visiteurs utilisent des téléphones Android bon marché et paient chaque mégaoctet : une page rapide et légère n'est pas un bonus, elle décide si votre site sera vu ou non. Beaucoup de lecteurs passent de l'anglais au français, donc le bilinguisme est la norme. Et comme les clients vous confient leur activité, la sécurité doit être pensée dès le départ ; c'est pourquoi je renforce aujourd'hui mes compétences en sécurité web.",
+        "Aujourd'hui, je crée des sites pour des entreprises, des écoles et des organisations, et j'écris toujours. Les deux métiers se rejoignent : comprendre ce dont les gens ont besoin, puis le rendre clair et simple. Si vous avez un projet, j'aimerais en parler.",
+      ],
+    },
+  },
+];
 
 // Interface and section text, per language.
 export const copy = {
   en: {
-    nav: { about: "About", work: "Work", skills: "Skills", services: "Services", contact: "Contact", cv: "CV" },
+    nav: { about: "About", experience: "Experience", work: "Projects", skills: "Skills", services: "Services", writing: "Writing", contact: "Contact", cv: "CV" },
     availability: "Available for new projects",
     viewWork: "View work",
     contactBtn: "Contact",
@@ -112,9 +149,10 @@ export const copy = {
 
     aboutTitle: ["From International Relations to ", "building the web."],
     about: [
-      "I studied International Relations at the University of Yaoundé I, then taught myself web development by shipping real products: a storefront for a phone shop, a bilingual exam-prep platform and a digital history archive.",
-      "Today I build websites for clients who need something that loads quickly on mobile data, works in English and French, and is secure by default. I'm deepening my cybersecurity skills so every site I hand over is built to be trusted.",
-      "Alongside the web, I edit Vox-style explainer videos and work as a ghostwriter. The same habits carry across all three: careful research, clear structure and on-time delivery.",
+      "I'm Samuel, an engineer and writer based in Yaoundé, Cameroon. I build websites that load fast on the phones people actually use, and I write: articles, long-form pieces and the words on the sites I make.",
+      "I didn't start in tech. I studied International Relations at the University of Yaoundé I, where I learned to research carefully and write clearly. In 2025 I put that to work as a ghostwriter, writing for clients under their own names.",
+      "Then I taught myself to code by shipping real things: an exam-prep platform for Cameroonian students, a storefront for a phone shop in Yaoundé and an interactive history of my country's partition. Today I build for businesses, schools and organisations, and I'm deepening my security skills so every site I hand over can be trusted.",
+      "When I'm not coding or writing, I edit Vox-style explainer videos.",
     ],
     facts: [
       { label: "Based in", value: "Yaoundé, Cameroon" },
@@ -195,7 +233,12 @@ export const copy = {
       sentMail: "Your email app should open with the message ready to send.",
       error: "Something went wrong. Please email",
       subject: "Website enquiry from",
+      cvFull: "View full CV",
     },
+    writingIntro: "Notes on building for the web, writing, and working from Cameroon.",
+    readPost: "Read",
+    allPosts: "Back to home",
+    minRead: "min read",
     nowLabel: "Now",
     now: "Launching the Mboa Phones storefront, deepening my web security skills and editing explainer videos.",
     copy: "Copy",
@@ -205,7 +248,7 @@ export const copy = {
   },
 
   fr: {
-    nav: { about: "Profil", work: "Projets", skills: "Compétences", services: "Services", contact: "Contact", cv: "CV" },
+    nav: { about: "Profil", experience: "Expérience", work: "Projets", skills: "Compétences", services: "Services", writing: "Écrits", contact: "Contact", cv: "CV" },
     availability: "Disponible pour de nouveaux projets",
     viewWork: "Voir les projets",
     contactBtn: "Contact",
@@ -215,9 +258,10 @@ export const copy = {
 
     aboutTitle: ["Des relations internationales ", "au développement web."],
     about: [
-      "J'ai étudié les relations internationales à l'Université de Yaoundé I, puis j'ai appris le développement web en réalisant de vrais produits : une boutique en ligne pour un vendeur de téléphones, une plateforme bilingue de préparation aux examens et une archive d'histoire numérique.",
-      "Aujourd'hui, je crée des sites pour des clients qui ont besoin d'un site rapide sur les données mobiles, en anglais et en français, et sécurisé par défaut. Je renforce mes compétences en cybersécurité pour que chaque site livré soit digne de confiance.",
-      "En parallèle, je monte des vidéos explicatives dans le style Vox et je travaille comme prête-plume. Les mêmes habitudes valent pour les trois : une recherche rigoureuse, une structure claire et des délais tenus.",
+      "Je suis Samuel, ingénieur web et rédacteur à Yaoundé, au Cameroun. Je crée des sites qui se chargent vite sur les téléphones que les gens utilisent vraiment, et j'écris : des articles, des textes longs et les mots des sites que je construis.",
+      "Je ne viens pas de la tech. J'ai étudié les relations internationales à l'Université de Yaoundé I, où j'ai appris à chercher avec rigueur et à écrire clairement. En 2025, j'ai mis cela à profit comme prête-plume, en écrivant pour des clients sous leur propre nom.",
+      "Puis j'ai appris à coder en réalisant de vrais projets : une plateforme de préparation aux examens pour les élèves camerounais, une boutique en ligne pour un vendeur de téléphones à Yaoundé et une histoire interactive de la partition de mon pays. Aujourd'hui, je crée pour des entreprises, des écoles et des organisations, et je renforce mes compétences en sécurité pour que chaque site livré soit digne de confiance.",
+      "Quand je ne code pas et n'écris pas, je monte des vidéos explicatives dans le style Vox.",
     ],
     facts: [
       { label: "Basé à", value: "Yaoundé, Cameroun" },
@@ -299,7 +343,12 @@ export const copy = {
       sentMail: "Votre messagerie devrait s'ouvrir avec le message prêt à envoyer.",
       error: "Une erreur est survenue. Écrivez-moi à",
       subject: "Demande via le site de",
+      cvFull: "Voir le CV complet",
     },
+    writingIntro: "Des notes sur le web, l'écriture et le travail depuis le Cameroun.",
+    readPost: "Lire",
+    allPosts: "Retour à l'accueil",
+    minRead: "min de lecture",
     nowLabel: "En ce moment",
     now: "Je lance la boutique Mboa Phones, je renforce mes compétences en sécurité web et je monte des vidéos explicatives.",
     copy: "Copier",

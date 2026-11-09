@@ -5,8 +5,7 @@ import { site } from "@/content/site";
 import { ThemeToggle } from "./ThemeToggle";
 import { LangToggle } from "./LangToggle";
 import { useLang } from "./LangProvider";
-
-const ids = ["about", "work", "skills", "services", "contact"] as const;
+import { sectionIds as ids } from "./SideNav";
 
 export function Header() {
   const { t } = useLang();
@@ -38,7 +37,7 @@ export function Header() {
           {site.name.toLowerCase().replace(" ", "-")}
         </a>
 
-        <nav aria-label="Main" className="hidden md:block">
+        <nav aria-label="Main" className="hidden">
           <ul className="flex items-center gap-7">
             {links.map((l) => (
               <li key={l.href}>
@@ -55,7 +54,7 @@ export function Header() {
             href={site.cv}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden h-10 items-center rounded-full border border-line px-4 font-mono text-xs uppercase tracking-[0.14em] transition-colors hover:border-accent hover:text-accent sm:inline-flex"
+            className="hidden h-10 items-center rounded-full border border-line px-4 font-mono text-xs uppercase tracking-[0.14em] transition-colors hover:border-accent hover:text-accent sm:inline-flex lg:hidden"
           >
             {t.nav.cv} <span aria-hidden="true" className="ml-1">↗</span>
           </a>
@@ -63,7 +62,7 @@ export function Header() {
           <ThemeToggle />
           <button
             type="button"
-            className="grid h-10 w-10 place-items-center rounded-full border border-line md:hidden"
+            className="grid h-10 w-10 place-items-center rounded-full border border-line lg:hidden"
             aria-label={open ? t.menuClose : t.menuOpen}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -79,7 +78,7 @@ export function Header() {
       </div>
 
       {open && (
-        <nav id="mobile-menu" aria-label="Mobile" className="border-t border-line md:hidden">
+        <nav id="mobile-menu" aria-label="Mobile" className="border-t border-line lg:hidden">
           <ul className="mx-auto max-w-6xl px-5 py-4">
             {links.map((l) => (
               <li key={l.href}>
