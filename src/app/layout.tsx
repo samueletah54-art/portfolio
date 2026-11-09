@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Nunito, Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { Nunito, Inter_Tight, JetBrains_Mono, Caveat } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { site } from "@/content/site";
 import { en } from "@/i18n/en";
@@ -17,6 +17,7 @@ import "./globals.css";
 
 const heading = Nunito({ variable: "--font-heading", subsets: ["latin"], weight: ["700", "800", "900"], display: "swap" });
 const body = Inter_Tight({ variable: "--font-body", subsets: ["latin"], display: "swap" });
+const hand = Caveat({ variable: "--font-hand", subsets: ["latin"], weight: ["600", "700"], display: "swap" });
 const code = JetBrains_Mono({ variable: "--font-code", subsets: ["latin"], display: "swap" });
 
 const description =
@@ -66,7 +67,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }} />
       </head>
-      <body className={`${heading.variable} ${body.variable} ${code.variable} antialiased`}>
+      <body className={`${heading.variable} ${hand.variable} ${body.variable} ${code.variable} antialiased`}>
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-yellow focus:px-5 focus:py-3 focus:font-bold focus:text-yellow-fg"

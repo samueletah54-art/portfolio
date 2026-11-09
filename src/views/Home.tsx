@@ -9,12 +9,13 @@ import { AvatarArt, GreenBackdrop, Intro } from "@/components/Hero";
 import { usePosts } from "@/components/PostIndex";
 import { socials } from "@/components/Footer";
 import { useEffect, useState } from "react";
-import { CategoryPills, PostCard } from "@/components/Blog";
+import { CategoryPills } from "@/components/Blog";
+import { fmtMonth } from "@/lib/format";
 import { Icon } from "@/components/Icons";
 
 export function SectionTitle({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
-    <h2 id={id} className="text-sm font-black uppercase tracking-[0.18em] text-accent">
+    <h2 id={id} className="font-display text-2xl font-black sm:text-3xl">
       {children}
     </h2>
   );
@@ -137,13 +138,9 @@ function SectionNav() {
   );
 }
 
-// Mobile-only small heading (on large screens the left menu names the sections).
+// Section heading in plain words, written the way I'd say it.
 function MobileHeading({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="sticky top-16 z-10 -mx-5 mb-6 bg-bg/80 px-5 py-4 text-sm font-black uppercase tracking-[0.18em] text-accent backdrop-blur sm:-mx-6 sm:px-6 lg:sr-only lg:static">
-      {children}
-    </h2>
-  );
+  return <h2 className="mb-6 font-display text-2xl font-black sm:text-3xl">{children}</h2>;
 }
 
 // Rows that dim their neighbours while one is hovered (large screens).
@@ -179,16 +176,17 @@ export function HomeView() {
         <div className="pb-10 pt-6 lg:w-[54%] lg:py-14">
           <section id="about" aria-label={t.home.sAbout} className="scroll-mt-24">
             <AvatarArt className="mx-auto w-full max-w-[420px] lg:max-w-[460px]" />
-            <MobileHeading>{t.home.sAbout}</MobileHeading>
+            <MobileHeading>{t.home.hAbout}</MobileHeading>
             <div className="space-y-4 text-muted">
               {about.bio[lang].map((para) => (
                 <p key={para.slice(0, 20)}>{para}</p>
               ))}
+              <p className="font-hand -rotate-2 pt-1 text-3xl text-accent">— Samuel</p>
             </div>
           </section>
 
           <section id="experience" aria-label={t.home.sExperience} className="mt-24 scroll-mt-24">
-            <MobileHeading>{t.home.sExperience}</MobileHeading>
+            <MobileHeading>{t.home.hExperience}</MobileHeading>
             <ol className={listCls}>
               {about.timeline.map((x) => (
                 <li key={x.year + x.title.en} className={rowCls}>
@@ -209,7 +207,7 @@ export function HomeView() {
           </section>
 
           <section id="projects" aria-label={t.home.sProjects} className="mt-24 scroll-mt-24">
-            <MobileHeading>{t.home.sProjects}</MobileHeading>
+            <MobileHeading>{t.home.hProjects}</MobileHeading>
             <ul className={listCls}>
               {projects.map((p) => (
                 <li key={p.slug} className={rowCls}>
@@ -225,13 +223,10 @@ export function HomeView() {
                         </Link>
                       </h3>
                       <p className="mt-1.5 text-muted">{p.summary[lang]}</p>
-                      <ul className="mt-3 flex flex-wrap gap-1.5" aria-label={t.projects.stack}>
-                        {p.stack.map((x) => (
-                          <li key={x} className="rounded-full bg-accent-soft px-2.5 py-1 text-xs font-bold text-accent">
-                            {x}
-                          </li>
-                        ))}
-                      </ul>
+                      <p className="mt-2 font-mono text-[13px] text-muted">
+                        <span className="sr-only">{t.projects.stack}: </span>
+                        {p.stack.join(" · ")}
+                      </p>
                     </div>
                   </div>
                 </li>
@@ -242,7 +237,7 @@ export function HomeView() {
               <Icon name="arrow" size={18} className="text-accent transition-transform group-hover:translate-x-1" />
             </Link>
 
-            <h3 className="mt-16 text-sm font-black uppercase tracking-[0.18em] text-accent">{t.home.servicesTitle}</h3>
+            <h3 className="mt-16 font-display text-xl font-black">{t.home.hServices}</h3>
             <ul className="mt-5 grid gap-4 sm:grid-cols-2">
               {services.map((x) => (
                 <li key={x.slug}>
@@ -259,11 +254,24 @@ export function HomeView() {
           </section>
 
           <section id="writing" aria-label={t.home.sWriting} className="mt-24 scroll-mt-24">
-            <MobileHeading>{t.home.sWriting}</MobileHeading>
-            <ul className="space-y-5">
+            <MobileHeading>{t.home.hWriting}</MobileHeading>
+            {/* Simple list, like a notebook index: date, title, one line */}
+            <ul className={listCls}>
               {posts.map((p) => (
-                <li key={p.slug}>
-                  <PostCard p={p} />
+                <li key={p.slug} className={rowCls}>
+                  <div className={`${cardCls} group grid gap-1 sm:grid-cols-[90px_1fr] sm:gap-6`}>
+                    <p className="t-meta pt-1.5 text-muted">
+                      <time dateTime={p.date}>{fmtMonth(p.date, lang)}</time>
+                    </p>
+                    <div>
+                      <h3 className="font-display text-lg font-extrabold leading-snug">
+                        <Link href={`/blog/${p.slug}`} className="after:absolute after:inset-0 after:rounded-2xl after:content-['']">
+                          <span className="sweep">{p[lang].title}</span>
+                        </Link>
+                      </h3>
+                      <p className="mt-1 line-clamp-2 text-muted">{p[lang].excerpt}</p>
+                    </div>
+                  </div>
                 </li>
               ))}
             </ul>
@@ -271,7 +279,7 @@ export function HomeView() {
               <span className="sweep">{t.hero.ctaPrimary}</span>
               <Icon name="arrow" size={18} className="text-accent transition-transform group-hover:translate-x-1" />
             </Link>
-            <h3 className="mt-14 text-sm font-black uppercase tracking-[0.18em] text-accent">{t.home.categories}</h3>
+            <h3 className="mt-14 font-display text-xl font-black">{t.home.categories}</h3>
             <div className="mt-4">
               <CategoryPills />
             </div>

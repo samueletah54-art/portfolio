@@ -98,6 +98,14 @@ export function AvatarArt({ className = "" }: { className?: string }) {
           />
         </button>
       </div>
+      {/* Handwritten note pointing at the avatar */}
+      <p aria-hidden="true" className="font-hand pointer-events-none absolute left-[2%] top-[14%] -rotate-6 text-2xl text-accent sm:text-3xl">
+        {t.hero.thatsMe}
+        <svg viewBox="0 0 90 60" className="ml-6 mt-1 block h-10 w-16" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M6 6 C 14 30, 34 44, 72 46" />
+          <path d="M60 36 L 73 46 L 59 54" />
+        </svg>
+      </p>
       {egg && (
         <p role="status" className="pop-in absolute left-1/2 top-4 -translate-x-1/2 whitespace-nowrap rounded-full bg-yellow px-4 py-2 text-sm font-bold text-yellow-fg">
           {t.egg}
@@ -111,9 +119,7 @@ export function AvatarArt({ className = "" }: { className?: string }) {
 export function GreenBackdrop() {
   return (
     <div aria-hidden="true" className="hero-bg pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      <span className="blob blob-1" />
-      <span className="blob blob-2" />
-      <span className="blob blob-3" />
+      <div className="grain absolute inset-0" />
     </div>
   );
 }

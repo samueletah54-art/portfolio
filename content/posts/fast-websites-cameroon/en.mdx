@@ -12,6 +12,10 @@ Most of the people who visit a website in Cameroon do it on an entry-level Andro
 
 Images are usually the heaviest part of a page. Save them as WebP or AVIF and serve the size the screen needs, not a 4000-pixel photo.
 
+Try it yourself. Pick an image and a connection, then press the button:
+
+<LoadTimeDemo lang="en" />
+
 ```html
 <img
   src="/shop-640.webp"
@@ -52,6 +56,10 @@ link.href = `https://wa.me/${phone}?text=${text}`;
 ## 4. Test on a real, slow connection
 
 Open Chrome DevTools, go to the Network tab and choose **Slow 4G**. Then load your site on an actual budget phone. What feels fine on office Wi-Fi often isn't.
+
+<Callout title="Quick tip">
+In DevTools, also tick **Disable cache**. Otherwise you are testing a page your browser has already saved, and it will look faster than it really is.
+</Callout>
 
 ## 5. Measure, then fix
 

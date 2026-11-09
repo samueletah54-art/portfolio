@@ -86,6 +86,24 @@ body {
 h1,
 h2,
 h3,
+.font-hand {
+  font-family: var(--font-hand), "Comic Sans MS", cursive;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+/* Film-grain texture over the green background: makes it feel printed rather than generated */
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+}
+html:not(.dark) .grain { opacity: 0.25; mix-blend-mode: multiply; }
+
+/* Callouts in posts */
+.callout { border-left: 4px solid var(--accent); background: var(--accent-soft); border-radius: 0 1rem 1rem 0; padding: 1rem 1.25rem; }
+.callout-warn { border-color: var(--yellow-text); background: color-mix(in srgb, var(--yellow) 14%, transparent); }
+.callout > * + * { margin-top: .6rem; }
+
 .font-display {
   font-family: var(--font-heading), var(--font-body), system-ui, sans-serif;
   letter-spacing: -0.015em;
