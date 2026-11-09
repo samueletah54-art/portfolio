@@ -28,7 +28,7 @@ export function WhatsAppFloat() {
 export function HireMe() {
   const { t } = useLang();
   return (
-    <section className="no-print mx-auto mt-24 max-w-6xl px-5 sm:px-6 lg:px-8" aria-labelledby="hire-title">
+    <section className="no-print mx-auto mt-24 max-w-[1100px] px-5 sm:px-6 lg:px-8" aria-labelledby="hire-title">
       <Reveal className="relative">
         {/* The avatar hangs upside down from under the card; the card covers the top of the image. */}
         <div className="pointer-events-none absolute -bottom-[96px] right-8 z-0 w-[80px] sm:-bottom-[120px] sm:right-16 sm:w-[100px]" aria-hidden="true">

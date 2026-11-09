@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { site, categories, projects, services, courses, about, uses, now, whatsappLink } from "@/content/site";
 import { useLang } from "@/components/LangProvider";
-import { CategoryPills, PostList, Popular } from "@/components/Blog";
+import { CategoryPills, PostFeed } from "@/components/Blog";
 import { Reveal } from "@/components/Reveal";
 import { Icon } from "@/components/Icons";
 import { ContactForm } from "@/components/ContactForm";
@@ -16,16 +16,16 @@ import { ProjectCard, ServiceIcon, SectionTitle } from "./Home";
 
 export function PageHead({ title, intro, children }: { title: string; intro?: string; children?: React.ReactNode }) {
   return (
-    <header className="mx-auto max-w-6xl px-5 pb-4 pt-10 sm:px-6 sm:pt-14 lg:px-8">
-      <h1 className="text-[clamp(2.4rem,7vw,4.2rem)] font-black leading-[1.02] tracking-tight">{title}</h1>
-      {intro && <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">{intro}</p>}
+    <header className="mx-auto max-w-[1100px] px-5 pb-4 pt-10 sm:px-6 sm:pt-14 lg:px-8">
+      <h1 className="t-title">{title}</h1>
+      {intro && <p className="t-lead mt-4 max-w-2xl text-muted">{intro}</p>}
       {children}
     </header>
   );
 }
 
 const Wrap = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <div className={`mx-auto max-w-6xl px-5 sm:px-6 lg:px-8 ${className}`}>{children}</div>
+  <div className={`mx-auto max-w-[1100px] px-5 sm:px-6 lg:px-8 ${className}`}>{children}</div>
 );
 
 /* ---------- Blog index and categories ---------- */
@@ -39,11 +39,8 @@ export function BlogView({ category }: { category?: string }) {
           <CategoryPills active={category} />
         </div>
       </PageHead>
-      <Wrap className="mt-10 grid gap-14 lg:grid-cols-[1fr_300px]">
-        <PostList category={category} />
-        <div className="lg:sticky lg:top-24 lg:self-start">
-          <Popular />
-        </div>
+      <Wrap className="mt-10">
+        <PostFeed category={category} />
       </Wrap>
     </>
   );
@@ -248,7 +245,7 @@ export function CourseView({ slug }: { slug: string }) {
             </span>
             {c.status === "soon" && <span className="rounded-full bg-yellow px-2.5 py-1 text-yellow-fg">{t.courses.soon}</span>}
           </div>
-          <h1 className="mt-4 text-[clamp(2.2rem,6vw,3.8rem)] font-black leading-[1.03] tracking-tight">{c.title[lang]}</h1>
+          <h1 className="t-title mt-4">{c.title[lang]}</h1>
           <p className="mt-4 text-xl leading-relaxed text-muted">{c.promise[lang]}</p>
           <div id="waitlist" className="mt-7 rounded-2xl border border-line bg-bg-2 p-5">
             <p className="font-bold">{t.courses.waitlist}</p>
@@ -337,7 +334,7 @@ export function AboutView() {
     <>
       <Wrap className="grid items-center gap-10 pt-10 sm:pt-14 md:grid-cols-[1.3fr_1fr]">
         <div>
-          <h1 className="text-[clamp(2.4rem,7vw,4.2rem)] font-black leading-[1.02] tracking-tight">{t.about.title}</h1>
+          <h1 className="t-title">{t.about.title}</h1>
           <div className="mt-6 space-y-4 text-lg leading-relaxed">
             {about.bio[lang].map((p, i) => (
               <p key={i} className={i ? "text-muted" : ""}>

@@ -54,7 +54,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   return (
     <>
       <ReadingProgress />
-      <article className="mx-auto max-w-6xl px-5 pt-8 sm:px-6 sm:pt-12 lg:px-8">
+      <article className="mx-auto max-w-[1100px] px-5 pt-8 sm:px-6 sm:pt-12 lg:px-8">
         <header className="max-w-3xl">
           {langs.map((l) => (
             <div key={l} data-l={l}>
@@ -63,14 +63,14 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                   ← {dict[l].post.back}
                 </Link>
               </p>
-              <p className="mt-6 text-sm font-semibold text-muted">
+              <p className="t-meta mt-6 text-muted">
                 <Link href={`/category/${p.category}`} className="text-accent hover:underline">
                   {cat?.name[l]}
                 </Link>{" "}
                 · <time dateTime={p.date}>{fmtDate(p.date, l)}</time> · {p[l].minutes} {dict[l].post.minRead}
               </p>
-              <h1 className="mt-3 text-[clamp(2.1rem,6vw,3.6rem)] font-black leading-[1.05] tracking-tight">{p[l].title}</h1>
-              {p[l].subtitle && <p className="mt-4 text-xl leading-relaxed text-muted">{p[l].subtitle}</p>}
+              <h1 className="t-title mt-3">{p[l].title}</h1>
+              {p[l].subtitle && <p className="t-lead mt-4 text-muted">{p[l].subtitle}</p>}
             </div>
           ))}
         </header>

@@ -12,7 +12,7 @@ export function RelatedPosts({ posts }: { posts: PostMeta[] }) {
       <h2 id="related-title" className="text-sm font-black uppercase tracking-[0.18em] text-accent">
         {t.post.related}
       </h2>
-      <ul className="mt-6 space-y-10">
+      <ul className="mt-6 grid gap-6 sm:grid-cols-2">
         {posts.map((p) => (
           <li key={p.slug}>
             <PostCard p={p} />

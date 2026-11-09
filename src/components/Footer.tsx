@@ -38,7 +38,7 @@ export function Footer() {
       </svg>
 
       <div className="relative z-0 -mt-px bg-gradient-to-r from-[var(--footer-a)] to-[var(--footer-b)]">
-        <div className="mx-auto max-w-6xl px-5 pb-10 pt-6 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1100px] px-5 pb-10 pt-6 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr]">
             <Newsletter />
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">

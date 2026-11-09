@@ -79,18 +79,28 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden" aria-labelledby="hero-title">
-      <div className="mx-auto grid max-w-6xl items-center gap-4 px-5 pb-6 pt-8 sm:px-6 sm:pt-12 lg:grid-cols-[1.05fr_1fr] lg:px-8 lg:pb-10">
+      {/* Background: soft layered gradient blobs that drift slowly, full width, ending in a gentle wave */}
+      <div aria-hidden="true" className="hero-bg pointer-events-none absolute inset-0">
+        <span className="blob blob-1" />
+        <span className="blob blob-2" />
+        <span className="blob blob-3" />
+        <svg className="absolute inset-x-0 bottom-0 h-16 w-full sm:h-24" viewBox="0 0 1440 96" preserveAspectRatio="none">
+          <path d="M0 64 C 240 20, 480 20, 720 52 C 960 84, 1200 84, 1440 40 L1440 96 L0 96 Z" fill="var(--bg)" />
+        </svg>
+      </div>
+      <div className="relative mx-auto grid max-w-[1100px] items-center gap-4 px-5 pb-6 pt-8 sm:px-6 sm:pt-12 lg:grid-cols-2 lg:gap-10 lg:px-8 lg:pb-20">
         <div className="relative z-10">
           <p className="font-display text-lg font-bold text-muted">{t.hero.hello}</p>
           <h1 id="hero-title" className="mt-1 text-[clamp(2.8rem,9vw,5.2rem)] font-black leading-[0.95] tracking-tight">
+            Samuel{" "}
             <Sparkles>
-              Samuel <span className="text-accent">ETAH</span>
+              <span className="text-accent">ETAH</span>
             </Sparkles>
           </h1>
           <p className="mt-4 font-display text-2xl font-extrabold sm:text-3xl">
             <span className="text-accent">Code.</span> <span className="text-[color:var(--accent-2)]">Secure.</span> <span className="text-yellow-text">Create.</span>
           </p>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">{t.hero.intro}</p>
+          <p className="t-lead mt-5 max-w-xl text-muted">{t.hero.intro}</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/blog" className="btn btn-primary">
               {t.hero.ctaPrimary}

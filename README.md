@@ -32,6 +32,7 @@ popular: false                # true shows it under Popular content
 ## A heading (appears in the table of contents)
 
 Your text. Code blocks get highlighting and a Copy button.
+Wrap a phrase in <Sparkles>like this</Sparkles> to make little stars pop around it.
 ```
 
 ## Environment variables (Vercel → Project → Settings → Environment Variables)

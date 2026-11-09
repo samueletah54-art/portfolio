@@ -10,7 +10,7 @@ type Ctx = { enabled: boolean; toggle: () => void; play: (s: SoundName) => void 
 const SoundContext = createContext<Ctx>({ enabled: false, toggle: () => {}, play: () => {} });
 
 const recipes: Record<SoundName, { from: number; to: number; ms: number; type: OscillatorType; gain: number }> = {
-  pop: { from: 520, to: 260, ms: 70, type: "sine", gain: 0.08 },
+  pop: { from: 880, to: 420, ms: 45, type: "sine", gain: 0.05 },
   on: { from: 440, to: 880, ms: 110, type: "triangle", gain: 0.07 },
   off: { from: 660, to: 330, ms: 110, type: "triangle", gain: 0.07 },
   open: { from: 300, to: 600, ms: 140, type: "sine", gain: 0.06 },

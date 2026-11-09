@@ -6,7 +6,7 @@ import { projects, services } from "@/content/site";
 import { testimonials } from "@/content/testimonials";
 import { useLang } from "@/components/LangProvider";
 import { Hero } from "@/components/Hero";
-import { CategoryPills, PostList, Popular } from "@/components/Blog";
+import { CategoryPills, PostFeed } from "@/components/Blog";
 import { Reveal } from "@/components/Reveal";
 import { Icon } from "@/components/Icons";
 
@@ -77,7 +77,7 @@ export function Testimonials() {
   const { lang, t } = useLang();
   if (testimonials.length === 0) return null;
   return (
-    <section className="mx-auto mt-24 max-w-6xl px-5 sm:px-6 lg:px-8" aria-labelledby="testi-title">
+    <section className="mx-auto mt-24 max-w-[1100px] px-5 sm:px-6 lg:px-8" aria-labelledby="testi-title">
       <SectionTitle id="testi-title">{t.home.testimonials}</SectionTitle>
       <ul className="mt-6 grid gap-5 md:grid-cols-2">
         {testimonials.map((q) => (
@@ -98,7 +98,7 @@ export function HomeView() {
     <>
       <Hero />
 
-      <section className="mx-auto mt-10 max-w-6xl px-5 sm:px-6 lg:px-8" aria-labelledby="cat-title">
+      <section className="mx-auto mt-10 max-w-[1100px] px-5 sm:px-6 lg:px-8" aria-labelledby="cat-title">
         <Reveal>
           <SectionTitle id="cat-title">{t.home.categories}</SectionTitle>
           <div className="mt-4">
@@ -107,19 +107,14 @@ export function HomeView() {
         </Reveal>
       </section>
 
-      <section className="mx-auto mt-16 grid max-w-6xl gap-14 px-5 sm:px-6 lg:grid-cols-[1fr_300px] lg:px-8" aria-labelledby="latest-title">
-        <div>
-          <SectionTitle id="latest-title">{t.home.latest}</SectionTitle>
-          <div className="mt-8">
-            <PostList />
-          </div>
-        </div>
-        <div className="lg:sticky lg:top-24 lg:self-start">
-          <Popular />
+      <section className="mx-auto mt-16 max-w-[1100px] px-5 sm:px-6 lg:px-8" aria-labelledby="latest-title">
+        <SectionTitle id="latest-title">{t.home.latest}</SectionTitle>
+        <div className="mt-8">
+          <PostFeed />
         </div>
       </section>
 
-      <section className="mx-auto mt-24 max-w-6xl px-5 sm:px-6 lg:px-8" aria-labelledby="work-title">
+      <section className="mx-auto mt-24 max-w-[1100px] px-5 sm:px-6 lg:px-8" aria-labelledby="work-title">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <SectionTitle id="work-title">{t.home.featured}</SectionTitle>
           <Link href="/projects" className="inline-flex min-h-11 items-center gap-1 font-bold text-accent">
@@ -137,7 +132,7 @@ export function HomeView() {
         </ul>
       </section>
 
-      <section className="mx-auto mt-24 max-w-6xl px-5 sm:px-6 lg:px-8" aria-labelledby="svc-title">
+      <section className="mx-auto mt-24 max-w-[1100px] px-5 sm:px-6 lg:px-8" aria-labelledby="svc-title">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <SectionTitle id="svc-title">{t.home.servicesTitle}</SectionTitle>
           <Link href="/services" className="inline-flex min-h-11 items-center gap-1 font-bold text-accent">
