@@ -3,43 +3,61 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --bg: #fff6f9;
-  --bg-2: #fbe8f0;
-  --fg: #3b1534;
-  --muted: #7a5470;
-  --line: rgb(59 21 52 / 0.13);
-  --accent: #c2185b;
-  --accent-2: #8e44c9;
+  --bg: #f8fafc;
+  --bg-2: #eef2f7;
+  --fg: #0f172a;
+  --muted: #475569;
+  --line: rgb(15 23 42 / 0.12);
+  --accent: #0f766e;
+  --accent-2: #0369a1;
   --accent-fg: #ffffff;
-  --grid: rgb(59 21 52 / 0.05);
-  --warm: #e0820b;
-  --pink: #e0457b;
+  --grid: rgb(15 23 42 / 0.05);
+  --warm: #d97706;
+  --pink: #0369a1;
   --paper: #ffffff;
-  --ink: #3b1534;
-  --glow: rgb(194 24 91 / 0.07);
-  --wave-a: rgb(194 24 91 / 0.08);
-  --wave-b: rgb(142 68 201 / 0.07);
+  --ink: #0f172a;
+  --glow: rgb(15 118 110 / 0.06);
+  --wave-a: rgb(15 118 110 / 0.06);
+  --wave-b: rgb(3 105 161 / 0.05);
   --on-gradient: #ffffff;
+  --sky-1: #b9dcf7;
+  --sky-2: #d6ecfb;
+  --sky-3: #fdf1df;
+  --sun: #ffc56b;
+  --cloud: rgb(255 255 255 / 0.9);
+  --bird: rgb(15 23 42 / 0.55);
+  --hill-1: #cfe2f1;
+  --hill-2: #aacde4;
+  --hill-3: #85b6d4;
 }
 
 .dark {
-  --bg: #2b1231;
-  --bg-2: #3a1a42;
-  --fg: #fff1f6;
-  --muted: #dbb7cd;
-  --line: rgb(255 241 246 / 0.14);
-  --accent: #ff7eb3;
-  --accent-2: #c79bff;
-  --accent-fg: #2b1231;
-  --grid: rgb(255 241 246 / 0.05);
-  --warm: #ffc46b;
-  --pink: #ff7eb3;
-  --paper: #fff1f6;
-  --ink: #2b1231;
-  --glow: rgb(255 126 179 / 0.09);
-  --wave-a: rgb(255 126 179 / 0.12);
-  --wave-b: rgb(199 155 255 / 0.1);
-  --on-gradient: #2b1231;
+  --bg: #0f172a;
+  --bg-2: #1e293b;
+  --fg: #e2e8f0;
+  --muted: #94a3b8;
+  --line: rgb(226 232 240 / 0.1);
+  --accent: #5eead4;
+  --accent-2: #38bdf8;
+  --accent-fg: #0f172a;
+  --grid: rgb(226 232 240 / 0.04);
+  --warm: #fcd34d;
+  --pink: #38bdf8;
+  --paper: #e2e8f0;
+  --ink: #0f172a;
+  --glow: rgb(29 78 216 / 0.15);
+  --wave-a: rgb(94 234 212 / 0.06);
+  --wave-b: rgb(56 189 248 / 0.05);
+  --on-gradient: #0f172a;
+  --sky-1: #050b1c;
+  --sky-2: #0d1d3f;
+  --sky-3: #1f4a6b;
+  --sun: #e6f4ff;
+  --cloud: rgb(148 163 184 / 0.16);
+  --bird: rgb(5 11 28 / 0.6);
+  --hill-1: #1e3557;
+  --hill-2: #172a47;
+  --hill-3: #132036;
 }
 
 @theme inline {
@@ -162,6 +180,62 @@ body {
 }
 .hero-art {
   filter: drop-shadow(0 28px 40px rgb(0 0 0 / 0.28));
+}
+
+/* Opening scene */
+html:not(.dark) .bn-stars {
+  display: none;
+}
+.bn-twinkle {
+  animation: bn-twinkle 3s ease-in-out infinite;
+}
+@keyframes bn-twinkle {
+  50% {
+    opacity: 0.2;
+  }
+}
+.bn-breathe {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: bn-breathe 6s ease-in-out infinite;
+}
+@keyframes bn-breathe {
+  50% {
+    transform: scale(1.12);
+    opacity: 0.4;
+  }
+}
+.bn-drift {
+  animation: bn-drift 100s linear infinite;
+}
+@keyframes bn-drift {
+  to {
+    transform: translateX(-1440px);
+  }
+}
+.bn-birds {
+  animation: bn-birds 38s linear infinite;
+}
+@keyframes bn-birds {
+  0% {
+    transform: translate(-120px, 150px);
+  }
+  50% {
+    transform: translate(720px, 110px);
+  }
+  100% {
+    transform: translate(1600px, 140px);
+  }
+}
+.bn-flap {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: bn-flap 0.9s ease-in-out infinite;
+}
+@keyframes bn-flap {
+  50% {
+    transform: scaleY(0.4);
+  }
 }
 
 /* Mouse spotlight */

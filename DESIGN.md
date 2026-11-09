@@ -12,11 +12,11 @@ Use this prompt with Claude, or any designer or developer, to keep the site cons
 
 1. **Brittany Chiang: clarity and focus.**
    - Two-column layout: name, title, pitch and a small section menu stay fixed on the left; the work scrolls on the right.
-   - Colours: Plum & Rose. Deep plum background (never black), rose accent and lilac highlight (rose-to-lilac gradient on buttons and key numbers); light mode is soft blush. 12 alternative palettes are kept in the colour sheet.
+   - Colours in Brittany Chiang's spirit: deep navy (#0f172a) with a mint-teal accent and sky-blue highlight; light mode is near-white with deep teal.
+   - Opening scene (inspired by Josh Comeau's moving header, drawn from scratch): layered hills with Mount Cameroon at the back, a moon at night and a sun by day, drifting clouds, gliding birds, twinkling stars; layers shift with the mouse and scroll, and the front hill is the page colour so it melts into the content.
    - A soft spotlight follows the mouse on desktop.
    - Lists dim the other items while you hover one (Experience, Projects, Services), so attention goes where the visitor points.
 2. **Josh W. Comeau: whimsy and warmth.**
-   - An original, softly lit 3D-style illustration of the work: phone with a website, video player, page being written, security shield, code bubble, floating orb. It drifts with the mouse.
    - Soft interface sounds (Web Audio, no files) with a speaker button to mute; a search button with Ctrl/Cmd+K.
    - Sparkles around the name and key words; icons "boop" (wiggle) on hover; springy hover motion on cards.
 3. **Lee Robinson: words over decoration.**

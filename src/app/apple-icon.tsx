@@ -14,7 +14,7 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#2b1231",
+          background: "#0f172a",
           color: "#ffffff",
           fontSize: 84,
           fontWeight: 700,
@@ -22,7 +22,7 @@ export default function AppleIcon() {
           fontFamily: "sans-serif",
         }}
       >
-        <span style={{ backgroundImage: "linear-gradient(135deg, #ff7eb3, #c79bff)", backgroundClip: "text", color: "transparent" }}>SE</span>
+        <span style={{ backgroundImage: "linear-gradient(135deg, #5eead4, #38bdf8)", backgroundClip: "text", color: "transparent" }}>SE</span>
       </div>
     ),
     size,

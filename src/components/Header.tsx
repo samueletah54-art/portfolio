@@ -34,9 +34,10 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-        <a href="#top" className="font-mono text-sm font-medium tracking-tight">
+        <a href="#top" className="whitespace-nowrap font-mono text-sm font-medium tracking-tight">
           <span className="text-accent">~/</span>
-          {site.name.toLowerCase().replace(" ", "-")}
+          <span className="hidden sm:inline">{site.name.toLowerCase().replace(" ", "-")}</span>
+          <span className="sm:hidden">se</span>
         </a>
 
         <nav aria-label="Main" className="hidden">
@@ -51,7 +52,7 @@ export function Header() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
           <a
             href={site.cv}
             target="_blank"

@@ -12,8 +12,7 @@ import { CopyEmail } from "@/components/CopyEmail";
 import { SideNav } from "@/components/SideNav";
 import { Block } from "@/components/Block";
 import { TypedTitle } from "@/components/TypedTitle";
-import { Waves } from "@/components/Waves";
-import { HeroArt } from "@/components/HeroArt";
+import { Banner } from "@/components/Banner";
 import { Sparkles } from "@/components/Sparkles";
 import { Craft } from "@/components/Craft";
 import { Magnetic } from "@/components/Magnetic";
@@ -61,12 +60,12 @@ export default function Home() {
 
   return (
     <>
-      <Waves />
       <CursorGlow />
       <Header />
+      <Banner />
       <div className="relative z-10 mx-auto min-h-screen max-w-6xl px-5 sm:px-8 lg:flex lg:justify-between lg:gap-12 lg:px-12">
         {/* Left: who I am, sticky on large screens */}
-        <header id="top" className="pt-28 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[46%] lg:flex-col lg:justify-between lg:py-24">
+        <header id="top" className="-mt-6 pt-0 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[46%] lg:flex-col lg:justify-between lg:py-24">
           <div>
             <p className="hero-in flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-muted">
               <span className="relative flex h-2 w-2">
@@ -136,10 +135,7 @@ export default function Home() {
         </header>
 
         {/* Right: what I've done, scrolls */}
-        <main id="main" className="pt-16 lg:w-[54%] lg:py-24">
-          <div className="hero-in mx-auto mb-14 max-w-[360px] lg:mb-16 lg:max-w-[440px]" style={{ animationDelay: "0.2s" }}>
-            <HeroArt />
-          </div>
+        <main id="main" className="pt-16 lg:w-[54%] lg:py-24 lg:pt-16">
           <Block id="about" label={t.nav.about}>
             <div className="space-y-4 leading-relaxed text-muted">
               {t.about.map((p, i) => (
