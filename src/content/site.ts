@@ -98,8 +98,8 @@ export const site = {
     whatsapp: null as string | null, // e.g. "+2376XXXXXXXX"
     github: "https://github.com/samueletah54-art",
     linkedin: null as string | null, // e.g. "https://www.linkedin.com/in/your-name"
-    instagram: null as string | null, // e.g. "https://www.instagram.com/your-handle"
-    x: null as string | null, // e.g. "https://x.com/your-handle"
+    instagram: "https://www.instagram.com/samuelisco22/" as string | null, // e.g. "https://www.instagram.com/your-handle"
+    x: "https://x.com/samuel_izko" as string | null, // e.g. "https://x.com/your-handle"
     threads: null as string | null, // e.g. "https://www.threads.net/@your-handle"
   },
 };
