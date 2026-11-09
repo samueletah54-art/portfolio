@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useLang } from "./LangProvider";
 
-export const sectionIds = ["about", "experience", "work", "skills", "services", "writing", "contact"] as const;
+export const sectionIds = ["about", "experience", "work", "craft", "skills", "services", "writing", "contact"] as const;
 
 // Small uppercase section menu for the sticky left column. The line next to the current
 // section grows and the label brightens as you scroll.

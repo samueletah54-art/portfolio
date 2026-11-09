@@ -23,6 +23,8 @@ export const site = {
   name: "Samuel Etah",
   location: "Yaoundé, Cameroon",
   cv: "https://the-line-eight.vercel.app/cv/",
+  // Paste a YouTube link to your best 20–40 second reel here; the player appears automatically.
+  reel: null as string | null,
 
   title: {
     en: "Engineer & writer",
@@ -139,7 +141,7 @@ export const posts: Post[] = [
 // Interface and section text, per language.
 export const copy = {
   en: {
-    nav: { about: "About", experience: "Experience", work: "Projects", skills: "Skills", services: "Services", writing: "Writing", contact: "Contact", cv: "CV" },
+    nav: { about: "About", experience: "Experience", work: "Projects", craft: "Motion & writing", skills: "Skills", services: "Services", writing: "Writing", contact: "Contact", cv: "CV" },
     availability: "Available for new projects",
     viewWork: "View work",
     contactBtn: "Contact",
@@ -167,6 +169,21 @@ export const copy = {
       { n: "109", label: "Exam questions built" },
     ],
     experienceTitle: "Experience",
+    craft: {
+      motionTitle: "Vox-style motion",
+      motionIntro: "Explainer videos that make a complex story easy to follow: a clear script, then kinetic text, animated maps and archive footage cut to the voice-over.",
+      motionMakes: ["YouTube explainers", "Short-form videos for social media", "Animated maps and timelines", "Kinetic typography"],
+      reelLabel: "Showreel",
+      reelPlay: "Play the reel",
+      writingTitle: "Ghostwriting",
+      writingIntro: "Writing published under my clients' names: researched properly, written in their voice and delivered on deadline, in English or French.",
+      writingMakes: ["Articles and opinion pieces", "Speeches", "Memoirs", "Editing and French–English translation"],
+      confidential: "Client work stays confidential. Samples are available on request, and my own writing is in the Writing section.",
+      processLabel: "How I work",
+      motionSteps: ["Script", "Storyboard", "Motion", "Sound & export"],
+      writingSteps: ["Interview", "Outline", "Draft in your voice", "Revise together"],
+      ask: "Ask for a sample",
+    },
     experience: [
       { year: "2026", role: "Freelance web developer", org: "Clients & independent projects" },
       { year: "2025", role: "Ghostwriter", org: "Independent" },
@@ -248,7 +265,7 @@ export const copy = {
   },
 
   fr: {
-    nav: { about: "Profil", experience: "Expérience", work: "Projets", skills: "Compétences", services: "Services", writing: "Écrits", contact: "Contact", cv: "CV" },
+    nav: { about: "Profil", experience: "Expérience", work: "Projets", craft: "Vidéo & écriture", skills: "Compétences", services: "Services", writing: "Écrits", contact: "Contact", cv: "CV" },
     availability: "Disponible pour de nouveaux projets",
     viewWork: "Voir les projets",
     contactBtn: "Contact",
@@ -276,6 +293,21 @@ export const copy = {
       { n: "109", label: "Questions d'examen créées" },
     ],
     experienceTitle: "Expérience",
+    craft: {
+      motionTitle: "Motion design style Vox",
+      motionIntro: "Des vidéos explicatives qui rendent une histoire complexe facile à suivre : un script clair, puis du texte animé, des cartes animées et des images d'archives montées sur la voix off.",
+      motionMakes: ["Vidéos explicatives YouTube", "Vidéos courtes pour les réseaux sociaux", "Cartes et frises animées", "Typographie animée"],
+      reelLabel: "Bande démo",
+      reelPlay: "Lire la bande démo",
+      writingTitle: "Prête-plume",
+      writingIntro: "Des textes publiés sous le nom de mes clients : bien documentés, écrits dans leur voix et livrés dans les délais, en anglais ou en français.",
+      writingMakes: ["Articles et tribunes", "Discours", "Mémoires", "Relecture et traduction anglais–français"],
+      confidential: "Le travail des clients reste confidentiel. Des extraits sont disponibles sur demande, et mes propres textes sont dans la rubrique Écrits.",
+      processLabel: "Ma méthode",
+      motionSteps: ["Script", "Storyboard", "Animation", "Son et export"],
+      writingSteps: ["Entretien", "Plan", "Rédaction dans votre voix", "Révision ensemble"],
+      ask: "Demander un extrait",
+    },
     experience: [
       { year: "2026", role: "Développeur web freelance", org: "Clients et projets indépendants" },
       { year: "2025", role: "Prête-plume", org: "Indépendant" },

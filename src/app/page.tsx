@@ -13,6 +13,7 @@ import { SideNav } from "@/components/SideNav";
 import { Block } from "@/components/Block";
 import { TypedTitle } from "@/components/TypedTitle";
 import { Waves } from "@/components/Waves";
+import { Craft } from "@/components/Craft";
 import { Magnetic } from "@/components/Magnetic";
 
 const icon = {
@@ -174,6 +175,10 @@ export default function Home() {
             <Projects />
           </Block>
 
+          <Block id="craft" label={t.nav.craft}>
+            <Craft />
+          </Block>
+
           <Block id="skills" label={t.nav.skills}>
             <div className="grid gap-6 sm:grid-cols-2">
               {t.skills.map((s) => (
@@ -209,10 +214,12 @@ export default function Home() {
             <ul className="dim-list mt-4 grid gap-4 sm:grid-cols-2">
               {t.also.map((s) => (
                 <li key={s.title}>
-                  <div className="h-full rounded-xl border border-dashed border-line p-5 transition-colors hover:border-accent/60">
-                    <h3 className="font-semibold tracking-tight">{s.title}</h3>
+                  <a href="#craft" className="group block h-full rounded-xl border border-dashed border-line p-5 transition-colors hover:border-accent/60">
+                    <h3 className="font-semibold tracking-tight group-hover:text-accent">
+                      {s.title} <span aria-hidden="true">↓</span>
+                    </h3>
                     <p className="mt-1.5 text-sm leading-relaxed text-muted">{s.description}</p>
-                  </div>
+                  </a>
                 </li>
               ))}
             </ul>
