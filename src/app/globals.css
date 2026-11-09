@@ -213,8 +213,16 @@ body.menu-open .wa-float {
 
 
 /* Hero background: layered blurred blobs in brand colours, drifting slowly */
+/* Hero background: green. Deep green in dark mode, fresh mint in light mode, fading into the page. */
 .hero-bg {
-  background: linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%);
+  background:
+    radial-gradient(120% 90% at 15% 0%, #1f7a4a 0%, transparent 60%),
+    linear-gradient(180deg, #0f4a30 0%, #0c3b27 55%, var(--bg) 100%);
+}
+html:not(.dark) .hero-bg {
+  background:
+    radial-gradient(120% 90% at 15% 0%, #a7f3c4 0%, transparent 60%),
+    linear-gradient(180deg, #d1fadf 0%, #e3fbea 55%, var(--bg) 100%);
 }
 .blob {
   position: absolute;
@@ -245,7 +253,7 @@ body.menu-open .wa-float {
   animation-duration: 34s;
   animation-delay: -12s;
 }
-html:not(.dark) .blob { opacity: 0.22; }
+html:not(.dark) .blob { opacity: 0.3; }
 html:not(.dark) .blob-3 { opacity: 0.12; }
 @keyframes blob-drift {
   0% { transform: translate(0, 0) scale(1); }
