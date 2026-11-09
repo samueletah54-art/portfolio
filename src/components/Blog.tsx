@@ -62,6 +62,27 @@ export function PostCard({ p }: { p: PostMeta }) {
   );
 }
 
+function PostRow({ p }: { p: PostMeta }) {
+  const { lang } = useLang();
+  const L = p[lang];
+  const day = new Date(p.date).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+  return (
+    <article className="lift group relative -mx-4 grid gap-1 rounded-2xl border border-transparent p-4 hover:border-line hover:bg-bg-2/70 sm:grid-cols-[80px_1fr] sm:gap-6 sm:p-5">
+      <p className="t-meta pt-1.5 text-muted">
+        <time dateTime={p.date}>{day}</time>
+      </p>
+      <div>
+        <h3 className="font-display text-xl font-extrabold leading-snug">
+          <Link href={`/blog/${p.slug}`} className="after:absolute after:inset-0 after:rounded-2xl after:content-['']">
+            <span className="sweep">{L.title}</span>
+          </Link>
+        </h3>
+        <p className="mt-1.5 line-clamp-2 text-muted">{L.excerpt}</p>
+      </div>
+    </article>
+  );
+}
+
 // "Popular content" only appears when it adds something: at least 5 posts in total,
 // and only posts that are NOT already visible in the main list next to it.
 export const POPULAR_MIN_POSTS = 5;
@@ -103,15 +124,26 @@ export function PostFeed({ category }: { category?: string }) {
 
   if (list.length === 0) return <p className="rounded-3xl border border-dashed border-line p-8 text-center text-muted">{t.home.noPosts}</p>;
 
+  // Grouped by year, like the index of a notebook: date on the left, title and one line on the right.
+  const years = [...new Set(shown.map((p) => p.date.slice(0, 4)))];
   const cards = (
     <div>
-      <ul className={`grid gap-6 ${popular.length ? "" : "md:grid-cols-2"}`}>
-        {shown.map((p) => (
-          <li key={p.slug}>
-            <PostCard p={p} />
-          </li>
-        ))}
-      </ul>
+      {years.map((y) => (
+        <section key={y} aria-labelledby={`y-${y}`} className="mb-12 last:mb-0">
+          <h2 id={`y-${y}`} className="font-display text-3xl font-black text-muted/70">
+            {y}
+          </h2>
+          <ul className="group/list mt-4 space-y-2">
+            {shown
+              .filter((p) => p.date.startsWith(y))
+              .map((p) => (
+                <li key={p.slug} className="transition-opacity duration-300 lg:group-hover/list:opacity-50 lg:hover:opacity-100!">
+                  <PostRow p={p} />
+                </li>
+              ))}
+          </ul>
+        </section>
+      ))}
       {count < list.length && (
         <button type="button" onClick={() => setCount((c) => c + 6)} className="btn btn-ghost mt-10">
           {t.home.showMore}

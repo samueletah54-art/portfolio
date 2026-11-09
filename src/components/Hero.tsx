@@ -149,7 +149,7 @@ export function Intro() {
         </Link>
       </div>
       {site.availableForWork && (
-        <p className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent xl:hidden">
+        <p className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent min-[1360px]:hidden">
           <span className="pulse-dot relative inline-block h-2 w-2 rounded-full bg-accent text-accent" aria-hidden="true" />
           {t.available}
         </p>

@@ -34,7 +34,7 @@ export function BlogView({ category }: { category?: string }) {
   const cat = categories.find((c) => c.slug === category);
   return (
     <>
-      <PageHead title={cat ? cat.name[lang] : t.home.latest} intro={cat ? cat.blurb[lang] : undefined}>
+      <PageHead title={cat ? cat.name[lang] : t.home.latest} intro={cat ? cat.blurb[lang] : t.home.blogIntro}>
         <div className="mt-6">
           <CategoryPills active={category} />
         </div>

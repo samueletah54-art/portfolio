@@ -51,6 +51,8 @@ export const en = {
     fullStory: "Read my full story",
     sections: "On this page",
     categories: "Browse by category",
+    blogIntro:
+      "Hi, I'm Samuel, and this is my blog. Here you'll find the articles I wish I'd had when I started building websites in Cameroon: how to make sites fast on cheap phones, how to keep them secure, and how to tell stories with video. I write in English and French, with examples you can try for yourself.",
     latest: "Articles and tutorials",
     popular: "Popular content",
     readMore: "Read more",

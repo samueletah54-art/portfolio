@@ -53,6 +53,8 @@ export const fr: Dict = {
     fullStory: "Lire mon histoire complète",
     sections: "Sur cette page",
     categories: "Parcourir par catégorie",
+    blogIntro:
+      "Salut, moi c'est Samuel, et voici mon blog. Vous y trouverez les articles que j'aurais aimé lire quand j'ai commencé à créer des sites au Cameroun : rendre un site rapide sur un téléphone d'entrée de gamme, le sécuriser, et raconter des histoires en vidéo. J'écris en anglais et en français, avec des exemples à essayer vous-même.",
     latest: "Articles et tutoriels",
     popular: "Contenus populaires",
     readMore: "Lire la suite",

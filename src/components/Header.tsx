@@ -79,7 +79,7 @@ export function Header() {
           {site.availableForWork && (
             <Link
               href="/contact"
-              className="hidden items-center gap-2 whitespace-nowrap rounded-full border border-accent/40 bg-accent-soft px-3 py-1 text-xs font-semibold text-accent xl:inline-flex"
+              className="hidden items-center gap-2 whitespace-nowrap rounded-full border border-accent/40 bg-accent-soft px-3 py-1 text-xs font-semibold text-accent min-[1360px]:inline-flex"
             >
               <span className="pulse-dot relative inline-block h-2 w-2 rounded-full bg-accent text-accent" aria-hidden="true" />
               {t.available}
@@ -95,7 +95,7 @@ export function Header() {
                 aria-expanded={cats}
                 aria-haspopup="true"
                 onClick={() => setCats((c) => !c)}
-                className="inline-flex min-h-11 items-center gap-1 rounded-full px-3.5 font-semibold transition-colors hover:text-accent"
+                className="inline-flex min-h-11 items-center gap-1 rounded-full px-2.5 font-semibold xl:px-3.5 transition-colors hover:text-accent"
               >
                 {t.nav.categories}
                 <Icon name="chevron" size={16} className={`transition-transform ${cats ? "rotate-180" : ""}`} />
@@ -130,7 +130,7 @@ export function Header() {
           <div className="hidden items-center gap-1.5 sm:flex">
             <SoundToggle labels={{ on: t.icons.soundOn, off: t.icons.soundOff }} />
             <ThemeToggle />
-            <a href="/rss.xml" className="icon-btn boop" aria-label={t.icons.rss} title={t.icons.rss}>
+            <a href="/rss.xml" className="icon-btn boop lg:max-xl:hidden" aria-label={t.icons.rss} title={t.icons.rss}>
               <Icon name="rss" size={18} />
             </a>
             <LangToggle />
