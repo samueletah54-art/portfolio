@@ -16,6 +16,7 @@ export const site = {
   contact: {
     email: "samueletah54@gmail.com",
     whatsapp: "+237671857479",
+    whatsapp2: "+237656147565", // second WhatsApp number
     github: "https://github.com/samueletah54-art",
     instagram: "https://www.instagram.com/samuelisco22/",
     x: "https://x.com/samuel_izko",
@@ -23,8 +24,8 @@ export const site = {
   },
 };
 
-export const whatsappLink = (text?: string) =>
-  `https://wa.me/${site.contact.whatsapp.replace(/\D/g, "")}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+export const whatsappLink = (text?: string, number: string = site.contact.whatsapp) =>
+  `https://wa.me/${number.replace(/\D/g, "")}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 
 /* ---------- Blog categories ---------- */
 export const categories: { slug: string; name: Text; blurb: Text }[] = [
@@ -370,3 +371,6 @@ export const now = {
     ],
   } as TextList,
 };
+
+// "+237671857479" -> "+237 671 857 479"
+export const prettyPhone = (n: string) => n.replace(/^(\+\d{3})(\d{3})(\d{3})(\d{3})$/, "$1 $2 $3 $4");

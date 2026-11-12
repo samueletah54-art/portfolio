@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { site, categories, projects, services, courses, about, uses, now, whatsappLink } from "@/content/site";
+import { site, categories, projects, services, courses, about, uses, now, whatsappLink, prettyPhone } from "@/content/site";
 import { useLang } from "@/components/LangProvider";
 import { CategoryPills, PostFeed } from "@/components/Blog";
 import { Reveal } from "@/components/Reveal";
@@ -422,6 +422,13 @@ export function ContactView() {
             </a>
             <CopyEmail />
           </div>
+          <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+            {[site.contact.whatsapp, site.contact.whatsapp2].map((n) => (
+              <a key={n} href={whatsappLink(undefined, n)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-semibold hover:text-accent">
+                <Icon name="whatsapp" size={18} /> {prettyPhone(n)}
+              </a>
+            ))}
+          </div>
           <ul className="mt-8 flex flex-wrap gap-2">
             {socials().map((s) => (
               <li key={s.name}>
@@ -501,7 +508,7 @@ export function CvView() {
         <h1 className="text-4xl font-black tracking-tight">{site.fullName}</h1>
         <p className="mt-1 text-lg font-bold text-accent">{lang === "fr" ? "Développeur web · Sécurité · Montage vidéo" : "Web developer · Security · Video editing"}</p>
         <p className="mt-2 text-sm text-muted">
-          {site.location} · {site.contact.email} · {site.contact.whatsapp} · {site.url.replace("https://", "")}
+          {site.location} · {site.contact.email} · {prettyPhone(site.contact.whatsapp)} / {prettyPhone(site.contact.whatsapp2)} · {site.url.replace("https://", "")}
         </p>
         <section className="mt-8">
           <h2 className="border-b border-line pb-1 text-sm font-black uppercase tracking-widest">{lang === "fr" ? "Profil" : "Profile"}</h2>
