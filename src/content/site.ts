@@ -89,6 +89,34 @@ export const projects: Project[] = [
     screenshots: ["/projects/examina.webp"],
   },
   {
+    slug: "bw-barbershop",
+    name: "BW Barber Shop",
+    kind: { en: "Business website & booking", fr: "Site vitrine et réservation" },
+    year: "2026",
+    summary: {
+      en: "A bilingual website for a new barbershop in Emombo, Yaoundé, with prices on show and booking in four steps.",
+      fr: "Un site bilingue pour un nouveau salon de coiffure à Emombo, Yaoundé, avec les prix affichés et une réservation en quatre étapes.",
+    },
+    stack: ["HTML", "CSS", "JavaScript", "Vercel Functions", "i18n (FR/EN)"],
+    image: "/projects/bw-barbershop.webp",
+    imageAlt: { en: "BW Barber Shop home page", fr: "Page d'accueil de BW Barber Shop" },
+    live: "https://bw-barbershop.vercel.app",
+    github: "https://github.com/samueletah54-art/bw-barbershop",
+    problem: {
+      en: "A new shop opening in a busy neighbourhood needed customers to find it, see the prices and book a chair before the first day, without a booking app or extra staff.",
+      fr: "Un nouveau salon dans un quartier animé devait se faire connaître, afficher ses prix et prendre des réservations avant le premier jour, sans application ni personnel en plus.",
+    },
+    built: {
+      en: ["A price list where every row books that cut", "Booking in four steps that ends in a ready-written WhatsApp message", "French and English, a dark design and a sticky call / WhatsApp bar on phones", "Google-ready business details (hours, prices, phone) and fast, cached images"],
+      fr: ["Une grille de tarifs où chaque ligne réserve la coupe", "Une réservation en quatre étapes qui se termine par un message WhatsApp déjà rédigé", "Français et anglais, un design sombre et une barre d'appel / WhatsApp fixe sur téléphone", "Des informations prêtes pour Google (horaires, prix, téléphone) et des images rapides"],
+    },
+    result: {
+      en: "Live before opening day, so customers can choose a cut and book in under a minute from their phone.",
+      fr: "En ligne avant l'ouverture : les clients choisissent une coupe et réservent en moins d'une minute depuis leur téléphone.",
+    },
+    screenshots: ["/projects/bw-barbershop.webp"],
+  },
+  {
     slug: "mboa-phones",
     name: "Mboa Phones",
     kind: { en: "E-commerce storefront", fr: "Boutique en ligne" },
