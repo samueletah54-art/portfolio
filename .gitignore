@@ -1,6 +1,3 @@
-Thumbs.db
-.DS_Store
-.vercel
-
-.vercel
-.env*
+node_modules
+.next
+out
